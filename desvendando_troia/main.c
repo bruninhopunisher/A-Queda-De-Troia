@@ -75,10 +75,20 @@ int main() {
             // Captura a posi��o do mouse
             mouse_x = event.mouse.x;
             mouse_y = event.mouse.y;
+            printf("x-%0.2f-\n", mouse_x);
+            printf("y-%0.2f\n", mouse_y);
         }
         else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
             // Detecta o clique do mouse
             mouse_pressed = true;
+            if (mouse_pressed = true &&
+                (mouse_x >= 72 && mouse_x <= 173) &&
+                (mouse_y >= 650 && mouse_y <= 681)){
+                al_destroy_bitmap(background); 
+                al_destroy_event_queue(event_queue);
+                al_destroy_display(display);
+                return 0;
+            }
         }
         else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
             // Detecta quando o bot�o do mouse � solto
