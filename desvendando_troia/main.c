@@ -2,6 +2,16 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 #include <stdio.h>
+#include <stdbool.h>
+
+//Novo tipo que é um ponteiro a uma função que retorna um valor Booleano.
+typedef bool(*IniciarAddon)();
+
+static void iniciarAddons(IniciarAddon refAddon,char *nomeAddon) {
+    if (!refAddon()) {
+        printf("Addon %s não inicializado!", nomeAddon);
+    }
+}
 
 int main() {
 
@@ -11,23 +21,13 @@ int main() {
         return -1;
     }
 
-    // Inicializa o addon de imagens
-    if (!al_init_image_addon()) {
-        printf("Falha ao inicializar o addon de imagem!\n");
-        return -1;
-    }
+    //Inicializando addon de Imagens
+    iniciarAddons(al_init_image_addon, "imagem");
+    //Inicializando addon de Primiticas ( Desenha formas geometricas )
+    iniciarAddons(al_init_primitives_addon, "primitivas");
+    //Inicializando addon do Mouse
+    iniciarAddons(al_install_mouse, "mouse");
 
-    // Inicializa o addon de primitivas (para desenhar formas geom�tricas)
-    if (!al_init_primitives_addon()) {
-        printf("Falha ao inicializar o addon de primitivas!\n");
-        return -1;
-    }
-
-    // Inicializa o mouse
-    if (!al_install_mouse()) {
-        printf("Falha ao inicializar o mouse!\n");
-        return -1;
-    }
 
     // Cria o display (janela) de 800x600
     ALLEGRO_DISPLAY* display = al_create_display(1280, 720);
@@ -79,8 +79,9 @@ int main() {
             printf("y-%0.2f\n", mouse_y);
         }
         else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-            // Detecta o clique do mouse
+            // Detecta o clique do mouse 
             mouse_pressed = true;
+            //Encerra o display e destroi os eventos ao clicar em Sair
             if (mouse_pressed = true &&
                 (mouse_x >= 72 && mouse_x <= 173) &&
                 (mouse_y >= 650 && mouse_y <= 681)){
@@ -97,14 +98,6 @@ int main() {
 
         // Desenha a imagem de fundo
         al_draw_bitmap(background, 0, 0, 0);
-
-        // Desenha um c�rculo na posi��o do mouse, mudando de cor se o bot�o estiver pressionado
-        if (mouse_pressed) {
-            al_draw_filled_circle(mouse_x, mouse_y, 20, al_map_rgb(255, 0, 0));  // C�rculo vermelho
-        }
-        else {
-            al_draw_filled_circle(mouse_x, mouse_y, 20, al_map_rgb(0, 255, 0));  // C�rculo verde
-        }
 
         // Atualiza a tela
         al_flip_display();
