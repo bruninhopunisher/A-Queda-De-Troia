@@ -5,14 +5,20 @@ ALLEGRO_EVENT_QUEUE* evento;
 ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
 ALLEGRO_BITMAP* backgroundIntUm;
+ALLEGRO_FONT* fonteMenu;
 
-void static testeInicializar(bool metodo, char* referencia) {
+int displayX;
+int displayY;
+int mouseX;
+int mouseY;
+
+void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
 		printf("Falha ao iniciar o %s", referencia);
 	} 
 }
 
-void static iniciarAddons() {
+void iniciarAddons() {
 	//Inicia o Allegro
 	testeInicializar(al_init(), "Allegro");
 	//Inicia Addon do Teclado
@@ -23,9 +29,13 @@ void static iniciarAddons() {
 	testeInicializar(al_init_primitives_addon(), "Primitivas");
 	//Inicia Addon do Mouse
 	testeInicializar(al_install_mouse(), "Mouse");
+	//Inicia Addon de Fonte
+	testeInicializar(al_init_font_addon(), "Fonte");
+	//Inicia Addon de arquivos TTF
+	testeInicializar(al_init_ttf_addon(), "TTF"); 
 }
 
-void static iniciarConstantes() {
+void iniciarConstantes() {
 	//Cria um ponteiro timer que armazena o cronometro
 	timer = al_create_timer(1.0 / 30.0);
 	testeInicializar(timer, "timer");
@@ -35,7 +45,9 @@ void static iniciarConstantes() {
 	testeInicializar(evento, "evento");
 
 	//Cria um ponteiro para o Display
-	display = al_create_display(1280, 720);
+	displayX = 1280;	
+	displayY = 720;
+	display = al_create_display(displayX, displayY);
 	testeInicializar(display, "display");
 
 	//Cria um ponteiro que recebe a Imagem do Menu
@@ -44,5 +56,10 @@ void static iniciarConstantes() {
 
 	//Cria um ponteiro que recebe a Imagem do Menu
 	backgroundIntUm = al_load_bitmap("backgroundI1.jpg");
-	testeInicializar(backgroundIntUm, "imagem_menu");
+	testeInicializar(backgroundIntUm, "imagemMenu");
+
+	//Criando a fonte
+	fonteMenu = al_load_font("MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
+	testeInicializar(fonteMenu, "fonteMenu");
+
 }
