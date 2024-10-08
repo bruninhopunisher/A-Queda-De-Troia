@@ -2,9 +2,7 @@
 #include "menu.h"
 
 int main() {
-	//Função Externa que inicia todos os Addons
 	iniciarAddons();
-	//Função Externa que inicia todas as Constantes
 	iniciarConstantes();
 
 	al_register_event_source(evento, al_get_keyboard_event_source());
@@ -48,12 +46,7 @@ int main() {
 		}
 	}
 
-	al_destroy_font(fonteMenu); 
-	al_destroy_bitmap(backgroundIntUm);
-	al_destroy_bitmap(backgroundMenu);
-	al_destroy_display(display);
-	al_destroy_timer(timer);
-	al_destroy_event_queue(evento);
+	destroiComponentes();
 
 	return 0;
 }

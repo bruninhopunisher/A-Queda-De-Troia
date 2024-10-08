@@ -40,6 +40,9 @@
     <Filter Include="Arquivos de Cabeçalho\Biblioteca">
       <UniqueIdentifier>{e418afb6-95ac-49c2-a3b9-1473eef4371f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Opções">
+      <UniqueIdentifier>{fa002fd9-7b44-4fe5-861b-aebb4f882c0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,11 +59,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="backgroundI1.jpg">
+      <Filter>Arquivos de Origem\Imagens\IntroducaoUm</Filter>
+    </Image>
     <Image Include="background_login.png">
       <Filter>Arquivos de Origem\Imagens\Menu</Filter>
     </Image>
-    <Image Include="backgroundI1.jpg">
-      <Filter>Arquivos de Origem\Imagens\IntroducaoUm</Filter>
+    <Image Include="background.png">
+      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
