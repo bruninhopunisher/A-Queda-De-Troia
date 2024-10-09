@@ -144,6 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="introducao01.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
@@ -153,8 +154,13 @@
   <ItemGroup>
     <Image Include="backgroundI1.jpg" />
     <Image Include="background_login.png" />
+    <Image Include="introducao01_1.jpg" />
+    <Image Include="introducao01_2.jpg" />
+    <Image Include="introducao01_3.jpg" />
+    <Image Include="introducao01_4.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="introducao01.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
   </ItemGroup>

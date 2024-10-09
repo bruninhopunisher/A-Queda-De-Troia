@@ -4,13 +4,21 @@ ALLEGRO_TIMER* timer;
 ALLEGRO_EVENT_QUEUE* evento;
 ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
-ALLEGRO_BITMAP* backgroundIntUm;
+ALLEGRO_BITMAP* introducao01_1;
+ALLEGRO_BITMAP* introducao01_2;
+ALLEGRO_BITMAP* introducao01_3;
+ALLEGRO_BITMAP* introducao01_4;
+ALLEGRO_BITMAP* introducao01_5;
+ALLEGRO_BITMAP* introducao01_6;
+ALLEGRO_BITMAP* introducao01_7;
+ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste apenas
 ALLEGRO_FONT* fonteMenu;
 
 int displayX;
 int displayY;
 int mouseX;
 int mouseY;
+int intru01 = 1;
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -54,6 +62,27 @@ void iniciarConstantes() {
 	backgroundMenu = al_load_bitmap("background_login.png");
 	testeInicializar(backgroundMenu, "imagem_menu");
 
+	introducao01_1 = al_load_bitmap("introducao01_1.jpg");
+	testeInicializar(backgroundMenu, "introducao01_1");
+	
+	introducao01_2 = al_load_bitmap("introducao01_2.jpg");
+	testeInicializar(backgroundMenu, "introducao01_2");
+
+	introducao01_3 = al_load_bitmap("introducao01_3.jpg");
+	testeInicializar(backgroundMenu, "introducao01_3");
+
+	introducao01_4 = al_load_bitmap("introducao01_4.jpg");
+	testeInicializar(backgroundMenu, "introducao01_4");
+
+	introducao01_5 = al_load_bitmap("introducao01_5.jpg");
+	testeInicializar(backgroundMenu, "introducao01_5");
+
+	introducao01_6 = al_load_bitmap("introducao01_6.jpg");
+	testeInicializar(backgroundMenu, "introducao01_6");
+
+	introducao01_7 = al_load_bitmap("introducao01_7.jpg");
+	testeInicializar(backgroundMenu, "introducao01_7");
+	
 	//Cria um ponteiro que recebe a Imagem do Menu
 	backgroundIntUm = al_load_bitmap("backgroundI1.jpg");
 	testeInicializar(backgroundIntUm, "imagemMenu");
