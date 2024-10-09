@@ -24,9 +24,9 @@ int main() {
 		if (event.type == ALLEGRO_EVENT_TIMER) {
 			redraw = true; 
 		}
-		if (event.type == ALLEGRO_EVENT_MOUSE_AXES) {
-			printf("x-%d \n y-%d \n", event.mouse.x, event.mouse.y);	
-		}
+		//if (event.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		//	printf("x-%d \n y-%d \n", event.mouse.x, event.mouse.y);	
+		//}
 		if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE || navegacao == -1) {
 			break;
 		}

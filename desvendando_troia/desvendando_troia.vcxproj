@@ -158,6 +158,9 @@
     <Image Include="introducao01_2.jpg" />
     <Image Include="introducao01_3.jpg" />
     <Image Include="introducao01_4.jpg" />
+    <Image Include="introducao01_5.jpg" />
+    <Image Include="introducao01_6.jpg" />
+    <Image Include="introducao01_7.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="introducao01.h" />
