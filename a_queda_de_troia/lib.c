@@ -4,6 +4,9 @@ ALLEGRO_TIMER* timer;
 ALLEGRO_EVENT_QUEUE* evento;
 ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
+ALLEGRO_BITMAP* backgroundOpcoes;
+ALLEGRO_BITMAP* comVolume;
+ALLEGRO_BITMAP* semVolume;
 ALLEGRO_BITMAP* introducao1_1;
 ALLEGRO_BITMAP* introducao1_2;
 ALLEGRO_BITMAP* introducao1_3;
@@ -76,6 +79,15 @@ void iniciarConstantes() {
 	backgroundIntUm = al_load_bitmap("Imagens/Img_Testes/backgroundI1.jpg");
 	testeInicializar(backgroundIntUm, "imagemMenu");
 
+	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
+	testeInicializar(backgroundOpcoes, "backgroundOpcoes");
+
+	semVolume = al_load_bitmap("Imagens/Opcoes/sem_volume.png");
+	testeInicializar(semVolume, "semVolume");
+
+	comVolume = al_load_bitmap("Imagens/Opcoes/com_volume.png");
+	testeInicializar(comVolume, "comVolume");
+
 	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
 	testeInicializar(fonteMenu, "fonteMenu");
 
@@ -85,6 +97,7 @@ void destruidor() {
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm);
 	al_destroy_bitmap(backgroundMenu);
+	al_destroy_bitmap(backgroundOpcoes);
 	al_destroy_bitmap(introducao1_1);
 	al_destroy_bitmap(introducao1_2);
 	al_destroy_bitmap(introducao1_3);
@@ -95,4 +108,6 @@ void destruidor() {
 	al_destroy_display(display);
 	al_destroy_timer(timer);
 	al_destroy_event_queue(evento);
+	al_destroy_bitmap(comVolume);
+	al_destroy_bitmap(semVolume);
 }

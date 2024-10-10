@@ -38,7 +38,7 @@ int main() {
 					introducao1_4, introducao1_5, introducao1_6, introducao1_7);
 				break;
 			case 2:
-				al_draw_bitmap(backgroundIntUm, 0, 0, 0);
+				opcoes(&navegacao, backgroundOpcoes, event);
 				al_flip_display();
 				break;
 		}

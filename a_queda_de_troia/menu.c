@@ -23,7 +23,7 @@ void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool
 	}
 	al_draw_filled_rectangle(38, 650, 150, 690, al_map_rgb(238, 173, 45)); 
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) - 25, ALLEGRO_ALIGN_CENTRE, "INICIAR"); 
-	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 55, ALLEGRO_ALIGN_CENTRE, "OPCOES");
+	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 55, ALLEGRO_ALIGN_CENTRE, "AUDIO");
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 135, ALLEGRO_ALIGN_CENTRE, "CREDITOS");
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 96, 648, ALLEGRO_ALIGN_CENTRE, "SAIR");
 	al_flip_display();

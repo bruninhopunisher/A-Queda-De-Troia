@@ -13,6 +13,9 @@
     <ClCompile Include="main.c">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="opcoes.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -23,6 +26,9 @@
     </ClInclude>
     <ClInclude Include="menu.h">
       <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="opcoes.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +58,15 @@
     </Image>
     <Image Include="Imagens\Introducao_1\intro7.jpg">
       <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Opcoes\background_opcoes.png">
+      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+    </Image>
+    <Image Include="Imagens\Opcoes\com_volume.png">
+      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+    </Image>
+    <Image Include="Imagens\Opcoes\sem_volume.png">
+      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +120,9 @@
     </Filter>
     <Filter Include="Arquivos de Origem\Imagens\IMG Testes">
       <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Opções">
+      <UniqueIdentifier>{6cdda049-104c-478c-a75e-2389052c290c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

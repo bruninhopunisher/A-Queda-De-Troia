@@ -10,11 +10,15 @@
 #include <allegro5/allegro_ttf.h>
 #include "menu.h"
 #include "introducao1.h"
+#include "opcoes.h"
 
 extern ALLEGRO_TIMER* timer; 
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
+extern ALLEGRO_BITMAP* backgroundOpcoes;
+extern ALLEGRO_BITMAP* comVolume;
+extern ALLEGRO_BITMAP* semVolume;
 extern ALLEGRO_BITMAP* introducao1_1;
 extern ALLEGRO_BITMAP* introducao1_2;
 extern ALLEGRO_BITMAP* introducao1_3;

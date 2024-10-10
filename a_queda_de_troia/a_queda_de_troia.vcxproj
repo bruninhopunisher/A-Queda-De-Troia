@@ -148,6 +148,7 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
     </ClCompile>
     <ClCompile Include="menu.c" />
+    <ClCompile Include="opcoes.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
@@ -159,11 +160,15 @@
     <Image Include="Imagens\Introducao_1\intro6.jpg" />
     <Image Include="Imagens\Introducao_1\intro7.jpg" />
     <Image Include="Imagens\Menu\background_login.jpg" />
+    <Image Include="Imagens\Opcoes\background_opcoes.png" />
+    <Image Include="Imagens\Opcoes\com_volume.png" />
+    <Image Include="Imagens\Opcoes\sem_volume.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="opcoes.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
