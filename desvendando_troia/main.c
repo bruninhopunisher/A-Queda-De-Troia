@@ -1,9 +1,7 @@
 ﻿#include "lib.h"
 
 int main() {
-	//Função Externa que inicia todos os Addons
 	iniciarAddons();
-	//Função Externa que inicia todas as Constantes
 	iniciarConstantes();
 
 	al_register_event_source(evento, al_get_keyboard_event_source());
@@ -44,6 +42,7 @@ int main() {
 		}
 	}
 
+<<<<<<< HEAD
 	al_destroy_font(fonteMenu); 
 	al_destroy_bitmap(backgroundIntUm);
 	al_destroy_bitmap(backgroundMenu);
@@ -57,6 +56,9 @@ int main() {
 	al_destroy_display(display);
 	al_destroy_timer(timer);
 	al_destroy_event_queue(evento);
+=======
+	destroiComponentes();
+>>>>>>> 013a76183f264ae7bc1f20d521e29900fe879bf3
 
 	return 0;
 }

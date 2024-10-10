@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Recurso">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens">
+      <UniqueIdentifier>{fabca226-e9fb-4192-b786-b52213184810}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Menu">
+      <UniqueIdentifier>{63d7464c-9842-43ea-bade-989f477beba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas">
+      <UniqueIdentifier>{2ecb1606-b007-4940-8b51-98b2755c0f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Menu">
+      <UniqueIdentifier>{6847f673-16b5-4bb1-9dc4-344a08a42ba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo">
+      <UniqueIdentifier>{fd5fb3f6-c852-4cce-80d1-5c488f345626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Opcoes">
+      <UniqueIdentifier>{762075d9-b6a1-4445-baab-979c1e42fb86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Creditos">
+      <UniqueIdentifier>{ccb23b8d-b0f2-4ceb-be12-ccf45dd6756d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Biblioteca">
+      <UniqueIdentifier>{e418afb6-95ac-49c2-a3b9-1473eef4371f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01">
+      <UniqueIdentifier>{c435b7a7-e2e4-4d98-8c8d-b45e1a4a295f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introducao">
+      <UniqueIdentifier>{95a9e752-bcb3-4801-bbff-869cf6641bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Fase">
+      <UniqueIdentifier>{3194c23a-9dde-4849-a43d-80039af053eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Introducao1">
+      <UniqueIdentifier>{69e001ad-458e-41eb-afef-7fcdd1c53bb6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="lib.c">
+      <Filter>Arquivos de Cabeçalho\Biblioteca</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao1.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introducao</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="background_login.png">
+      <Filter>Arquivos de Origem\Imagens\Menu</Filter>
+    </Image>
+    <Image Include="introducao1_1.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_3.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_4.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_5.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_6.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_7.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="backgroundI1.jpg">
+      <Filter>Arquivos de Origem\Imagens</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menu.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="lib.h">
+      <Filter>Arquivos de Cabeçalho\Biblioteca</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao1.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introducao</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

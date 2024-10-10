@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="lib.c">
+      <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao1.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib.h">
+      <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao1.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="introducao1_1.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_6.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_5.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_4.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_7.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="introducao1_3.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="background_login.png">
+      <Filter>Arquivos de Origem\Imagens\Menu</Filter>
+    </Image>
+    <Image Include="backgroundI1.jpg">
+      <Filter>Arquivos de Origem\Imagens\IMG Testes</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Arquivos de Cabeçalho">
+      <UniqueIdentifier>{fda3d9a6-c1c9-4880-84ba-29700c7241fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Bibliotecas">
+      <UniqueIdentifier>{1ec26c51-00c6-48d2-970e-021124b0f7b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas">
+      <UniqueIdentifier>{d2ed3b90-e109-4e83-9ef3-39937faad5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Créditos">
+      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo">
+      <UniqueIdentifier>{ec0510ec-928a-421c-96d8-70998e59ecbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Menu">
+      <UniqueIdentifier>{e6fddd6a-de88-454a-9877-ab7bf244d685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Opções">
+      <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01">
+      <UniqueIdentifier>{2e9df5a0-3d26-488b-bc92-a99b0bc9375a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Fase">
+      <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução">
+      <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Recurso">
+      <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens">
+      <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Introdução 1">
+      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Menu">
+      <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\IMG Testes">
+      <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

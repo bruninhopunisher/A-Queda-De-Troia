@@ -26,42 +26,34 @@ void testeInicializar(bool metodo, char* referencia) {
 	} 
 }
 
+//Inicia o Allegro
 void iniciarAddons() {
-	//Inicia o Allegro
+
 	testeInicializar(al_init(), "Allegro");
-	//Inicia Addon do Teclado
 	testeInicializar(al_install_keyboard(), "Teclado");
-	//Inicia Addon da Imagem
 	testeInicializar(al_init_image_addon(), "Imagem");
-	//Inicia Addon das Primitivas
 	testeInicializar(al_init_primitives_addon(), "Primitivas");
-	//Inicia Addon do Mouse
 	testeInicializar(al_install_mouse(), "Mouse");
-	//Inicia Addon de Fonte
 	testeInicializar(al_init_font_addon(), "Fonte");
-	//Inicia Addon de arquivos TTF
 	testeInicializar(al_init_ttf_addon(), "TTF"); 
 }
 
 void iniciarConstantes() {
-	//Cria um ponteiro timer que armazena o cronometro
 	timer = al_create_timer(1.0 / 30.0);
 	testeInicializar(timer, "timer");
 
-	//Cria um ponteiro para uma fila de eventos
 	evento = al_create_event_queue();
 	testeInicializar(evento, "evento");
 
-	//Cria um ponteiro para o Display
 	displayX = 1280;	
 	displayY = 720;
 	display = al_create_display(displayX, displayY);
 	testeInicializar(display, "display");
 
-	//Cria um ponteiro que recebe a Imagem do Menu
 	backgroundMenu = al_load_bitmap("background_login.png");
 	testeInicializar(backgroundMenu, "imagem_menu");
 
+<<<<<<< HEAD
 	introducao1_1 = al_load_bitmap("introducao1_1.jpg");
 	testeInicializar(backgroundMenu, "introducao1_1");
 	
@@ -84,11 +76,21 @@ void iniciarConstantes() {
 	testeInicializar(backgroundMenu, "introducao1_7");
 	
 	//Cria um ponteiro que recebe a Imagem do Menu
+=======
+>>>>>>> 013a76183f264ae7bc1f20d521e29900fe879bf3
 	backgroundIntUm = al_load_bitmap("backgroundI1.jpg");
 	testeInicializar(backgroundIntUm, "imagemMenu");
 
-	//Criando a fonte
 	fonteMenu = al_load_font("MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
 	testeInicializar(fonteMenu, "fonteMenu");
 
+}
+
+void destroiComponentes() {
+	al_destroy_font(fonteMenu);
+	al_destroy_bitmap(backgroundIntUm);
+	al_destroy_bitmap(backgroundMenu);
+	al_destroy_display(display);
+	al_destroy_timer(timer);
+	al_destroy_event_queue(evento);
 }

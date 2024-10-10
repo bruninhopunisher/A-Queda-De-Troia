@@ -149,6 +149,7 @@
     <ClCompile Include="menu.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="background.png" />
     <Image Include="backgroundI1.jpg" />
     <Image Include="background_login.png" />
     <Image Include="introducao1_1.jpg" />
