@@ -44,19 +44,7 @@ int main() {
 		}
 	}
 
-	al_destroy_font(fonteMenu); 
-	al_destroy_bitmap(backgroundIntUm);
-	al_destroy_bitmap(backgroundMenu);
-	al_destroy_bitmap(introducao1_1);
-	al_destroy_bitmap(introducao1_2);
-	al_destroy_bitmap(introducao1_3);
-	al_destroy_bitmap(introducao1_4);
-	al_destroy_bitmap(introducao1_5);
-	al_destroy_bitmap(introducao1_6);
-	al_destroy_bitmap(introducao1_7);
-	al_destroy_display(display);
-	al_destroy_timer(timer);
-	al_destroy_event_queue(evento);
+	destruidor();
 
 	return 0;
 }
