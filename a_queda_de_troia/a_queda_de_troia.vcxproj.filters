@@ -26,32 +26,32 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="introducao1_1.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_6.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_5.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_4.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_7.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="introducao1_3.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
-    </Image>
-    <Image Include="background_login.png">
+    <Image Include="Imagens\Menu\background_login.jpg">
       <Filter>Arquivos de Origem\Imagens\Menu</Filter>
     </Image>
-    <Image Include="backgroundI1.jpg">
+    <Image Include="Imagens\Img Testes\backgroundI1.jpg">
       <Filter>Arquivos de Origem\Imagens\IMG Testes</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro1.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro3.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro4.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro5.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro6.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\intro7.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

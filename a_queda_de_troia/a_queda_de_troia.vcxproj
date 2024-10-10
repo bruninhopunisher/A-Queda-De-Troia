@@ -150,15 +150,15 @@
     <ClCompile Include="menu.c" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="backgroundI1.jpg" />
-    <Image Include="background_login.png" />
-    <Image Include="introducao1_1.jpg" />
-    <Image Include="introducao1_2.jpg" />
-    <Image Include="introducao1_3.jpg" />
-    <Image Include="introducao1_4.jpg" />
-    <Image Include="introducao1_5.jpg" />
-    <Image Include="introducao1_6.jpg" />
-    <Image Include="introducao1_7.jpg" />
+    <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
+    <Image Include="Imagens\Introducao_1\intro1.jpg" />
+    <Image Include="Imagens\Introducao_1\intro2.jpg" />
+    <Image Include="Imagens\Introducao_1\intro3.jpg" />
+    <Image Include="Imagens\Introducao_1\intro4.jpg" />
+    <Image Include="Imagens\Introducao_1\intro5.jpg" />
+    <Image Include="Imagens\Introducao_1\intro6.jpg" />
+    <Image Include="Imagens\Introducao_1\intro7.jpg" />
+    <Image Include="Imagens\Menu\background_login.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="introducao1.h" />
