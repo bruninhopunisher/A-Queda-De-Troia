@@ -141,10 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="introducao01.c" />
+    <ClCompile Include="introducao1.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
@@ -154,18 +151,21 @@
   <ItemGroup>
     <Image Include="backgroundI1.jpg" />
     <Image Include="background_login.png" />
-    <Image Include="introducao01_1.jpg" />
-    <Image Include="introducao01_2.jpg" />
-    <Image Include="introducao01_3.jpg" />
-    <Image Include="introducao01_4.jpg" />
-    <Image Include="introducao01_5.jpg" />
-    <Image Include="introducao01_6.jpg" />
-    <Image Include="introducao01_7.jpg" />
+    <Image Include="introducao1_1.jpg" />
+    <Image Include="introducao1_2.jpg" />
+    <Image Include="introducao1_3.jpg" />
+    <Image Include="introducao1_4.jpg" />
+    <Image Include="introducao1_5.jpg" />
+    <Image Include="introducao1_6.jpg" />
+    <Image Include="introducao1_7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="introducao01.h" />
+    <ClInclude Include="introducao1.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -46,12 +46,9 @@
     <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Fase">
       <UniqueIdentifier>{3194c23a-9dde-4849-a43d-80039af053eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Introducao01">
+    <Filter Include="Arquivos de Origem\Imagens\Introducao1">
       <UniqueIdentifier>{69e001ad-458e-41eb-afef-7fcdd1c53bb6}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -63,7 +60,7 @@
     <ClCompile Include="lib.c">
       <Filter>Arquivos de Cabeçalho\Biblioteca</Filter>
     </ClCompile>
-    <ClCompile Include="introducao01.c">
+    <ClCompile Include="introducao1.c">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introducao</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,29 +68,29 @@
     <Image Include="background_login.png">
       <Filter>Arquivos de Origem\Imagens\Menu</Filter>
     </Image>
+    <Image Include="introducao1_1.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_3.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_4.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_5.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_6.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
+    <Image Include="introducao1_7.jpg">
+      <Filter>Arquivos de Origem\Imagens\Introducao1</Filter>
+    </Image>
     <Image Include="backgroundI1.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_1.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_3.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_4.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_5.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_6.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
-    </Image>
-    <Image Include="introducao01_7.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introducao01</Filter>
+      <Filter>Arquivos de Origem\Imagens</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -103,8 +100,11 @@
     <ClInclude Include="lib.h">
       <Filter>Arquivos de Cabeçalho\Biblioteca</Filter>
     </ClInclude>
-    <ClInclude Include="introducao01.h">
+    <ClInclude Include="introducao1.h">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introducao</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

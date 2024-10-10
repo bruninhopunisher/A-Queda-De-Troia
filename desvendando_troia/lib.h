@@ -8,18 +8,20 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_ttf.h>
+#include "menu.h"
+#include "introducao1.h"
 
 extern ALLEGRO_TIMER* timer; 
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
-extern ALLEGRO_BITMAP* introducao01_1;
-extern ALLEGRO_BITMAP* introducao01_2;
-extern ALLEGRO_BITMAP* introducao01_3;
-extern ALLEGRO_BITMAP* introducao01_4;
-extern ALLEGRO_BITMAP* introducao01_5;
-extern ALLEGRO_BITMAP* introducao01_6;
-extern ALLEGRO_BITMAP* introducao01_7;
+extern ALLEGRO_BITMAP* introducao1_1;
+extern ALLEGRO_BITMAP* introducao1_2;
+extern ALLEGRO_BITMAP* introducao1_3;
+extern ALLEGRO_BITMAP* introducao1_4;
+extern ALLEGRO_BITMAP* introducao1_5;
+extern ALLEGRO_BITMAP* introducao1_6;
+extern ALLEGRO_BITMAP* introducao1_7;
 extern ALLEGRO_BITMAP* backgroundIntUm;
 extern ALLEGRO_FONT* fonteMenu;
 
