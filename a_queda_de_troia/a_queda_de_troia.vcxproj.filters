@@ -62,10 +62,13 @@
     <Image Include="Imagens\Opcoes\background_opcoes.png">
       <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Opcoes\com_volume.png">
+    <Image Include="Imagens\Opcoes\sem-som.png">
       <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Opcoes\sem_volume.png">
+    <Image Include="Imagens\Opcoes\som-musical.png">
+      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+    </Image>
+    <Image Include="Imagens\Opcoes\som-musical-hover.png">
       <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
   </ItemGroup>

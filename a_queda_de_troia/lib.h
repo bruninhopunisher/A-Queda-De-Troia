@@ -19,6 +19,8 @@ extern ALLEGRO_BITMAP* backgroundMenu;
 extern ALLEGRO_BITMAP* backgroundOpcoes;
 extern ALLEGRO_BITMAP* comVolume;
 extern ALLEGRO_BITMAP* semVolume;
+extern ALLEGRO_BITMAP* comVolumeHover;
+extern ALLEGRO_BITMAP* semVolumeHover;
 extern ALLEGRO_BITMAP* introducao1_1;
 extern ALLEGRO_BITMAP* introducao1_2;
 extern ALLEGRO_BITMAP* introducao1_3;

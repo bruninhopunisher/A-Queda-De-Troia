@@ -161,8 +161,9 @@
     <Image Include="Imagens\Introducao_1\intro7.jpg" />
     <Image Include="Imagens\Menu\background_login.jpg" />
     <Image Include="Imagens\Opcoes\background_opcoes.png" />
-    <Image Include="Imagens\Opcoes\com_volume.png" />
-    <Image Include="Imagens\Opcoes\sem_volume.png" />
+    <Image Include="Imagens\Opcoes\sem-som.png" />
+    <Image Include="Imagens\Opcoes\som-musical-hover.png" />
+    <Image Include="Imagens\Opcoes\som-musical.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="introducao1.h" />
