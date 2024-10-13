@@ -24,6 +24,7 @@ int displayY;
 int mouseX;
 int mouseY;
 int intru01 = 1;
+bool boolVolume = true;
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -98,7 +99,6 @@ void iniciarConstantes() {
 
 	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
 	testeInicializar(fonteMenu, "fonteMenu");
-
 }
 
 void destruidor() {

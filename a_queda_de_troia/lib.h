@@ -36,6 +36,7 @@ extern int displayY;
 extern int mouseX;
 extern int mouseY;
 extern int intru01;
+extern bool boolVolume;
 
 void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
