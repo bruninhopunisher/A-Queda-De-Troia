@@ -8,6 +8,8 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 #include "menu.h"
 #include "introducao1.h"
 #include "opcoes.h"
@@ -21,6 +23,7 @@ extern ALLEGRO_BITMAP* comVolume;
 extern ALLEGRO_BITMAP* semVolume;
 extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
+extern ALLEGRO_SAMPLE* musicaPadrao;
 extern ALLEGRO_BITMAP* introducao1_1;
 extern ALLEGRO_BITMAP* introducao1_2;
 extern ALLEGRO_BITMAP* introducao1_3;
@@ -41,6 +44,7 @@ extern bool boolVolume;
 void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
 void iniciarConstantes();
+void destruidor();
 
 #endif // !LIB_H
 

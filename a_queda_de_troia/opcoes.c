@@ -1,6 +1,12 @@
 #include "opcoes.h"
 
 void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento) {
+
+	//Verifica se a musica foi interrompida
+	if (boolVolume == false) {
+		al_stop_samples();
+	}
+
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
@@ -31,6 +37,7 @@ void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 	}
 
+	//Verifica se o botão com volume está ativo
 	if (boolVolume == true) {
 		al_draw_bitmap(comVolumeHover, 700, 300, 0);
 		al_draw_bitmap(semVolume, 500, 300, 0);
@@ -55,6 +62,7 @@ void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento) {
 		//Botão sem volume
 		if ((evento.mouse.x >= 506 && evento.mouse.x <= 621) && (evento.mouse.y >= 306 && evento.mouse.y <= 421)) {
 			boolVolume = false;
+			al_stop_samples();
 		}
 
 		//Botão com volume

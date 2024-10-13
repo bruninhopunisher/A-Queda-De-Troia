@@ -9,6 +9,7 @@ ALLEGRO_BITMAP* comVolume;
 ALLEGRO_BITMAP* semVolume;
 ALLEGRO_BITMAP* comVolumeHover;
 ALLEGRO_BITMAP* semVolumeHover;
+ALLEGRO_SAMPLE* musicaPadrao;
 ALLEGRO_BITMAP* introducao1_1;
 ALLEGRO_BITMAP* introducao1_2;
 ALLEGRO_BITMAP* introducao1_3;
@@ -40,7 +41,11 @@ void iniciarAddons() {
 	testeInicializar(al_init_primitives_addon(), "Primitivas");
 	testeInicializar(al_install_mouse(), "Mouse");
 	testeInicializar(al_init_font_addon(), "Fonte");
-	testeInicializar(al_init_ttf_addon(), "TTF"); 
+	testeInicializar(al_init_ttf_addon(), "TTF");
+	testeInicializar(al_install_audio(), "audio");
+	testeInicializar(al_init_acodec_addon(), "audio codecs");
+	//Toca 16 sons simultaneamente
+	testeInicializar(al_reserve_samples(16), "reserve samples");
 }
 
 void iniciarConstantes() {
@@ -99,6 +104,9 @@ void iniciarConstantes() {
 
 	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
 	testeInicializar(fonteMenu, "fonteMenu");
+
+	musicaPadrao = al_load_sample("Audios/audio_padrao.mp3");
+	testeInicializar(musicaPadrao, "musica_padrao");
 }
 
 void destruidor() {
@@ -120,4 +128,5 @@ void destruidor() {
 	al_destroy_bitmap(semVolume);
 	al_destroy_bitmap(comVolumeHover);
 	al_destroy_bitmap(semVolumeHover);
+	al_destroy_sample(musicaPadrao);
 }

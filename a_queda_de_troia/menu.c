@@ -1,6 +1,14 @@
 #include "menu.h"
 
 void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool* rodando) {
+
+	//Verifica se a musica foi interrompida
+	if (boolVolume == false) {
+		al_stop_samples();
+	}
+
+	al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;

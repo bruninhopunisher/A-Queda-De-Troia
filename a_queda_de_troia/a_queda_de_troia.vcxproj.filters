@@ -127,5 +127,13 @@
     <Filter Include="Arquivos de Origem\Imagens\Opções">
       <UniqueIdentifier>{6cdda049-104c-478c-a75e-2389052c290c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Origem\Audios">
+      <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audios\audio_padrao.mp3">
+      <Filter>Arquivos de Origem\Audios</Filter>
+    </Media>
   </ItemGroup>
 </Project>
