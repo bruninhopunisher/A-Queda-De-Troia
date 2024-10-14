@@ -31,7 +31,7 @@ int main() {
 		}
 		switch (navegacao) {
 			case 0:
-				menu(&navegacao, backgroundMenu, event, &rodando);				 	
+				menu(&navegacao, backgroundMenu, event, &rodando);
 				break;
 			case 1:  
 				introducao1(&intro, &navegacao, event, introducao1_1, introducao1_2, introducao1_3, 
@@ -39,7 +39,9 @@ int main() {
 				break;
 			case 2:
 				opcoes(&navegacao, backgroundOpcoes, event);
-				al_flip_display();
+				break;
+			case 3:
+				faseUm(event);
 				break;
 		}
 	}

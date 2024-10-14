@@ -2,6 +2,6 @@
 #define OPCOES_H
 #include "lib.h"
 
-void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento);
+void opcoes();
 
 #endif // !OPCOES_H

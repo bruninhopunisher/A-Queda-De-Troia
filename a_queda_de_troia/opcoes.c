@@ -62,7 +62,7 @@ void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento) {
 		//Botão sem volume
 		if ((evento.mouse.x >= 506 && evento.mouse.x <= 621) && (evento.mouse.y >= 306 && evento.mouse.y <= 421)) {
 			boolVolume = false;
-			al_stop_samples();
+			//al_stop_samples();
 		}
 
 		//Botão com volume

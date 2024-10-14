@@ -1,15 +1,19 @@
 #include "lib.h"
 
+//Variaveis Globais
 ALLEGRO_TIMER* timer;
 ALLEGRO_EVENT_QUEUE* evento;
 ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
+
+//Opções
 ALLEGRO_BITMAP* backgroundOpcoes;
 ALLEGRO_BITMAP* comVolume;
 ALLEGRO_BITMAP* semVolume;
 ALLEGRO_BITMAP* comVolumeHover;
 ALLEGRO_BITMAP* semVolumeHover;
-ALLEGRO_SAMPLE* musicaPadrao;
+
+//Introdução Um
 ALLEGRO_BITMAP* introducao1_1;
 ALLEGRO_BITMAP* introducao1_2;
 ALLEGRO_BITMAP* introducao1_3;
@@ -17,6 +21,16 @@ ALLEGRO_BITMAP* introducao1_4;
 ALLEGRO_BITMAP* introducao1_5;
 ALLEGRO_BITMAP* introducao1_6;
 ALLEGRO_BITMAP* introducao1_7;
+
+//Fase 1
+ALLEGRO_BITMAP* backgroundFaseUm;
+ALLEGRO_BITMAP* personagemHeitor;
+ALLEGRO_BITMAP* personagemHelena;
+
+//Audios e Musicas
+ALLEGRO_SAMPLE* musicaPadrao;
+
+//Demais
 ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 ALLEGRO_FONT* fonteMenu;
 
@@ -26,6 +40,12 @@ int mouseX;
 int mouseY;
 int intru01 = 1;
 bool boolVolume = true;
+
+int personagemHeitorX = 115;
+int personagemHeitorY = 490;
+int personagemHelenaX = 1150;
+int personagemHelenaY = 585;
+
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -107,6 +127,15 @@ void iniciarConstantes() {
 
 	musicaPadrao = al_load_sample("Audios/audio_padrao.mp3");
 	testeInicializar(musicaPadrao, "musica_padrao");
+
+	backgroundFaseUm = al_load_bitmap("Imagens/Fase_Um/background_fase_um.jpg");
+	testeInicializar(backgroundFaseUm, "backgroundFaseUm");
+
+	personagemHeitor = al_load_bitmap("Imagens/Fase_Um/heitor_um.png");
+	testeInicializar(personagemHeitor, "personagemHeitor");
+
+	personagemHelena = al_load_bitmap("Imagens/Fase_Um/helena_um.png");
+	testeInicializar(personagemHelena, "personagemHelena");
 }
 
 void destruidor() {
@@ -129,4 +158,7 @@ void destruidor() {
 	al_destroy_bitmap(comVolumeHover);
 	al_destroy_bitmap(semVolumeHover);
 	al_destroy_sample(musicaPadrao);
+	al_destroy_bitmap(backgroundFaseUm);
+	al_destroy_bitmap(personagemHeitor);
+	al_destroy_bitmap(personagemHelena);
 }

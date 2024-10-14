@@ -5,7 +5,7 @@
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClCompile>
     <ClCompile Include="introducao1.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Introdução 1</Filter>
     </ClCompile>
     <ClCompile Include="menu.c">
       <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
@@ -16,19 +16,25 @@
     <ClCompile Include="opcoes.c">
       <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
     </ClCompile>
+    <ClCompile Include="fase_um.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClInclude>
     <ClInclude Include="introducao1.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Introdução 1</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
       <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
     </ClInclude>
     <ClInclude Include="opcoes.h">
       <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
+    </ClInclude>
+    <ClInclude Include="fase_um.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +77,15 @@
     <Image Include="Imagens\Opcoes\som-musical-hover.png">
       <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
+    <Image Include="Imagens\Fase_Um\background_fase_um.jpg">
+      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_Um\heitor_um.png">
+      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_Um\helena_um.png">
+      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -97,15 +112,6 @@
     <Filter Include="Arquivos de Cabeçalho\Telas\Opções">
       <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01">
-      <UniqueIdentifier>{2e9df5a0-3d26-488b-bc92-a99b0bc9375a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Fase">
-      <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução">
-      <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Origem">
       <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
     </Filter>
@@ -129,6 +135,15 @@
     </Filter>
     <Filter Include="Arquivos de Origem\Audios">
       <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Fase 1">
+      <UniqueIdentifier>{fd3cf576-319d-40f3-ab19-f735daeb6efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase 1">
+      <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Introdução 1">
+      <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

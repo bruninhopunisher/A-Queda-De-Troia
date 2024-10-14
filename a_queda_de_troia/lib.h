@@ -14,16 +14,20 @@
 #include "introducao1.h"
 #include "opcoes.h"
 
-extern ALLEGRO_TIMER* timer; 
+//Variaveis Globais
+extern ALLEGRO_TIMER* timer;
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
+
+//Opções
 extern ALLEGRO_BITMAP* backgroundOpcoes;
 extern ALLEGRO_BITMAP* comVolume;
 extern ALLEGRO_BITMAP* semVolume;
 extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
-extern ALLEGRO_SAMPLE* musicaPadrao;
+
+//Introdução Um
 extern ALLEGRO_BITMAP* introducao1_1;
 extern ALLEGRO_BITMAP* introducao1_2;
 extern ALLEGRO_BITMAP* introducao1_3;
@@ -31,9 +35,24 @@ extern ALLEGRO_BITMAP* introducao1_4;
 extern ALLEGRO_BITMAP* introducao1_5;
 extern ALLEGRO_BITMAP* introducao1_6;
 extern ALLEGRO_BITMAP* introducao1_7;
-extern ALLEGRO_BITMAP* backgroundIntUm;
+
+//Fase 1
+extern ALLEGRO_BITMAP* backgroundFaseUm;
+extern ALLEGRO_BITMAP* personagemHeitor;
+extern ALLEGRO_BITMAP* personagemHelena;
+extern int personagemHeitorX;
+extern int personagemHeitorY;
+extern int personagemHelenaX;
+extern int personagemHelenaY;
+
+//Audios e Musicas
+extern ALLEGRO_SAMPLE* musicaPadrao;
+
+//Demais
+extern ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 extern ALLEGRO_FONT* fonteMenu;
 
+//Variáveis Globais
 extern int displayX;
 extern int displayY;
 extern int mouseX;
@@ -41,6 +60,7 @@ extern int mouseY;
 extern int intru01;
 extern bool boolVolume;
 
+//Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
 void iniciarConstantes();
