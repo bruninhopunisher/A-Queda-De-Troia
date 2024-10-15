@@ -13,6 +13,7 @@
 #include "menu.h"
 #include "introducao1.h"
 #include "opcoes.h"
+#include "fase02.h"
 
 //Variaveis Globais
 extern ALLEGRO_TIMER* timer;
@@ -44,6 +45,10 @@ extern int personagemHeitorX;
 extern int personagemHeitorY;
 extern int personagemHelenaX;
 extern int personagemHelenaY;
+
+//Fase 2
+extern ALLEGRO_BITMAP* background_f2;
+
 
 //Audios e Musicas
 extern ALLEGRO_SAMPLE* musicaPadrao;

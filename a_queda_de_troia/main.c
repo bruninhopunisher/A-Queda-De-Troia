@@ -17,6 +17,13 @@ int main() {
 	bool rodando = true;
 	int intro = 1;
 
+	//FASE 2
+	int pressionado = 0;
+	int positionX1_f2 = 615;
+	int positionX2_f2 = 665;
+	int positionY1_f2 = 225;
+	int positionY2_f2 = 295;
+
 	al_start_timer(timer);
 	while (rodando) {
 		al_wait_for_event(evento, &event);
@@ -41,7 +48,10 @@ int main() {
 				opcoes(&navegacao, backgroundOpcoes, event);
 				break;
 			case 3:
-				faseUm(event);
+				faseUm(event, &navegacao);
+				break;
+			case 4:
+				fase2(&navegacao, background_f2, &positionX1_f2, &positionX2_f2, &positionY1_f2, &positionY2_f2, event, &pressionado);
 				break;
 		}
 	}

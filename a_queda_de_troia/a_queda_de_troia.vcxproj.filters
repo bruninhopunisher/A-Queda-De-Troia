@@ -19,6 +19,9 @@
     <ClCompile Include="fase_um.c">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
     </ClCompile>
+    <ClCompile Include="fase02.c">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="fase_um.h">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
+    </ClInclude>
+    <ClInclude Include="fase02.h">
+      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,9 @@
     </Image>
     <Image Include="Imagens\Fase_Um\helena_um.png">
       <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+    </Image>
+    <Image Include="background-f2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +153,15 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Introdução 1">
       <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase 2">
+      <UniqueIdentifier>{8dcecaa8-c540-44b1-afce-21e2b29d7e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Fases">
+      <UniqueIdentifier>{faf92c3b-40cf-440b-8df8-e45593d3c65b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Fases\Fase2">
+      <UniqueIdentifier>{5cb9d68f-0b6d-4b2f-b4d0-6abd978e9a37}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

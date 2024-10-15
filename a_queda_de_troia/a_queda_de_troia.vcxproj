@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fase02.c" />
     <ClCompile Include="fase_um.c" />
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="lib.c" />
@@ -152,6 +153,7 @@
     <ClCompile Include="opcoes.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="background-f2.jpg" />
     <Image Include="Imagens\Fase_Um\background_fase_um.jpg" />
     <Image Include="Imagens\Fase_Um\heitor_um.png" />
     <Image Include="Imagens\Fase_Um\helena_um.png" />
@@ -170,6 +172,7 @@
     <Image Include="Imagens\Opcoes\som-musical.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fase02.h" />
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />

@@ -2,8 +2,8 @@
 
 //Variaveis Globais
 ALLEGRO_TIMER* timer;
-ALLEGRO_EVENT_QUEUE* evento;
-ALLEGRO_DISPLAY* display;
+ALLEGRO_EVENT_QUEUE* evento; 
+ALLEGRO_DISPLAY* display; 
 ALLEGRO_BITMAP* backgroundMenu;
 
 //Opções
@@ -26,6 +26,9 @@ ALLEGRO_BITMAP* introducao1_7;
 ALLEGRO_BITMAP* backgroundFaseUm;
 ALLEGRO_BITMAP* personagemHeitor;
 ALLEGRO_BITMAP* personagemHelena;
+ 
+//Fase 2
+ALLEGRO_BITMAP* background_f2; 
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* musicaPadrao;
@@ -33,6 +36,7 @@ ALLEGRO_SAMPLE* musicaPadrao;
 //Demais
 ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 ALLEGRO_FONT* fonteMenu;
+
 
 int displayX;
 int displayY;
@@ -75,6 +79,7 @@ void iniciarConstantes() {
 	evento = al_create_event_queue();
 	testeInicializar(evento, "evento");
 
+	//TAMANHO E CRIAÇÃO DO DISPLAY
 	displayX = 1280;	
 	displayY = 720;
 	display = al_create_display(displayX, displayY);
@@ -136,9 +141,15 @@ void iniciarConstantes() {
 
 	personagemHelena = al_load_bitmap("Imagens/Fase_Um/helena_um.png");
 	testeInicializar(personagemHelena, "personagemHelena");
+
+	background_f2 = al_load_bitmap("background-f2.jpg");
+	testeInicializar(background_f2, "background-fase2");
+
 }
 
+//FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
+	al_destroy_bitmap(background_f2);
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm);
 	al_destroy_bitmap(backgroundMenu);
