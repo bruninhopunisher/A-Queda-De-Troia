@@ -41,8 +41,7 @@ int main() {
 				menu(&navegacao, backgroundMenu, event, &rodando);
 				break;
 			case 1:  
-				introducao1(&intro, &navegacao, event, introducao1_1, introducao1_2, introducao1_3, 
-					introducao1_4, introducao1_5, introducao1_6, introducao1_7);
+				introducao1(&intro, &navegacao, event);
 				break;
 			case 2:
 				opcoes(&navegacao, backgroundOpcoes, event);
