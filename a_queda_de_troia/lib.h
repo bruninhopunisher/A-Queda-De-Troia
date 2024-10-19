@@ -22,6 +22,7 @@ extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
 
+
 //Opções
 extern ALLEGRO_BITMAP* backgroundOpcoes;
 extern ALLEGRO_BITMAP* comVolume;
