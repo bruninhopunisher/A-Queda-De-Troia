@@ -30,13 +30,13 @@ void menu(ALLEGRO_EVENT evento) {
 	al_flip_display();
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 		if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= (displayY / 2) - 30 && evento.mouse.y <= (displayY / 2) + 30) {
-			navegacao = 1; // Iniciar
+			navegacao += 3; // Iniciar
 		}
 		else if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= 410 && evento.mouse.y <= 470) {
-			navegacao = 2; // Opcoes
+			navegacao += 1; // Opcoes
 		}
 		else if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= 490 && evento.mouse.y <= 550) {
-			navegacao = 3; // Creditos
+			navegacao += 2; // Creditos
 		}
 		else if (evento.mouse.x >= 38 && evento.mouse.x <= 150 && evento.mouse.y >= 650 && evento.mouse.y <= 690) {
 			rodando = false;

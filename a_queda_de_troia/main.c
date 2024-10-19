@@ -29,15 +29,19 @@ int main() {
 				menu(event);
 				break;
 			case 1:  
-				introducao1(event);
-				break;
-			case 2:
 				opcoes(event);
 				break;
+			case 2:
+				printf("ATENCAO \n\n\n Opcao creditos nao concluida"); // Criar creditos
+				rodando = false;
+				break;
 			case 3:
-				faseUm(event);
+				introducao1(event);
 				break;
 			case 4:
+				faseUm(event);
+				break;
+			case 5:
 				fase2(event);
 				break;
 		}

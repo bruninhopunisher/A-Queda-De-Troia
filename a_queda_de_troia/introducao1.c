@@ -81,7 +81,7 @@ int introducao1(ALLEGRO_EVENT event) {
 		if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			if (mouseX >= 565 && mouseY >= 550 && mouseX <= 715 && mouseY <= 590) {
 				intro = 1; //Reseta a intro para utilizar em outra funcao
-				navegacao += 2; //Passa para fase 1
+				navegacao += 1; //Passa para fase 1
 				/*printf("navegacao: %d\n", *navegacao);*/
 			}
 		}
