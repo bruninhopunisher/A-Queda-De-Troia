@@ -1,6 +1,6 @@
 #include "opcoes.h"
 
-void opcoes(int *navegacao, ALLEGRO_EVENT evento) {
+void opcoes(ALLEGRO_EVENT evento) {
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
@@ -51,7 +51,7 @@ void opcoes(int *navegacao, ALLEGRO_EVENT evento) {
 		//Botão voltar
 		if (evento.mouse.x >= 20 && evento.mouse.x <= 180 && evento.mouse.y >= 650 && evento.mouse.y <= 690) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-			*navegacao = 0;
+			navegacao = 0;
 		}
 
 		//Botão sem volume

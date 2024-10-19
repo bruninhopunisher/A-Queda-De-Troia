@@ -22,13 +22,23 @@ ALLEGRO_BITMAP* introducao1_5;
 ALLEGRO_BITMAP* introducao1_6;
 ALLEGRO_BITMAP* introducao1_7;
 
+
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
 ALLEGRO_BITMAP* personagemHeitor;
 ALLEGRO_BITMAP* personagemHelena;
+int personagemHeitorX = 115;
+int personagemHeitorY = 490;
+int personagemHelenaX = 1150;
+int personagemHelenaY = 585;
  
 //Fase 2
-ALLEGRO_BITMAP* background_f2; 
+ALLEGRO_BITMAP* background_f2;
+int pressionado = 0;
+int positionX1_f2 = 615;
+int positionX2_f2 = 665;
+int positionY1_f2 = 225;
+int positionY2_f2 = 295;
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* musicaPadrao;
@@ -42,13 +52,12 @@ int displayX;
 int displayY;
 int mouseX;
 int mouseY;
-int intru01 = 1;
+int intro = 1;
+int navegacao = 0;
+bool rodando = true;
 bool boolVolume = true;
 
-int personagemHeitorX = 115;
-int personagemHeitorY = 490;
-int personagemHelenaX = 1150;
-int personagemHelenaY = 585;
+
 
 
 void testeInicializar(bool metodo, char* referencia) {
