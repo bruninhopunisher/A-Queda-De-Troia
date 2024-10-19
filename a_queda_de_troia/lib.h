@@ -22,7 +22,6 @@ extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
 
-
 //Opções
 extern ALLEGRO_BITMAP* backgroundOpcoes;
 extern ALLEGRO_BITMAP* comVolume;
@@ -43,6 +42,8 @@ extern ALLEGRO_BITMAP* introducao1_7;
 extern ALLEGRO_BITMAP* backgroundFaseUm;
 extern ALLEGRO_BITMAP* personagemHeitor;
 extern ALLEGRO_BITMAP* personagemHelena;
+extern ALLEGRO_BITMAP* frente_direito;
+extern ALLEGRO_BITMAP* frente_esquerdo;
 extern int personagemHeitorX;
 extern int personagemHeitorY;
 extern int personagemHelenaX;
@@ -55,7 +56,6 @@ extern int positionX1_f2;
 extern int positionX2_f2;
 extern int positionY1_f2;
 extern int positionY2_f2;
-
 
 //Audios e Musicas
 extern ALLEGRO_SAMPLE* musicaPadrao;

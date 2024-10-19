@@ -22,11 +22,13 @@ ALLEGRO_BITMAP* introducao1_5;
 ALLEGRO_BITMAP* introducao1_6;
 ALLEGRO_BITMAP* introducao1_7;
 
-
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
 ALLEGRO_BITMAP* personagemHeitor;
 ALLEGRO_BITMAP* personagemHelena;
+ALLEGRO_BITMAP* frente_direito;
+ALLEGRO_BITMAP* frente_esquerdo;
+
 int personagemHeitorX = 115;
 int personagemHeitorY = 490;
 int personagemHelenaX = 1150;
@@ -47,7 +49,6 @@ ALLEGRO_SAMPLE* musicaPadrao;
 ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 ALLEGRO_FONT* fonteMenu;
 
-
 int displayX;
 int displayY;
 int mouseX;
@@ -56,9 +57,6 @@ int intro = 1;
 int navegacao = 0;
 bool rodando = true;
 bool boolVolume = true;
-
-
-
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -82,11 +80,14 @@ void iniciarAddons() {
 }
 
 void iniciarConstantes() {
-	timer = al_create_timer(1.0 / 30.0);
+	//Global
+	timer = al_create_timer(0.5 / 30.0);
 	testeInicializar(timer, "timer");
 
 	evento = al_create_event_queue();
 	testeInicializar(evento, "evento");
+
+
 
 	//TAMANHO E CRIAÇÃO DO DISPLAY
 	displayX = 1280;	
@@ -94,9 +95,15 @@ void iniciarConstantes() {
 	display = al_create_display(displayX, displayY);
 	testeInicializar(display, "display");
 
+
+
+	//Menu
 	backgroundMenu = al_load_bitmap("Imagens/Menu/background_login.jpg");
 	testeInicializar(backgroundMenu, "imagem_menu");
 
+
+
+	//Introdução 1
 	introducao1_1 = al_load_bitmap("Imagens/Introducao_1/intro1.jpg");
 	testeInicializar(backgroundMenu, "introducao1_1");
 	
@@ -121,6 +128,9 @@ void iniciarConstantes() {
 	backgroundIntUm = al_load_bitmap("Imagens/Img_Testes/backgroundI1.jpg");
 	testeInicializar(backgroundIntUm, "imagemMenu");
 
+
+
+	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
 	testeInicializar(backgroundOpcoes, "backgroundOpcoes");
 
@@ -136,24 +146,41 @@ void iniciarConstantes() {
 	semVolumeHover = al_load_bitmap("Imagens/Opcoes/sem-som-hover.png");
 	testeInicializar(comVolume, "semVolumeHover");
 
-	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
-	testeInicializar(fonteMenu, "fonteMenu");
 
-	musicaPadrao = al_load_sample("Audios/audio_padrao.mp3");
-	testeInicializar(musicaPadrao, "musica_padrao");
 
-	backgroundFaseUm = al_load_bitmap("Imagens/Fase_Um/background_fase_um.jpg");
-	testeInicializar(backgroundFaseUm, "backgroundFaseUm");
-
+	//Fase 1
 	personagemHeitor = al_load_bitmap("Imagens/Fase_Um/heitor_um.png");
 	testeInicializar(personagemHeitor, "personagemHeitor");
 
 	personagemHelena = al_load_bitmap("Imagens/Fase_Um/helena_um.png");
 	testeInicializar(personagemHelena, "personagemHelena");
 
+	backgroundFaseUm = al_load_bitmap("Imagens/Fase_Um/background_fase_um.jpg");
+	testeInicializar(backgroundFaseUm, "backgroundFaseUm");
+
+	frente_direito = al_load_bitmap("Imagens/Fase_Um/frente_descendo.jpg");
+	testeInicializar(frente_direito, "frente_descendo.jpg");
+
+	frente_esquerdo = al_load_bitmap("Imagens/Fase_Um/frente_descendo_2.jpg");
+	testeInicializar(frente_esquerdo, "frente_descendo_2.jpg");
+
+
+
+	//Fase 2
 	background_f2 = al_load_bitmap("background-f2.jpg");
 	testeInicializar(background_f2, "background-fase2");
 
+
+
+	//Fonte
+	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
+	testeInicializar(fonteMenu, "fonteMenu");
+
+
+
+	//Audios Jogo
+	musicaPadrao = al_load_sample("Audios/audio_padrao.mp3");
+	testeInicializar(musicaPadrao, "musica_padrao");
 }
 
 void audioJogo(int navegacao) {
@@ -211,4 +238,6 @@ void destruidor() {
 	al_destroy_bitmap(backgroundFaseUm);
 	al_destroy_bitmap(personagemHeitor);
 	al_destroy_bitmap(personagemHelena);
+	al_destroy_bitmap(frente_direito);
+	al_destroy_bitmap(frente_esquerdo);
 }

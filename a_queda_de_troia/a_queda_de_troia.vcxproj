@@ -155,6 +155,8 @@
   <ItemGroup>
     <Image Include="background-f2.jpg" />
     <Image Include="Imagens\Fase_Um\background_fase_um.jpg" />
+    <Image Include="Imagens\Fase_Um\frente_descendo.jpg" />
+    <Image Include="Imagens\Fase_Um\frente_descendo_2.jpg" />
     <Image Include="Imagens\Fase_Um\heitor_um.png" />
     <Image Include="Imagens\Fase_Um\helena_um.png" />
     <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
