@@ -2,6 +2,6 @@
 #define INTRODUCAO1_H
 #include "lib.h"
 
-int introducao1(int* intro, int* navegacao, ALLEGRO_EVENT event);
+int introducao1(ALLEGRO_EVENT event);
 
 #endif // !INTRODUCAO1_H

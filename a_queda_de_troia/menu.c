@@ -1,13 +1,12 @@
 #include "menu.h"
 
-void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool* rodando) {
+void menu(ALLEGRO_EVENT evento) {
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 	}
-
-	al_draw_bitmap(background, 0, 0, 0);
+	al_draw_bitmap(backgroundMenu, 0, 0, 0);
 	al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(238, 173, 45)); 
 	al_draw_filled_rectangle(540, 410, 740, 470, al_map_rgb(238, 173, 45)); 
 	al_draw_filled_rectangle(540, 490, 740, 550, al_map_rgb(238, 173, 45)); 
@@ -31,16 +30,16 @@ void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool
 	al_flip_display();
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 		if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= (displayY / 2) - 30 && evento.mouse.y <= (displayY / 2) + 30) {
-			*navegacao = 1;
+			navegacao += 3; // Iniciar
 		}
 		else if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= 410 && evento.mouse.y <= 470) {
-			*navegacao = 2;
+			navegacao += 1; // Opcoes
 		}
 		else if (evento.mouse.x >= (displayX / 2) - 100 && evento.mouse.x <= (displayX / 2) + 100 && evento.mouse.y >= 490 && evento.mouse.y <= 550) {
-			*navegacao = 3;
+			navegacao += 2; // Creditos
 		}
 		else if (evento.mouse.x >= 38 && evento.mouse.x <= 150 && evento.mouse.y >= 650 && evento.mouse.y <= 690) {
-			*rodando = false;
+			rodando = false;
 		}
 	}
 }

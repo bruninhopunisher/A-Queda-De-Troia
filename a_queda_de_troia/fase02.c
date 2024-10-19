@@ -1,7 +1,7 @@
 #include "fase2.h" 
 
-void fase2(int* navegacao, ALLEGRO_BITMAP* backgroundf2, int* positionX1, int* positionX2, int* positionY1, int* positionY2, ALLEGRO_EVENT evento, int* pressionado) {
-	al_draw_bitmap(backgroundf2, 0, 0, 0);
+void fase2(ALLEGRO_EVENT evento) {
+	al_draw_bitmap(background_f2, 0, 0, 0);
 	//SOLDADOS DE BAIXO
 	al_draw_filled_rectangle(135, 565, 185, 635, al_map_rgba(0, 244, 244, 0.5));
 	al_draw_filled_rectangle(295, 565, 345, 635, al_map_rgba(0, 244, 244, 0.5));
@@ -20,49 +20,48 @@ void fase2(int* navegacao, ALLEGRO_BITMAP* backgroundf2, int* positionX1, int* p
 	{
 	case ALLEGRO_EVENT_KEY_DOWN: 
 		if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
-			*pressionado = 1;
+			pressionado = 1;
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
-			*pressionado = 2;
+			pressionado = 2;
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
-			*pressionado = 3;
+			pressionado = 3;
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
-			*pressionado = 4;
+			pressionado = 4;
 		}
 		break;
 	case ALLEGRO_EVENT_KEY_UP:
-		*pressionado = 0;
+		pressionado = 0;
 		break;
 	}
 
-	switch (*pressionado)
+	switch (pressionado)
 	{
 	case 1:
-		*positionY1 -= 1;
-		*positionY2 -= 1;
+		positionY1_f2 -= 1;
+		positionY2_f2 -= 1;
 		break;
 	case 2:
-		*positionX1 -= 1;
-		*positionX2 -= 1;
+		positionX1_f2 -= 1;
+		positionX2_f2 -= 1;
 		break;
 	case 3:
-		*positionX1 += 1;
-		*positionX2 += 1;
+		positionX1_f2 += 1;
+		positionX2_f2 += 1;
 		break;
 	case 4:
-		*positionY1 += 1;
-		*positionY2 += 1;
+		positionY1_f2 += 1;
+		positionY2_f2 += 1;
 		break;
 	}
 
 	//PERSONAGEM DO JOGADOR
-	al_draw_filled_rectangle(*positionX1, *positionY1, *positionX2, *positionY2, al_map_rgba(0, 244, 244, 0.5));
+	al_draw_filled_rectangle(positionX1_f2, positionY1_f2, positionX2_f2, positionY2_f2, al_map_rgba(0, 244, 244, 0.5));
 
 	//REI DE ESPARTA
 	al_draw_filled_rectangle(615, 425, 665, 495, al_map_rgba(0, 244, 244, 0.5));
-
 
 	al_flip_display();
 }

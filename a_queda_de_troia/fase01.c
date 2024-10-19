@@ -1,6 +1,6 @@
 #include "fase01.h"
 
-void faseUm(ALLEGRO_EVENT evento,int *navegacao) {
+void faseUm(ALLEGRO_EVENT evento) {
 
     int valorCase;
 
@@ -8,7 +8,7 @@ void faseUm(ALLEGRO_EVENT evento,int *navegacao) {
 	al_draw_bitmap(personagemHeitor, personagemHeitorX, personagemHeitorY, 0);
 	al_draw_bitmap(personagemHelena, personagemHelenaX, personagemHelenaY, 0);
     if ((personagemHeitorX >= 1115 && personagemHeitorX <= 1185) && (personagemHeitorY >= 530 && personagemHeitorY <= 640)) {
-        *navegacao = 4;
+        navegacao += 1;
         al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgba(50, 50, 50, 128));
         al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2), ALLEGRO_ALIGN_CENTRE, "PROXIMA FASE");
     }

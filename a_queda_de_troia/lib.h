@@ -50,6 +50,11 @@ extern int personagemHelenaY;
 
 //Fase 2
 extern ALLEGRO_BITMAP* background_f2;
+extern int pressionado;
+extern int positionX1_f2;
+extern int positionX2_f2;
+extern int positionY1_f2;
+extern int positionY2_f2;
 
 
 //Audios e Musicas
@@ -64,7 +69,9 @@ extern int displayX;
 extern int displayY;
 extern int mouseX;
 extern int mouseY;
-extern int intru01;
+extern int intro;
+extern int navegacao;
+extern bool rodando;
 extern bool boolVolume;
 
 //Funções Iniciadoras e Destruidora

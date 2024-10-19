@@ -11,52 +11,41 @@ int main() {
 	al_register_event_source(evento, al_get_timer_event_source(timer));
 	al_register_event_source(evento, al_get_mouse_event_source());
 
+	ALLEGRO_EVENT event;
 	bool redraw = true;
-	ALLEGRO_EVENT event; 
-	int navegacao = 0;
-	bool rodando = true;
-	int intro = 1;
-
-	//FASE 2
-	int pressionado = 0;
-	int positionX1_f2 = 615;
-	int positionX2_f2 = 665;
-	int positionY1_f2 = 225;
-	int positionY2_f2 = 295;
-
 	al_start_timer(timer);
+
 	while (rodando) {
 		al_wait_for_event(evento, &event);
 		if (event.type == ALLEGRO_EVENT_TIMER) {
 			redraw = true; 
 		}
-		//if (event.type == ALLEGRO_EVENT_MOUSE_AXES) {
-		//	printf("x-%d \n y-%d \n", event.mouse.x, event.mouse.y);	
-		//}
-		if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE || navegacao == -1) {
+		if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
 			break;
 		}
 		audioJogo(navegacao);
 		switch (navegacao) {
 			case 0:
-				menu(&navegacao, backgroundMenu, event, &rodando);
+				menu(event);
 				break;
 			case 1:  
-				introducao1(&intro, &navegacao, event);
+				opcoes(event);
 				break;
 			case 2:
-				opcoes(&navegacao, event);
+				printf("ATENCAO \n\n\n Opcao creditos nao concluida"); // Criar creditos
+				rodando = false;
 				break;
 			case 3:
-				faseUm(event, &navegacao);
+				introducao1(event);
 				break;
 			case 4:
-				fase2(&navegacao, background_f2, &positionX1_f2, &positionX2_f2, &positionY1_f2, &positionY2_f2, event, &pressionado);
+				faseUm(event);
+				break;
+			case 5:
+				fase2(event);
 				break;
 		}
 	}
-
 	destruidor();
-
 	return 0;
 }
