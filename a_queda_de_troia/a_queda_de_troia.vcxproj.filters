@@ -16,7 +16,7 @@
     <ClCompile Include="opcoes.c">
       <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
     </ClCompile>
-    <ClCompile Include="fase_um.c">
+    <ClCompile Include="fase01.c">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
     </ClCompile>
     <ClCompile Include="fase02.c">
@@ -36,7 +36,7 @@
     <ClInclude Include="opcoes.h">
       <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
     </ClInclude>
-    <ClInclude Include="fase_um.h">
+    <ClInclude Include="fase01.h">
       <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
     </ClInclude>
     <ClInclude Include="fase02.h">

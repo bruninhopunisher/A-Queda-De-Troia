@@ -143,7 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fase02.c" />
-    <ClCompile Include="fase_um.c" />
+    <ClCompile Include="fase01.c" />
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
@@ -177,7 +177,7 @@
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="opcoes.h" />
-    <ClInclude Include="fase_um.h" />
+    <ClInclude Include="fase01.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

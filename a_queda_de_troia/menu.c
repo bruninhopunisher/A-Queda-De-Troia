@@ -2,17 +2,11 @@
 
 void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool* rodando) {
 
-	//Verifica se a musica foi interrompida
-	if (boolVolume == false) {
-		al_stop_samples();
-	}
-
-	al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 	}
+
 	al_draw_bitmap(background, 0, 0, 0);
 	al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(238, 173, 45)); 
 	al_draw_filled_rectangle(540, 410, 740, 470, al_map_rgb(238, 173, 45)); 

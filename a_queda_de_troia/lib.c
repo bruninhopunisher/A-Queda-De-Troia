@@ -147,6 +147,36 @@ void iniciarConstantes() {
 
 }
 
+void audioJogo(int navegacao) {
+	if (boolVolume == false) {
+		al_stop_samples();
+	}
+	else {
+		switch (navegacao) {
+		case 0:
+			//Audio menu
+			al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		case 1:
+			//Audio Introdução
+			al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		case 2:
+			//Audio opções
+			al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		case 3:
+			//Audio fase 1
+			al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		case 4:
+			//Audio fase 2
+			al_play_sample(musicaPadrao, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		}
+	}
+}
+
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
 	al_destroy_bitmap(background_f2);

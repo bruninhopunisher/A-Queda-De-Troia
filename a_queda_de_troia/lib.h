@@ -13,6 +13,7 @@
 #include "menu.h"
 #include "introducao1.h"
 #include "opcoes.h"
+#include "fase01.h"
 #include "fase02.h"
 
 //Variaveis Globais
@@ -69,6 +70,7 @@ extern bool boolVolume;
 void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
 void iniciarConstantes();
+void audioJogo(int navegacao);
 void destruidor();
 
 #endif // !LIB_H

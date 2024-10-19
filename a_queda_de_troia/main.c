@@ -36,6 +36,7 @@ int main() {
 		if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE || navegacao == -1) {
 			break;
 		}
+		audioJogo(navegacao);
 		switch (navegacao) {
 			case 0:
 				menu(&navegacao, backgroundMenu, event, &rodando);
@@ -44,7 +45,7 @@ int main() {
 				introducao1(&intro, &navegacao, event);
 				break;
 			case 2:
-				opcoes(&navegacao, backgroundOpcoes, event);
+				opcoes(&navegacao, event);
 				break;
 			case 3:
 				faseUm(event, &navegacao);

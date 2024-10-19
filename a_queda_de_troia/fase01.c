@@ -1,4 +1,4 @@
-#include "fase_um.h"
+#include "fase01.h"
 
 void faseUm(ALLEGRO_EVENT evento,int *navegacao) {
 
@@ -41,6 +41,4 @@ void faseUm(ALLEGRO_EVENT evento,int *navegacao) {
         printf("\nX %d\n", personagemHeitorX);
         printf("y %d\n", personagemHeitorY);
     }
-
-   
 }

@@ -1,18 +1,13 @@
 #include "opcoes.h"
 
-void opcoes(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento) {
-
-	//Verifica se a musica foi interrompida
-	if (boolVolume == false) {
-		al_stop_samples();
-	}
+void opcoes(int *navegacao, ALLEGRO_EVENT evento) {
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 	}
 
-	al_draw_bitmap(background, 0, 0, 0);
+	al_draw_bitmap(backgroundOpcoes, 0, 0, 0);
 	al_draw_bitmap(semVolume, 500, 300, 0);
 	al_draw_bitmap(comVolume, 700, 300, 0);
 	
