@@ -51,11 +51,18 @@ extern int personagemHelenaY;
 
 //Fase 2
 extern ALLEGRO_BITMAP* background_f2;
+extern ALLEGRO_BITMAP* espada_player1;
+extern ALLEGRO_BITMAP* espada_rei_f2;
 extern int pressionado;
+extern int ultPressionado;
 extern int positionX1_f2;
 extern int positionX2_f2;
 extern int positionY1_f2;
 extern int positionY2_f2;
+extern int positionX_espada1;
+extern int positionY_espada1;
+extern int limiteAtaque;
+extern bool atacando;
 
 //Audios e Musicas
 extern ALLEGRO_SAMPLE* musicaPadrao;

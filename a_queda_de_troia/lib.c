@@ -36,11 +36,18 @@ int personagemHelenaY = 585;
  
 //Fase 2
 ALLEGRO_BITMAP* background_f2;
+ALLEGRO_BITMAP* espada_player1;
+ALLEGRO_BITMAP* espada_rei_f2;
 int pressionado = 0;
+int ultPressionado = 0;
 int positionX1_f2 = 615;
 int positionX2_f2 = 665;
 int positionY1_f2 = 225;
 int positionY2_f2 = 295;
+int positionX_espada1 = 605;
+int positionY_espada1 = 275;
+int limiteAtaque = 0;
+bool atacando = false;
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* musicaPadrao;
@@ -170,6 +177,12 @@ void iniciarConstantes() {
 	background_f2 = al_load_bitmap("background-f2.jpg");
 	testeInicializar(background_f2, "background-fase2");
 
+	espada_player1 = al_load_bitmap("espada1-player-f2.jpg");
+	testeInicializar(espada_player1, "espada1-player1");
+	
+	espada_rei_f2 = al_load_bitmap("espada-rei-f2.jpg");
+	testeInicializar(espada_rei_f2, "espada-rei-f2");
+
 
 
 	//Fonte
@@ -215,7 +228,11 @@ void audioJogo(int navegacao) {
 
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
+	//Fase 2
 	al_destroy_bitmap(background_f2);
+	al_destroy_bitmap(espada_player1);
+	al_destroy_bitmap(espada_rei_f2);
+
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm);
 	al_destroy_bitmap(backgroundMenu);

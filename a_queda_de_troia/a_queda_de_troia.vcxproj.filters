@@ -84,15 +84,23 @@
       <Filter>Arquivos de Origem\Imagens\Opções</Filter>
     </Image>
     <Image Include="Imagens\Fase_Um\background_fase_um.jpg">
-      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
     </Image>
     <Image Include="Imagens\Fase_Um\heitor_um.png">
-      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
     </Image>
     <Image Include="Imagens\Fase_Um\helena_um.png">
-      <Filter>Arquivos de Origem\Imagens\Fase 1</Filter>
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
     </Image>
     <Image Include="background-f2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_Um\frente_descendo.jpg" />
+    <Image Include="Imagens\Fase_Um\frente_descendo_2.jpg" />
+    <Image Include="espada1-player-f2.jpg">
+      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
+    </Image>
+    <Image Include="espada-rei-f2.jpg">
       <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
     </Image>
   </ItemGroup>
@@ -142,9 +150,6 @@
     <Filter Include="Arquivos de Origem\Audios">
       <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Fase 1">
-      <UniqueIdentifier>{fd3cf576-319d-40f3-ab19-f735daeb6efe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase 1">
       <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
     </Filter>
@@ -159,6 +164,9 @@
     </Filter>
     <Filter Include="Arquivos de Origem\Imagens\Fases\Fase2">
       <UniqueIdentifier>{5cb9d68f-0b6d-4b2f-b4d0-6abd978e9a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem\Imagens\Fases\Fase 1">
+      <UniqueIdentifier>{fd3cf576-319d-40f3-ab19-f735daeb6efe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
