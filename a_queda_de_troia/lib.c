@@ -312,11 +312,8 @@ void audioJogo(int navegacao) {
 
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
-	//Fase 2
-	al_destroy_bitmap(background_f2);
-	al_destroy_bitmap(espada_player1);
-	al_destroy_bitmap(espada_rei_f2);
 
+	//Global
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm); //Img Teste
 
@@ -341,7 +338,6 @@ void destruidor() {
 	al_destroy_bitmap(introducao1_5);
 	al_destroy_bitmap(introducao1_6);
 	al_destroy_bitmap(introducao1_7);
-	al_destroy_bitmap(backgroundIntUm);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);
