@@ -15,12 +15,27 @@
 #include "opcoes.h"
 #include "fase01.h"
 #include "fase02.h"
+#include "fase03.h"
 
 //Variaveis Globais
 extern ALLEGRO_TIMER* timer;
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
+extern ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
+extern ALLEGRO_FONT* fonteMenu;
+
+extern int displayX;
+extern int displayY;
+extern int mouseX;
+extern int mouseY;
+extern int intro;
+extern int navegacao;
+extern bool rodando;
+extern bool boolVolume;
+
+//Audios e Musicas
+extern ALLEGRO_SAMPLE* audioMenu;
 
 //Opções
 extern ALLEGRO_BITMAP* backgroundOpcoes;
@@ -64,22 +79,35 @@ extern int positionY_espada1;
 extern int limiteAtaque;
 extern bool atacando;
 
-//Audios e Musicas
-extern ALLEGRO_SAMPLE* musicaPadrao;
-
-//Demais
-extern ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
-extern ALLEGRO_FONT* fonteMenu;
-
-//Variáveis Globais
-extern int displayX;
-extern int displayY;
-extern int mouseX;
-extern int mouseY;
-extern int intro;
-extern int navegacao;
-extern bool rodando;
-extern bool boolVolume;
+//Fase 3
+extern ALLEGRO_BITMAP* imgPuzzle;
+extern ALLEGRO_BITMAP* imgFundoPuzzle;
+extern ALLEGRO_BITMAP* puzzle1;
+extern ALLEGRO_BITMAP* puzzle2;
+extern ALLEGRO_BITMAP* puzzle3;
+extern ALLEGRO_BITMAP* puzzle4;
+extern ALLEGRO_BITMAP* puzzle5;
+extern ALLEGRO_BITMAP* puzzle6;
+extern ALLEGRO_BITMAP* puzzle7;
+extern ALLEGRO_BITMAP* puzzle8;
+extern ALLEGRO_BITMAP* puzzle9;
+extern ALLEGRO_BITMAP* puzzle10;
+extern ALLEGRO_BITMAP* puzzle11;
+extern ALLEGRO_BITMAP* puzzle12;
+extern ALLEGRO_BITMAP* puzzle13;
+extern ALLEGRO_BITMAP* puzzle14;
+extern ALLEGRO_BITMAP* puzzle15;
+extern ALLEGRO_BITMAP* puzzle16;
+extern ALLEGRO_BITMAP* puzzle17;
+extern ALLEGRO_BITMAP* puzzle18;
+extern ALLEGRO_BITMAP* puzzle19;
+extern ALLEGRO_BITMAP* puzzle20;
+extern ALLEGRO_BITMAP* puzzle21;
+extern ALLEGRO_BITMAP* puzzle22;
+extern ALLEGRO_BITMAP* puzzle23;
+extern ALLEGRO_BITMAP* puzzle24;
+extern ALLEGRO_BITMAP* puzzle25;
+extern int contadorCreditos;
 
 //Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);

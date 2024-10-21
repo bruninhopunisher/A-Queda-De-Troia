@@ -23,6 +23,16 @@ int main() {
 		if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
 			break;
 		}
+		if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+			if (event.keyboard.keycode == ALLEGRO_KEY_P) { // Atalho para passar de fase (APENAS DESENVOLVEDORES :p )
+				navegacao += 1;
+			}
+		}
+		if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+			if (event.keyboard.keycode == ALLEGRO_KEY_O) { // Atalho para DESATIVAR o som (APENAS DESENVOLVEDORES :p )
+				boolVolume = false;
+			}
+		}
 		audioJogo(navegacao);
 		switch (navegacao) {
 			case 0:
@@ -39,10 +49,13 @@ int main() {
 				introducao1(event);
 				break;
 			case 4:
-				faseUm(event);
+				fase01(event);
 				break;
 			case 5:
 				fase2(event);
+				break;
+			case 6:
+				fase3(event);
 				break;
 		}
 	}

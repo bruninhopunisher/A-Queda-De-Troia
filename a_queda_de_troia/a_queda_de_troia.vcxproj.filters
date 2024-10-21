@@ -5,22 +5,25 @@
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClCompile>
     <ClCompile Include="introducao1.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 1</Filter>
     </ClCompile>
     <ClCompile Include="menu.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Menu</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="opcoes.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
+      <Filter>Arquivos de Cabeçalho\Opções</Filter>
     </ClCompile>
     <ClCompile Include="fase01.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 1</Filter>
     </ClCompile>
     <ClCompile Include="fase02.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 2</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 2</Filter>
+    </ClCompile>
+    <ClCompile Include="fase03.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -28,80 +31,168 @@
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClInclude>
     <ClInclude Include="introducao1.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 1</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Menu</Filter>
     </ClInclude>
     <ClInclude Include="opcoes.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Opções</Filter>
+      <Filter>Arquivos de Cabeçalho\Opções</Filter>
     </ClInclude>
     <ClInclude Include="fase01.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 1</Filter>
     </ClInclude>
     <ClInclude Include="fase02.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase 2</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 2</Filter>
+    </ClInclude>
+    <ClInclude Include="fase03.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Imagens\Menu\background_login.jpg">
-      <Filter>Arquivos de Origem\Imagens\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Menu</Filter>
     </Image>
     <Image Include="Imagens\Img Testes\backgroundI1.jpg">
-      <Filter>Arquivos de Origem\Imagens\IMG Testes</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\IMG Testes</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro1.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro3.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro4.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro5.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro6.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro7.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Opcoes\background_opcoes.png">
-      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
     <Image Include="Imagens\Opcoes\sem-som.png">
-      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
     <Image Include="Imagens\Opcoes\som-musical.png">
-      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
     <Image Include="Imagens\Opcoes\som-musical-hover.png">
-      <Filter>Arquivos de Origem\Imagens\Opções</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_Um\background_fase_um.jpg">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_Um\heitor_um.png">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_Um\helena_um.png">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
     <Image Include="background-f2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
-    <Image Include="Imagens\Fase_Um\frente_descendo.jpg" />
-    <Image Include="Imagens\Fase_Um\frente_descendo_2.jpg" />
     <Image Include="espada1-player-f2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
     <Image Include="espada-rei-f2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Fases\Fase2</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\6.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\7.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\8.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\9.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\10.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\11.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\12.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\13.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\14.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\15.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\16.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\17.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\18.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\19.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\20.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\21.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\22.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\23.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\24.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\25.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\img_original.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\img_fundo.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\background_fase_um.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\frente_descendo.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\frente_descendo_2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\heitor_um.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\helena_um.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -111,70 +202,88 @@
     <Filter Include="Arquivos de Cabeçalho\Bibliotecas">
       <UniqueIdentifier>{1ec26c51-00c6-48d2-970e-021124b0f7b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas">
-      <UniqueIdentifier>{d2ed3b90-e109-4e83-9ef3-39937faad5cd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Créditos">
-      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo">
-      <UniqueIdentifier>{ec0510ec-928a-421c-96d8-70998e59ecbf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Menu">
-      <UniqueIdentifier>{e6fddd6a-de88-454a-9877-ab7bf244d685}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Opções">
-      <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Origem">
       <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
     </Filter>
     <Filter Include="Arquivos de Recurso">
       <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens">
-      <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Créditos">
+      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Introdução 1">
-      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Jogo">
+      <UniqueIdentifier>{ec0510ec-928a-421c-96d8-70998e59ecbf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Menu">
-      <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\IMG Testes">
-      <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Opções">
-      <UniqueIdentifier>{6cdda049-104c-478c-a75e-2389052c290c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem\Audios">
-      <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase 1">
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 1">
       <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Introdução 1">
-      <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase 2">
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 2">
       <UniqueIdentifier>{8dcecaa8-c540-44b1-afce-21e2b29d7e74}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Fases">
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 3">
+      <UniqueIdentifier>{b70c0484-c1ba-4194-bfaf-e51a262008d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 1">
+      <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 2">
+      <UniqueIdentifier>{7f467c5d-4191-435b-8924-389c5785504b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 3">
+      <UniqueIdentifier>{15d011b9-87bd-49ca-8e48-64997ae4e0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 4">
+      <UniqueIdentifier>{4262aecf-0eb2-4637-a7a1-b496ec40d8c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 5">
+      <UniqueIdentifier>{cd0df1b1-37b2-4f9c-90d8-88983e2acd37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Menu">
+      <UniqueIdentifier>{e6fddd6a-de88-454a-9877-ab7bf244d685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Opções">
+      <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Audios">
+      <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens">
+      <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introdução 1">
+      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Menu">
+      <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\IMG Testes">
+      <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Opções">
+      <UniqueIdentifier>{6cdda049-104c-478c-a75e-2389052c290c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases">
       <UniqueIdentifier>{faf92c3b-40cf-440b-8df8-e45593d3c65b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Fases\Fase2">
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2">
       <UniqueIdentifier>{5cb9d68f-0b6d-4b2f-b4d0-6abd978e9a37}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Fases\Fase 1">
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 1">
       <UniqueIdentifier>{fd3cf576-319d-40f3-ab19-f735daeb6efe}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Audios\audio_padrao.mp3">
-      <Filter>Arquivos de Origem\Audios</Filter>
-    </Media>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 3">
+      <UniqueIdentifier>{ba67b6aa-db8e-4b26-be3b-61315295ed86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça">
+      <UniqueIdentifier>{bfb31db2-37dc-44e8-a975-f728ed8c6fcf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audios\audio_menu.mp3">
+      <Filter>Arquivos de Cabeçalho\Audios</Filter>
+    </Media>
   </ItemGroup>
 </Project>

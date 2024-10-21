@@ -2,6 +2,6 @@
 #define FASE_UM_H
 #include "lib.h"
 
-void faseUm(ALLEGRO_EVENT evento);
+void fase01(ALLEGRO_EVENT evento);
 
 #endif // !FASE_UM_H

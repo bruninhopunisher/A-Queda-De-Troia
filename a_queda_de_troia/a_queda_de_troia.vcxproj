@@ -83,6 +83,8 @@
     <Allegro_AddonFont>true</Allegro_AddonFont>
     <Allegro_AddonColor>true</Allegro_AddonColor>
     <Allegro_AddonVideo>true</Allegro_AddonVideo>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>Clean</CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -144,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="fase02.c" />
     <ClCompile Include="fase01.c" />
+    <ClCompile Include="fase03.c" />
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
@@ -156,11 +159,38 @@
     <Image Include="background-f2.jpg" />
     <Image Include="espada-rei-f2.jpg" />
     <Image Include="espada1-player-f2.jpg" />
-    <Image Include="Imagens\Fase_Um\background_fase_um.jpg" />
-    <Image Include="Imagens\Fase_Um\frente_descendo.jpg" />
-    <Image Include="Imagens\Fase_Um\frente_descendo_2.jpg" />
-    <Image Include="Imagens\Fase_Um\heitor_um.png" />
-    <Image Include="Imagens\Fase_Um\helena_um.png" />
+    <Image Include="Imagens\Fase_01\background_fase_um.jpg" />
+    <Image Include="Imagens\Fase_01\frente_descendo.jpg" />
+    <Image Include="Imagens\Fase_01\frente_descendo_2.jpg" />
+    <Image Include="Imagens\Fase_01\heitor_um.png" />
+    <Image Include="Imagens\Fase_01\helena_um.png" />
+    <Image Include="Imagens\Fase_03\1.jpg" />
+    <Image Include="Imagens\Fase_03\10.jpg" />
+    <Image Include="Imagens\Fase_03\11.jpg" />
+    <Image Include="Imagens\Fase_03\12.jpg" />
+    <Image Include="Imagens\Fase_03\13.jpg" />
+    <Image Include="Imagens\Fase_03\14.jpg" />
+    <Image Include="Imagens\Fase_03\15.jpg" />
+    <Image Include="Imagens\Fase_03\16.jpg" />
+    <Image Include="Imagens\Fase_03\17.jpg" />
+    <Image Include="Imagens\Fase_03\18.jpg" />
+    <Image Include="Imagens\Fase_03\19.jpg" />
+    <Image Include="Imagens\Fase_03\2.jpg" />
+    <Image Include="Imagens\Fase_03\20.jpg" />
+    <Image Include="Imagens\Fase_03\21.jpg" />
+    <Image Include="Imagens\Fase_03\22.jpg" />
+    <Image Include="Imagens\Fase_03\23.jpg" />
+    <Image Include="Imagens\Fase_03\24.jpg" />
+    <Image Include="Imagens\Fase_03\25.jpg" />
+    <Image Include="Imagens\Fase_03\3.jpg" />
+    <Image Include="Imagens\Fase_03\4.jpg" />
+    <Image Include="Imagens\Fase_03\5.jpg" />
+    <Image Include="Imagens\Fase_03\6.jpg" />
+    <Image Include="Imagens\Fase_03\7.jpg" />
+    <Image Include="Imagens\Fase_03\8.jpg" />
+    <Image Include="Imagens\Fase_03\9.jpg" />
+    <Image Include="Imagens\Fase_03\img_fundo.jpg" />
+    <Image Include="Imagens\Fase_03\img_original.jpg" />
     <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
     <Image Include="Imagens\Introducao_1\intro1.jpg" />
     <Image Include="Imagens\Introducao_1\intro2.jpg" />
@@ -177,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fase02.h" />
+    <ClInclude Include="fase03.h" />
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
@@ -184,10 +215,10 @@
     <ClInclude Include="fase01.h" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Audios\audio_padrao.mp3" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Media Include="Audios\audio_menu.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

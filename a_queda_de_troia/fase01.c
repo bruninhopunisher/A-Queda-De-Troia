@@ -1,8 +1,7 @@
 #include "fase01.h"
 
-void faseUm(ALLEGRO_EVENT evento) {
+void fase01(ALLEGRO_EVENT evento) {
 
-    navegacao = 5;
     bool is_moving = false;
 
 	al_draw_bitmap(backgroundFaseUm, 0, 0, 0);
