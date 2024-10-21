@@ -154,6 +154,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="background-f2.jpg" />
+    <Image Include="barra-vida-50R.jpg" />
+    <Image Include="barra-vida-cheia.jpg" />
+    <Image Include="barra-vida-baixa.jpg" />
+    <Image Include="barra-vida-100R-f2.jpg" />
     <Image Include="espada-rei-f2.jpg" />
     <Image Include="espada1-player-f2.jpg" />
     <Image Include="Imagens\Fase_Um\background_fase_um.jpg" />

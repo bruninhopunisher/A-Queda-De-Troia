@@ -38,8 +38,18 @@ int personagemHelenaY = 585;
 ALLEGRO_BITMAP* background_f2;
 ALLEGRO_BITMAP* espada_player1;
 ALLEGRO_BITMAP* espada_rei_f2;
+ALLEGRO_BITMAP* barra_vida_cheia;
+ALLEGRO_BITMAP* barra_vida_baixa;
+ALLEGRO_BITMAP* barra_vidaRei_100;
+ALLEGRO_BITMAP* barra_vidaRei_50;
 int pressionado = 0;
 int ultPressionado = 0;
+//HEITOR
+int positionX1_heitor = 615;
+int positionX2_heitor = 665;
+int positionY1_heitor = 100;
+int positionY2_heitor = 170;
+//PARIS
 int positionX1_f2 = 615;
 int positionX2_f2 = 665;
 int positionY1_f2 = 225;
@@ -47,7 +57,15 @@ int positionY2_f2 = 295;
 int positionX_espada1 = 605;
 int positionY_espada1 = 275;
 int limiteAtaque = 0;
+bool controleJogador = false;
 bool atacando = false;
+//REI MENELAU
+int positionX_espadaR = 630;
+int positionY_espadaR = 355;
+int vidaJogador = 100;
+int limiteAtaqueR = 0;
+int ataqueReiTimer = 0;
+int vidaRei = 1000;
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* musicaPadrao;
@@ -183,6 +201,17 @@ void iniciarConstantes() {
 	espada_rei_f2 = al_load_bitmap("espada-rei-f2.jpg");
 	testeInicializar(espada_rei_f2, "espada-rei-f2");
 
+	barra_vida_cheia = al_load_bitmap("barra-vida-cheia.jpg");
+	testeInicializar(barra_vida_cheia, "barra_vida_cheia-f2");
+
+	barra_vida_baixa = al_load_bitmap("barra-vida-baixa.jpg");
+	testeInicializar(barra_vida_baixa, "barra_vida_baixa-f2");
+
+	barra_vidaRei_100 = al_load_bitmap("barra-vida-100R-f2.jpg");
+	testeInicializar(barra_vidaRei_100, "barra_vida_Rei_100");
+
+	barra_vidaRei_50 = al_load_bitmap("barra-vida-50R.jpg");
+	testeInicializar(barra_vidaRei_50, "barra_vida_Rei_50");
 
 
 	//Fonte
@@ -232,7 +261,10 @@ void destruidor() {
 	al_destroy_bitmap(background_f2);
 	al_destroy_bitmap(espada_player1);
 	al_destroy_bitmap(espada_rei_f2);
-
+	al_destroy_bitmap(barra_vida_cheia);
+	al_destroy_bitmap(barra_vida_baixa);
+	al_destroy_bitmap(barra_vidaRei_100);
+	al_destroy_bitmap(barra_vidaRei_50);
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm);
 	al_destroy_bitmap(backgroundMenu);
