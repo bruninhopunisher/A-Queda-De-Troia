@@ -49,8 +49,18 @@ int personagemHelenaY = 585;
 ALLEGRO_BITMAP* background_f2;
 ALLEGRO_BITMAP* espada_player1;
 ALLEGRO_BITMAP* espada_rei_f2;
+ALLEGRO_BITMAP* barra_vida_cheia;
+ALLEGRO_BITMAP* barra_vida_baixa;
+ALLEGRO_BITMAP* barra_vidaRei_100;
+ALLEGRO_BITMAP* barra_vidaRei_50;
 int pressionado = 0;
 int ultPressionado = 0;
+//HEITOR
+int positionX1_heitor = 615;
+int positionX2_heitor = 665;
+int positionY1_heitor = 100;
+int positionY2_heitor = 170;
+//PARIS
 int positionX1_f2 = 615;
 int positionX2_f2 = 665;
 int positionY1_f2 = 225;
@@ -58,7 +68,15 @@ int positionY2_f2 = 295;
 int positionX_espada1 = 605;
 int positionY_espada1 = 275;
 int limiteAtaque = 0;
+bool controleJogador = false;
 bool atacando = false;
+//REI MENELAU
+int positionX_espadaR = 630;
+int positionY_espadaR = 355;
+int vidaJogador = 100;
+int limiteAtaqueR = 0;
+int ataqueReiTimer = 0;
+int vidaRei = 1000;
 
 //Fase 3
 ALLEGRO_BITMAP* imgPuzzle;
@@ -88,7 +106,6 @@ ALLEGRO_BITMAP* puzzle22;
 ALLEGRO_BITMAP* puzzle23;
 ALLEGRO_BITMAP* puzzle24;
 ALLEGRO_BITMAP* puzzle25;
-
 int contadorCreditos = 3;
 
 //Audios e Musicas
@@ -193,10 +210,17 @@ void iniciarConstantes() {
 	background_f2 = al_load_bitmap("background-f2.jpg");
 	espada_rei_f2 = al_load_bitmap("espada-rei-f2.jpg");
 	espada_player1 = al_load_bitmap("espada1-player-f2.jpg");
+	barra_vidaRei_50 = al_load_bitmap("barra-vida-50R.jpg");
+	barra_vidaRei_100 = al_load_bitmap("barra-vida-100R-f2.jpg");
+	barra_vida_baixa = al_load_bitmap("barra-vida-baixa.jpg");
+	barra_vida_cheia = al_load_bitmap("barra-vida-cheia.jpg");
 
 	testeInicializar(background_f2, "background-fase2");
 	testeInicializar(espada_player1, "espada1-player1");
 	testeInicializar(espada_rei_f2, "espada-rei-f2");
+	testeInicializar(barra_vidaRei_50, "barra-vida-50R");
+	testeInicializar(barra_vidaRei_100, "barra-vida-100R-f2");
+	testeInicializar(barra_vida_baixa, "barra-vida-baixa");
 
 	//Fase 3
 	imgPuzzle = al_load_bitmap("Imagens/Fase_03/img_original.jpg");
@@ -288,11 +312,11 @@ void audioJogo(int navegacao) {
 
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
+	//Fase 2
+	al_destroy_bitmap(background_f2);
+	al_destroy_bitmap(espada_player1);
+	al_destroy_bitmap(espada_rei_f2);
 
-	//Global
-	al_destroy_timer(timer);
-	al_destroy_event_queue(evento);
-	al_destroy_display(display);
 	al_destroy_font(fonteMenu);
 	al_destroy_bitmap(backgroundIntUm); //Img Teste
 

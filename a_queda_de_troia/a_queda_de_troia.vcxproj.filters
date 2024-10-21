@@ -57,25 +57,25 @@
       <Filter>Arquivos de Cabeçalho\Imagens\IMG Testes</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro1.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro3.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro4.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro5.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro6.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Introducao_1\intro7.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introdução 1</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="Imagens\Opcoes\background_opcoes.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
@@ -194,6 +194,18 @@
     <Image Include="Imagens\Fase_01\helena_um.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
     </Image>
+    <Image Include="barra-vida-cheia.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-100R-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-baixa.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-50R.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -250,9 +262,6 @@
     <Filter Include="Arquivos de Cabeçalho\Imagens">
       <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Imagens\Introdução 1">
-      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Menu">
       <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
     </Filter>
@@ -276,6 +285,24 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça">
       <UniqueIdentifier>{bfb31db2-37dc-44e8-a975-f728ed8c6fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções">
+      <UniqueIdentifier>{6d2acc2a-4b20-43a1-832e-def046fe6e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 5">
+      <UniqueIdentifier>{3b331268-3f4b-4cdc-901d-28aa7f811c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4">
+      <UniqueIdentifier>{7287c894-030d-4b7b-96b8-1b5fd1a7362a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3">
+      <UniqueIdentifier>{f92e830a-517c-4325-b40c-a8be5612f785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2">
+      <UniqueIdentifier>{073b627a-0a77-4fb6-acd0-838fbb6e2c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1">
+      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

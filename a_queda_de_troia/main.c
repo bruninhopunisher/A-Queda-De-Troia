@@ -9,7 +9,7 @@ int main() {
 	al_register_event_source(evento, al_get_keyboard_event_source());
 	al_register_event_source(evento, al_get_display_event_source(display));
 	al_register_event_source(evento, al_get_timer_event_source(timer));
-	al_register_event_source(evento, al_get_mouse_event_source());
+	al_register_event_source(evento, al_get_mouse_event_source()); 
 
 	ALLEGRO_EVENT event;
 	bool redraw = true;
@@ -55,6 +55,7 @@ int main() {
 				fase2(event);
 				break;
 			case 6:
+				
 				fase3(event);
 				break;
 		}

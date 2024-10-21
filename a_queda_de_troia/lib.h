@@ -68,16 +68,35 @@ extern int personagemHelenaY;
 extern ALLEGRO_BITMAP* background_f2;
 extern ALLEGRO_BITMAP* espada_player1;
 extern ALLEGRO_BITMAP* espada_rei_f2;
+extern ALLEGRO_BITMAP* barra_vida_cheia;
+extern ALLEGRO_BITMAP* barra_vida_baixa;
+extern ALLEGRO_BITMAP* barra_vidaRei_100;
+extern ALLEGRO_BITMAP* barra_vidaRei_50;
 extern int pressionado;
 extern int ultPressionado;
+//HEITOR
+extern int positionX1_heitor;
+extern int positionX2_heitor;
+extern int positionY1_heitor;
+extern int positionY2_heitor;
+//PARIS
 extern int positionX1_f2;
 extern int positionX2_f2;
 extern int positionY1_f2;
 extern int positionY2_f2;
 extern int positionX_espada1;
 extern int positionY_espada1;
-extern int limiteAtaque;
+extern int vidaJogador;
+extern bool controleJogador;
 extern bool atacando;
+//REI MENELAU
+extern int positionX_espadaR;
+extern int positionY_espadaR;
+extern int limiteAtaque;
+extern int limiteAtaqueR;
+extern int vidaRei;
+extern int ataqueReiTimer;
+
 
 //Fase 3
 extern ALLEGRO_BITMAP* imgPuzzle;
