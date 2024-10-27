@@ -163,6 +163,7 @@
     <Image Include="barra-vida-100R-f2.jpg" />
     <Image Include="espada-rei-f2.jpg" />
     <Image Include="espada1-player-f2.jpg" />
+    <Image Include="helenaIntro1.jpg" />
     <Image Include="Imagens\Fase_01\background_fase_um.jpg" />
     <Image Include="Imagens\Fase_01\frente_descendo.jpg" />
     <Image Include="Imagens\Fase_01\frente_descendo_2.jpg" />
@@ -196,18 +197,12 @@
     <Image Include="Imagens\Fase_03\img_fundo.jpg" />
     <Image Include="Imagens\Fase_03\img_original.jpg" />
     <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
-    <Image Include="Imagens\Introducao_1\intro1.jpg" />
-    <Image Include="Imagens\Introducao_1\intro2.jpg" />
-    <Image Include="Imagens\Introducao_1\intro3.jpg" />
-    <Image Include="Imagens\Introducao_1\intro4.jpg" />
-    <Image Include="Imagens\Introducao_1\intro5.jpg" />
-    <Image Include="Imagens\Introducao_1\intro6.jpg" />
-    <Image Include="Imagens\Introducao_1\intro7.jpg" />
     <Image Include="Imagens\Menu\background_login.jpg" />
     <Image Include="Imagens\Opcoes\background_opcoes.png" />
     <Image Include="Imagens\Opcoes\sem-som.png" />
     <Image Include="Imagens\Opcoes\som-musical-hover.png" />
     <Image Include="Imagens\Opcoes\som-musical.png" />
+    <Image Include="ParisIntro1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fase02.h" />

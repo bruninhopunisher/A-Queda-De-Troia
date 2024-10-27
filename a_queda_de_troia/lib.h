@@ -45,13 +45,10 @@ extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
 
 //Introdução Um
-extern ALLEGRO_BITMAP* introducao1_1;
-extern ALLEGRO_BITMAP* introducao1_2;
-extern ALLEGRO_BITMAP* introducao1_3;
-extern ALLEGRO_BITMAP* introducao1_4;
-extern ALLEGRO_BITMAP* introducao1_5;
-extern ALLEGRO_BITMAP* introducao1_6;
-extern ALLEGRO_BITMAP* introducao1_7;
+extern ALLEGRO_BITMAP* fundoHelena;
+extern ALLEGRO_BITMAP* fundoParis;
+extern ALLEGRO_FONT* fonteIntro1;
+extern bool renderizar;
 
 //Fase 1
 extern ALLEGRO_BITMAP* backgroundFaseUm;
@@ -133,6 +130,7 @@ void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
 void iniciarConstantes();
 void audioJogo(int navegacao);
+void imagemIntro(ALLEGRO_BITMAP* image, ALLEGRO_EVENT evento);
 void destruidor();
 
 #endif // !LIB_H

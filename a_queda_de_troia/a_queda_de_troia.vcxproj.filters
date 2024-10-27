@@ -56,27 +56,6 @@
     <Image Include="Imagens\Img Testes\backgroundI1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\IMG Testes</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro1.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro3.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro4.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro5.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro6.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
-    <Image Include="Imagens\Introducao_1\intro7.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
-    </Image>
     <Image Include="Imagens\Opcoes\background_opcoes.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
@@ -205,6 +184,12 @@
     </Image>
     <Image Include="barra-vida-50R.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="helenaIntro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="ParisIntro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

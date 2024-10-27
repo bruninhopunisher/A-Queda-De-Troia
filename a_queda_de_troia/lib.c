@@ -25,13 +25,10 @@ ALLEGRO_BITMAP* comVolumeHover;
 ALLEGRO_BITMAP* semVolumeHover;
 
 //Introdução Um
-ALLEGRO_BITMAP* introducao1_1;
-ALLEGRO_BITMAP* introducao1_2;
-ALLEGRO_BITMAP* introducao1_3;
-ALLEGRO_BITMAP* introducao1_4;
-ALLEGRO_BITMAP* introducao1_5;
-ALLEGRO_BITMAP* introducao1_6;
-ALLEGRO_BITMAP* introducao1_7;
+ALLEGRO_BITMAP* fundoHelena;
+ALLEGRO_BITMAP* fundoParis;
+ALLEGRO_FONT* fonteIntro1;
+bool renderizar = 0;
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
@@ -161,24 +158,13 @@ void iniciarConstantes() {
 	testeInicializar(backgroundMenu, "imagem_menu");
 
 	//Introdução 1
-	introducao1_1 = al_load_bitmap("Imagens/Introducao_1/intro1.jpg");
-	introducao1_2 = al_load_bitmap("Imagens/Introducao_1/intro2.jpg");
-	introducao1_3 = al_load_bitmap("Imagens/Introducao_1/intro3.jpg");
-	introducao1_4 = al_load_bitmap("Imagens/Introducao_1/intro4.jpg");
-	introducao1_5 = al_load_bitmap("Imagens/Introducao_1/intro5.jpg");
-	introducao1_6 = al_load_bitmap("Imagens/Introducao_1/intro6.jpg");
-	introducao1_7 = al_load_bitmap("Imagens/Introducao_1/intro7.jpg");
-	introducao1_5 = al_load_bitmap("Imagens/Introducao_1/intro5.jpg");
-	introducao1_6 = al_load_bitmap("Imagens/Introducao_1/intro6.jpg");
-	introducao1_7 = al_load_bitmap("Imagens/Introducao_1/intro7.jpg");
+	fundoHelena = al_load_bitmap("Imagens/Introducao_1/helenaIntro1.jpg");
+	fundoParis = al_load_bitmap("Imagens/Introducao_1/ParisIntro1.jpg");
+	fonteIntro1 = al_load_font("Fontes/MateSC-Regular.ttf", 45, 0);
 
-	testeInicializar(introducao1_1, "introducao1_1");
-	testeInicializar(introducao1_2, "introducao1_2");
-	testeInicializar(introducao1_3, "introducao1_3");
-	testeInicializar(introducao1_4, "introducao1_4");
-	testeInicializar(introducao1_5, "introducao1_5");
-	testeInicializar(introducao1_6, "introducao1_6");
-	testeInicializar(introducao1_7, "introducao1_7");
+	testeInicializar(fonteIntro1, "fonte_intro_1");
+	testeInicializar(fundoHelena, "fundo_helena-Intro1");
+	testeInicializar(fundoParis, "fundo_paris_Intro1");
 
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
@@ -310,6 +296,23 @@ void audioJogo(int navegacao) {
 	}
 }
 
+void imagemIntro(ALLEGRO_BITMAP* imagem, ALLEGRO_EVENT evento) {
+	al_draw_bitmap(imagem, 0, 0, 0);
+	al_draw_filled_rectangle(1016, 653, 1189, 692, al_map_rgb(222, 158, 30));
+	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1095, 650, ALLEGRO_ALIGN_CENTRE, "Proximo");
+	if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK); 
+	}
+	else {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW); 
+	}
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+		if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+			intro += 1;
+		}
+	}
+}
+
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
 
@@ -331,13 +334,9 @@ void destruidor() {
 	al_destroy_bitmap(semVolumeHover);
 
 	//Introdução 1
-	al_destroy_bitmap(introducao1_1);
-	al_destroy_bitmap(introducao1_2);
-	al_destroy_bitmap(introducao1_3);
-	al_destroy_bitmap(introducao1_4);
-	al_destroy_bitmap(introducao1_5);
-	al_destroy_bitmap(introducao1_6);
-	al_destroy_bitmap(introducao1_7);
+	al_destroy_bitmap(fundoHelena);
+	al_destroy_bitmap(fundoParis);
+	al_destroy_font(fonteIntro1);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);
