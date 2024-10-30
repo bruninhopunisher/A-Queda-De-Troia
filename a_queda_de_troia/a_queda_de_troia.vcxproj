@@ -147,6 +147,7 @@
     <ClCompile Include="fase02.c" />
     <ClCompile Include="fase01.c" />
     <ClCompile Include="fase03.c" />
+    <ClCompile Include="fase04.c" />
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
@@ -207,6 +208,7 @@
   <ItemGroup>
     <ClInclude Include="fase02.h" />
     <ClInclude Include="fase03.h" />
+    <ClInclude Include="fase04.h" />
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
@@ -214,10 +216,10 @@
     <ClInclude Include="fase01.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Media Include="Audios\audio_menu.mp3" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Audios\audio_menu.mp3" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -105,6 +105,16 @@ ALLEGRO_BITMAP* puzzle24;
 ALLEGRO_BITMAP* puzzle25;
 int contadorCreditos = 3;
 
+//fase 04
+
+ALLEGRO_BITMAP* player;
+ALLEGRO_BITMAP* inimigo;
+int playX = 640;
+int playY = 360;
+int iniX = 1280;
+int iniY = 360;
+
+
 //Audios e Musicas
 ALLEGRO_SAMPLE* audioMenu;
 
@@ -264,6 +274,14 @@ void iniciarConstantes() {
 	testeInicializar(puzzle23, "puzzle23");
 	testeInicializar(puzzle24, "puzzle24");
 	testeInicializar(puzzle25, "puzzle25");
+
+	//fase 4
+
+	player = al_load_bitmap("Imagens/Fase_04/player.jpg");
+	inimigo = al_load_bitmap("Imagens/Fase_04/inimigo.jpg");
+	testeInicializar(player, "player");
+	testeInicializar(inimigo, "inimigo");
+
 }
 
 void audioJogo(int navegacao) {
@@ -378,4 +396,8 @@ void destruidor() {
 	al_destroy_bitmap(puzzle23);
 	al_destroy_bitmap(puzzle24);
 	al_destroy_bitmap(puzzle25);
+
+	//fese 4
+	al_destroy_bitmap (player);
+	al_destroy_bitmap (inimigo);
 }

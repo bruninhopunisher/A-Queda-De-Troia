@@ -25,6 +25,9 @@
     <ClCompile Include="fase03.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
     </ClCompile>
+    <ClCompile Include="fase04.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -47,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="fase03.h">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
+    </ClInclude>
+    <ClInclude Include="fase04.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -289,13 +295,16 @@
     <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1">
       <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 4">
+      <UniqueIdentifier>{b5aba31b-7410-4d74-b55a-5c9030f232e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Audios\audio_menu.mp3">
       <Filter>Arquivos de Cabeçalho\Audios</Filter>
     </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

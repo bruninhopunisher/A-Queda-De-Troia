@@ -16,6 +16,7 @@
 #include "fase01.h"
 #include "fase02.h"
 #include "fase03.h"
+#include "fase04.h"
 
 //Variaveis Globais
 extern ALLEGRO_TIMER* timer;
@@ -124,6 +125,17 @@ extern ALLEGRO_BITMAP* puzzle23;
 extern ALLEGRO_BITMAP* puzzle24;
 extern ALLEGRO_BITMAP* puzzle25;
 extern int contadorCreditos;
+
+
+//fase 4
+
+extern ALLEGRO_BITMAP* player;
+extern ALLEGRO_BITMAP* inimigo;
+extern int playX;
+extern int playY;
+extern int iniX;
+extern int iniY;
+
 
 //Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);
