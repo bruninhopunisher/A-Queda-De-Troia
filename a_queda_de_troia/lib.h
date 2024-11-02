@@ -1,4 +1,4 @@
-	#ifndef LIB_H
+#ifndef LIB_H
 #define LIB_H
 #include <stdio.h>
 #include <stdbool.h>
@@ -126,9 +126,27 @@ extern ALLEGRO_BITMAP* puzzle24;
 extern ALLEGRO_BITMAP* puzzle25;
 extern int contadorCreditos;
 
+// Armazena as informações de cada peça do puzzle
+typedef struct {
+    char nome[20];
+    int id;
+    int pos_correta_x;
+    int pos_correta_y;
+    int pos_atual_x;
+    int pos_atual_y;
+    bool selecionada;
+    bool posicao_correta;
+} infoPecas;
 
-//fase 4
+typedef struct {
+    infoPecas pecas[25];
+	int totalPecas;
+} Puzzle;
 
+extern bool verificaPuzzle;
+
+
+//Fase 4
 extern ALLEGRO_BITMAP* player;
 extern ALLEGRO_BITMAP* inimigo;
 extern int playX;
@@ -146,4 +164,3 @@ void imagemIntro(ALLEGRO_BITMAP* image, ALLEGRO_EVENT evento);
 void destruidor();
 
 #endif // !LIB_H
-

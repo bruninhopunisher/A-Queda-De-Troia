@@ -28,6 +28,9 @@
     <ClCompile Include="fase04.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
     </ClCompile>
+    <ClCompile Include="quebra_cabeça_void.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">

@@ -104,9 +104,9 @@ ALLEGRO_BITMAP* puzzle23;
 ALLEGRO_BITMAP* puzzle24;
 ALLEGRO_BITMAP* puzzle25;
 int contadorCreditos = 3;
+bool verificaPuzzle = true;
 
-//fase 04
-
+//Fase 04
 ALLEGRO_BITMAP* player;
 ALLEGRO_BITMAP* inimigo;
 int playX = 640;
@@ -276,7 +276,6 @@ void iniciarConstantes() {
 	testeInicializar(puzzle25, "puzzle25");
 
 	//fase 4
-
 	player = al_load_bitmap("Imagens/Fase_04/player.jpg");
 	inimigo = al_load_bitmap("Imagens/Fase_04/inimigo.jpg");
 	testeInicializar(player, "player");
@@ -400,4 +399,5 @@ void destruidor() {
 	//fese 4
 	al_destroy_bitmap (player);
 	al_destroy_bitmap (inimigo);
+	printf("Destriudo");
 }
