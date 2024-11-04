@@ -56,29 +56,6 @@ void fase2(ALLEGRO_EVENT evento) {
 	al_draw_filled_rectangle(935, 100, 985, 170, al_map_rgba(0, 244, 244, 0.5));
 	al_draw_filled_rectangle(1095, 100, 1145, 170, al_map_rgba(0, 244, 244, 0.5));
 
-
-	//ATAQUE DO REI
-	if (limiteAtaqueR < 10 && ataqueReiTimer == 200) {
-		positionY_espadaR -= 2;
-		limiteAtaqueR += 1;
-		if (positionX_espadaR + 20 >= positionX1_f2 &&
-			positionX_espadaR + 20 <= positionX2_f2 &&
-			positionY_espadaR >= positionY1_f2 &&
-			positionY_espadaR <= positionY2_f2) {
-			vidaJogador = 15;
-		}
-	}
-	else {
-		if (ataqueReiTimer == 200) {
-			positionY_espadaR += 20;
-			limiteAtaqueR = 0;
-			ataqueReiTimer = 0;
-		}
-		else {
-			ataqueReiTimer += 1;
-		}
-	}
-
 	//ESPADA REI
 	al_draw_bitmap(espada_rei_f2, positionX_espadaR, positionY_espadaR, 0);
 	
@@ -111,76 +88,13 @@ void fase2(ALLEGRO_EVENT evento) {
 			break;
 		}
 
-		//EVENTO DE TECLA DO JOGADOR
-		switch (evento.type)
-		{
-
-		case ALLEGRO_EVENT_KEY_DOWN:
-			if (evento.keyboard.keycode == ALLEGRO_KEY_UP && vidaJogador == 100) {
-				pressionado = 1;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT && vidaJogador == 100) {
-				pressionado = 2;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT && vidaJogador == 100) {
-				pressionado = 3;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && vidaJogador == 100) {
-				pressionado = 4;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_SPACE && vidaJogador == 100) {
-				atacando = true;
-			}
-			break;
-
-		case ALLEGRO_EVENT_KEY_UP:
-			if (evento.keyboard.keycode == ALLEGRO_KEY_UP && vidaJogador == 100) {
-				ultPressionado = 1;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT && vidaJogador == 100) {
-				ultPressionado = 2;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT && vidaJogador == 100) {
-				ultPressionado = 3;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && vidaJogador == 100) {
-				ultPressionado = 4;
-			}
-			if (pressionado == ultPressionado && vidaJogador == 100) {
-				pressionado = 0;
-				ultPressionado = 0;
-			}
-			break;
-		}
 
 		switch (vidaJogador)
 		{
 
 		case 100:
 			//MOVIMENTAÇÃO DO PARIS VIDA 100%
-			switch (pressionado)
-			{
-			case 1:
-				positionY1_f2 -= 2;
-				positionY2_f2 -= 2;
-				positionY_espada1 -= 2;
-				break;
-			case 2:
-				positionX1_f2 -= 2;
-				positionX2_f2 -= 2;
-				positionX_espada1 -= 2;
-				break;
-			case 3:
-				positionX1_f2 += 2;
-				positionX2_f2 += 2;
-				positionX_espada1 += 2;
-				break;
-			case 4:
-				positionY1_f2 += 2;
-				positionY2_f2 += 2;
-				positionY_espada1 += 2;
-				break;
-			}
+			movimentarPlayer(evento, &positionX1_f2, &positionY1_f2); 
 			//ATAQUE PARIS
 			if (atacando == true) {
 				ataquePlayer(&positionX_espada1, &positionY_espada1, 3, &atacando, &limiteAtaque);
@@ -190,17 +104,14 @@ void fase2(ALLEGRO_EVENT evento) {
 		case 15:
 			if (positionX1_f2 < 615){
 				positionX1_f2 += 1;
-				positionX2_f2 += 1;
 				positionX_espada1 += 1;
 			}
-			if (positionX1_f2 > 665 || positionX2_f2 > 665) {
+			if (positionX1_f2 > 665) {
 				positionX1_f2 -= 1;
-				positionX2_f2 -= 1;
 				positionX_espada1 -= 1;
 			}
 			if (positionY1_f2 > 190) {
 				positionY1_f2 -= 1;
-				positionY2_f2 -= 1;
 				positionY_espada1 -= 1;
 			}
 			if (positionY1_f2 <= 190) {
@@ -213,72 +124,8 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 		}
 
-
-		//ESPADA PARIS
-		al_draw_bitmap(espada_player1, positionX_espada1, positionY_espada1, 0);
-
 		//PARIS - CONTROLANDO
-		switch (pressionado)
-		{
-		case 0:
-			al_draw_bitmap(ParisBaixoNormal, positionX1_f2, positionY1_f2, 0);
-			break;
-		case 1:
-			if (movimento >= 0 && movimento < 20) {
-				al_draw_bitmap(ParisCimaNormal, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento >= 20 && movimento < 40) {
-				al_draw_bitmap(ParisCimaEsq, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento == 40) {
-				al_draw_bitmap(ParisCimaDir, positionX1_f2, positionY1_f2, 0);
-				movimento = 0;
-			}
-			break;
-		case 2:
-			if (movimento >= 0 && movimento < 20) {
-				al_draw_bitmap(ParisEsqNormal, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento >= 20 && movimento < 40) {
-				al_draw_bitmap(ParisEsqEsq, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento == 40) {
-				al_draw_bitmap(ParisEsqDir, positionX1_f2, positionY1_f2, 0);
-				movimento = 0;
-			}
-			break;
-		case 3:
-			if (movimento >= 0 && movimento < 20) {
-				al_draw_bitmap(ParisDirNormal, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento >= 20 && movimento < 40) {
-				al_draw_bitmap(ParisDirEsq, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento == 40) {
-				al_draw_bitmap(ParisDirDir, positionX1_f2, positionY1_f2, 0);
-				movimento = 0;
-			}
-			break;
-		case 4:
-			if (movimento >= 0 && movimento < 20) {
-				al_draw_bitmap(ParisBaixoNormal, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento >= 20&& movimento < 40 ) {
-				al_draw_bitmap(ParisBaixoEsq, positionX1_f2, positionY1_f2, 0);
-				movimento += 1;
-			}
-			if (movimento == 40) {
-				al_draw_bitmap(ParisBaixoEsq, positionX1_f2, positionY1_f2, 0);
-				movimento = 0;
-			}
-		}
+		movimentoSprite(ParisBaixoNormal, ParisBaixoEsq, ParisBaixoDir, ParisEsqNormal, ParisEsqEsq, ParisEsqDir, ParisCimaNormal, ParisCimaEsq, ParisCimaDir, ParisDirNormal, ParisDirEsq, ParisDirDir, positionX1_f2, positionY1_f2);
 		
 		//HEITOR
 		al_draw_filled_rectangle(positionX1_heitor, positionY1_heitor, positionX2_heitor, positionY2_heitor, al_map_rgba(0, 244, 244, 0.5));
@@ -320,69 +167,7 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 
 		//EVENTO DE TECLA HEITOR
-		switch (evento.type)
-		{
-		case ALLEGRO_EVENT_KEY_DOWN:
-			if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
-				pressionado = 1;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
-				pressionado = 2;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
-				pressionado = 3;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
-				pressionado = 4;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_SPACE) {
-				atacando = true;
-			}
-			break;
-		case ALLEGRO_EVENT_KEY_UP:
-			if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
-				ultPressionado = 1;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
-				ultPressionado = 2;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
-				ultPressionado = 3;
-			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN ) {
-				ultPressionado = 4;
-			}
-			if (pressionado == ultPressionado) {
-				pressionado = 0;
-				ultPressionado = 0;
-			}
-			break;
-		}
-
-		//MOVIMENTAÇÃO DO HEITOR
-		switch (pressionado)
-		{
-		case 1:
-			positionY1_heitor -= 2;
-			positionY2_heitor -= 2;
-			positionY_espada1 -= 2;
-			break;
-		case 2:
-			positionX1_heitor -= 2;
-			positionX2_heitor -= 2;
-			positionX_espada1 -= 2;
-			break;
-		case 3:
-			positionX1_heitor += 2;
-			positionX2_heitor += 2;
-			positionX_espada1 += 2;
-			break;
-		case 4:
-			positionY1_heitor += 2;
-			positionY2_heitor += 2;
-			positionY_espada1 += 2;
-			break;
-		}
+		movimentarPlayer(evento, positionX1_heitor, positionY1_heitor);
 
 		//ATAQUE JOGADOR
 		if (atacando == true) {
@@ -393,7 +178,7 @@ void fase2(ALLEGRO_EVENT evento) {
 		al_draw_bitmap(espada_player1, positionX_espada1, positionY_espada1, 0);
 
 		//HEITOR - CONTROLANDO
-		al_draw_filled_rectangle(positionX1_heitor, positionY1_heitor, positionX2_heitor, positionY2_heitor, al_map_rgba(0, 244, 244, 0.5));
+		movimentoSprite(ParisBaixoNormal, ParisBaixoEsq, ParisBaixoDir, ParisEsqNormal, ParisEsqEsq, ParisEsqDir, ParisCimaNormal, ParisCimaEsq, ParisCimaDir, ParisDirNormal, ParisDirEsq, ParisDirDir, positionX1_f2, positionY1_f2);
 
 		//PARIS
 		al_draw_filled_rectangle(615, 20, 665, 90, al_map_rgba(0, 244, 244, 1));

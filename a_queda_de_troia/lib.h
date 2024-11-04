@@ -96,9 +96,7 @@ extern ALLEGRO_BITMAP* ParisDirNormal;
 extern ALLEGRO_BITMAP* ParisDirEsq;
 extern ALLEGRO_BITMAP* ParisDirDir;
 extern int positionX1_f2;
-extern int positionX2_f2;
 extern int positionY1_f2;
-extern int positionY2_f2;
 extern int positionX_espada1;
 extern int positionY_espada1;
 extern int vidaJogador;
@@ -172,7 +170,14 @@ extern int iniX;
 extern int iniY;
 
 //Movimentação Jogador
-void movimentarPlayer(ALLEGRO_EVENT evento,int posicaoX,int posicaoY);
+void movimentarPlayer(ALLEGRO_EVENT evento,int* posicaoX,int* posicaoY);
+
+//Movimento Sprite
+void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BITMAP* baixoD,
+    ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
+    ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
+    ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
+    int posicaoX, int posicaoY);
 
 //Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);

@@ -75,9 +75,7 @@ ALLEGRO_BITMAP* ParisDirNormal;
 ALLEGRO_BITMAP* ParisDirEsq;
 ALLEGRO_BITMAP* ParisDirDir;
 int positionX1_f2 = 615;
-int positionX2_f2 = 665;
 int positionY1_f2 = 225;
-int positionY2_f2 = 295;
 int positionX_espada1 = 605;
 int positionY_espada1 = 275;
 int limiteAtaque = 0;
@@ -328,7 +326,10 @@ void iniciarConstantes() {
 
 }
 
-void movimentarPlayer(ALLEGRO_EVENT evento, int posicaoX, int posicaoY) {
+void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
+
+	//VERIFICA QUAL TECLA PRESSIONOU
+
 	switch (evento.type)
 	{
 	case ALLEGRO_EVENT_KEY_DOWN:
@@ -365,28 +366,92 @@ void movimentarPlayer(ALLEGRO_EVENT evento, int posicaoX, int posicaoY) {
 			pressionado = 0;
 			ultPressionado = 0;
 		}
-		break;
 	}
 
-	//MOVIMENTAÇÃO DO HEITOR
+	//MOVIMENTAÇÃO DO JOGADOR
+
 	switch (pressionado)
 	{
 	case 1:
-		posicaoY -= 2;
-		positionY_espada1 -= 2;
+		*posicaoY -= 2;
 		break;
 	case 2:
-		posicaoX -= 2;
-		positionX_espada1 -= 2;
+		*posicaoX -= 2;
 		break;
 	case 3:
-		posicaoX += 2;
-		positionX_espada1 += 2;
+		*posicaoX += 2;
 		break;
 	case 4:
-		posicaoY += 2;
-		positionY_espada1 += 2;
+		*posicaoY += 2;
 		break;
+	}
+}
+
+void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BITMAP* baixoD,
+					 ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
+					 ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
+					 ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
+				     int posicaoX, int posicaoY) {
+	switch (pressionado)
+	{
+	case 0:
+		al_draw_bitmap(baixoN, posicaoX, posicaoY, 0);
+		break;
+	case 1:
+		if (movimento >= 0 && movimento < 20) {
+			al_draw_bitmap(cimaN, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento >= 20 && movimento < 40) {
+			al_draw_bitmap(cimaE, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento == 40) {
+			al_draw_bitmap(cimaD, posicaoX, posicaoY, 0);
+			movimento = 0;
+		}
+		break;
+	case 2:
+		if (movimento >= 0 && movimento < 20) {
+			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento >= 20 && movimento < 40) {
+			al_draw_bitmap(esquerdaE, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento == 40) {
+			al_draw_bitmap(esquerdaD, posicaoX, posicaoY, 0);
+			movimento = 0;
+		}
+		break;
+	case 3:
+		if (movimento >= 0 && movimento < 20) {
+			al_draw_bitmap(direitaN, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento >= 20 && movimento < 40) {
+			al_draw_bitmap(direitaE, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento == 40) {
+			al_draw_bitmap(direitaD, posicaoX, posicaoY, 0);
+			movimento = 0;
+		}
+		break;
+	case 4:
+		if (movimento >= 0 && movimento < 20) {
+			al_draw_bitmap(baixoN, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento >= 20 && movimento < 40) {
+			al_draw_bitmap(baixoE, posicaoX, posicaoY, 0);
+			movimento += 1;
+		}
+		if (movimento == 40) {
+			al_draw_bitmap(baixoD, posicaoX, posicaoY, 0);
+			movimento = 0;
+		}
 	}
 }
 
