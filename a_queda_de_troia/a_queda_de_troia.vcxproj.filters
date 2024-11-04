@@ -28,8 +28,11 @@
     <ClCompile Include="fase04.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
     </ClCompile>
-    <ClCompile Include="quebra_cabeça_void.c">
+    <ClCompile Include="quebra_cabeca.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao2.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +60,9 @@
     <ClInclude Include="fase04.h">
       <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
     </ClInclude>
+    <ClInclude Include="introducao2.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Imagens\Menu\background_login.jpg">
@@ -76,15 +82,6 @@
     </Image>
     <Image Include="Imagens\Opcoes\som-musical-hover.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
-    </Image>
-    <Image Include="background-f2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
-    <Image Include="espada1-player-f2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
-    <Image Include="espada-rei-f2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
     <Image Include="Imagens\Fase_03\1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
@@ -182,23 +179,74 @@
     <Image Include="Imagens\Fase_01\helena_um.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
     </Image>
-    <Image Include="barra-vida-cheia.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
-    <Image Include="barra-vida-100R-f2.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
-    <Image Include="barra-vida-baixa.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
-    <Image Include="barra-vida-50R.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
-    </Image>
     <Image Include="helenaIntro1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
     <Image Include="ParisIntro1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="ParisBaixoNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisBaixoEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisBaixoDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="espada-rei-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="espada1-player-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-cheia.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-baixa.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-100R-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-50R.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="ParisEsqNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisEsqEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisEsqDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="background-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="fundoMenelau.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="fundoAgamenom.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -207,9 +255,6 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Bibliotecas">
       <UniqueIdentifier>{1ec26c51-00c6-48d2-970e-021124b0f7b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Origem">
-      <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
     </Filter>
     <Filter Include="Arquivos de Recurso">
       <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
@@ -300,6 +345,12 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 4">
       <UniqueIdentifier>{b5aba31b-7410-4d74-b55a-5c9030f232e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis">
+      <UniqueIdentifier>{ec77e31f-12bf-4a9e-9dde-f6314bbdaf20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

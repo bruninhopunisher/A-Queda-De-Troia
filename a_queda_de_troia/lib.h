@@ -12,6 +12,7 @@
 #include <allegro5/allegro_acodec.h>
 #include "menu.h"
 #include "introducao1.h"
+#include "introducao2.h"
 #include "opcoes.h"
 #include "fase01.h"
 #include "fase02.h"
@@ -23,7 +24,6 @@ extern ALLEGRO_TIMER* timer;
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
-extern ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 extern ALLEGRO_FONT* fonteMenu;
 
 extern int displayX;
@@ -45,11 +45,15 @@ extern ALLEGRO_BITMAP* semVolume;
 extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
 
-//Introdução Um
+//Introdução 1
 extern ALLEGRO_BITMAP* fundoHelena;
 extern ALLEGRO_BITMAP* fundoParis;
 extern ALLEGRO_FONT* fonteIntro1;
 extern bool renderizar;
+
+//Introdução 2
+extern ALLEGRO_BITMAP* fundoAgamenom;
+extern ALLEGRO_BITMAP* fundoMenelau;
 
 //Fase 1
 extern ALLEGRO_BITMAP* backgroundFaseUm;
@@ -72,12 +76,25 @@ extern ALLEGRO_BITMAP* barra_vidaRei_100;
 extern ALLEGRO_BITMAP* barra_vidaRei_50;
 extern int pressionado;
 extern int ultPressionado;
+extern int movimento;
 //HEITOR
 extern int positionX1_heitor;
 extern int positionX2_heitor;
 extern int positionY1_heitor;
 extern int positionY2_heitor;
 //PARIS
+extern ALLEGRO_BITMAP* ParisBaixoEsq;
+extern ALLEGRO_BITMAP* ParisBaixoDir;
+extern ALLEGRO_BITMAP* ParisBaixoNormal;
+extern ALLEGRO_BITMAP* ParisEsqDir;
+extern ALLEGRO_BITMAP* ParisEsqEsq;
+extern ALLEGRO_BITMAP* ParisEsqNormal;
+extern ALLEGRO_BITMAP* ParisCimaNormal;
+extern ALLEGRO_BITMAP* ParisCimaEsq;
+extern ALLEGRO_BITMAP* ParisCimaDir;
+extern ALLEGRO_BITMAP* ParisDirNormal;
+extern ALLEGRO_BITMAP* ParisDirEsq;
+extern ALLEGRO_BITMAP* ParisDirDir;
 extern int positionX1_f2;
 extern int positionX2_f2;
 extern int positionY1_f2;
@@ -154,6 +171,8 @@ extern int playY;
 extern int iniX;
 extern int iniY;
 
+//Movimentação Jogador
+void movimentarPlayer(ALLEGRO_EVENT evento,int posicaoX,int posicaoY);
 
 //Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);

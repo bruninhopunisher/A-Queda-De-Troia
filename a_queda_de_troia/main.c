@@ -1,4 +1,4 @@
-﻿#include "lib.h"
+﻿	#include "lib.h"
 
 int main() {
 	//Função Externa que inicia todos os Addons
@@ -59,15 +59,7 @@ int main() {
 				fase01(event);
 				break;
 			case 5:
-				al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
-				al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 360, ALLEGRO_ALIGN_CENTRE, "intro2 Em const");
-				al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 420, ALLEGRO_ALIGN_CENTRE, "Proximo");
-				al_flip_display();
-				if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-					if (mouseX >= 572 && mouseX <= 710 && mouseY >= 430 && mouseY <= 455) {
-						navegacao += 1;
-					}
-				}
+				introducao2(event);
 				break;
 			case 6:
 				fase2(event);

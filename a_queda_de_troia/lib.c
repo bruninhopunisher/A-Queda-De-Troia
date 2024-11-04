@@ -2,10 +2,9 @@
 
 //Variaveis Globais
 ALLEGRO_TIMER* timer;
-ALLEGRO_EVENT_QUEUE* evento; 
-ALLEGRO_DISPLAY* display; 
+ALLEGRO_EVENT_QUEUE* evento;
+ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
-ALLEGRO_BITMAP* backgroundIntUm; // Imagem teste
 ALLEGRO_FONT* fonteMenu;
 
 int displayX;
@@ -24,11 +23,15 @@ ALLEGRO_BITMAP* semVolume;
 ALLEGRO_BITMAP* comVolumeHover;
 ALLEGRO_BITMAP* semVolumeHover;
 
-//Introdução Um
+//Introdução 1
 ALLEGRO_BITMAP* fundoHelena;
 ALLEGRO_BITMAP* fundoParis;
 ALLEGRO_FONT* fonteIntro1;
 bool renderizar = 0;
+
+//Introdução 2
+ALLEGRO_BITMAP* fundoAgamenom;
+ALLEGRO_BITMAP* fundoMenelau;
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
@@ -52,12 +55,25 @@ ALLEGRO_BITMAP* barra_vidaRei_100;
 ALLEGRO_BITMAP* barra_vidaRei_50;
 int pressionado = 0;
 int ultPressionado = 0;
+int movimento = 0;
 //HEITOR
 int positionX1_heitor = 615;
 int positionX2_heitor = 665;
 int positionY1_heitor = 100;
 int positionY2_heitor = 170;
 //PARIS
+ALLEGRO_BITMAP* ParisBaixoEsq;
+ALLEGRO_BITMAP* ParisBaixoDir;
+ALLEGRO_BITMAP* ParisBaixoNormal;
+ALLEGRO_BITMAP* ParisEsqDir;
+ALLEGRO_BITMAP* ParisEsqEsq;
+ALLEGRO_BITMAP* ParisEsqNormal;
+ALLEGRO_BITMAP* ParisCimaNormal;
+ALLEGRO_BITMAP* ParisCimaEsq;
+ALLEGRO_BITMAP* ParisCimaDir;
+ALLEGRO_BITMAP* ParisDirNormal;
+ALLEGRO_BITMAP* ParisDirEsq;
+ALLEGRO_BITMAP* ParisDirDir;
 int positionX1_f2 = 615;
 int positionX2_f2 = 665;
 int positionY1_f2 = 225;
@@ -143,11 +159,9 @@ void iniciarConstantes() {
 	//Global
 	timer = al_create_timer(0.5 / 30.0);
 	evento = al_create_event_queue();
-	backgroundIntUm = al_load_bitmap("Imagens/Img_Testes/backgroundI1.jpg");
 
 	testeInicializar(timer, "timer");
 	testeInicializar(evento, "evento");
-	testeInicializar(backgroundIntUm, "backgroundIntUm");
 
 	//Fonte
 	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
@@ -176,6 +190,13 @@ void iniciarConstantes() {
 	testeInicializar(fundoHelena, "fundo_helena-Intro1");
 	testeInicializar(fundoParis, "fundo_paris_Intro1");
 
+	//Introdução 2
+	fundoAgamenom = al_load_bitmap("Imagens/Introducao_2/fundoAgamenom.jpg");
+	fundoMenelau = al_load_bitmap("Imagens/Introducao_2/fundoMenelau.jpg");
+
+	testeInicializar(fundoAgamenom, "fundo-agamenom-Intro2");
+	testeInicializar(fundoAgamenom, "fundo-menelau-Intro2");
+
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
 	semVolume = al_load_bitmap("Imagens/Opcoes/sem-som.png");
@@ -203,14 +224,38 @@ void iniciarConstantes() {
 	testeInicializar(frente_esquerdo, "frente_descendo_2.jpg");
 
 	//Fase 2
-	background_f2 = al_load_bitmap("background-f2.jpg");
-	espada_rei_f2 = al_load_bitmap("espada-rei-f2.jpg");
-	espada_player1 = al_load_bitmap("espada1-player-f2.jpg");
-	barra_vidaRei_50 = al_load_bitmap("barra-vida-50R.jpg");
-	barra_vidaRei_100 = al_load_bitmap("barra-vida-100R-f2.jpg");
-	barra_vida_baixa = al_load_bitmap("barra-vida-baixa.jpg");
-	barra_vida_cheia = al_load_bitmap("barra-vida-cheia.jpg");
+	background_f2 = al_load_bitmap("Imagens/Fase_02/background-f2.jpg");
+	espada_rei_f2 = al_load_bitmap("Imagens/Fase_02/espada-rei-f2.jpg");
+	espada_player1 = al_load_bitmap("Imagens/Fase_02/espada1-player-f2.jpg");
+	barra_vidaRei_50 = al_load_bitmap("Imagens/Fase_02/barra-vida-50R.jpg");
+	barra_vidaRei_100 = al_load_bitmap("Imagens/Fase_02/barra-vida-100R-f2.jpg");
+	barra_vida_baixa = al_load_bitmap("Imagens/Fase_02/barra-vida-baixa.jpg");
+	barra_vida_cheia = al_load_bitmap("Imagens/Fase_02/barra-vida-cheia.jpg");
+	ParisBaixoDir = al_load_bitmap("Imagens/Fase_02/ParisBaixoDir.jpg");
+	ParisBaixoEsq = al_load_bitmap("Imagens/Fase_02/ParisBaixoEsq.jpg");
+	ParisBaixoNormal = al_load_bitmap("Imagens/Fase_02/ParisBaixoNormal.jpg");
+	ParisEsqNormal = al_load_bitmap("Imagens/Fase_02/ParisEsqNormal.jpg");
+	ParisEsqEsq = al_load_bitmap("Imagens/Fase_02/ParisEsqEsq.jpg");
+	ParisEsqDir = al_load_bitmap("Imagens/Fase_02/ParisEsqDir.jpg");
+	ParisCimaNormal = al_load_bitmap("Imagens/Fase_02/ParisCimaNormal.jpg");
+	ParisCimaEsq = al_load_bitmap("Imagens/Fase_02/ParisCimaEsq.jpg");
+	ParisCimaDir = al_load_bitmap("Imagens/Fase_02/ParisCimaDir.jpg");
+	ParisDirNormal = al_load_bitmap("Imagens/Fase_02/ParisDirNormal.jpg");
+	ParisDirEsq = al_load_bitmap("Imagens/Fase_02/ParisDirEsq.jpg");
+	ParisDirDir = al_load_bitmap("Imagens/Fase_02/ParisDirDir.jpg");
 
+	testeInicializar(ParisDirDir, "Paris_Dir_Dir");
+	testeInicializar(ParisDirEsq, "Paris_Dir_Esq");
+	testeInicializar(ParisDirNormal, "Paris_Dir_Normal");
+	testeInicializar(ParisCimaDir, "Paris_Cima_Dir");
+	testeInicializar(ParisCimaEsq, "Paris_Cima_Esq");
+	testeInicializar(ParisCimaNormal, "Paris_Cima_Normal");
+	testeInicializar(ParisEsqDir, "Paris_Esq_Dir");
+	testeInicializar(ParisEsqEsq, "Paris_Esq_Esq");
+	testeInicializar(ParisEsqNormal, "Paris_Esq_Normal");
+	testeInicializar(ParisBaixoNormal, "Paris_Baixo_Normal");
+	testeInicializar(ParisBaixoEsq, "Paris_Baixo_Esq");
+	testeInicializar(ParisBaixoDir, "Paris_Baixo_Dir");
 	testeInicializar(background_f2, "background-fase2");
 	testeInicializar(espada_player1, "espada1-player1");
 	testeInicializar(espada_rei_f2, "espada-rei-f2");
@@ -283,6 +328,68 @@ void iniciarConstantes() {
 
 }
 
+void movimentarPlayer(ALLEGRO_EVENT evento, int posicaoX, int posicaoY) {
+	switch (evento.type)
+	{
+	case ALLEGRO_EVENT_KEY_DOWN:
+		if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+			pressionado = 1;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+			pressionado = 2;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+			pressionado = 3;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+			pressionado = 4;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_SPACE) {
+			atacando = true;
+		}
+		break;
+	case ALLEGRO_EVENT_KEY_UP:
+		if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+			ultPressionado = 1;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+			ultPressionado = 2;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+			ultPressionado = 3;
+		}
+		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+			ultPressionado = 4;
+		}
+		if (pressionado == ultPressionado) {
+			pressionado = 0;
+			ultPressionado = 0;
+		}
+		break;
+	}
+
+	//MOVIMENTAÇÃO DO HEITOR
+	switch (pressionado)
+	{
+	case 1:
+		posicaoY -= 2;
+		positionY_espada1 -= 2;
+		break;
+	case 2:
+		posicaoX -= 2;
+		positionX_espada1 -= 2;
+		break;
+	case 3:
+		posicaoX += 2;
+		positionX_espada1 += 2;
+		break;
+	case 4:
+		posicaoY += 2;
+		positionY_espada1 += 2;
+		break;
+	}
+}
+
 void audioJogo(int navegacao) {
 	if (boolVolume == false) {
 		al_stop_samples();
@@ -334,14 +441,16 @@ void imagemIntro(ALLEGRO_BITMAP* imagem, ALLEGRO_EVENT evento) {
 void destruidor() {
 
 	//Global
-	al_destroy_font(fonteMenu);
-	al_destroy_bitmap(backgroundIntUm); //Img Teste
+	al_destroy_timer(timer);
+	al_destroy_event_queue(evento);
+	al_destroy_display(display);
 
 	//Audios e Musicas
 	al_destroy_sample(audioMenu);
 
 	//Menu
 	al_destroy_bitmap(backgroundMenu);
+	al_destroy_font(fonteMenu);
 
 	//Opções
 	al_destroy_bitmap(backgroundOpcoes);
@@ -355,6 +464,10 @@ void destruidor() {
 	al_destroy_bitmap(fundoParis);
 	al_destroy_font(fonteIntro1);
 
+	//Introdução 2
+	al_destroy_bitmap(fundoAgamenom);
+	al_destroy_bitmap(fundoMenelau);
+
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);
 	al_destroy_bitmap(personagemHeitor);
@@ -366,6 +479,22 @@ void destruidor() {
 	al_destroy_bitmap(background_f2);
 	al_destroy_bitmap(espada_player1);
 	al_destroy_bitmap(espada_rei_f2);
+	al_destroy_bitmap(barra_vida_cheia);
+	al_destroy_bitmap(barra_vida_baixa);
+	al_destroy_bitmap(barra_vidaRei_100);
+	al_destroy_bitmap(barra_vidaRei_50);
+	al_destroy_bitmap(ParisBaixoDir);
+	al_destroy_bitmap(ParisBaixoEsq);
+	al_destroy_bitmap(ParisBaixoNormal);
+	al_destroy_bitmap(ParisEsqDir);
+	al_destroy_bitmap(ParisEsqEsq);
+	al_destroy_bitmap(ParisEsqNormal);
+	al_destroy_bitmap(ParisCimaDir);
+	al_destroy_bitmap(ParisCimaEsq);
+	al_destroy_bitmap(ParisCimaNormal);
+	al_destroy_bitmap(ParisDirDir);
+	al_destroy_bitmap(ParisDirEsq);
+	al_destroy_bitmap(ParisDirNormal);
 
 	//Fase 3
 	al_destroy_bitmap(imgPuzzle);

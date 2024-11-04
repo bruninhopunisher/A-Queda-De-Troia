@@ -149,13 +149,14 @@
     <ClCompile Include="fase03.c" />
     <ClCompile Include="fase04.c" />
     <ClCompile Include="introducao1.c" />
+    <ClCompile Include="introducao2.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
     </ClCompile>
     <ClCompile Include="menu.c" />
     <ClCompile Include="opcoes.c" />
-    <ClCompile Include="quebra_cabeça_void.c" />
+    <ClCompile Include="quebra_cabeca.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="background-f2.jpg" />
@@ -165,7 +166,10 @@
     <Image Include="barra-vida-100R-f2.jpg" />
     <Image Include="espada-rei-f2.jpg" />
     <Image Include="espada1-player-f2.jpg" />
+    <Image Include="fundoAgamenom.jpg" />
+    <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
+    <Image Include="ParisBaixoNormal.jpg" />
     <Image Include="Imagens\Fase_01\background_fase_um.jpg" />
     <Image Include="Imagens\Fase_01\frente_descendo.jpg" />
     <Image Include="Imagens\Fase_01\frente_descendo_2.jpg" />
@@ -204,6 +208,17 @@
     <Image Include="Imagens\Opcoes\sem-som.png" />
     <Image Include="Imagens\Opcoes\som-musical-hover.png" />
     <Image Include="Imagens\Opcoes\som-musical.png" />
+    <Image Include="ParisBaixoDir.jpg" />
+    <Image Include="ParisBaixoEsq.jpg" />
+    <Image Include="ParisCimaDir.jpg" />
+    <Image Include="ParisCimaEsq.jpg" />
+    <Image Include="ParisCimaNormal.jpg" />
+    <Image Include="ParisDirDir.jpg" />
+    <Image Include="ParisDirEsq.jpg" />
+    <Image Include="ParisDirNormal.jpg" />
+    <Image Include="ParisEsqDir.jpg" />
+    <Image Include="ParisEsqEsq.jpg" />
+    <Image Include="ParisEsqNormal.jpg" />
     <Image Include="ParisIntro1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +226,7 @@
     <ClInclude Include="fase03.h" />
     <ClInclude Include="fase04.h" />
     <ClInclude Include="introducao1.h" />
+    <ClInclude Include="introducao2.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="opcoes.h" />

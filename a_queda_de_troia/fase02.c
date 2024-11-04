@@ -218,7 +218,67 @@ void fase2(ALLEGRO_EVENT evento) {
 		al_draw_bitmap(espada_player1, positionX_espada1, positionY_espada1, 0);
 
 		//PARIS - CONTROLANDO
-		al_draw_filled_rectangle(positionX1_f2, positionY1_f2, positionX2_f2, positionY2_f2, al_map_rgba(0, 244, 244, 1));
+		switch (pressionado)
+		{
+		case 0:
+			al_draw_bitmap(ParisBaixoNormal, positionX1_f2, positionY1_f2, 0);
+			break;
+		case 1:
+			if (movimento >= 0 && movimento < 20) {
+				al_draw_bitmap(ParisCimaNormal, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 40) {
+				al_draw_bitmap(ParisCimaEsq, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento == 40) {
+				al_draw_bitmap(ParisCimaDir, positionX1_f2, positionY1_f2, 0);
+				movimento = 0;
+			}
+			break;
+		case 2:
+			if (movimento >= 0 && movimento < 20) {
+				al_draw_bitmap(ParisEsqNormal, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 40) {
+				al_draw_bitmap(ParisEsqEsq, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento == 40) {
+				al_draw_bitmap(ParisEsqDir, positionX1_f2, positionY1_f2, 0);
+				movimento = 0;
+			}
+			break;
+		case 3:
+			if (movimento >= 0 && movimento < 20) {
+				al_draw_bitmap(ParisDirNormal, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 40) {
+				al_draw_bitmap(ParisDirEsq, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento == 40) {
+				al_draw_bitmap(ParisDirDir, positionX1_f2, positionY1_f2, 0);
+				movimento = 0;
+			}
+			break;
+		case 4:
+			if (movimento >= 0 && movimento < 20) {
+				al_draw_bitmap(ParisBaixoNormal, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20&& movimento < 40 ) {
+				al_draw_bitmap(ParisBaixoEsq, positionX1_f2, positionY1_f2, 0);
+				movimento += 1;
+			}
+			if (movimento == 40) {
+				al_draw_bitmap(ParisBaixoEsq, positionX1_f2, positionY1_f2, 0);
+				movimento = 0;
+			}
+		}
 		
 		//HEITOR
 		al_draw_filled_rectangle(positionX1_heitor, positionY1_heitor, positionX2_heitor, positionY2_heitor, al_map_rgba(0, 244, 244, 0.5));
