@@ -248,6 +248,9 @@
     <Image Include="fundoAgamenom.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
     </Image>
+    <Image Include="soldadosEsparta.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">

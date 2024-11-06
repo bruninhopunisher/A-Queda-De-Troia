@@ -6,6 +6,10 @@ int main() {
 	//Função Externa que inicia todas as Constantes
 	iniciarConstantes();
 
+	Puzzle peca1;
+
+	peca1.pecas[2].id;
+
 	al_register_event_source(evento, al_get_keyboard_event_source());
 	al_register_event_source(evento, al_get_display_event_source(display));
 	al_register_event_source(evento, al_get_timer_event_source(timer));
@@ -35,11 +39,11 @@ int main() {
 		}
 		audioJogo(navegacao);
 
-		//if (event.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
-		//	mouseX = event.mouse.x;
-		//	mouseY = event.mouse.y;
-		//	printf("X: %d Y: %d \n\n", mouseX, mouseY);
-		//}
+		if (event.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
+			mouseX = event.mouse.x;
+			mouseY = event.mouse.y;
+			printf("X: %d Y: %d \n\n", mouseX, mouseY);
+		}
 
 		switch (navegacao) {
 			case 0:

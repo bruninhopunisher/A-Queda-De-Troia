@@ -44,11 +44,35 @@ void fase2(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(background_f2, 0, 0, 0);
 
 	//SOLDADOS DE BAIXO
-	al_draw_filled_rectangle(135, 565, 185, 635, al_map_rgba(0, 244, 244, 0.5));
-	al_draw_filled_rectangle(295, 565, 345, 635, al_map_rgba(0, 244, 244, 0.5));
-	al_draw_filled_rectangle(615, 565, 665, 635, al_map_rgba(0, 244, 244, 0.5));
-	al_draw_filled_rectangle(935, 565, 985, 635, al_map_rgba(0, 244, 244, 0.5));
-	al_draw_filled_rectangle(1095, 565, 1145, 635, al_map_rgba(0, 244, 244, 0.5));
+	al_draw_bitmap(soldadosEsparta, 100, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 200, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 300, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 400, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 500, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 600, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 700, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 800, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 900, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 1000, 600, 0);
+	al_draw_bitmap(soldadosEsparta, 1100, 600, 0);
+
+	al_draw_bitmap(soldadosEsparta, 100, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 200, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 300, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 400, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 500, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 600, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 700, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 800, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 900, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 1000, 550, 0);
+	al_draw_bitmap(soldadosEsparta, 1100, 550, 0);
+
+	al_draw_bitmap(soldadosEsparta, 200, 500, 0);
+	al_draw_bitmap(soldadosEsparta, 400, 500, 0);
+	al_draw_bitmap(soldadosEsparta, 600, 500, 0);
+	al_draw_bitmap(soldadosEsparta, 800, 500, 0);
+	al_draw_bitmap(soldadosEsparta, 1000, 500, 0);
 
 	//SOLDADOS DE CIMA
 	al_draw_filled_rectangle(135, 100, 185, 170, al_map_rgba(0, 244, 244, 0.5));
@@ -94,7 +118,47 @@ void fase2(ALLEGRO_EVENT evento) {
 
 		case 100:
 			//MOVIMENTAÇÃO DO PARIS VIDA 100%
-			movimentarPlayer(evento, &positionX1_f2, &positionY1_f2); 
+			if (positionY1_f2 < 450 && positionY1_f2 > 150) {
+				movimentarPlayer(evento, &positionX1_f2, &positionY1_f2); 
+			}
+			else {
+				switch (positionY1_f2)
+				{
+				case 450:
+					switch (evento.type)
+					{
+					case ALLEGRO_EVENT_KEY_DOWN:
+						if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+							printf("opa");
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						break;
+					}
+					break;
+				case 150:
+					switch (evento.type)
+					{
+					case ALLEGRO_EVENT_KEY_DOWN:
+						if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+						}
+						break;
+					}
+					break;
+				}
+			}
 			//ATAQUE PARIS
 			if (atacando == true) {
 				ataquePlayer(&positionX_espada1, &positionY_espada1, 3, &atacando, &limiteAtaque);

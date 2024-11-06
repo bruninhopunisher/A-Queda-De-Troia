@@ -53,6 +53,7 @@ ALLEGRO_BITMAP* barra_vida_cheia;
 ALLEGRO_BITMAP* barra_vida_baixa;
 ALLEGRO_BITMAP* barra_vidaRei_100;
 ALLEGRO_BITMAP* barra_vidaRei_50;
+ALLEGRO_BITMAP* soldadosEsparta;
 int pressionado = 0;
 int ultPressionado = 0;
 int movimento = 0;
@@ -241,7 +242,9 @@ void iniciarConstantes() {
 	ParisDirNormal = al_load_bitmap("Imagens/Fase_02/ParisDirNormal.jpg");
 	ParisDirEsq = al_load_bitmap("Imagens/Fase_02/ParisDirEsq.jpg");
 	ParisDirDir = al_load_bitmap("Imagens/Fase_02/ParisDirDir.jpg");
+	soldadosEsparta = al_load_bitmap("Imagens/Fase_02/soldadosEsparta.jpg");
 
+	testeInicializar(soldadosEsparta, "soldados_esparta");
 	testeInicializar(ParisDirDir, "Paris_Dir_Dir");
 	testeInicializar(ParisDirEsq, "Paris_Dir_Esq");
 	testeInicializar(ParisDirNormal, "Paris_Dir_Normal");
@@ -560,6 +563,7 @@ void destruidor() {
 	al_destroy_bitmap(ParisDirDir);
 	al_destroy_bitmap(ParisDirEsq);
 	al_destroy_bitmap(ParisDirNormal);
+	al_destroy_bitmap(soldadosEsparta);
 
 	//Fase 3
 	al_destroy_bitmap(imgPuzzle);

@@ -220,6 +220,7 @@
     <Image Include="ParisEsqEsq.jpg" />
     <Image Include="ParisEsqNormal.jpg" />
     <Image Include="ParisIntro1.jpg" />
+    <Image Include="soldadosEsparta.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fase02.h" />

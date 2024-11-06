@@ -74,6 +74,7 @@ extern ALLEGRO_BITMAP* barra_vida_cheia;
 extern ALLEGRO_BITMAP* barra_vida_baixa;
 extern ALLEGRO_BITMAP* barra_vidaRei_100;
 extern ALLEGRO_BITMAP* barra_vidaRei_50;
+extern ALLEGRO_BITMAP* soldadosEsparta;
 extern int pressionado;
 extern int ultPressionado;
 extern int movimento;
