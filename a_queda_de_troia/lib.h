@@ -176,20 +176,20 @@ extern int contadorCreditos;
 
 // Armazena as informações de cada peça do puzzle
 typedef struct {
-    char nome[20];
     int id;
     int pos_correta_x;
     int pos_correta_y;
     int pos_atual_x;
     int pos_atual_y;
     bool selecionada;
-    bool posicao_correta;
 } infoPecas;
 
 typedef struct {
     infoPecas pecas[25];
-	int totalPecas;
+    int totalPecas;
 } Puzzle;
+extern ALLEGRO_BITMAP* imagensPuzzle[25];
+extern bool verificaPuzzle;
 
 extern bool verificaPuzzle;
 

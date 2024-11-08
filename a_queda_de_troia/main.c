@@ -33,7 +33,7 @@ int main() {
 				boolVolume = false;
 			}
 		}
-		audioJogo(navegacao);
+		/*audioJogo(navegacao);*/
 
 		//if (event.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
 		//	mouseX = event.mouse.x;
@@ -43,7 +43,8 @@ int main() {
 
 		switch (navegacao) {
 			case 0:
-				menu(event);
+				fase3(event);
+				/*menu(event);*/
 				break;
 			case 1:  
 				opcoes(event);
