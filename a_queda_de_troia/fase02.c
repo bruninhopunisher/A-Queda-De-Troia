@@ -122,39 +122,30 @@ void fase2(ALLEGRO_EVENT evento) {
 				movimentarPlayer(evento, &positionX1_f2, &positionY1_f2); 
 			}
 			else {
+				printf("Y-%d", positionY1_f2);
 				switch (positionY1_f2)
 				{
-				case 450:
-					switch (evento.type)
-					{
-					case ALLEGRO_EVENT_KEY_DOWN:
-						if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
-							printf("opa");
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						break;
+				case 451:
+					printf("To aqui");
+					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
 					break;
-				case 150:
-					switch (evento.type)
-					{
-					case ALLEGRO_EVENT_KEY_DOWN:
-						if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
-							movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
-						}
-						break;
+				case 149:
+					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
 					break;
 				}

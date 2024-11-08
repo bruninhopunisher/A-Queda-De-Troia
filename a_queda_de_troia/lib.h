@@ -78,6 +78,38 @@ extern ALLEGRO_BITMAP* soldadosEsparta;
 extern int pressionado;
 extern int ultPressionado;
 extern int movimento;
+
+//typedef struct {
+//    //Posicionado para Cima
+//    ALLEGRO_BITMAP* CimaParado;
+//    ALLEGRO_BITMAP* CimaPeEsquerdo1;
+//    ALLEGRO_BITMAP* CimaPeEsquerdo2;
+//    ALLEGRO_BITMAP* CimaPeDireito1;
+//    ALLEGRO_BITMAP* CimaPeDireito2;
+//    //Posicionado para Esquerda
+//    ALLEGRO_BITMAP* EsqParado;
+//    ALLEGRO_BITMAP* EsqPeEsquerdo1;
+//    ALLEGRO_BITMAP* EsqPeEsquerdo2;
+//    ALLEGRO_BITMAP* EsqPeDireito1;
+//    ALLEGRO_BITMAP* EsqPeDireito2;
+//    //Posicionado para Direita
+//    ALLEGRO_BITMAP* DirParado;
+//    ALLEGRO_BITMAP* DirPeEsquerdo1;
+//    ALLEGRO_BITMAP* DirPeEsquerdo2;
+//    ALLEGRO_BITMAP* DirPeDireito1;
+//    ALLEGRO_BITMAP* DirPeDireito2;
+//    //Posicionado para Baixo
+//    ALLEGRO_BITMAP* BaixoParado;
+//    ALLEGRO_BITMAP* BaixoPeEsquerdo1;
+//    ALLEGRO_BITMAP* BaixoPeEsquerdo2;
+//    ALLEGRO_BITMAP* BaixoPeDireito1;
+//    ALLEGRO_BITMAP* BaixoPeDireito2;
+//    char nome[20];
+//    int posicaoX;
+//    int posicaoY;
+//    int vida;
+//} Personagem;
+
 //HEITOR
 extern int positionX1_heitor;
 extern int positionX2_heitor;

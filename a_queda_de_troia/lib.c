@@ -46,6 +46,7 @@ int personagemHelenaX = 1150;
 int personagemHelenaY = 585;
 
 //Fase 2
+//Personagem paris;
 ALLEGRO_BITMAP* background_f2;
 ALLEGRO_BITMAP* espada_player1;
 ALLEGRO_BITMAP* espada_rei_f2;
