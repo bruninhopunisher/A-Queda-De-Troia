@@ -125,11 +125,15 @@ bool verificaPuzzle = true;
 //Fase 04
 ALLEGRO_BITMAP* player;
 ALLEGRO_BITMAP* inimigo;
+bool gameOver = false;
 int playX = 595; //Centro da tela
 int playY = 315; //Centro da tela
-int iniX[6] = { 0, 1285, 0, 1285, 0, 1285 };
-int iniY[6] = { 120, 220, 320, 420, 520, 620 };
+int PlayVel = 8;
+int vidaF4 = 3;
+int iniX[6] = { 0, 1210, 0, 1210, 0, 1210 };
+int iniY[6] = { 80, 180, 280, 380, 480, 580 };
 int iniZ[6] = { 0,1,0,1,0,1 };
+int iniVel = 2;
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* audioMenu;
