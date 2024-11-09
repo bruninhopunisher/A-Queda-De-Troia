@@ -199,8 +199,11 @@ extern ALLEGRO_BITMAP* player;
 extern ALLEGRO_BITMAP* inimigo;
 extern int playX;
 extern int playY;
-extern int iniX;
-extern int iniY;
+//extern int iniX;
+//extern int iniY;
+extern int iniX[6];
+extern int iniY[6];
+extern int iniZ[6];
 
 //Movimentação Jogador
 void movimentarPlayer(ALLEGRO_EVENT evento,int* posicaoX,int* posicaoY);

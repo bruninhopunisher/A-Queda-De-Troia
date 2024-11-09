@@ -125,11 +125,11 @@ bool verificaPuzzle = true;
 //Fase 04
 ALLEGRO_BITMAP* player;
 ALLEGRO_BITMAP* inimigo;
-int playX = 640;
-int playY = 360;
-int iniX = 1280;
-int iniY = 360;
-
+int playX = 595; //Centro da tela
+int playY = 315; //Centro da tela
+int iniX[6] = { 0, 1285, 0, 1285, 0, 1285 };
+int iniY[6] = { 120, 220, 320, 420, 520, 620 };
+int iniZ[6] = { 0,1,0,1,0,1 };
 
 //Audios e Musicas
 ALLEGRO_SAMPLE* audioMenu;
@@ -598,5 +598,4 @@ void destruidor() {
 	//fese 4
 	al_destroy_bitmap (player);
 	al_destroy_bitmap (inimigo);
-	printf("Destriudo");
 }
