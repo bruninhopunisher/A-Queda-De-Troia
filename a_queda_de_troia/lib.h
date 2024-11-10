@@ -214,6 +214,12 @@ extern int posicaoCorretaY[25];
 
 extern int mouseAoVivoX;
 extern int mouseAoVivoY;
+extern int swapX;
+extern int swapY;
+extern int idPeca;
+extern int idQuadrante;
+extern indice;
+extern bool pecaPosicionada;
 
 
 //Fase 4

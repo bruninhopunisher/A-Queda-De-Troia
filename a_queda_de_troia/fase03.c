@@ -43,36 +43,68 @@ void fase3(ALLEGRO_EVENT evento) {
 		 printf("MOUSE Y %d\n", mouseY);
 	}
 
+	//if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+	//	for (int i = 0; i < 25; i++) {
+	//		if ((mouseX >= posicaoInicialX[i] && mouseX <= posicaoInicialX[i] + 110) && (mouseY >= posicaoInicialY[i] && mouseY <= posicaoInicialY[i] + 110)) {
+	//			indice = i;
+	//			idPeca = pecasPuzzle.pecas[i].id;
+	//			//swapX = pecasPuzzle.pecas[i].pos_atual_x;
+	//			//swapY = pecasPuzzle.pecas[i].pos_atual_y;
+	//			printf("ID Peca %d\n", idPeca);
+	//			//printf("Swap X %d\n", swapX);
+	//			//printf("Swap Y %d\n", swapY);
+	//			printf("Indice %d\n", indice);
+	//		}
+	//	}
+	//}
+
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		for (int i = 0; i < 25; i++) {
 			if ((mouseX >= posicaoInicialX[i] && mouseX <= posicaoInicialX[i] + 110) && (mouseY >= posicaoInicialY[i] && mouseY <= posicaoInicialY[i] + 110)) {
-				int idPeca = pecasPuzzle.pecas[i].id;
-				printf("ID Peca %d\n", idPeca);
+				indice = i;
+				idPeca = pecasPuzzle.pecas[i].id;
+				printf("ANTES %s\n", pecasPuzzle.pecas[i].selecionada ? "true" : "false");
+				pecasPuzzle.pecas[i].selecionada = true;
 			}
 		}
-	}
 
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		for (int j = 0; j < 25; j++) {
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
-				int idQuadrante = quadrantePuzzle.quadrantes[j].id;
+				idQuadrante = quadrantePuzzle.quadrantes[j].id;
+				swapX = quadrantePuzzle.quadrantes[j].X;
+				swapY = quadrantePuzzle.quadrantes[j].Y;
+				pecasPuzzle.pecas[indice].pos_atual_x = swapX;
+				pecasPuzzle.pecas[indice].pos_atual_y = swapY;
+				pecaPosicionada = true;
+				printf("Swap X %d\n", swapX);
+				printf("Swap Y %d\n", swapY);
 				printf("ID Quadrante %d\n", idQuadrante);
 			}
 		}
-	}
 
-	for (int i = 0; i < 25; i++) {
-		if ((mouseAoVivoX >= posicaoInicialX[i] && mouseAoVivoX <= posicaoInicialX[i] + 110) && (mouseAoVivoY >= posicaoInicialY[i] && mouseAoVivoY <= posicaoInicialY[i] + 110)) {
-			printf("ATeeeeeeeeeeee %d");
+		for (int k = 0; k < 25; k++) {
+			if (pecaPosicionada == true) {
+				idQuadrante = 0;
+				swapX = 0;
+				swapY = 0;
+				pecasPuzzle.pecas[k].selecionada == false;
+				pecaPosicionada = false;
+				printf("DEPOIS %s\n", pecasPuzzle.pecas[k].selecionada ? "true" : "false");
+			}
 		}
 	}
 
-	for (int j = 0; j < 25; j++) {
-		if ((mouseAoVivoX >= quadrantePuzzle.quadrantes[j].X && mouseAoVivoX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseAoVivoY >= quadrantePuzzle.quadrantes[j].Y && mouseAoVivoY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
-			printf("ATeeeeeeeeeeee %d");
+	//for (int i = 0; i < 25; i++) {
+	//	if ((mouseAoVivoX >= posicaoInicialX[i] && mouseAoVivoX <= posicaoInicialX[i] + 110) && (mouseAoVivoY >= posicaoInicialY[i] && mouseAoVivoY <= posicaoInicialY[i] + 110)) {
+	//		printf("ATeeeeeeeeeeee %d");
+	//	}
+	//}
 
-		}
-	}
+	//for (int j = 0; j < 25; j++) {
+	//	if ((mouseAoVivoX >= quadrantePuzzle.quadrantes[j].X && mouseAoVivoX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseAoVivoY >= quadrantePuzzle.quadrantes[j].Y && mouseAoVivoY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
+	//		printf("ATeeeeeeeeeeee %d");
+	//	}
+	//}
 
 	al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 
@@ -117,8 +149,6 @@ void fase3(ALLEGRO_EVENT evento) {
 	// Quando soltar o mouse a imagem ira ficar no local
 	// Quando todas as peças estiverem no local correto a imagem do puzzle ira aparecer o botão de próxima fase
 
-
-
 	//al_draw_bitmap(puzzle1, 365, 70, 0);
 	//al_draw_bitmap(puzzle2, 480, 70, 0);
 	//al_draw_bitmap(puzzle3, 595, 70, 0);
@@ -146,32 +176,32 @@ void fase3(ALLEGRO_EVENT evento) {
 	//al_draw_bitmap(puzzle25, 825, 530, 0);
 	
 	 //Colocando as imagens fora da área do retângulo
-	al_draw_bitmap(puzzle1, 8, 20, 0);		// Superior esquerda
-	al_draw_bitmap(puzzle2, 8, 160, 0);	// Superior esquerda
-	al_draw_bitmap(puzzle3, 8, 290, 0);	// Inferior esquerda
-	al_draw_bitmap(puzzle4, 8, 420, 0);	// Inferior esquerda
-	al_draw_bitmap(puzzle5, 240, 20, 0);	// Superior direita
-	al_draw_bitmap(puzzle6, 125, 20, 0);	// Superior direita
-	al_draw_bitmap(puzzle7, 125, 160, 0);	// Inferior direita
-	al_draw_bitmap(puzzle8, 125, 290, 0);	// Inferior direita
-	al_draw_bitmap(puzzle9, 970, 20, 0);	// Centro direita
-	al_draw_bitmap(puzzle10, 240, 550, 0);  // Centro direita
-	al_draw_bitmap(puzzle11, 970, 510, 0);	// Superior centro
-	al_draw_bitmap(puzzle12, 125, 420, 0);	// Centro esquerda
-	al_draw_bitmap(puzzle13, 1100, 20, 0);	// Superior centro
-	al_draw_bitmap(puzzle14, 240, 160, 0);	// Superior centro
-	al_draw_bitmap(puzzle15, 970, 145, 0);	// Inferior centro
-	al_draw_bitmap(puzzle16, 970, 265, 0);	// Inferior centro
-	al_draw_bitmap(puzzle17, 970, 385, 0);	// Superior esquerda
-	al_draw_bitmap(puzzle18, 1100, 145, 0); // Inferior esquerda
-	al_draw_bitmap(puzzle19, 1100, 265, 0); // Superior direita
-	al_draw_bitmap(puzzle20, 1100, 390, 0); // Inferior direita
-	al_draw_bitmap(puzzle21, 1100, 510, 0); // Centro esquerda
-	al_draw_bitmap(puzzle22, 8, 550, 0);	// Centro esquerda
-	al_draw_bitmap(puzzle23, 240, 290, 0); // Centro esquerda
-	al_draw_bitmap(puzzle24, 240, 420, 0); // Centro direita
-	al_draw_bitmap(puzzle25,125, 550, 0);	// Centro direita
-
+	al_draw_bitmap(puzzle1, pecasPuzzle.pecas[0].pos_atual_x, pecasPuzzle.pecas[0].pos_atual_y, 0);
+	al_draw_bitmap(puzzle2, pecasPuzzle.pecas[1].pos_atual_x, pecasPuzzle.pecas[1].pos_atual_y, 0);	// Superior esquerda
+	al_draw_bitmap(puzzle3, pecasPuzzle.pecas[2].pos_atual_x, pecasPuzzle.pecas[2].pos_atual_y, 0);	// Inferior esquerda
+	al_draw_bitmap(puzzle4, pecasPuzzle.pecas[3].pos_atual_x, pecasPuzzle.pecas[3].pos_atual_y, 0);	// Inferior esquerda
+	al_draw_bitmap(puzzle5, pecasPuzzle.pecas[4].pos_atual_x, pecasPuzzle.pecas[4].pos_atual_y, 0);	// Superior direita
+	al_draw_bitmap(puzzle6, pecasPuzzle.pecas[5].pos_atual_x, pecasPuzzle.pecas[5].pos_atual_y, 0);	// Superior direita
+	al_draw_bitmap(puzzle7, pecasPuzzle.pecas[6].pos_atual_x, pecasPuzzle.pecas[6].pos_atual_y, 0);	// Inferior direita
+	al_draw_bitmap(puzzle8, pecasPuzzle.pecas[7].pos_atual_x, pecasPuzzle.pecas[7].pos_atual_y, 0);	// Inferior direita
+	al_draw_bitmap(puzzle9, pecasPuzzle.pecas[8].pos_atual_x, pecasPuzzle.pecas[8].pos_atual_y, 0);	// Centro direita
+	al_draw_bitmap(puzzle10, pecasPuzzle.pecas[9].pos_atual_x, pecasPuzzle.pecas[9].pos_atual_y, 0);  // Centro direita
+	al_draw_bitmap(puzzle11, pecasPuzzle.pecas[10].pos_atual_x, pecasPuzzle.pecas[10].pos_atual_y, 0);	// Superior centro
+	al_draw_bitmap(puzzle12, pecasPuzzle.pecas[11].pos_atual_x, pecasPuzzle.pecas[11].pos_atual_y, 0);	// Centro esquerda
+	al_draw_bitmap(puzzle13, pecasPuzzle.pecas[12].pos_atual_x, pecasPuzzle.pecas[12].pos_atual_y, 0);	// Superior centro
+	al_draw_bitmap(puzzle14, pecasPuzzle.pecas[13].pos_atual_x, pecasPuzzle.pecas[13].pos_atual_y, 0);	// Superior centro
+	al_draw_bitmap(puzzle15, pecasPuzzle.pecas[14].pos_atual_x, pecasPuzzle.pecas[14].pos_atual_y, 0);	// Inferior centro
+	al_draw_bitmap(puzzle16, pecasPuzzle.pecas[15].pos_atual_x, pecasPuzzle.pecas[15].pos_atual_y, 0);	// Inferior centro
+	al_draw_bitmap(puzzle17, pecasPuzzle.pecas[16].pos_atual_x, pecasPuzzle.pecas[16].pos_atual_y, 0);	// Superior esquerda
+	al_draw_bitmap(puzzle18, pecasPuzzle.pecas[17].pos_atual_x, pecasPuzzle.pecas[17].pos_atual_y, 0); // Inferior esquerda
+	al_draw_bitmap(puzzle19, pecasPuzzle.pecas[18].pos_atual_x, pecasPuzzle.pecas[18].pos_atual_y, 0); // Superior direita
+	al_draw_bitmap(puzzle20, pecasPuzzle.pecas[19].pos_atual_x, pecasPuzzle.pecas[19].pos_atual_y, 0); // Inferior direita
+	al_draw_bitmap(puzzle21, pecasPuzzle.pecas[20].pos_atual_x, pecasPuzzle.pecas[20].pos_atual_y, 0); // Centro esquerda
+	al_draw_bitmap(puzzle22, pecasPuzzle.pecas[21].pos_atual_x, pecasPuzzle.pecas[21].pos_atual_y, 0);	// Centro esquerda
+	al_draw_bitmap(puzzle23, pecasPuzzle.pecas[22].pos_atual_x, pecasPuzzle.pecas[22].pos_atual_y, 0); // Centro esquerda
+	al_draw_bitmap(puzzle24, pecasPuzzle.pecas[23].pos_atual_x, pecasPuzzle.pecas[23].pos_atual_y, 0); // Centro direita
+	al_draw_bitmap(puzzle25, pecasPuzzle.pecas[24].pos_atual_x, pecasPuzzle.pecas[24].pos_atual_y, 0);	// Centro direita
+	
 	// Botão Próxima fase
 	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
