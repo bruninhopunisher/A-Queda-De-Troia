@@ -169,6 +169,9 @@
     <Image Include="fundoAgamenom.jpg" />
     <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
+    <Image Include="Imagens\Fase_04\flexa.png" />
+    <Image Include="Imagens\Fase_04\inimigo.jpg" />
+    <Image Include="Imagens\Fase_04\player.jpg" />
     <Image Include="ParisBaixoNormal.jpg" />
     <Image Include="Imagens\Fase_01\background_fase_um.jpg" />
     <Image Include="Imagens\Fase_01\frente_descendo.jpg" />

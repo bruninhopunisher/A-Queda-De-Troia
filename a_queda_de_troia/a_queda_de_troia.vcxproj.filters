@@ -251,6 +251,15 @@
     <Image Include="soldadosEsparta.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
+    <Image Include="Imagens\Fase_04\flexa.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\inimigo.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\player.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -354,6 +363,9 @@
     </Filter>
     <Filter Include="Arquivos de Origem">
       <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4">
+      <UniqueIdentifier>{b0929e43-a9cb-40eb-86e0-7bf3a84a62b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

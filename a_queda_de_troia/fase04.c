@@ -2,7 +2,7 @@
 
 void fase4(ALLEGRO_EVENT evento) {
 	if(gameOver == false){
-		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0)); //Criar um mapa de fundo
+		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
 		if(vidaF4 == 3){
 			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 670, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 3");
 		}
@@ -47,20 +47,35 @@ void fase4(ALLEGRO_EVENT evento) {
 				iniZ[i] = 1;
 			}
 		}
+
+		//Sistema da flexa
+		for (int i = 0; i < 6; i++) {
+			al_draw_bitmap(flecha, iniFleX[i], iniFleY[i], 0);
+			iniFleY[i] += iniVel;
+			if (iniFleY[i] >= 786) {
+				iniFleY[i] = 0;
+			}
+		}
+
+
 		al_flip_display();
 
 		//Sistema de colisao com inimigo
 		for(int i = 0; i < 6; i++){
-			if (playX + 70 > iniX[i] && playX < iniX[i] + 70 && playY + 70 > iniY[i] && playY < iniY[i] + 70) { //70x70 e o tamanho dos inimigos
-				playX = 640; // Colocar vida ou algo do tipo para ir abaixando
-				playY = 100;
+			if ((playX + 70 > iniX[i] && playX < iniX[i] + 70 && playY + 70 > iniY[i] && playY < iniY[i] + 70) || //70x70 e o tamanho dos inimigos
+				 playX + 70 > iniFleX[i] && playX < iniFleX[i] + 13 && playY + 70 > iniFleY[i] && playY < iniFleY[i] + 66) { //13x66 e o tamanho da flecha
 				vidaF4 -= 1;
+				playX = 595;
+				playY = 315;
 				iniX[0] = 0;
 				iniX[1] = 1210;
 				iniX[2] = 0;
 				iniX[3] = 1210;
 				iniX[4] = 0;
 				iniX[5] = 1210;
+				for (int i = 0; i < 6; i++) {
+					iniFleY[i] = 0;
+				}
 				if (vidaF4 < 0) {
 					gameOver = true;
 				}
@@ -89,10 +104,12 @@ void fase4(ALLEGRO_EVENT evento) {
 				iniX[3] = 1210;
 				iniX[4] = 0;
 				iniX[5] = 1210;
+				for (int i = 0; i < 6; i++) {
+					iniFleY[i] = 0;
+				}
 			}
 		}
 	}
-
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
 		mouseX = evento.mouse.x;

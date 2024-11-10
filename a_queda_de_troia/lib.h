@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <time.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_image.h>
@@ -197,6 +198,7 @@ extern bool verificaPuzzle;
 //Fase 4
 extern ALLEGRO_BITMAP* player;
 extern ALLEGRO_BITMAP* inimigo;
+extern ALLEGRO_BITMAP* flecha;
 extern bool gameOver;
 extern int playX;
 extern int playY;
@@ -206,6 +208,8 @@ extern int iniX[6];
 extern int iniY[6];
 extern int iniZ[6];
 extern int iniVel;
+extern int iniFleX[6];
+extern int iniFleY[6];
 //FimFase4
 
 
