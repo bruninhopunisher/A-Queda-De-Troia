@@ -4,5 +4,4 @@
 
 void fase3(ALLEGRO_EVENT event);
 
-
 #endif // !FASE03_H

@@ -188,10 +188,31 @@ typedef struct {
     infoPecas pecas[25];
     int totalPecas;
 } Puzzle;
+
+typedef struct {
+	int id;
+	int X;
+	int Y;
+	bool selecionada;
+} infoQuadrante;
+
+typedef struct {
+    infoQuadrante quadrantes[25];
+	int totalQuadrantes;
+} Quadrante;
+
+extern Puzzle pecasPuzzle;
+extern Quadrante quadrantePuzzle;
+
 extern ALLEGRO_BITMAP* imagensPuzzle[25];
 extern bool verificaPuzzle;
+extern int posicaoInicialX[25];
+extern int posicaoInicialY[25];
+extern int posicaoCorretaX[25];
+extern int posicaoCorretaY[25];
 
-extern bool verificaPuzzle;
+extern int mouseAoVivoX;
+extern int mouseAoVivoY;
 
 
 //Fase 4

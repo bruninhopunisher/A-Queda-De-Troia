@@ -33,18 +33,49 @@ void desenhaQuadrados() {
 }
 
 void fase3(ALLEGRO_EVENT evento) {
-	quebraCabeca();
 	
-
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
 
-	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES)
-	{
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
-		// printf("\nMOUSE X %d\n", mouseX);
-		// printf("MOUSE Y %d\n", mouseY);
+		 printf("\nMOUSE X %d\n", mouseX);
+		 printf("MOUSE Y %d\n", mouseY);
 	}
+
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+		for (int i = 0; i < 25; i++) {
+			if ((mouseX >= posicaoInicialX[i] && mouseX <= posicaoInicialX[i] + 110) && (mouseY >= posicaoInicialY[i] && mouseY <= posicaoInicialY[i] + 110)) {
+				int idPeca = pecasPuzzle.pecas[i].id;
+				printf("ID Peca %d\n", idPeca);
+			}
+		}
+	}
+
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+		for (int j = 0; j < 25; j++) {
+			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
+				int idQuadrante = quadrantePuzzle.quadrantes[j].id;
+				printf("ID Quadrante %d\n", idQuadrante);
+			}
+		}
+	}
+
+	for (int i = 0; i < 25; i++) {
+		if ((mouseAoVivoX >= posicaoInicialX[i] && mouseAoVivoX <= posicaoInicialX[i] + 110) && (mouseAoVivoY >= posicaoInicialY[i] && mouseAoVivoY <= posicaoInicialY[i] + 110)) {
+			printf("ATeeeeeeeeeeee %d");
+		}
+	}
+
+	for (int j = 0; j < 25; j++) {
+		if ((mouseAoVivoX >= quadrantePuzzle.quadrantes[j].X && mouseAoVivoX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseAoVivoY >= quadrantePuzzle.quadrantes[j].Y && mouseAoVivoY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
+			printf("ATeeeeeeeeeeee %d");
+
+		}
+	}
+
+	al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+
 
 	if (contadorCreditos >= 1)
 	{
@@ -86,6 +117,8 @@ void fase3(ALLEGRO_EVENT evento) {
 	// Quando soltar o mouse a imagem ira ficar no local
 	// Quando todas as peças estiverem no local correto a imagem do puzzle ira aparecer o botão de próxima fase
 
+
+
 	//al_draw_bitmap(puzzle1, 365, 70, 0);
 	//al_draw_bitmap(puzzle2, 480, 70, 0);
 	//al_draw_bitmap(puzzle3, 595, 70, 0);
@@ -113,20 +146,20 @@ void fase3(ALLEGRO_EVENT evento) {
 	//al_draw_bitmap(puzzle25, 825, 530, 0);
 	
 	 //Colocando as imagens fora da área do retângulo
-	al_draw_bitmap(puzzle1, 8, 60, 0);		// Superior esquerda
-	al_draw_bitmap(puzzle2, 8, 190, 0);	// Superior esquerda
-	al_draw_bitmap(puzzle3, 8, 320, 0);	// Inferior esquerda
-	al_draw_bitmap(puzzle4, 8, 450, 0);	// Inferior esquerda
-	al_draw_bitmap(puzzle5, 240, 60, 0);	// Superior direita
+	al_draw_bitmap(puzzle1, 8, 20, 0);		// Superior esquerda
+	al_draw_bitmap(puzzle2, 8, 160, 0);	// Superior esquerda
+	al_draw_bitmap(puzzle3, 8, 290, 0);	// Inferior esquerda
+	al_draw_bitmap(puzzle4, 8, 420, 0);	// Inferior esquerda
+	al_draw_bitmap(puzzle5, 240, 20, 0);	// Superior direita
 	al_draw_bitmap(puzzle6, 125, 20, 0);	// Superior direita
 	al_draw_bitmap(puzzle7, 125, 160, 0);	// Inferior direita
 	al_draw_bitmap(puzzle8, 125, 290, 0);	// Inferior direita
 	al_draw_bitmap(puzzle9, 970, 20, 0);	// Centro direita
-	al_draw_bitmap(puzzle10, 240, 580, 0);  // Centro direita
+	al_draw_bitmap(puzzle10, 240, 550, 0);  // Centro direita
 	al_draw_bitmap(puzzle11, 970, 510, 0);	// Superior centro
 	al_draw_bitmap(puzzle12, 125, 420, 0);	// Centro esquerda
 	al_draw_bitmap(puzzle13, 1100, 20, 0);	// Superior centro
-	al_draw_bitmap(puzzle14, 240, 190, 0);	// Superior centro
+	al_draw_bitmap(puzzle14, 240, 160, 0);	// Superior centro
 	al_draw_bitmap(puzzle15, 970, 145, 0);	// Inferior centro
 	al_draw_bitmap(puzzle16, 970, 265, 0);	// Inferior centro
 	al_draw_bitmap(puzzle17, 970, 385, 0);	// Superior esquerda
@@ -134,9 +167,9 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(puzzle19, 1100, 265, 0); // Superior direita
 	al_draw_bitmap(puzzle20, 1100, 390, 0); // Inferior direita
 	al_draw_bitmap(puzzle21, 1100, 510, 0); // Centro esquerda
-	al_draw_bitmap(puzzle22, 8, 580, 0);	// Centro esquerda
-	al_draw_bitmap(puzzle23, 240, 320, 0); // Centro esquerda
-	al_draw_bitmap(puzzle24, 240, 450, 0); // Centro direita
+	al_draw_bitmap(puzzle22, 8, 550, 0);	// Centro esquerda
+	al_draw_bitmap(puzzle23, 240, 290, 0); // Centro esquerda
+	al_draw_bitmap(puzzle24, 240, 420, 0); // Centro direita
 	al_draw_bitmap(puzzle25,125, 550, 0);	// Centro direita
 
 	// Botão Próxima fase

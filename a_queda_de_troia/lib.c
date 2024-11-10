@@ -121,6 +121,14 @@ ALLEGRO_BITMAP* puzzle24;
 ALLEGRO_BITMAP* puzzle25;
 int contadorCreditos = 3;
 bool verificaPuzzle = true;
+int posicaoInicialX[25] = { 8, 8, 8, 8, 240, 125, 125, 125, 970, 240, 970, 125, 1100, 240, 970, 970, 970, 1100, 1100, 1100, 1100, 8, 240, 240, 125 };
+int posicaoInicialY[25] = { 20, 160, 290, 420, 20, 20, 160, 290, 20, 550, 510, 420, 20, 160, 145, 265, 385, 145, 265, 390, 510, 550, 290, 420, 550 };
+int posicaoCorretaX[25] = { 365, 480, 710, 825, 325, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825 };
+int posicaoCorretaY[25] = { 70, 70, 70, 70, 185, 185, 185, 185, 185, 300, 300, 300, 300, 300, 415, 415, 415, 415, 415, 530, 530, 530, 530, 530 };
+Puzzle pecasPuzzle;
+Quadrante quadrantePuzzle;
+int mouseAoVivoX;
+int mouseAoVivoY;
 
 //Fase 04
 ALLEGRO_BITMAP* player;
@@ -321,6 +329,288 @@ void iniciarConstantes() {
 	testeInicializar(puzzle23, "puzzle23");
 	testeInicializar(puzzle24, "puzzle24");
 	testeInicializar(puzzle25, "puzzle25");
+
+	pecasPuzzle.pecas[0].id = 1;
+	pecasPuzzle.pecas[0].pos_correta_x = 340;
+	pecasPuzzle.pecas[0].pos_correta_y = 60;
+	pecasPuzzle.pecas[0].pos_atual_x = 10;
+	pecasPuzzle.pecas[0].pos_atual_y = 0;
+	pecasPuzzle.pecas[0].selecionada = false;
+
+	pecasPuzzle.pecas[1].id = 2;
+	pecasPuzzle.pecas[1].pos_correta_x = 460;
+	pecasPuzzle.pecas[1].pos_correta_y = 60;
+	pecasPuzzle.pecas[1].pos_atual_x = 10;
+	pecasPuzzle.pecas[1].pos_atual_y = 130;
+	pecasPuzzle.pecas[1].selecionada = false;
+
+	pecasPuzzle.pecas[1].id = 2;
+	pecasPuzzle.pecas[1].pos_correta_x = 460;
+	pecasPuzzle.pecas[1].pos_correta_y = 60;
+	pecasPuzzle.pecas[1].pos_atual_x = 10;
+	pecasPuzzle.pecas[1].pos_atual_y = 130;
+	pecasPuzzle.pecas[1].selecionada = false;
+
+	pecasPuzzle.pecas[2].id = 3;
+	pecasPuzzle.pecas[2].pos_correta_x = 580;
+	pecasPuzzle.pecas[2].pos_correta_y = 60;
+	pecasPuzzle.pecas[2].pos_atual_x = 10;
+	pecasPuzzle.pecas[2].pos_atual_y = 250;
+	pecasPuzzle.pecas[2].selecionada = false;
+
+	pecasPuzzle.pecas[3].id = 4;
+	pecasPuzzle.pecas[3].pos_correta_x = 700;
+	pecasPuzzle.pecas[3].pos_correta_y = 60;
+	pecasPuzzle.pecas[3].pos_atual_x = 10;
+	pecasPuzzle.pecas[3].pos_atual_y = 370;
+	pecasPuzzle.pecas[3].selecionada = false;
+
+	pecasPuzzle.pecas[4].id = 5;
+	pecasPuzzle.pecas[4].pos_correta_x = 820;
+	pecasPuzzle.pecas[4].pos_correta_y = 60;
+	pecasPuzzle.pecas[4].pos_atual_x = 130;
+	pecasPuzzle.pecas[4].pos_atual_y = 0;
+	pecasPuzzle.pecas[4].selecionada = false;
+
+	pecasPuzzle.pecas[5].id = 6;
+	pecasPuzzle.pecas[5].pos_correta_x = 340;
+	pecasPuzzle.pecas[5].pos_correta_y = 180;
+	pecasPuzzle.pecas[5].pos_atual_x = 130;
+	pecasPuzzle.pecas[5].pos_atual_y = 130;
+	pecasPuzzle.pecas[5].selecionada = false;
+
+	pecasPuzzle.pecas[6].id = 7;
+	pecasPuzzle.pecas[6].pos_correta_x = 460;
+	pecasPuzzle.pecas[6].pos_correta_y = 180;
+	pecasPuzzle.pecas[6].pos_atual_x = 130;
+	pecasPuzzle.pecas[6].pos_atual_y = 250;
+	pecasPuzzle.pecas[6].selecionada = false;
+
+	pecasPuzzle.pecas[7].id = 8;
+	pecasPuzzle.pecas[7].pos_correta_x = 580;
+	pecasPuzzle.pecas[7].pos_correta_y = 180;
+	pecasPuzzle.pecas[7].pos_atual_x = 130;
+	pecasPuzzle.pecas[7].pos_atual_y = 370;
+	pecasPuzzle.pecas[7].selecionada = false;
+
+	pecasPuzzle.pecas[8].id = 9;
+	pecasPuzzle.pecas[8].pos_correta_x = 700;
+	pecasPuzzle.pecas[8].pos_correta_y = 180;
+	pecasPuzzle.pecas[8].pos_atual_x = 130;
+	pecasPuzzle.pecas[8].pos_atual_y = 490;
+	pecasPuzzle.pecas[8].selecionada = false;
+
+	pecasPuzzle.pecas[9].id = 10;
+	pecasPuzzle.pecas[9].pos_correta_x = 820;
+	pecasPuzzle.pecas[9].pos_correta_y = 180;
+	pecasPuzzle.pecas[9].pos_atual_x = 10;
+	pecasPuzzle.pecas[9].pos_atual_y = 490;
+	pecasPuzzle.pecas[9].selecionada = false;
+
+	pecasPuzzle.pecas[10].id = 11;
+	pecasPuzzle.pecas[10].pos_correta_x = 340;
+	pecasPuzzle.pecas[10].pos_correta_y = 300;
+	pecasPuzzle.pecas[10].pos_atual_x = 10;
+	pecasPuzzle.pecas[10].pos_atual_y = 610;
+	pecasPuzzle.pecas[10].selecionada = false;
+
+	pecasPuzzle.pecas[11].id = 12;
+	pecasPuzzle.pecas[11].pos_correta_x = 460;
+	pecasPuzzle.pecas[11].pos_correta_y = 300;
+	pecasPuzzle.pecas[11].pos_atual_x = 950;
+	pecasPuzzle.pecas[11].pos_atual_y = 0;
+	pecasPuzzle.pecas[11].selecionada = false;
+
+	pecasPuzzle.pecas[12].id = 13;
+	pecasPuzzle.pecas[12].pos_correta_x = 580;
+	pecasPuzzle.pecas[12].pos_correta_y = 300;
+	pecasPuzzle.pecas[12].pos_atual_x = 1080;
+	pecasPuzzle.pecas[12].pos_atual_y = 0;
+	pecasPuzzle.pecas[12].selecionada = false;
+
+	pecasPuzzle.pecas[13].id = 14;
+	pecasPuzzle.pecas[13].pos_correta_x = 700;
+	pecasPuzzle.pecas[13].pos_correta_y = 300;
+	pecasPuzzle.pecas[13].pos_atual_x = 950;
+	pecasPuzzle.pecas[13].pos_atual_y = 130;
+	pecasPuzzle.pecas[13].selecionada = false;
+
+	pecasPuzzle.pecas[14].id = 15;
+	pecasPuzzle.pecas[14].pos_correta_x = 820;
+	pecasPuzzle.pecas[14].pos_correta_y = 300;
+	pecasPuzzle.pecas[14].pos_atual_x = 950;
+	pecasPuzzle.pecas[14].pos_atual_y = 130;
+	pecasPuzzle.pecas[14].selecionada = false;
+
+	pecasPuzzle.pecas[15].id = 16;
+	pecasPuzzle.pecas[15].pos_correta_x = 340;
+	pecasPuzzle.pecas[15].pos_correta_y = 420;
+	pecasPuzzle.pecas[15].pos_atual_x = 950;
+	pecasPuzzle.pecas[15].pos_atual_y = 260;
+	pecasPuzzle.pecas[15].selecionada = false;
+
+	pecasPuzzle.pecas[16].id = 17;
+	pecasPuzzle.pecas[16].pos_correta_x = 460;
+	pecasPuzzle.pecas[16].pos_correta_y = 420;
+	pecasPuzzle.pecas[16].pos_atual_x = 950;
+	pecasPuzzle.pecas[16].pos_atual_y = 380;
+	pecasPuzzle.pecas[16].selecionada = false;
+
+	pecasPuzzle.pecas[17].id = 18;
+	pecasPuzzle.pecas[17].pos_correta_x = 580;
+	pecasPuzzle.pecas[17].pos_correta_y = 420;
+	pecasPuzzle.pecas[17].pos_atual_x = 1080;
+	pecasPuzzle.pecas[17].pos_atual_y = 130;
+	pecasPuzzle.pecas[17].selecionada = false;
+
+	pecasPuzzle.pecas[18].id = 19;
+	pecasPuzzle.pecas[18].pos_correta_x = 700;
+	pecasPuzzle.pecas[18].pos_correta_y = 420;
+	pecasPuzzle.pecas[18].pos_atual_x = 1080;
+	pecasPuzzle.pecas[18].pos_atual_y = 260;
+	pecasPuzzle.pecas[18].selecionada = false;
+
+	pecasPuzzle.pecas[19].id = 20;
+	pecasPuzzle.pecas[19].pos_correta_x = 820;
+	pecasPuzzle.pecas[19].pos_correta_y = 420;
+	pecasPuzzle.pecas[19].pos_atual_x = 1080;
+	pecasPuzzle.pecas[19].pos_atual_y = 380;
+	pecasPuzzle.pecas[19].selecionada = false;
+
+	pecasPuzzle.pecas[20].id = 21;
+	pecasPuzzle.pecas[20].pos_correta_x = 340;
+	pecasPuzzle.pecas[20].pos_correta_y = 540;
+	pecasPuzzle.pecas[20].pos_atual_x = 1080;
+	pecasPuzzle.pecas[20].pos_atual_y = 490;
+	pecasPuzzle.pecas[20].selecionada = false;
+
+	pecasPuzzle.pecas[21].id = 22;
+	pecasPuzzle.pecas[21].pos_correta_x = 460;
+	pecasPuzzle.pecas[21].pos_correta_y = 540;
+	pecasPuzzle.pecas[21].pos_atual_x = 1080;
+	pecasPuzzle.pecas[21].pos_atual_y = 610;
+	pecasPuzzle.pecas[21].selecionada = false;
+
+	pecasPuzzle.pecas[22].id = 23;
+	pecasPuzzle.pecas[22].pos_correta_x = 580;
+	pecasPuzzle.pecas[22].pos_correta_y = 540;
+	pecasPuzzle.pecas[22].pos_atual_x = 1080;
+	pecasPuzzle.pecas[22].pos_atual_y = 730;
+	pecasPuzzle.pecas[22].selecionada = false;
+
+	pecasPuzzle.pecas[23].id = 24;
+	pecasPuzzle.pecas[23].pos_correta_x = 700;
+	pecasPuzzle.pecas[23].pos_correta_y = 540;
+	pecasPuzzle.pecas[23].pos_atual_x = 1080;
+	pecasPuzzle.pecas[23].pos_atual_y = 850;
+	pecasPuzzle.pecas[23].selecionada = false;
+
+	pecasPuzzle.pecas[24].id = 25;
+	pecasPuzzle.pecas[24].pos_correta_x = 820;
+	pecasPuzzle.pecas[24].pos_correta_y = 540;
+	pecasPuzzle.pecas[24].pos_atual_x = 950;
+	pecasPuzzle.pecas[24].pos_atual_y = 490;
+	pecasPuzzle.pecas[24].selecionada = false;
+
+	quadrantePuzzle.quadrantes[0].id = 1;
+	quadrantePuzzle.quadrantes[0].X = 365;
+	quadrantePuzzle.quadrantes[0].Y = 70;
+
+	quadrantePuzzle.quadrantes[1].id = 2;
+	quadrantePuzzle.quadrantes[1].X = 480;
+	quadrantePuzzle.quadrantes[1].Y = 70;
+
+	quadrantePuzzle.quadrantes[2].id = 3;
+	quadrantePuzzle.quadrantes[2].X = 595;
+	quadrantePuzzle.quadrantes[2].Y = 70;
+
+	quadrantePuzzle.quadrantes[3].id = 4;
+	quadrantePuzzle.quadrantes[3].X = 710;
+	quadrantePuzzle.quadrantes[3].Y = 70;
+
+	quadrantePuzzle.quadrantes[4].id = 5;
+	quadrantePuzzle.quadrantes[4].X = 825;
+	quadrantePuzzle.quadrantes[4].Y = 70;
+
+	quadrantePuzzle.quadrantes[5].id = 6;
+	quadrantePuzzle.quadrantes[5].X = 365;
+	quadrantePuzzle.quadrantes[5].Y = 185;
+
+	quadrantePuzzle.quadrantes[6].id = 7;
+	quadrantePuzzle.quadrantes[6].X = 480;
+	quadrantePuzzle.quadrantes[6].Y = 185;
+
+	quadrantePuzzle.quadrantes[7].id = 8;
+	quadrantePuzzle.quadrantes[7].X = 595;
+	quadrantePuzzle.quadrantes[7].Y = 185;
+
+	quadrantePuzzle.quadrantes[8].id = 9;
+	quadrantePuzzle.quadrantes[8].X = 710;
+	quadrantePuzzle.quadrantes[8].Y = 185;
+
+	quadrantePuzzle.quadrantes[9].id = 10;
+	quadrantePuzzle.quadrantes[9].X = 825;
+	quadrantePuzzle.quadrantes[9].Y = 185;
+
+	quadrantePuzzle.quadrantes[10].id = 11;
+	quadrantePuzzle.quadrantes[10].X = 365;
+	quadrantePuzzle.quadrantes[10].Y = 300;
+
+	quadrantePuzzle.quadrantes[11].id = 12;
+	quadrantePuzzle.quadrantes[11].X = 480;
+	quadrantePuzzle.quadrantes[11].Y = 300;
+
+	quadrantePuzzle.quadrantes[12].id = 13;
+	quadrantePuzzle.quadrantes[12].X = 595;
+	quadrantePuzzle.quadrantes[12].Y = 300;
+
+	quadrantePuzzle.quadrantes[13].id = 14;
+	quadrantePuzzle.quadrantes[13].X = 710;
+	quadrantePuzzle.quadrantes[13].Y = 300;
+
+	quadrantePuzzle.quadrantes[14].id = 15;
+	quadrantePuzzle.quadrantes[14].X = 825;
+	quadrantePuzzle.quadrantes[14].Y = 300;
+
+	quadrantePuzzle.quadrantes[15].id = 16;
+	quadrantePuzzle.quadrantes[15].X = 365;
+	quadrantePuzzle.quadrantes[15].Y = 415;
+
+	quadrantePuzzle.quadrantes[16].id = 17;
+	quadrantePuzzle.quadrantes[16].X = 480;
+	quadrantePuzzle.quadrantes[16].Y = 415;
+
+	quadrantePuzzle.quadrantes[17].id = 18;
+	quadrantePuzzle.quadrantes[17].X = 595;
+	quadrantePuzzle.quadrantes[17].Y = 415;
+
+	quadrantePuzzle.quadrantes[18].id = 19;
+	quadrantePuzzle.quadrantes[18].X = 710;
+	quadrantePuzzle.quadrantes[18].Y = 415;
+
+	quadrantePuzzle.quadrantes[19].id = 20;
+	quadrantePuzzle.quadrantes[19].X = 825;
+	quadrantePuzzle.quadrantes[19].Y = 415;
+
+	quadrantePuzzle.quadrantes[20].id = 21;
+	quadrantePuzzle.quadrantes[20].X = 365;
+	quadrantePuzzle.quadrantes[20].Y = 530;
+
+	quadrantePuzzle.quadrantes[21].id = 22;
+	quadrantePuzzle.quadrantes[21].X = 480;
+	quadrantePuzzle.quadrantes[21].Y = 530;
+	
+	quadrantePuzzle.quadrantes[22].id = 23;
+	quadrantePuzzle.quadrantes[22].X = 595;
+	quadrantePuzzle.quadrantes[22].Y = 530;
+
+	quadrantePuzzle.quadrantes[23].id = 24;
+	quadrantePuzzle.quadrantes[23].X = 710;
+	quadrantePuzzle.quadrantes[23].Y = 530;
+
+	quadrantePuzzle.quadrantes[24].id = 25;
+	quadrantePuzzle.quadrantes[24].X = 825;
+	quadrantePuzzle.quadrantes[24].Y = 530;
 
 	//fase 4
 	player = al_load_bitmap("Imagens/Fase_04/player.jpg");
