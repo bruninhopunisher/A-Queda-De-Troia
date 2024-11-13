@@ -31,14 +31,11 @@ void desenhaQuadrados() {
 		}
 	}
 
-	//for (int j = 0; j < 25; j++) {
-	//	for (int k = 0; k < 25; k++) {
-	//		int x = posicoesIniciais.posicoes[j].x + j * 110;
-	//		int y = posicoesIniciais.posicoes[k].y + k * 110;
-	//		al_draw_rectangle(x, y, x + tamanhoQuadrado, y + tamanhoQuadrado, corLinha, 10);
-	//	}
-	//}
-
+	for (int m = 0; m < 25; m++) {
+		for (int n = 0; n < 25; n++) {
+			al_draw_rectangle(posicaoInicialX[n] - 0.5, posicaoInicialY[n] - 0.5, posicaoInicialX[n] + 111, posicaoInicialY[n] + 111, al_map_rgb(255, 255, 255), 6);
+		}
+	}
 }
 
 void fase3(ALLEGRO_EVENT evento) {
@@ -61,14 +58,14 @@ void fase3(ALLEGRO_EVENT evento) {
 				indice = j;
 				idPeca = pecasPuzzle.pecas[j].id;
 				pecaSelecionada = true;
-				printf("ID PECA %d", idPeca);
-				printf("ANTES %s\n", pecasPuzzle.pecas[j].selecionada ? "true" : "false");
+				printf("ID PECA %d\n", idPeca);
 			}
 
 			// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 			if (pecaSelecionada == true) {
 				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
-					idQuadrante = quadrantePuzzle.quadrantes[j].id;
+					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
+					quadrantePuzzle.quadrantes[j].idPecaRecebida = idPeca;
 					pecasPuzzle.pecas[indice].pos_atual_x = quadrantePuzzle.quadrantes[j].X;
 					pecasPuzzle.pecas[indice].pos_atual_y = quadrantePuzzle.quadrantes[j].Y;
 					posicoesIniciais.posicoes[indice].contemPeca = false;
@@ -76,15 +73,18 @@ void fase3(ALLEGRO_EVENT evento) {
 					pecaSelecionada = false;
 					printf("ID Quadrante %d\n", idQuadrante);
 				}
-				pecasPuzzle.pecas[indice].selecionada = false;
+			}
+
+			// Verifica imagem dentro do quadrante para retirala
+			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == true) {
+				printf("ID PECA %d\n", quadrantePuzzle.quadrantes[j].idPecaRecebida);
+				printf("ID QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
+				quadranteSelecionado = true;
 			}
 		}
 	}
 
-	// Verificação para desenhar um quadrado no entorno da peça selecionada apenas quando tiver uma peça selecionada
-	if (pecaSelecionada == true) {
-		al_draw_rectangle(pecasPuzzle.pecas[indice].pos_atual_x - 0.5, pecasPuzzle.pecas[indice].pos_atual_y - 0.5, pecasPuzzle.pecas[indice].pos_atual_x + 111, pecasPuzzle.pecas[indice].pos_atual_y + 111, al_map_rgb(255, 255, 255), 6);
-	}
+	
 
 	al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 
@@ -145,6 +145,11 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(puzzle23, pecasPuzzle.pecas[22].pos_atual_x, pecasPuzzle.pecas[22].pos_atual_y, 0); // Centro esquerda
 	al_draw_bitmap(puzzle24, pecasPuzzle.pecas[23].pos_atual_x, pecasPuzzle.pecas[23].pos_atual_y, 0); // Centro direita
 	al_draw_bitmap(puzzle25, pecasPuzzle.pecas[24].pos_atual_x, pecasPuzzle.pecas[24].pos_atual_y, 0);	// Centro direita
+
+	// Verificação para desenhar um quadrado no entorno da peça selecionada apenas quando tiver uma peça selecionada
+	if (pecaSelecionada == true) {
+		al_draw_rectangle(pecasPuzzle.pecas[indice].pos_atual_x - 0.5, pecasPuzzle.pecas[indice].pos_atual_y - 0.5, pecasPuzzle.pecas[indice].pos_atual_x + 111, pecasPuzzle.pecas[indice].pos_atual_y + 111, al_map_rgb(238, 173, 45), 6);
+	}
 	
 	// Botão Próxima fase
 	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));

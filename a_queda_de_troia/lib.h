@@ -190,7 +190,9 @@ typedef struct {
     int totalPecas;
 } Puzzle;
 
+// Armazena as informações de cada quadrante do puzzle
 typedef struct {
+    int idPecaRecebida;
 	int id;
 	int X;
 	int Y;
@@ -202,7 +204,9 @@ typedef struct {
 	int totalQuadrantes;
 } Quadrante;
 
+// Armazena as informações de cada posição inicial do puzzle
 typedef struct {
+	int id;
 	int x;
 	int y;
 	bool contemPeca;
@@ -230,6 +234,7 @@ extern int idQuadrante;
 extern indice;
 extern bool pecaPosicionada;
 extern bool pecaSelecionada;
+extern bool quadranteSelecionado;
 
 
 //Fase 4
