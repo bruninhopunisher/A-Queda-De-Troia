@@ -156,7 +156,6 @@
     </ClCompile>
     <ClCompile Include="menu.c" />
     <ClCompile Include="opcoes.c" />
-    <ClCompile Include="quebra_cabeca.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="background-f2.jpg" />

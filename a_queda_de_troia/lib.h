@@ -194,7 +194,7 @@ typedef struct {
 	int id;
 	int X;
 	int Y;
-	bool selecionada;
+	bool contemPeca;
 } infoQuadrante;
 
 typedef struct {
@@ -202,6 +202,17 @@ typedef struct {
 	int totalQuadrantes;
 } Quadrante;
 
+typedef struct {
+	int x;
+	int y;
+	bool contemPeca;
+} posicaoInicial;
+
+typedef struct {
+	posicaoInicial posicoes[25];
+} PosicaoInicialStruct;
+
+extern PosicaoInicialStruct posicoesIniciais;
 extern Puzzle pecasPuzzle;
 extern Quadrante quadrantePuzzle;
 
@@ -212,14 +223,13 @@ extern int posicaoInicialY[25];
 extern int posicaoCorretaX[25];
 extern int posicaoCorretaY[25];
 
-extern int mouseAoVivoX;
-extern int mouseAoVivoY;
 extern int swapX;
 extern int swapY;
 extern int idPeca;
 extern int idQuadrante;
 extern indice;
 extern bool pecaPosicionada;
+extern bool pecaSelecionada;
 
 
 //Fase 4

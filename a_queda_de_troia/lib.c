@@ -121,21 +121,19 @@ ALLEGRO_BITMAP* puzzle24;
 ALLEGRO_BITMAP* puzzle25;
 int contadorCreditos = 3;
 bool verificaPuzzle = true;
-int posicaoInicialX[25] = { 8, 8, 8, 8, 240, 125, 125, 125, 970, 240, 970, 125, 1100, 240, 970, 970, 970, 1100, 1100, 1100, 1100, 8, 240, 240, 125 };
-int posicaoInicialY[25] = { 20, 160, 290, 420, 20, 20, 160, 290, 20, 550, 510, 420, 20, 160, 145, 265, 385, 145, 265, 390, 510, 550, 290, 420, 550 };
+//int posicaoInicialX[25] = { 8, 8, 8, 8, 240, 125, 125, 125, 970, 240, 970, 125, 1100, 240, 970, 970, 970, 1100, 1100, 1100, 1100, 8, 240, 240, 125 };
+//int posicaoInicialY[25] = { 20, 160, 290, 420, 20, 20, 160, 290, 20, 550, 510, 420, 20, 160, 145, 265, 385, 145, 265, 390, 510, 550, 290, 420, 550 };
 int posicaoCorretaX[25] = { 365, 480, 710, 825, 325, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825 };
 int posicaoCorretaY[25] = { 70, 70, 70, 70, 185, 185, 185, 185, 185, 300, 300, 300, 300, 300, 415, 415, 415, 415, 415, 530, 530, 530, 530, 530 };
 Puzzle pecasPuzzle;
 Quadrante quadrantePuzzle;
-int mouseAoVivoX;
-int mouseAoVivoY;
+PosicaoInicialStruct posicoesIniciais;
 int swapX;
 int swapY;
 int idPeca;
 int idQuadrante;
 int indice;
 bool pecaSelecionada = false;
-bool pecaPosicionada = false;
 
 //Fase 04
 ALLEGRO_BITMAP* player;
@@ -346,6 +344,106 @@ void iniciarConstantes() {
 	testeInicializar(puzzle24, "puzzle24");
 	testeInicializar(puzzle25, "puzzle25");
 
+	posicoesIniciais.posicoes[0].x = 8;
+	posicoesIniciais.posicoes[0].y = 20;
+	posicoesIniciais.posicoes[0].contemPeca = true;
+
+	posicoesIniciais.posicoes[1].x = 8;
+	posicoesIniciais.posicoes[1].y = 160;
+	posicoesIniciais.posicoes[1].contemPeca = true;
+
+	posicoesIniciais.posicoes[2].x = 8;
+	posicoesIniciais.posicoes[2].y = 290;
+	posicoesIniciais.posicoes[2].contemPeca = true;
+
+	posicoesIniciais.posicoes[3].x = 8;
+	posicoesIniciais.posicoes[3].y = 420;
+	posicoesIniciais.posicoes[3].contemPeca = true;
+
+	posicoesIniciais.posicoes[4].x = 240;
+	posicoesIniciais.posicoes[4].y = 20;
+	posicoesIniciais.posicoes[4].contemPeca = true;
+
+	posicoesIniciais.posicoes[5].x = 125;
+	posicoesIniciais.posicoes[5].y = 20;
+	posicoesIniciais.posicoes[5].contemPeca = true;
+
+	posicoesIniciais.posicoes[6].x = 125;
+	posicoesIniciais.posicoes[6].y = 160;
+	posicoesIniciais.posicoes[6].contemPeca = true;
+
+	posicoesIniciais.posicoes[7].x = 125;
+	posicoesIniciais.posicoes[7].y = 290;
+	posicoesIniciais.posicoes[7].contemPeca = true;
+
+	posicoesIniciais.posicoes[8].x = 970;
+	posicoesIniciais.posicoes[8].y = 20;
+	posicoesIniciais.posicoes[8].contemPeca = true;
+
+	posicoesIniciais.posicoes[9].x = 240;
+	posicoesIniciais.posicoes[9].y = 550;
+	posicoesIniciais.posicoes[9].contemPeca = true;
+
+	posicoesIniciais.posicoes[10].x = 970;
+	posicoesIniciais.posicoes[10].y = 510;
+	posicoesIniciais.posicoes[10].contemPeca = true;
+
+	posicoesIniciais.posicoes[11].x = 125;
+	posicoesIniciais.posicoes[11].y = 420;
+	posicoesIniciais.posicoes[11].contemPeca = true;
+
+	posicoesIniciais.posicoes[12].x = 1100;
+	posicoesIniciais.posicoes[12].y = 20;
+	posicoesIniciais.posicoes[12].contemPeca = true;
+
+	posicoesIniciais.posicoes[13].x = 240;
+	posicoesIniciais.posicoes[13].y = 160;
+	posicoesIniciais.posicoes[13].contemPeca = true;
+
+	posicoesIniciais.posicoes[14].x = 970;
+	posicoesIniciais.posicoes[14].y = 145;
+	posicoesIniciais.posicoes[14].contemPeca = true;
+
+	posicoesIniciais.posicoes[15].x = 970;
+	posicoesIniciais.posicoes[15].y = 265;
+	posicoesIniciais.posicoes[15].contemPeca = true;
+
+	posicoesIniciais.posicoes[16].x = 970;
+	posicoesIniciais.posicoes[16].y = 385;
+	posicoesIniciais.posicoes[16].contemPeca = true;
+
+	posicoesIniciais.posicoes[17].x = 1100;
+	posicoesIniciais.posicoes[17].y = 145;
+	posicoesIniciais.posicoes[17].contemPeca = true;
+
+	posicoesIniciais.posicoes[18].x = 1100;
+	posicoesIniciais.posicoes[18].y = 265;
+	posicoesIniciais.posicoes[18].contemPeca = true;
+
+	posicoesIniciais.posicoes[19].x = 1100;
+	posicoesIniciais.posicoes[19].y = 390;
+	posicoesIniciais.posicoes[19].contemPeca = true;
+
+	posicoesIniciais.posicoes[20].x = 1100;
+	posicoesIniciais.posicoes[20].y = 510;
+	posicoesIniciais.posicoes[20].contemPeca = true;
+
+	posicoesIniciais.posicoes[21].x = 8;
+	posicoesIniciais.posicoes[21].y = 550;
+	posicoesIniciais.posicoes[21].contemPeca = true;
+
+	posicoesIniciais.posicoes[22].x = 240;
+	posicoesIniciais.posicoes[22].y = 290;
+	posicoesIniciais.posicoes[22].contemPeca = true;
+
+	posicoesIniciais.posicoes[23].x = 240;
+	posicoesIniciais.posicoes[23].y = 420;
+	posicoesIniciais.posicoes[23].contemPeca = true;
+
+	posicoesIniciais.posicoes[24].x = 125;
+	posicoesIniciais.posicoes[24].y = 550;
+	posicoesIniciais.posicoes[24].contemPeca = true;
+
 	pecasPuzzle.pecas[0].id = 1;
 	pecasPuzzle.pecas[0].pos_correta_x = 340;
 	pecasPuzzle.pecas[0].pos_correta_y = 60;
@@ -524,102 +622,127 @@ void iniciarConstantes() {
 	quadrantePuzzle.quadrantes[0].id = 1;
 	quadrantePuzzle.quadrantes[0].X = 365;
 	quadrantePuzzle.quadrantes[0].Y = 70;
+	quadrantePuzzle.quadrantes[0].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[1].id = 2;
 	quadrantePuzzle.quadrantes[1].X = 480;
 	quadrantePuzzle.quadrantes[1].Y = 70;
+	quadrantePuzzle.quadrantes[1].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[2].id = 3;
 	quadrantePuzzle.quadrantes[2].X = 595;
 	quadrantePuzzle.quadrantes[2].Y = 70;
+	quadrantePuzzle.quadrantes[2].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[3].id = 4;
 	quadrantePuzzle.quadrantes[3].X = 710;
 	quadrantePuzzle.quadrantes[3].Y = 70;
+	quadrantePuzzle.quadrantes[3].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[4].id = 5;
 	quadrantePuzzle.quadrantes[4].X = 825;
 	quadrantePuzzle.quadrantes[4].Y = 70;
+	quadrantePuzzle.quadrantes[4].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[5].id = 6;
 	quadrantePuzzle.quadrantes[5].X = 365;
 	quadrantePuzzle.quadrantes[5].Y = 185;
+	quadrantePuzzle.quadrantes[5].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[6].id = 7;
 	quadrantePuzzle.quadrantes[6].X = 480;
 	quadrantePuzzle.quadrantes[6].Y = 185;
+	quadrantePuzzle.quadrantes[6].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[7].id = 8;
 	quadrantePuzzle.quadrantes[7].X = 595;
 	quadrantePuzzle.quadrantes[7].Y = 185;
+	quadrantePuzzle.quadrantes[7].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[8].id = 9;
 	quadrantePuzzle.quadrantes[8].X = 710;
 	quadrantePuzzle.quadrantes[8].Y = 185;
+	quadrantePuzzle.quadrantes[8].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[9].id = 10;
 	quadrantePuzzle.quadrantes[9].X = 825;
 	quadrantePuzzle.quadrantes[9].Y = 185;
+	quadrantePuzzle.quadrantes[9].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[10].id = 11;
 	quadrantePuzzle.quadrantes[10].X = 365;
 	quadrantePuzzle.quadrantes[10].Y = 300;
+	quadrantePuzzle.quadrantes[10].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[11].id = 12;
 	quadrantePuzzle.quadrantes[11].X = 480;
 	quadrantePuzzle.quadrantes[11].Y = 300;
+	quadrantePuzzle.quadrantes[11].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[12].id = 13;
 	quadrantePuzzle.quadrantes[12].X = 595;
 	quadrantePuzzle.quadrantes[12].Y = 300;
+	quadrantePuzzle.quadrantes[12].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[13].id = 14;
 	quadrantePuzzle.quadrantes[13].X = 710;
 	quadrantePuzzle.quadrantes[13].Y = 300;
+	quadrantePuzzle.quadrantes[13].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[14].id = 15;
 	quadrantePuzzle.quadrantes[14].X = 825;
 	quadrantePuzzle.quadrantes[14].Y = 300;
+	quadrantePuzzle.quadrantes[14].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[15].id = 16;
 	quadrantePuzzle.quadrantes[15].X = 365;
 	quadrantePuzzle.quadrantes[15].Y = 415;
+	quadrantePuzzle.quadrantes[15].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[16].id = 17;
 	quadrantePuzzle.quadrantes[16].X = 480;
 	quadrantePuzzle.quadrantes[16].Y = 415;
+	quadrantePuzzle.quadrantes[16].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[17].id = 18;
 	quadrantePuzzle.quadrantes[17].X = 595;
 	quadrantePuzzle.quadrantes[17].Y = 415;
+	quadrantePuzzle.quadrantes[17].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[18].id = 19;
 	quadrantePuzzle.quadrantes[18].X = 710;
 	quadrantePuzzle.quadrantes[18].Y = 415;
+	quadrantePuzzle.quadrantes[18].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[19].id = 20;
 	quadrantePuzzle.quadrantes[19].X = 825;
 	quadrantePuzzle.quadrantes[19].Y = 415;
+	quadrantePuzzle.quadrantes[19].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[20].id = 21;
 	quadrantePuzzle.quadrantes[20].X = 365;
 	quadrantePuzzle.quadrantes[20].Y = 530;
+	quadrantePuzzle.quadrantes[20].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[21].id = 22;
 	quadrantePuzzle.quadrantes[21].X = 480;
 	quadrantePuzzle.quadrantes[21].Y = 530;
+	quadrantePuzzle.quadrantes[21].contemPeca = false;
 	
 	quadrantePuzzle.quadrantes[22].id = 23;
 	quadrantePuzzle.quadrantes[22].X = 595;
 	quadrantePuzzle.quadrantes[22].Y = 530;
+	quadrantePuzzle.quadrantes[22].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[23].id = 24;
 	quadrantePuzzle.quadrantes[23].X = 710;
 	quadrantePuzzle.quadrantes[23].Y = 530;
+	quadrantePuzzle.quadrantes[23].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[24].id = 25;
 	quadrantePuzzle.quadrantes[24].X = 825;
 	quadrantePuzzle.quadrantes[24].Y = 530;
+	quadrantePuzzle.quadrantes[24].contemPeca = false;
 
 	//fase 4
 	player = al_load_bitmap("Imagens/Fase_04/player.jpg");
