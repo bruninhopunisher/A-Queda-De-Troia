@@ -140,18 +140,24 @@ bool quadranteSelecionado = false;
 ALLEGRO_BITMAP* player;
 ALLEGRO_BITMAP* inimigo;
 ALLEGRO_BITMAP* flecha;
-
+bool iniciarFase = true;
 bool gameOver = false;
-int playX = 595; //Centro da tela
-int playY = 315; //Centro da tela
-int PlayVel = 8;
-int vidaF4 = 3;
-int iniX[6] = { 0, 1210, 0, 1210, 0, 1210 };
-int iniY[6] = { 80, 180, 280, 380, 480, 580 };
-int iniZ[6] = { 0,1,0,1,0,1 };
-int iniVel = 2;
-int iniFleX[6] = { 170, 290, 410, 810, 930, 1050 }; // ideal seria 50,170,290,410,530,810,930,1050,1170 (9)
-int iniFleY[6] = { 0, 0, 0, 0, 0, 0 };
+int iniVel = 1.5;//2; //Vel do inimigo
+//player
+int playX = 605; //Centro da tela
+int playY = 325; //Centro da tela
+int PlayVel = 8; //Vel do player
+int vidaF4 = 3; //QTD de vidas
+//inimigo de lança
+int qtdLanc = 6;
+int lancX[6] = { 0, 1210, 0, 1210, 0, 1210 };
+int lancY[6] = { 80, 180, 280, 380, 480, 580 };
+int lancZ[6] = { 0,1,0,1,0,1 };
+//flechas
+int qtdFle = 21;
+int fleX[21] = { 29, 99, 169, 239, 309, 379, 449, 519, 589, 659, 729, 799, 869, 939, 1009, 1079, 1149, 1219, 1289, 1359, 1429 };
+int fleY[21] = { -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60 };
+int fleZ[21] = { 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 };
 //Fim Fase 04
 
 //Audios e Musicas

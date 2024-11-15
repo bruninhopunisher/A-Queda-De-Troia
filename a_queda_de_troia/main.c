@@ -45,7 +45,7 @@ int main() {
 			case 0:
 				/*fase3(event);*/
 				menu(event);
-				/*fase4(event);*/
+				//fase4(event);
 				break;
 			case 1:  
 				opcoes(event);

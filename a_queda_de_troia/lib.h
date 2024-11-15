@@ -241,17 +241,24 @@ extern bool quadranteSelecionado;
 extern ALLEGRO_BITMAP* player;
 extern ALLEGRO_BITMAP* inimigo;
 extern ALLEGRO_BITMAP* flecha;
+extern bool iniciarFase;
 extern bool gameOver;
+extern int iniVel; //velocidade do inimigo
+//player
 extern int playX;
 extern int playY;
 extern int PlayVel;
 extern int vidaF4;
-extern int iniX[6];
-extern int iniY[6];
-extern int iniZ[6];
-extern int iniVel;
-extern int iniFleX[6];
-extern int iniFleY[6];
+//inimigo de lança
+extern int qtdLanc;
+extern int lancX[6];
+extern int lancY[6];
+extern int lancZ[6];
+//flechas
+extern int qtdFle;
+extern int fleX[21];
+extern int fleY[21];
+extern int fleZ[21];
 //FimFase4
 
 
