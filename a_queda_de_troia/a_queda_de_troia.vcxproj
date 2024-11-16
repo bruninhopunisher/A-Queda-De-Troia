@@ -150,6 +150,7 @@
     <ClCompile Include="fase04.c" />
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="introducao2.c" />
+    <ClCompile Include="introducao3.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
@@ -158,6 +159,13 @@
     <ClCompile Include="opcoes.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\introduçao 3\pagina1.jpg" />
+    <Image Include="..\..\introduçao 3\pagina2.jpg" />
+    <Image Include="..\..\introduçao 3\pagina3.jpg" />
+    <Image Include="..\..\introduçao 3\pagina4.jpg" />
+    <Image Include="..\..\introduçao 3\pagina5.jpg" />
+    <Image Include="..\..\introduçao 3\pagina6.jpg" />
+    <Image Include="..\..\introduçao 3\pagina7.jpg" />
     <Image Include="background-f2.jpg" />
     <Image Include="barra-vida-50R.jpg" />
     <Image Include="barra-vida-cheia.jpg" />
@@ -230,6 +238,7 @@
     <ClInclude Include="fase04.h" />
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="introducao2.h" />
+    <ClInclude Include="introducao3.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="opcoes.h" />

@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_image.h>
@@ -14,6 +15,7 @@
 #include "menu.h"
 #include "introducao1.h"
 #include "introducao2.h"
+#include "introducao3.h"
 #include "opcoes.h"
 #include "fase01.h"
 #include "fase02.h"
@@ -55,6 +57,15 @@ extern bool renderizar;
 //Introdução 2
 extern ALLEGRO_BITMAP* fundoAgamenom;
 extern ALLEGRO_BITMAP* fundoMenelau;
+
+//Introdução 3
+extern ALLEGRO_BITMAP* pagina1;
+extern ALLEGRO_BITMAP* pagina2;
+extern ALLEGRO_BITMAP* pagina3;
+extern ALLEGRO_BITMAP* pagina4;
+extern ALLEGRO_BITMAP* pagina5;
+extern ALLEGRO_BITMAP* pagina6;
+extern ALLEGRO_BITMAP* pagina7;
 
 //Fase 1
 extern ALLEGRO_BITMAP* backgroundFaseUm;

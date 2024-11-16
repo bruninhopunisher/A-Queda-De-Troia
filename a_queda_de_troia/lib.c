@@ -32,6 +32,17 @@ bool renderizar = 0;
 //Introdução 2
 ALLEGRO_BITMAP* fundoAgamenom;
 ALLEGRO_BITMAP* fundoMenelau;
+ 
+//Introdução 3
+ALLEGRO_BITMAP* pagina1;
+ALLEGRO_BITMAP* pagina2;
+ALLEGRO_BITMAP* pagina3;
+ALLEGRO_BITMAP* pagina4;
+ALLEGRO_BITMAP* pagina5;
+ALLEGRO_BITMAP* pagina6;
+ALLEGRO_BITMAP* pagina7;
+
+efeitoDigitacao[4];
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
@@ -225,6 +236,24 @@ void iniciarConstantes() {
 
 	testeInicializar(fundoAgamenom, "fundo-agamenom-Intro2");
 	testeInicializar(fundoAgamenom, "fundo-menelau-Intro2");
+
+	//Introdução 3
+	pagina1 = al_load_bitmap("Imagens/Introducao_3/pagina1.jpg");
+	pagina2 = al_load_bitmap("Imagens/Introducao_3/pagina2.jpg");
+	pagina3 = al_load_bitmap("Imagens/Introducao_3/pagina3.jpg");
+	pagina4 = al_load_bitmap("Imagens/Introducao_3/pagina4.jpg");
+	pagina5 = al_load_bitmap("Imagens/Introducao_3/pagina5.jpg");
+	pagina6 = al_load_bitmap("Imagens/Introducao_3/pagina6.jpg");
+	pagina7 = al_load_bitmap("Imagens/Introducao_3/pagina7.jpg");
+	
+
+	testeInicializar(pagina1, "pagian-1-Intro3");
+	testeInicializar(pagina2, "pagian-2-Intro3");
+	testeInicializar(pagina3, "pagian-3-Intro3");
+	testeInicializar(pagina4, "pagian-4-Intro3");
+	testeInicializar(pagina5, "pagian-5-Intro3");
+	testeInicializar(pagina6, "pagian-6-Intro3");
+	testeInicializar(pagina7, "pagian-7-Intro3");
 
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
@@ -991,6 +1020,15 @@ void destruidor() {
 	//Introdução 2
 	al_destroy_bitmap(fundoAgamenom);
 	al_destroy_bitmap(fundoMenelau);
+
+	//Introdução 3
+	al_destroy_bitmap(pagina1);
+	al_destroy_bitmap(pagina2);
+	al_destroy_bitmap(pagina3);
+	al_destroy_bitmap(pagina4);
+	al_destroy_bitmap(pagina5);
+	al_destroy_bitmap(pagina6);
+	al_destroy_bitmap(pagina7);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);

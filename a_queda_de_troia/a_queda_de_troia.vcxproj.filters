@@ -31,6 +31,9 @@
     <ClCompile Include="introducao2.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
     </ClCompile>
+    <ClCompile Include="introducao3.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -59,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="introducao2.h">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao3.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +263,27 @@
     <Image Include="Imagens\Fase_04\player.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
     </Image>
+    <Image Include="..\..\introduçao 3\pagina1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina6.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina7.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -267,9 +294,6 @@
     </Filter>
     <Filter Include="Arquivos de Recurso">
       <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Créditos">
-      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Jogo">
       <UniqueIdentifier>{ec0510ec-928a-421c-96d8-70998e59ecbf}</UniqueIdentifier>
@@ -363,6 +387,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4">
       <UniqueIdentifier>{b0929e43-a9cb-40eb-86e0-7bf3a84a62b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Créditos">
+      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
