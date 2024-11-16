@@ -24,6 +24,9 @@ ALLEGRO_BITMAP* comVolumeHover;
 ALLEGRO_BITMAP* semVolumeHover;
 
 //Introdução 1
+ALLEGRO_BITMAP* fundo1Intro1;
+ALLEGRO_BITMAP* fundo2Intro1;
+ALLEGRO_BITMAP* fundo3Intro1;
 ALLEGRO_BITMAP* fundoHelena;
 ALLEGRO_BITMAP* fundoParis;
 ALLEGRO_FONT* fonteIntro1;
@@ -226,10 +229,16 @@ void iniciarConstantes() {
 	testeInicializar(backgroundMenu, "imagem_menu");
 
 	//Introdução 1
+	fundo1Intro1 = al_load_bitmap("Imagens/Introducao_1/fundo1Intro1.jpg");
+	fundo2Intro1 = al_load_bitmap("Imagens/Introducao_1/fundo2Intro1.jpg");
+	fundo3Intro1 = al_load_bitmap("Imagens/Introducao_1/fundo3Intro1.jpg");
 	fundoHelena = al_load_bitmap("Imagens/Introducao_1/helenaIntro1.jpg");
 	fundoParis = al_load_bitmap("Imagens/Introducao_1/ParisIntro1.jpg");
 	fonteIntro1 = al_load_font("Fontes/MateSC-Regular.ttf", 45, 0);
 
+	testeInicializar(fundo1Intro1, "fundo_1_intro1");
+	testeInicializar(fundo2Intro1, "fundo_2_intro1");
+	testeInicializar(fundo3Intro1, "fundo_3_intro1");
 	testeInicializar(fonteIntro1, "fonte_intro_1");
 	testeInicializar(fundoHelena, "fundo_helena-Intro1");
 	testeInicializar(fundoParis, "fundo_paris_Intro1");
@@ -1017,6 +1026,9 @@ void destruidor() {
 	al_destroy_bitmap(semVolumeHover);
 
 	//Introdução 1
+	al_destroy_bitmap(fundo1Intro1);
+	al_destroy_bitmap(fundo2Intro1);
+	al_destroy_bitmap(fundo3Intro1);
 	al_destroy_bitmap(fundoHelena);
 	al_destroy_bitmap(fundoParis);
 	al_destroy_font(fonteIntro1);

@@ -11,7 +11,7 @@ void introducao3(ALLEGRO_EVENT evento) {
 	{
 	case 1:
 		imagemIntro(pagina1, evento);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 610, 610, ALLEGRO_ALIGN_CENTRE, "Os gregos preparam a maior estrategia de todos os tempos.",35);
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 610, 610, ALLEGRO_ALIGN_CENTRE, "Os gregos preparam a maior estrategia de todos os tempos.");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 610, 650, ALLEGRO_ALIGN_CENTRE, "A invasao de Troia comeca esta noite.");
 		al_flip_display();
 		break;

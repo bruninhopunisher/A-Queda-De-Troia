@@ -284,6 +284,15 @@
     <Image Include="..\..\introduçao 3\pagina7.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
     </Image>
+    <Image Include="fundo1Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="fundo2Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="fundo3Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">

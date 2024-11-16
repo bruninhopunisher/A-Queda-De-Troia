@@ -49,6 +49,9 @@ extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
 
 //Introdução 1
+extern ALLEGRO_BITMAP* fundo1Intro1;
+extern ALLEGRO_BITMAP* fundo2Intro1;
+extern ALLEGRO_BITMAP* fundo3Intro1;
 extern ALLEGRO_BITMAP* fundoHelena;
 extern ALLEGRO_BITMAP* fundoParis;
 extern ALLEGRO_FONT* fonteIntro1;

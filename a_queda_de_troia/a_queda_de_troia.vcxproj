@@ -173,6 +173,9 @@
     <Image Include="barra-vida-100R-f2.jpg" />
     <Image Include="espada-rei-f2.jpg" />
     <Image Include="espada1-player-f2.jpg" />
+    <Image Include="fundo1Intro1.jpg" />
+    <Image Include="fundo2Intro1.jpg" />
+    <Image Include="fundo3Intro1.jpg" />
     <Image Include="fundoAgamenom.jpg" />
     <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
