@@ -141,11 +141,15 @@ Quadrante quadrantePuzzle;
 PosicaoInicialStruct posicoesIniciais;
 int swapX;
 int swapY;
+bool swapAtivo = false;
 int idPeca;
 int idQuadrante;
 int indice;
 bool pecaSelecionada = false;
 bool quadranteSelecionado = false;
+bool first = false;
+int marcacaoX;
+int marcacaoY;
 
 //Fase 04
 ALLEGRO_BITMAP* player;
