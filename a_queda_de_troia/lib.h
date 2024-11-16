@@ -224,17 +224,18 @@ extern ALLEGRO_BITMAP* imagensPuzzle[25];
 extern bool verificaPuzzle;
 extern int posicaoInicialX[25];
 extern int posicaoInicialY[25];
-extern int posicaoCorretaX[25];
-extern int posicaoCorretaY[25];
-
 extern int swapX;
 extern int swapY;
+extern bool swapAtivo;
 extern int idPeca;
 extern int idQuadrante;
 extern indice;
 extern bool pecaPosicionada;
 extern bool pecaSelecionada;
+extern bool first;
 extern bool quadranteSelecionado;
+extern int marcacaoX;
+extern int marcacaoY;
 
 
 //Fase 4
