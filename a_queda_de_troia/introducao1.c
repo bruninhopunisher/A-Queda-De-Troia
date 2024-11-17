@@ -24,7 +24,6 @@ int introducao1(ALLEGRO_EVENT event) {
 		//al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 670, 600, ALLEGRO_ALIGN_CENTRE, "");
 		al_flip_display();
 		break;
-		break;
 	case 4:
 		imagemIntro(fundoHelena, event);
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 670, 600, ALLEGRO_ALIGN_CENTRE, "Nao devia estar aqui.");
@@ -70,10 +69,11 @@ int introducao1(ALLEGRO_EVENT event) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		}
 		else {
-			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW);
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 		}
 		if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 				intro += 1;
 				navegacao += 1;
 			}

@@ -1,6 +1,15 @@
 #include "introducao2.h"
 
 void introducao2(ALLEGRO_EVENT evento) {
+	//printf("\nChegouuuuuuuuu intro 2");
+	//printf("%d\n", intro);
+	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		mouseX = evento.mouse.x;
+		mouseY = evento.mouse.y;
+	}
+
+	//printf("\nMOUSE X%d\n", mouseX);
+	//printf("MOUSE Y%d\n", mouseY);
 	switch (intro)
 	{
 	case 1:
@@ -24,18 +33,16 @@ void introducao2(ALLEGRO_EVENT evento) {
 	case 5:
 		imagemIntro(fundoAgamenom, evento);
 		al_flip_display();
-		if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+		if ((mouseX >= 1016 && mouseX <= 1189) && (mouseY >= 653 && mouseY <= 692)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-		}
-		else {
-			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW);
-		}
-		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-			if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
-				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW);
-				intro += 1;
+			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+				printf("Entrouuuuu");
+				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 				navegacao += 1;
 			}
+		}
+		else {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 		}
 		break;
 	}

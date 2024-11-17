@@ -97,10 +97,6 @@ void fase3(ALLEGRO_EVENT evento) {
 		}
 	}
 
-	
-
-	al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-
 	if (contadorCreditos >= 1)
 	{
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
@@ -163,8 +159,6 @@ void fase3(ALLEGRO_EVENT evento) {
 	if (first == true) {
 		al_draw_rectangle(marcacaoX - 0.4, marcacaoY - 0.5, marcacaoX + 110, marcacaoY + 110, al_map_rgb(238, 173, 45), 6);
 	}
-	
-	
 	
 	// Botão Próxima fase
 	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));

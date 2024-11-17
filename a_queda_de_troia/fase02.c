@@ -197,7 +197,6 @@ void fase2(ALLEGRO_EVENT evento) {
 			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 6, ALLEGRO_ALIGN_CENTRE, "HEITOR");
 			al_draw_bitmap(barra_vida_cheia, 30, 30, 0);
 			break;
-
 		}
 
 		//BARRA DE VIDA REI MENELAU

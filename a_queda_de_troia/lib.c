@@ -988,16 +988,17 @@ void audioJogo(int navegacao) {
 
 void imagemIntro(ALLEGRO_BITMAP* imagem, ALLEGRO_EVENT evento) {
 	al_draw_bitmap(imagem, 0, 0, 0);
-	al_draw_filled_rectangle(1016, 653, 1189, 692, al_map_rgb(222, 158, 30));
+	al_draw_filled_rectangle(1016, 653, 1175, 692, al_map_rgb(222, 158, 30));
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1095, 650, ALLEGRO_ALIGN_CENTRE, "Proximo");
 	if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK); 
 	}
 	else {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW); 
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 	}
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 			intro += 1;
 		}
 	}
