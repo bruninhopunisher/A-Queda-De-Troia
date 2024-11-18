@@ -31,6 +31,13 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		mouseAxesX = evento.mouse.x;
+		mouseAxesY = evento.mouse.y;
+		/*printf("\nMOUSE X %d\n", mouseX);
+		printf("MOUSE Y %d\n", mouseY);*/
+	}
+
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 		/*printf("\nMOUSE X %d\n", mouseX);
@@ -57,41 +64,42 @@ void fase3(ALLEGRO_EVENT evento) {
 				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
 					quadrantePuzzle.quadrantes[j].idPecaRecebida = idPeca;
+					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					pecasPuzzle.pecas[indice].pos_atual_x = quadrantePuzzle.quadrantes[j].X;
 					pecasPuzzle.pecas[indice].pos_atual_y = quadrantePuzzle.quadrantes[j].Y;
 					posicoesIniciais.posicoes[indice].contemPeca = false;
-					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					pecaSelecionada = false;
 					printf("2 ID Quadrante %d\n", idQuadrante);
 				}
 			}
 
 			// Verifica imagem dentro do quadrante para retirala (apenas quadrantes que possuem peças)
-			if (pecaSelecionada == false) {
-				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == true) {
-					idPecaRetirada = quadrantePuzzle.quadrantes[j].idPecaRecebida - 1;
-					idQuadrante = quadrantePuzzle.quadrantes[j].id - 1;
-					printf("\n 3 ID PECA RETIRADA %d\n", idPecaRetirada);
-					printf("3 ID EEEQUADRANTE %d\n", idQuadrante);
-					swapAtivo = true;
-				}
-			}
-
+			// Acessas os quadrantes que contem peça posicionada
+			//if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == true) {
+			//	idPecaRetirada = quadrantePuzzle.quadrantes[j].idPecaRecebida;
+			//	idQuadrante = quadrantePuzzle.quadrantes[j].id - 1;
+			//	printf("\n 3 ID PECA RETIRADA %d\n", idPecaRetirada);
+			//	printf("3 ID EEEQUADRANTE %d\n", idQuadrante);
+			//	swapAtivo = true;
+			//}
+	
 			// Verifiça se tem peças na posição inicial (quadrado branco), não havendo, a peça e posicionada lá
-			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == false && swapAtivo == true) {
-				printf("\n4 ID P INICIAL %d\n", posicoesIniciais.posicoes[j].id);
-				printf("4 ID QUADRANTE %d\n", idQuadrante);
-				quadrantePuzzle.quadrantes[idQuadrante].contemPeca = false;
-				pecasPuzzle.pecas[idPecaRetirada].pos_atual_x = posicoesIniciais.posicoes[j].x;
-				pecasPuzzle.pecas[idPecaRetirada].pos_atual_y = posicoesIniciais.posicoes[j].y;
-				posicoesIniciais.posicoes[j].contemPeca = true;
-				swapAtivo = false;
-			}
+			//if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == false && swapAtivo == true) {
+			//	printf("\n4 ID POSICAO INICIAL %d\n", posicoesIniciais.posicoes[j].id);
+			//	printf("4 ID QUADRANTE %d\n", idQuadrante);
+			//	quadrantePuzzle.quadrantes[idQuadrante].contemPeca = false;
+			//	pecasPuzzle.pecas[idPecaRetirada - 1].pos_atual_x = posicoesIniciais.posicoes[j].x;
+			//	pecasPuzzle.pecas[idPecaRetirada - 1].pos_atual_y = posicoesIniciais.posicoes[j].y;
+			//	posicoesIniciais.posicoes[j].contemPeca = true;
+			//	swapAtivo = false;
+			//}
 
 			// movimentação do marcador em todas as posições do quadrante
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
+				printf("4 ID QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
+				printf("4 BOOL QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].contemPeca);
 				first = true;
 			}
 
@@ -100,6 +108,8 @@ void fase3(ALLEGRO_EVENT evento) {
 				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
+				printf("\n5 ID QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
+				printf("5 BOOL QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].contemPeca);
 				first = true;
 			}
 		}
@@ -108,7 +118,7 @@ void fase3(ALLEGRO_EVENT evento) {
 	if (contadorCreditos >= 1) {
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-		if ((mouseX >= 460 && mouseX <= 820) && (mouseY >= 665 && mouseY <= 710)) {
+		if ((mouseAxesX >= 460 && mouseAxesX <= 820) && (mouseAxesY >= 665 && mouseAxesY <= 710)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
 				imagemPuzzle();
@@ -168,7 +178,7 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
 
 	// Verificar se clicou em proximo
-	if (mouseX >= 1040 && mouseY >= 650 && mouseX <= 1219 && mouseY <= 690) {
+	if ((mouseAxesX >= 1040 && mouseAxesX <= 1219) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			navegacao += 1;

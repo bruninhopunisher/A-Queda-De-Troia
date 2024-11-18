@@ -43,8 +43,8 @@ int main() {
 
 		switch (navegacao) {
 			case 0:
-				/*fase3(event);*/
-				menu(event);
+				fase3(event);
+				/*menu(event);*/
 				//fase4(event);
 				/*introducao1(event);*/
 				break;
