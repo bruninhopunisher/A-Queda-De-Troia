@@ -33,26 +33,26 @@ void fase3(ALLEGRO_EVENT evento) {
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
-		printf("\nMOUSE X %d\n", mouseX);
-		printf("MOUSE Y %d\n", mouseY);
+		/*printf("\nMOUSE X %d\n", mouseX);
+		printf("MOUSE Y %d\n", mouseY);*/
 	}
 
-	// L�gica do Quebra-Cabeça
+	// Lógica do Quebra-Cabeça
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 		for (int j = 0; j < 25; j++) {
 			// Seleciona a peça de sua posicao inicial
 			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
-				indice = j;
 				idPeca = pecasPuzzle.pecas[j].id;
-				pecaSelecionada = true;
-				printf("ID PECA %d\n", idPeca);
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
+				indice = j;
 				first = true;
+				pecaSelecionada = true;
+				printf("\n1 ID PECA POSICAO INICIAL %d\n", idPeca);
 			}
 
-			// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
+			// Verifica se há alguma peça selecionada, não havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 			if (pecaSelecionada == true) {
 				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
@@ -62,34 +62,44 @@ void fase3(ALLEGRO_EVENT evento) {
 					posicoesIniciais.posicoes[indice].contemPeca = false;
 					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					pecaSelecionada = false;
-					printf("ID Quadrante %d\n", idQuadrante);
+					printf("2 ID Quadrante %d\n", idQuadrante);
 				}
 			}
 
-			//if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == false && swapAtivo == true) {
-			//	printf("ID P INICIAL %d\n", posicoesIniciais.posicoes[j].id);
-			//	//marcacaoX = posicoesIniciais.posicoes[j].x;
-			//	//marcacaoY = posicoesIniciais.posicoes[j].y;
-			//	pecasPuzzle.pecas[j].pos_atual_x = swapX;
-			//	pecasPuzzle.pecas[j].pos_atual_y = swapY;
-			//	swapAtivo = false;
-			//}
+			// Verifica imagem dentro do quadrante para retirala (apenas quadrantes que possuem peças)
+			if (pecaSelecionada == false) {
+				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == true) {
+					idPecaRetirada = quadrantePuzzle.quadrantes[j].idPecaRecebida - 1;
+					idQuadrante = quadrantePuzzle.quadrantes[j].id - 1;
+					printf("\n 3 ID PECA RETIRADA %d\n", idPecaRetirada);
+					printf("3 ID EEEQUADRANTE %d\n", idQuadrante);
+					swapAtivo = true;
+				}
+			}
 
-			// Verifica imagem dentro do quadrante para retirala
-			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
-				idPeca = quadrantePuzzle.quadrantes[j].idPecaRecebida;
-				idPeca -= 1;
-				printf("SUB %d\n", idPeca);
-				printf("ID EEEQUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
-				swapX = pecasPuzzle.pecas[idPeca].pos_correta_x;
-				swapY = pecasPuzzle.pecas[idPeca].pos_correta_y;
-				swapAtivo = true;
+			// Verifiça se tem peças na posição inicial (quadrado branco), não havendo, a peça e posicionada lá
+			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == false && swapAtivo == true) {
+				printf("\n4 ID P INICIAL %d\n", posicoesIniciais.posicoes[j].id);
+				printf("4 ID QUADRANTE %d\n", idQuadrante);
+				quadrantePuzzle.quadrantes[idQuadrante].contemPeca = false;
+				pecasPuzzle.pecas[idPecaRetirada].pos_atual_x = posicoesIniciais.posicoes[j].x;
+				pecasPuzzle.pecas[idPecaRetirada].pos_atual_y = posicoesIniciais.posicoes[j].y;
+				posicoesIniciais.posicoes[j].contemPeca = true;
+				swapAtivo = false;
 			}
 
 			// movimentação do marcador em todas as posições do quadrante
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
+				first = true;
+			}
+
+			// Move o marcador para as áreas iniciais do quadrante branco das posições iniciais
+			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110)) {
+				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
+				marcacaoX = posicoesIniciais.posicoes[j].x;
+				marcacaoY = posicoesIniciais.posicoes[j].y;
 				first = true;
 			}
 		}

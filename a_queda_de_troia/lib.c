@@ -148,6 +148,7 @@ int swapX;
 int swapY;
 bool swapAtivo = false;
 int idPeca;
+int idPecaRetirada;
 int idQuadrante;
 int indice;
 bool pecaSelecionada = false;

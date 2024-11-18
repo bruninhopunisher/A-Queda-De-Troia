@@ -244,6 +244,7 @@ extern int swapX;
 extern int swapY;
 extern bool swapAtivo;
 extern int idPeca;
+extern int idPecaRetirada;
 extern int idQuadrante;
 extern indice;
 extern bool pecaPosicionada;
