@@ -13,6 +13,8 @@ int mouseX;
 int mouseY;
 int intro = 1;
 int navegacao = 0;
+int mouseAxesX;
+int mouseAxesY;
 bool rodando = true;
 bool boolVolume = true;
 

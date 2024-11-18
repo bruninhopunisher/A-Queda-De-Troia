@@ -35,6 +35,8 @@ extern int mouseX;
 extern int mouseY;
 extern int intro;
 extern int navegacao;
+extern int mouseAxesX;
+extern int mouseAxesY;
 extern bool rodando;
 extern bool boolVolume;
 

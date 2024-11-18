@@ -3,8 +3,8 @@
 void introducao3(ALLEGRO_EVENT evento) {
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
-		mouseX = evento.mouse.x;
-		mouseY = evento.mouse.y;
+		mouseAxesX = evento.mouse.x;
+		mouseAxesY = evento.mouse.y;
 	}
 
 	switch (intro)
@@ -61,7 +61,7 @@ void introducao3(ALLEGRO_EVENT evento) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_ARROW);
 		}
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-			if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
+			if (mouseAxesX >= 1016 && mouseAxesY >= 653 && mouseAxesX <= 1189 && mouseAxesY <= 692) {
 				intro += 1;
 				navegacao += 1;
 			}

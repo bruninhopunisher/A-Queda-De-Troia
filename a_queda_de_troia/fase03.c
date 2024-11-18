@@ -1,6 +1,4 @@
-#include "fase03.h"
-
-// ATENÇÃO NÃO MEXER NO CÓDIGO DA PÁGINA
+ï»¿#include "fase03.h"
 
 // Mostra a imagem original do puzzle
 void imagemPuzzle() {
@@ -20,7 +18,7 @@ void desenhaQuadrados() {
 		}
 	}
 
-	// Desenha linhas brancas nas posições iniciais
+	// Desenha linhas brancas nas posiÃ§Ãµes iniciais
 	for (int m = 0; m < 25; m++) {
 		for (int n = 0; n < 25; n++) {
 			al_draw_rectangle(posicaoInicialX[n] - 0.5, posicaoInicialY[n] - 0.5, posicaoInicialX[n] + 110, posicaoInicialY[n] + 110, al_map_rgb(255, 255, 255), 6);
@@ -29,21 +27,21 @@ void desenhaQuadrados() {
 }
 
 void fase3(ALLEGRO_EVENT evento) {
-	
+
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
 
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 		printf("\nMOUSE X %d\n", mouseX);
 		printf("MOUSE Y %d\n", mouseY);
 	}
 
-	// Lógica do Quebra-Cabeça
+	// Lï¿½gica do Quebra-CabeÃ§a
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-		// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
+		// Verifica se hÃ¡ alguma peÃ§a selecionada, havendo, a peÃ§a Ã© colocada dentro do quadrante clicado setado falso para peÃ§a selecionada
 		for (int j = 0; j < 25; j++) {
-			// Seleciona a peça de sua posição inicial
+			// Seleciona a peÃ§a de sua posicao inicial
 			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
 				indice = j;
 				idPeca = pecasPuzzle.pecas[j].id;
@@ -54,7 +52,7 @@ void fase3(ALLEGRO_EVENT evento) {
 				first = true;
 			}
 
-			// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
+			// Verifica se hÃ¡ alguma peÃ§a selecionada, havendo, a peÃ§a Ã© colocada dentro do quadrante clicado setado falso para peÃ§a selecionada
 			if (pecaSelecionada == true) {
 				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
@@ -87,8 +85,8 @@ void fase3(ALLEGRO_EVENT evento) {
 				swapY = pecasPuzzle.pecas[idPeca].pos_correta_y;
 				swapAtivo = true;
 			}
-			
-			// Movimentação do marcador em todas as posições do quadrante
+
+			// movimentaÃ§Ã£o do marcador em todas as posiÃ§Ãµes do quadrante
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
@@ -97,25 +95,20 @@ void fase3(ALLEGRO_EVENT evento) {
 		}
 	}
 
-	if (contadorCreditos >= 1)
-	{
+	if (contadorCreditos >= 1) {
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-		if ((mouseX >= 460 && mouseX <= 820) && (mouseY >= 665 && mouseY <= 710))
-		{
+		if ((mouseX >= 460 && mouseX <= 820) && (mouseY >= 665 && mouseY <= 710)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0)
-			{
+			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
 				imagemPuzzle();
 			}
 		}
-		else
-		{
+		else {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 		}
 	}
-	else if (contadorCreditos < 1)
-	{
+	else if (contadorCreditos < 1) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
@@ -127,8 +120,8 @@ void fase3(ALLEGRO_EVENT evento) {
 	// Area imagem puzzle
 	al_draw_filled_rectangle(360, 65, 940, 645, al_map_rgb(255, 255, 255));
 	desenhaQuadrados();
-	
-	//Colocando as imagens fora da área do retângulo
+
+	//Colocando as imagens fora da Ã¡rea do retÃ¢ngulo
 	al_draw_bitmap(puzzle1, pecasPuzzle.pecas[0].pos_atual_x, pecasPuzzle.pecas[0].pos_atual_y, 0);
 	al_draw_bitmap(puzzle2, pecasPuzzle.pecas[1].pos_atual_x, pecasPuzzle.pecas[1].pos_atual_y, 0);	// Superior esquerda
 	al_draw_bitmap(puzzle3, pecasPuzzle.pecas[2].pos_atual_x, pecasPuzzle.pecas[2].pos_atual_y, 0);	// Inferior esquerda
@@ -155,18 +148,19 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(puzzle24, pecasPuzzle.pecas[23].pos_atual_x, pecasPuzzle.pecas[23].pos_atual_y, 0); // Centro direita
 	al_draw_bitmap(puzzle25, pecasPuzzle.pecas[24].pos_atual_x, pecasPuzzle.pecas[24].pos_atual_y, 0);	// Centro direita
 
-	// Verificação para desenhar um quadrado no entorno da peça selecionada apenas quando tiver uma peça selecionada
+	// VerificaÃ§Ã£o para desenhar um quadrado no entorno da peÃ§a selecionada apenas quando tiver uma peÃ§a selecionada
 	if (first == true) {
 		al_draw_rectangle(marcacaoX - 0.4, marcacaoY - 0.5, marcacaoX + 110, marcacaoY + 110, al_map_rgb(238, 173, 45), 6);
 	}
-	
-	// Botão Próxima fase
+
+	// BotÃ£o PrÃ³xima fase
 	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
-	{ // Verificar se clicou em proximo
-		if (mouseX >= 1088 && mouseY >= 660 && mouseX <= 1225 && mouseY <= 680)
-		{
+
+	// Verificar se clicou em proximo
+	if (mouseX >= 1040 && mouseY >= 650 && mouseX <= 1219 && mouseY <= 690) {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			navegacao += 1;
 		}
 	}

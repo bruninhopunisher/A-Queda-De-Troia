@@ -3,8 +3,8 @@
 void opcoes(ALLEGRO_EVENT evento) {
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
-		mouseX = evento.mouse.x;
-		mouseY = evento.mouse.y;
+		mouseAxesX = evento.mouse.x;
+		mouseAxesY = evento.mouse.y;
 	}
 
 	al_draw_bitmap(backgroundOpcoes, 0, 0, 0);
@@ -14,21 +14,21 @@ void opcoes(ALLEGRO_EVENT evento) {
 	al_draw_filled_rectangle(20, 650, 180, 690, al_map_rgb(238, 173, 45));
 
 	//Desenha o botão voltar
-	if ((mouseX >= 20 && mouseX <= 180) && (mouseY >= 650 && mouseY <= 690)) {
+	if ((mouseAxesX >= 20 && mouseAxesX <= 180) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
 		al_draw_filled_rectangle(20, 650, 180, 690, al_map_rgb(255, 165, 0));
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 	}
-	else if ((mouseX != 20 && mouseX != 180) && (mouseY != 650 && mouseY != 690)) {
+	else if ((mouseAxesX != 20 && mouseAxesX != 180) && (mouseAxesY != 650 && mouseAxesY != 690)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 	}
 
 	//Mão ativa do botão sem volume
-	if ((mouseX >= 506 && mouseX <= 621) && (mouseY >= 306 && mouseY <= 421)) {
+	if ((mouseAxesX >= 506 && mouseAxesX <= 621) && (mouseAxesY >= 306 && mouseAxesY <= 421)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 	}
 
 	//Mão ativa do botão com volume
-	if ((mouseX >= 706 && mouseX <= 821) && (mouseY >= 306 && mouseY <= 421)) {
+	if ((mouseAxesX >= 706 && mouseAxesX <= 821) && (mouseAxesY >= 306 && mouseAxesY <= 421)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 	}
 
@@ -57,7 +57,6 @@ void opcoes(ALLEGRO_EVENT evento) {
 		//Botão sem volume
 		if ((evento.mouse.x >= 506 && evento.mouse.x <= 621) && (evento.mouse.y >= 306 && evento.mouse.y <= 421)) {
 			boolVolume = false;
-			//al_stop_samples();
 		}
 
 		//Botão com volume
