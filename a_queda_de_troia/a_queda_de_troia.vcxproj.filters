@@ -293,6 +293,15 @@
     <Image Include="fundo3Intro1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
+    <Image Include="Imagens\Introducao_1\mapa_atenas.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\mapa_troia.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\mapa_grecia.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">

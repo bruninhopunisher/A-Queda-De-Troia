@@ -17,6 +17,7 @@ int mouseAxesX;
 int mouseAxesY;
 bool rodando = true;
 bool boolVolume = true;
+efeitoDigitacao[4];
 
 //Opções
 ALLEGRO_BITMAP* backgroundOpcoes;
@@ -32,6 +33,9 @@ ALLEGRO_BITMAP* fundo3Intro1;
 ALLEGRO_BITMAP* fundoHelena;
 ALLEGRO_BITMAP* fundoParis;
 ALLEGRO_FONT* fonteIntro1;
+ALLEGRO_BITMAP* mapaAtenas;
+ALLEGRO_BITMAP* mapaTroia;
+ALLEGRO_BITMAP* mapaGrecia;
 bool renderizar = 0;
 
 //Introdução 2
@@ -46,8 +50,6 @@ ALLEGRO_BITMAP* pagina4;
 ALLEGRO_BITMAP* pagina5;
 ALLEGRO_BITMAP* pagina6;
 ALLEGRO_BITMAP* pagina7;
-
-efeitoDigitacao[4];
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
@@ -238,6 +240,9 @@ void iniciarConstantes() {
 	fundoHelena = al_load_bitmap("Imagens/Introducao_1/helenaIntro1.jpg");
 	fundoParis = al_load_bitmap("Imagens/Introducao_1/ParisIntro1.jpg");
 	fonteIntro1 = al_load_font("Fontes/MateSC-Regular.ttf", 45, 0);
+	mapaAtenas = al_load_bitmap("Imagens/Introducao_1/mapa_atenas.png");
+	mapaTroia = al_load_bitmap("Imagens/Introducao_1/mapa_troia.png");
+	mapaGrecia = al_load_bitmap("Imagens/Introducao_1/mapa_grecia.png");
 
 	testeInicializar(fundo1Intro1, "fundo_1_intro1");
 	testeInicializar(fundo2Intro1, "fundo_2_intro1");
@@ -245,6 +250,9 @@ void iniciarConstantes() {
 	testeInicializar(fonteIntro1, "fonte_intro_1");
 	testeInicializar(fundoHelena, "fundo_helena-Intro1");
 	testeInicializar(fundoParis, "fundo_paris_Intro1");
+	testeInicializar(mapaAtenas, "mapaAtenas");
+	testeInicializar(mapaTroia, "mapaTroia");
+	testeInicializar(mapaGrecia, "mapaGrecia");
 
 	//Introdução 2
 	fundoAgamenom = al_load_bitmap("Imagens/Introducao_2/fundoAgamenom.jpg");
@@ -261,7 +269,6 @@ void iniciarConstantes() {
 	pagina5 = al_load_bitmap("Imagens/Introducao_3/pagina5.jpg");
 	pagina6 = al_load_bitmap("Imagens/Introducao_3/pagina6.jpg");
 	pagina7 = al_load_bitmap("Imagens/Introducao_3/pagina7.jpg");
-	
 
 	testeInicializar(pagina1, "pagian-1-Intro3");
 	testeInicializar(pagina2, "pagian-2-Intro3");
