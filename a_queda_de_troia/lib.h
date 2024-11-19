@@ -197,8 +197,8 @@ extern int contadorCreditos;
 // Armazena as informações de cada peça do puzzle
 typedef struct {
     int id;
-    int pos_correta_x;
-    int pos_correta_y;
+    int pos_inicial_x;
+    int pos_inicial_y;
     int pos_atual_x;
     int pos_atual_y;
     bool selecionada;
@@ -256,6 +256,10 @@ extern bool first;
 extern bool quadranteSelecionado;
 extern int marcacaoX;
 extern int marcacaoY;
+extern int guardaMovimentacao[25];
+extern int arrayVerificador[25];
+extern int somaVerificadora;
+extern int somaPosicao;
 
 
 //Fase 4

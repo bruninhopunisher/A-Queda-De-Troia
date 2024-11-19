@@ -141,6 +141,7 @@ int contadorCreditos = 3;
 bool verificaPuzzle = true;
 int posicaoInicialX[25] = { 8, 8, 8, 8, 240, 125, 125, 125, 970, 240, 970, 125, 1100, 240, 970, 970, 970, 1100, 1100, 1100, 1100, 8, 240, 240, 125 };
 int posicaoInicialY[25] = { 20, 160, 290, 420, 20, 20, 160, 290, 20, 550, 510, 420, 20, 160, 145, 265, 385, 145, 265, 390, 510, 550, 290, 420, 550 };
+int arrayVerificador[25] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 //int posicaoCorretaX[25] = { 365, 480, 710, 825, 325, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825 };
 //int posicaoCorretaY[25] = { 70, 70, 70, 70, 185, 185, 185, 185, 185, 300, 300, 300, 300, 300, 415, 415, 415, 415, 415, 530, 530, 530, 530, 530 };
 Puzzle pecasPuzzle;
@@ -158,6 +159,9 @@ bool quadranteSelecionado = false;
 bool first = false;
 int marcacaoX;
 int marcacaoY;
+int somaVerificadora;
+int guardaMovimentacao[25];
+int somaPosicao = 0;
 
 //Fase 04
 ALLEGRO_BITMAP* player;
@@ -529,176 +533,176 @@ void iniciarConstantes() {
 	posicoesIniciais.posicoes[24].contemPeca = true;
 
 	pecasPuzzle.pecas[0].id = 1;
-	pecasPuzzle.pecas[0].pos_correta_x = 340;
-	pecasPuzzle.pecas[0].pos_correta_y = 60;
+	pecasPuzzle.pecas[0].pos_inicial_x = 340;
+	pecasPuzzle.pecas[0].pos_inicial_y = 60;
 	pecasPuzzle.pecas[0].pos_atual_x = 8;
 	pecasPuzzle.pecas[0].pos_atual_y = 20;
 	pecasPuzzle.pecas[0].selecionada = false;
 
 	pecasPuzzle.pecas[1].id = 2;
-	pecasPuzzle.pecas[1].pos_correta_x = 460;
-	pecasPuzzle.pecas[1].pos_correta_y = 60;
+	pecasPuzzle.pecas[1].pos_inicial_x = 8;
+	pecasPuzzle.pecas[1].pos_inicial_y = 20;
 	pecasPuzzle.pecas[1].pos_atual_x = 8;
 	pecasPuzzle.pecas[1].pos_atual_y = 160;
 	pecasPuzzle.pecas[1].selecionada = false;
 
 	pecasPuzzle.pecas[2].id = 3;
-	pecasPuzzle.pecas[2].pos_correta_x = 580;
-	pecasPuzzle.pecas[2].pos_correta_y = 60;
+	pecasPuzzle.pecas[2].pos_inicial_x = 8;
+	pecasPuzzle.pecas[2].pos_inicial_y = 290;
 	pecasPuzzle.pecas[2].pos_atual_x = 8;
 	pecasPuzzle.pecas[2].pos_atual_y = 290;
 	pecasPuzzle.pecas[2].selecionada = false;
 
 	pecasPuzzle.pecas[3].id = 4;
-	pecasPuzzle.pecas[3].pos_correta_x = 700;
-	pecasPuzzle.pecas[3].pos_correta_y = 60;
+	pecasPuzzle.pecas[3].pos_inicial_x = 8;
+	pecasPuzzle.pecas[3].pos_inicial_y = 420;
 	pecasPuzzle.pecas[3].pos_atual_x = 8;
 	pecasPuzzle.pecas[3].pos_atual_y = 420;
 	pecasPuzzle.pecas[3].selecionada = false;
 
 	pecasPuzzle.pecas[4].id = 5;
-	pecasPuzzle.pecas[4].pos_correta_x = 820;
-	pecasPuzzle.pecas[4].pos_correta_y = 60;
+	pecasPuzzle.pecas[4].pos_inicial_x = 240;
+	pecasPuzzle.pecas[4].pos_inicial_y = 20;
 	pecasPuzzle.pecas[4].pos_atual_x = 240;
 	pecasPuzzle.pecas[4].pos_atual_y = 20;
 	pecasPuzzle.pecas[4].selecionada = false;
 
 	pecasPuzzle.pecas[5].id = 6;
-	pecasPuzzle.pecas[5].pos_correta_x = 340;
-	pecasPuzzle.pecas[5].pos_correta_y = 180;
+	pecasPuzzle.pecas[5].pos_inicial_x = 125;
+	pecasPuzzle.pecas[5].pos_inicial_y = 20;
 	pecasPuzzle.pecas[5].pos_atual_x = 125;
 	pecasPuzzle.pecas[5].pos_atual_y = 20;
 	pecasPuzzle.pecas[5].selecionada = false;
 
 	pecasPuzzle.pecas[6].id = 7;
-	pecasPuzzle.pecas[6].pos_correta_x = 460;
-	pecasPuzzle.pecas[6].pos_correta_y = 180;
+	pecasPuzzle.pecas[6].pos_inicial_x = 125;
+	pecasPuzzle.pecas[6].pos_inicial_y = 160;
 	pecasPuzzle.pecas[6].pos_atual_x = 125;
 	pecasPuzzle.pecas[6].pos_atual_y = 160;
 	pecasPuzzle.pecas[6].selecionada = false;
 
 	pecasPuzzle.pecas[7].id = 8;
-	pecasPuzzle.pecas[7].pos_correta_x = 580;
-	pecasPuzzle.pecas[7].pos_correta_y = 180;
+	pecasPuzzle.pecas[7].pos_inicial_x = 125;
+	pecasPuzzle.pecas[7].pos_inicial_y = 290;
 	pecasPuzzle.pecas[7].pos_atual_x = 125;
 	pecasPuzzle.pecas[7].pos_atual_y = 290;
 	pecasPuzzle.pecas[7].selecionada = false;
 
 	pecasPuzzle.pecas[8].id = 9;
-	pecasPuzzle.pecas[8].pos_correta_x = 700;
-	pecasPuzzle.pecas[8].pos_correta_y = 180;
+	pecasPuzzle.pecas[8].pos_inicial_x = 970;
+	pecasPuzzle.pecas[8].pos_inicial_y = 20;
 	pecasPuzzle.pecas[8].pos_atual_x = 970;
 	pecasPuzzle.pecas[8].pos_atual_y = 20;
 	pecasPuzzle.pecas[8].selecionada = false;
 
 	pecasPuzzle.pecas[9].id = 10;
-	pecasPuzzle.pecas[9].pos_correta_x = 820;
-	pecasPuzzle.pecas[9].pos_correta_y = 180;
+	pecasPuzzle.pecas[9].pos_inicial_x = 240;
+	pecasPuzzle.pecas[9].pos_inicial_y = 550;
 	pecasPuzzle.pecas[9].pos_atual_x = 240;
 	pecasPuzzle.pecas[9].pos_atual_y = 550;
 	pecasPuzzle.pecas[9].selecionada = false;
 
 	pecasPuzzle.pecas[10].id = 11;
-	pecasPuzzle.pecas[10].pos_correta_x = 340;
-	pecasPuzzle.pecas[10].pos_correta_y = 300;
+	pecasPuzzle.pecas[10].pos_inicial_x = 970;
+	pecasPuzzle.pecas[10].pos_inicial_y = 510;
 	pecasPuzzle.pecas[10].pos_atual_x = 970;
 	pecasPuzzle.pecas[10].pos_atual_y = 510;
 	pecasPuzzle.pecas[10].selecionada = false;
 
 	pecasPuzzle.pecas[11].id = 12;
-	pecasPuzzle.pecas[11].pos_correta_x = 460;
-	pecasPuzzle.pecas[11].pos_correta_y = 300;
+	pecasPuzzle.pecas[11].pos_inicial_x = 125;
+	pecasPuzzle.pecas[11].pos_inicial_y = 420;
 	pecasPuzzle.pecas[11].pos_atual_x = 125;
 	pecasPuzzle.pecas[11].pos_atual_y = 420;
 	pecasPuzzle.pecas[11].selecionada = false;
 
 	pecasPuzzle.pecas[12].id = 13;
-	pecasPuzzle.pecas[12].pos_correta_x = 580;
-	pecasPuzzle.pecas[12].pos_correta_y = 300;
+	pecasPuzzle.pecas[12].pos_inicial_x = 1100;
+	pecasPuzzle.pecas[12].pos_inicial_y = 20;
 	pecasPuzzle.pecas[12].pos_atual_x = 1100;
 	pecasPuzzle.pecas[12].pos_atual_y = 20;
 	pecasPuzzle.pecas[12].selecionada = false;
 
 	pecasPuzzle.pecas[13].id = 14;
-	pecasPuzzle.pecas[13].pos_correta_x = 700;
-	pecasPuzzle.pecas[13].pos_correta_y = 300;
+	pecasPuzzle.pecas[13].pos_inicial_x = 240;
+	pecasPuzzle.pecas[13].pos_inicial_y = 160;
 	pecasPuzzle.pecas[13].pos_atual_x = 240;
 	pecasPuzzle.pecas[13].pos_atual_y = 160;
 	pecasPuzzle.pecas[13].selecionada = false;
 
 	pecasPuzzle.pecas[14].id = 15;
-	pecasPuzzle.pecas[14].pos_correta_x = 820;
-	pecasPuzzle.pecas[14].pos_correta_y = 300;
+	pecasPuzzle.pecas[14].pos_inicial_x = 970;
+	pecasPuzzle.pecas[14].pos_inicial_y = 145;
 	pecasPuzzle.pecas[14].pos_atual_x = 970;
 	pecasPuzzle.pecas[14].pos_atual_y = 145;
 	pecasPuzzle.pecas[14].selecionada = false;
 
 	pecasPuzzle.pecas[15].id = 16;
-	pecasPuzzle.pecas[15].pos_correta_x = 340;
-	pecasPuzzle.pecas[15].pos_correta_y = 420;
+	pecasPuzzle.pecas[15].pos_inicial_x = 970;
+	pecasPuzzle.pecas[15].pos_inicial_y = 265;
 	pecasPuzzle.pecas[15].pos_atual_x = 970;
 	pecasPuzzle.pecas[15].pos_atual_y = 265;
 	pecasPuzzle.pecas[15].selecionada = false;
 
 	pecasPuzzle.pecas[16].id = 17;
-	pecasPuzzle.pecas[16].pos_correta_x = 460;
-	pecasPuzzle.pecas[16].pos_correta_y = 420;
+	pecasPuzzle.pecas[16].pos_inicial_x = 970;
+	pecasPuzzle.pecas[16].pos_inicial_y = 385;
 	pecasPuzzle.pecas[16].pos_atual_x = 970;
 	pecasPuzzle.pecas[16].pos_atual_y = 385;
 	pecasPuzzle.pecas[16].selecionada = false;
 
 	pecasPuzzle.pecas[17].id = 18;
-	pecasPuzzle.pecas[17].pos_correta_x = 580;
-	pecasPuzzle.pecas[17].pos_correta_y = 420;
+	pecasPuzzle.pecas[17].pos_inicial_x = 1100;
+	pecasPuzzle.pecas[17].pos_inicial_y = 145;
 	pecasPuzzle.pecas[17].pos_atual_x = 1100;
 	pecasPuzzle.pecas[17].pos_atual_y = 145;
 	pecasPuzzle.pecas[17].selecionada = false;
 
 	pecasPuzzle.pecas[18].id = 19;
-	pecasPuzzle.pecas[18].pos_correta_x = 700;
-	pecasPuzzle.pecas[18].pos_correta_y = 420;
+	pecasPuzzle.pecas[18].pos_inicial_x = 1100;
+	pecasPuzzle.pecas[18].pos_inicial_y = 265;
 	pecasPuzzle.pecas[18].pos_atual_x = 1100;
 	pecasPuzzle.pecas[18].pos_atual_y = 265;
 	pecasPuzzle.pecas[18].selecionada = false;
 
 	pecasPuzzle.pecas[19].id = 20;
-	pecasPuzzle.pecas[19].pos_correta_x = 820;
-	pecasPuzzle.pecas[19].pos_correta_y = 420;
+	pecasPuzzle.pecas[19].pos_inicial_x = 1100;
+	pecasPuzzle.pecas[19].pos_inicial_y = 390;
 	pecasPuzzle.pecas[19].pos_atual_x = 1100;
 	pecasPuzzle.pecas[19].pos_atual_y = 390;
 	pecasPuzzle.pecas[19].selecionada = false;
 
 	pecasPuzzle.pecas[20].id = 21;
-	pecasPuzzle.pecas[20].pos_correta_x = 340;
-	pecasPuzzle.pecas[20].pos_correta_y = 540;
+	pecasPuzzle.pecas[20].pos_inicial_x = 1100;
+	pecasPuzzle.pecas[20].pos_inicial_y = 510;
 	pecasPuzzle.pecas[20].pos_atual_x = 1100;
 	pecasPuzzle.pecas[20].pos_atual_y = 510;
 	pecasPuzzle.pecas[20].selecionada = false;
 
 	pecasPuzzle.pecas[21].id = 22;
-	pecasPuzzle.pecas[21].pos_correta_x = 460;
-	pecasPuzzle.pecas[21].pos_correta_y = 540;
+	pecasPuzzle.pecas[21].pos_inicial_x = 8;
+	pecasPuzzle.pecas[21].pos_inicial_y = 550;
 	pecasPuzzle.pecas[21].pos_atual_x = 8;
 	pecasPuzzle.pecas[21].pos_atual_y = 550;
 	pecasPuzzle.pecas[21].selecionada = false;
 
 	pecasPuzzle.pecas[22].id = 23;
-	pecasPuzzle.pecas[22].pos_correta_x = 580;
-	pecasPuzzle.pecas[22].pos_correta_y = 540;
+	pecasPuzzle.pecas[22].pos_inicial_x = 240;
+	pecasPuzzle.pecas[22].pos_inicial_y = 290;
 	pecasPuzzle.pecas[22].pos_atual_x = 240;
 	pecasPuzzle.pecas[22].pos_atual_y = 290;
 	pecasPuzzle.pecas[22].selecionada = false;
 
 	pecasPuzzle.pecas[23].id = 24;
-	pecasPuzzle.pecas[23].pos_correta_x = 700;
-	pecasPuzzle.pecas[23].pos_correta_y = 540;
+	pecasPuzzle.pecas[23].pos_inicial_x = 240;
+	pecasPuzzle.pecas[23].pos_inicial_y = 420;
 	pecasPuzzle.pecas[23].pos_atual_x = 240;
 	pecasPuzzle.pecas[23].pos_atual_y = 420;
 	pecasPuzzle.pecas[23].selecionada = false;
 
 	pecasPuzzle.pecas[24].id = 25;
-	pecasPuzzle.pecas[24].pos_correta_x = 820;
-	pecasPuzzle.pecas[24].pos_correta_y = 540;
+	pecasPuzzle.pecas[24].pos_inicial_x = 125;
+	pecasPuzzle.pecas[24].pos_inicial_y = 550;
 	pecasPuzzle.pecas[24].pos_atual_x = 125;
 	pecasPuzzle.pecas[24].pos_atual_y = 550;
 	pecasPuzzle.pecas[24].selecionada = false;

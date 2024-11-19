@@ -26,6 +26,16 @@ void desenhaQuadrados() {
 	}
 }
 
+//void verificaPuzzleCompleto() {
+//	for (int i = 0; i < 25; i++) {
+//		//printf("Sequencia de id %d\n", quadrantePuzzle.quadrantes[i].idPecaRecebida);
+//		if (quadrantePuzzle.quadrantes[i].idPecaRecebida == arrayVerificador[i]) {
+//			somaVerificadora += 1;
+//			//printf("SOMAVERIFICADORA %d", somaVerificadora);
+//		}
+//	}
+//}
+
 void fase3(ALLEGRO_EVENT evento) {
 
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
@@ -64,6 +74,8 @@ void fase3(ALLEGRO_EVENT evento) {
 				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
 					quadrantePuzzle.quadrantes[j].idPecaRecebida = idPeca;
+					guardaMovimentacao[somaPosicao] = indice;
+					somaPosicao += 1;
 					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					pecasPuzzle.pecas[indice].pos_atual_x = quadrantePuzzle.quadrantes[j].X;
 					pecasPuzzle.pecas[indice].pos_atual_y = quadrantePuzzle.quadrantes[j].Y;
@@ -98,8 +110,6 @@ void fase3(ALLEGRO_EVENT evento) {
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
-				printf("4 ID QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
-				printf("4 BOOL QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].contemPeca);
 				first = true;
 			}
 
@@ -108,8 +118,6 @@ void fase3(ALLEGRO_EVENT evento) {
 				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
-				printf("\n5 ID QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].id);
-				printf("5 BOOL QUADRANTE %d\n", quadrantePuzzle.quadrantes[j].contemPeca);
 				first = true;
 			}
 		}
@@ -133,6 +141,33 @@ void fase3(ALLEGRO_EVENT evento) {
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
 		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
+	}
+
+	// Faz o cada peça movida na sequencia voltar para sua posição inicial
+	al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
+	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+	if ((mouseAxesX >= 75 && mouseAxesX <= 285) && (mouseAxesY >= 670 && mouseAxesY <= 712)) {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+			for (int i = 0; i < 25; i++) {	
+				printf("%d ", guardaMovimentacao[i]);
+			}
+			somaPosicao -= 1;
+			int swapDaPeca = guardaMovimentacao[somaPosicao];
+			pecasPuzzle.pecas[swapDaPeca].pos_atual_x = pecasPuzzle.pecas[swapDaPeca].pos_inicial_x;
+			pecasPuzzle.pecas[swapDaPeca].pos_atual_y = pecasPuzzle.pecas[swapDaPeca].pos_inicial_y;
+			printf("\n");
+		}
+	}
+
+	// Após a verificação, o botão leva para a próxia fase
+	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
+	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
+	if ((mouseAxesX >= 1040 && mouseAxesX <= 1219) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+			navegacao += 1;
+		}
 	}
 
 	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
@@ -173,17 +208,20 @@ void fase3(ALLEGRO_EVENT evento) {
 		al_draw_rectangle(marcacaoX - 0.4, marcacaoY - 0.5, marcacaoX + 110, marcacaoY + 110, al_map_rgb(238, 173, 45), 6);
 	}
 
-	// Botão Próxima fase
-	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
-	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
+	// Verifica Puzzle
+	//al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+	//al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
+	//al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
+	//al_draw_filled_rectangle(972, 670, 1214, 710, al_map_rgb(238, 173, 45));
+	//al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1093, 670, ALLEGRO_ALIGN_CENTRE, "Validar Puzzle");
 
-	// Verificar se clicou em proximo
-	if ((mouseAxesX >= 1040 && mouseAxesX <= 1219) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-			navegacao += 1;
-		}
-	}
+	//for (int i = 0; i < 25; i++) {
+	//	//printf("Sequencia de id %d\n", quadrantePuzzle.quadrantes[i].idPecaRecebida);
+	//	if (quadrantePuzzle.quadrantes[i].idPecaRecebida == arrayVerificador[i]) {
+	//		somaVerificadora += 1;
+	//		//printf("SOMAVERIFICADORA %d", somaVerificadora);
+	//	}
+	//}
 
 	al_flip_display();
 }
