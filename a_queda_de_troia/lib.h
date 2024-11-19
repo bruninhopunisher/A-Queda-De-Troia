@@ -57,6 +57,9 @@ extern ALLEGRO_BITMAP* fundo3Intro1;
 extern ALLEGRO_BITMAP* fundoHelena;
 extern ALLEGRO_BITMAP* fundoParis;
 extern ALLEGRO_FONT* fonteIntro1;
+extern ALLEGRO_BITMAP* mapaAtenas;
+extern ALLEGRO_BITMAP* mapaTroia;
+extern ALLEGRO_BITMAP* mapaGrecia;
 extern bool renderizar;
 
 //Introdução 2
