@@ -166,6 +166,9 @@
     <Image Include="..\..\introduçao 3\pagina5.jpg" />
     <Image Include="..\..\introduçao 3\pagina6.jpg" />
     <Image Include="..\..\introduçao 3\pagina7.jpg" />
+    <Image Include="ataquebaixo1.jpg" />
+    <Image Include="ataquebaixo3.jpg" />
+    <Image Include="ataquebaixo4.jpg" />
     <Image Include="background-f2.jpg" />
     <Image Include="barra-vida-50R.jpg" />
     <Image Include="barra-vida-cheia.jpg" />
@@ -179,6 +182,7 @@
     <Image Include="fundoAgamenom.jpg" />
     <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
+    <Image Include="ataquebaixo2.jpg" />
     <Image Include="Imagens\Fase_04\flexa.png" />
     <Image Include="Imagens\Fase_04\inimigo.jpg" />
     <Image Include="Imagens\Fase_04\player.jpg" />
@@ -237,6 +241,7 @@
     <Image Include="ParisEsqNormal.jpg" />
     <Image Include="ParisIntro1.jpg" />
     <Image Include="soldadosEsparta.jpg" />
+    <Image Include="soldadosTroia.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fase02.h" />
