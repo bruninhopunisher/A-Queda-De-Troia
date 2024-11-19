@@ -1,12 +1,9 @@
 #include "introducao3.h"
 
 void introducao3(ALLEGRO_EVENT evento) {
-<<<<<<< HEAD
 
 	ALLEGRO_FONT* font = al_load_ttf_font("Fontes/MateSC-Regular.ttf", 35, 0);
 
-=======
->>>>>>> 5462816bef8f164d7f9fb01513d2d26507687c4a
 	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
@@ -14,17 +11,12 @@ void introducao3(ALLEGRO_EVENT evento) {
 	switch (intro) {
 	case 1:
 		imagemIntro(pagina1, evento);
-<<<<<<< HEAD
 		al_draw_text(font, al_map_rgb(0, 0, 0), 610, 610, ALLEGRO_ALIGN_CENTRE, "Os gregos preparam a maior estrategia de todos os tempos.");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 610, 650, ALLEGRO_ALIGN_CENTRE, "A invasao de Troia comeca esta noite.");
-=======
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 610, 590, ALLEGRO_ALIGN_CENTRE, "Os gregos preparam a maior estrategia de todos os tempos.");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 610, 630, ALLEGRO_ALIGN_CENTRE, "A invasao de Troia comeca esta noite.");
->>>>>>> 5462816bef8f164d7f9fb01513d2d26507687c4a
 		al_flip_display();
 		break;
 	case 2:
-		imagemIntro(pagina2, evento);		
+		imagemIntro(pagina2, evento);
 		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 580, ALLEGRO_ALIGN_CENTRE, "O destino de Troia esta em nossas maos.");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 620, ALLEGRO_ALIGN_CENTRE, " Vamos entrar em suas portas");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 660, ALLEGRO_ALIGN_CENTRE, " de forma silenciosa.");
@@ -57,17 +49,14 @@ void introducao3(ALLEGRO_EVENT evento) {
 		al_flip_display();
 		break;
 	case 6:
-<<<<<<< HEAD
 		imagemIntro(pagina6, evento);
 		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "Cada movimento deve ser preciso.");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Nao temos margem para erro!");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "Boa sorte, soldado.");
-=======
 		imagemIntro(pagina5, evento);
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "Cada movimento deve ser preciso.");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Nao temos margem para erro!");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "Boa sorte, soldado!");
->>>>>>> 5462816bef8f164d7f9fb01513d2d26507687c4a
 		al_flip_display();
 		if ((mouseX >= 1016 && mouseX <= 1189) && (mouseY >= 653 && mouseY <= 692)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);

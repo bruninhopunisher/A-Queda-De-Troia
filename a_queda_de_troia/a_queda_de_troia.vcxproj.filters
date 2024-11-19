@@ -302,6 +302,21 @@
     <Image Include="Imagens\Introducao_1\mapa_grecia.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
     </Image>
+    <Image Include="ataquebaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="soldadosTroia.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">

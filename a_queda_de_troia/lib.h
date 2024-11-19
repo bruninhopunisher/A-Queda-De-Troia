@@ -95,6 +95,7 @@ extern ALLEGRO_BITMAP* barra_vida_baixa;
 extern ALLEGRO_BITMAP* barra_vidaRei_100;
 extern ALLEGRO_BITMAP* barra_vidaRei_50;
 extern ALLEGRO_BITMAP* soldadosEsparta;
+extern ALLEGRO_BITMAP* soldadosTroia;
 extern int pressionado;
 extern int ultPressionado;
 extern int movimento;
@@ -148,6 +149,10 @@ extern ALLEGRO_BITMAP* ParisCimaDir;
 extern ALLEGRO_BITMAP* ParisDirNormal;
 extern ALLEGRO_BITMAP* ParisDirEsq;
 extern ALLEGRO_BITMAP* ParisDirDir;
+extern ALLEGRO_BITMAP* ParisAtaqueB1;
+extern ALLEGRO_BITMAP* ParisAtaqueB2;
+extern ALLEGRO_BITMAP* ParisAtaqueB3;
+extern ALLEGRO_BITMAP* ParisAtaqueB4;
 extern int positionX1_f2;
 extern int positionY1_f2;
 extern int positionX_espada1;
@@ -160,7 +165,7 @@ extern int positionX_espadaR;
 extern int positionY_espadaR;
 extern int limiteAtaque;
 extern int limiteAtaqueR;
-extern int vidaRei;
+extern int vidaReiX;
 extern int ataqueReiTimer;
 
 
@@ -291,6 +296,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
     ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
     ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
     ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
+    ALLEGRO_BITMAP* ataqueBaixo1, ALLEGRO_BITMAP* ataqueBaixo2, ALLEGRO_BITMAP* ataqueBaixo3, ALLEGRO_BITMAP* ataquebaixo4,
     int posicaoX, int posicaoY);
 
 //Funções Iniciadoras e Destruidora
