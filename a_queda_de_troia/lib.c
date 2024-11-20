@@ -57,11 +57,20 @@ ALLEGRO_BITMAP* personagemHeitor;
 ALLEGRO_BITMAP* personagemHelena;
 ALLEGRO_BITMAP* frente_direito;
 ALLEGRO_BITMAP* frente_esquerdo;
+ALLEGRO_BITMAP* sprite_atual;
+
 
 int personagemHeitorX = 115;
 int personagemHeitorY = 490;
 int personagemHelenaX = 1150;
 int personagemHelenaY = 585;
+bool esta_movendo = false; // controlar o estado de movimento
+int direcaoX = 0;    // Direção horizontal -1 = esquerda 1 = direita
+int direcaoY = 0;    // Direção vertical -1 = cima, 1 = baixo
+int contador_passos = 0;  // Contador para alternar entre os passos
+int atraso_animacao = 0; // Controlar a velocidade da animação
+int ultima_direcaoX = 0; // Última direção horizontal
+int ultima_direcaoY = 0; // Última direção vertical
 
 //Fase 2
 //Personagem paris;
@@ -1115,6 +1124,10 @@ void destruidor() {
 	al_destroy_bitmap(fundoHelena);
 	al_destroy_bitmap(fundoParis);
 	al_destroy_font(fonteIntro1);
+	al_destroy_bitmap(mapaAtenas);
+	al_destroy_bitmap(mapaGrecia);
+	al_destroy_bitmap(mapaTroia);
+	al_destroy_bitmap(sprite_atual);
 
 	//Introdução 2
 	al_destroy_bitmap(fundoAgamenom);
@@ -1135,7 +1148,19 @@ void destruidor() {
 	al_destroy_bitmap(personagemHelena);
 	al_destroy_bitmap(frente_direito);
 	al_destroy_bitmap(frente_esquerdo);
-	
+	al_destroy_bitmap(ParisCimaNormal);
+	al_destroy_bitmap(ParisCimaEsq);
+	al_destroy_bitmap(ParisCimaDir);
+	al_destroy_bitmap(ParisBaixoNormal);
+	al_destroy_bitmap(ParisBaixoEsq);
+	al_destroy_bitmap(ParisBaixoDir);
+	al_destroy_bitmap(ParisEsqNormal);
+	al_destroy_bitmap(ParisEsqEsq);
+	al_destroy_bitmap(ParisEsqDir);
+	al_destroy_bitmap(ParisDirNormal);
+	al_destroy_bitmap(ParisDirEsq);
+	al_destroy_bitmap(ParisDirDir);
+
 	//Fase 2
 	al_destroy_bitmap(background_f2);
 	al_destroy_bitmap(espada_player1);
