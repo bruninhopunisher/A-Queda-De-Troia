@@ -151,6 +151,7 @@
     <ClCompile Include="introducao1.c" />
     <ClCompile Include="introducao2.c" />
     <ClCompile Include="introducao3.c" />
+    <ClCompile Include="introducao4.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
@@ -159,6 +160,11 @@
     <ClCompile Include="opcoes.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag1.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag2.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag3.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag4.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag5.jpg" />
     <Image Include="..\..\introduçao 3\pagina1.jpg" />
     <Image Include="..\..\introduçao 3\pagina2.jpg" />
     <Image Include="..\..\introduçao 3\pagina3.jpg" />
@@ -250,6 +256,7 @@
     <ClInclude Include="introducao1.h" />
     <ClInclude Include="introducao2.h" />
     <ClInclude Include="introducao3.h" />
+    <ClInclude Include="introducao4.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="opcoes.h" />

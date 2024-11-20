@@ -16,6 +16,7 @@
 #include "introducao1.h"
 #include "introducao2.h"
 #include "introducao3.h"
+#include "introducao4.h"
 #include "opcoes.h"
 #include "fase01.h"
 #include "fase02.h"
@@ -28,6 +29,7 @@ extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
 extern ALLEGRO_FONT* fonteMenu;
+extern ALLEGRO_FONT* font;
 
 extern int displayX;
 extern int displayY;
@@ -74,6 +76,13 @@ extern ALLEGRO_BITMAP* pagina4;
 extern ALLEGRO_BITMAP* pagina5;
 extern ALLEGRO_BITMAP* pagina6;
 extern ALLEGRO_BITMAP* pagina7;
+
+//Introdução 4
+extern ALLEGRO_BITMAP* pag1;
+extern ALLEGRO_BITMAP* pag2;
+extern ALLEGRO_BITMAP* pag3;
+extern ALLEGRO_BITMAP* pag4;
+extern ALLEGRO_BITMAP* pag5;
 
 //Fase 1
 extern ALLEGRO_BITMAP* backgroundFaseUm;

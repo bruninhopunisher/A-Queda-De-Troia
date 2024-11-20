@@ -34,6 +34,9 @@
     <ClCompile Include="introducao3.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
     </ClCompile>
+    <ClCompile Include="introducao4.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -65,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="introducao3.h">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao4.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +322,21 @@
     </Image>
     <Image Include="soldadosTroia.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
