@@ -6,6 +6,7 @@ ALLEGRO_EVENT_QUEUE* evento;
 ALLEGRO_DISPLAY* display;
 ALLEGRO_BITMAP* backgroundMenu;
 ALLEGRO_FONT* fonteMenu;
+ALLEGRO_FONT* font;
 
 int displayX;
 int displayY;
@@ -50,6 +51,13 @@ ALLEGRO_BITMAP* pagina4;
 ALLEGRO_BITMAP* pagina5;
 ALLEGRO_BITMAP* pagina6;
 ALLEGRO_BITMAP* pagina7;
+
+//Introdução 4
+ALLEGRO_BITMAP* pag1;
+ALLEGRO_BITMAP* pag2;
+ALLEGRO_BITMAP* pag3;
+ALLEGRO_BITMAP* pag4;
+ALLEGRO_BITMAP* pag5;
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm;
@@ -239,6 +247,7 @@ void iniciarConstantes() {
 	//Fonte
 	fonteMenu = al_load_font("Fontes/MedievalSharp-Bold.ttf", 35, ALLEGRO_ALIGN_CENTRE);
 	testeInicializar(fonteMenu, "fonteMenu");
+	font = al_load_ttf_font("Fontes/MateSC-Regular.ttf", 35, 0);
 
 	//Audios Jogo
 	audioMenu = al_load_sample("Audios/audio_menu.mp3");
@@ -298,6 +307,19 @@ void iniciarConstantes() {
 	testeInicializar(pagina5, "pagian-5-Intro3");
 	testeInicializar(pagina6, "pagian-6-Intro3");
 	testeInicializar(pagina7, "pagian-7-Intro3");
+
+	//Introdução 3
+	pag1 = al_load_bitmap("Imagens/Introducao_4/pag1.jpg");
+	pag2 = al_load_bitmap("Imagens/Introducao_4/pag2.jpg");
+	pag3 = al_load_bitmap("Imagens/Introducao_4/pag3.jpg");
+	pag4 = al_load_bitmap("Imagens/Introducao_4/pag4.jpg");
+	pag5 = al_load_bitmap("Imagens/Introducao_4/pag5.jpg");
+
+	testeInicializar(pagina1, "pag-1-Intro4");
+	testeInicializar(pagina2, "pag-2-Intro4");
+	testeInicializar(pagina3, "pag-3-Intro4");
+	testeInicializar(pagina4, "pag-4-Intro4");
+	testeInicializar(pagina5, "pag-5-Intro4");
 
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
@@ -1112,6 +1134,7 @@ void destruidor() {
 	//Menu
 	al_destroy_bitmap(backgroundMenu);
 	al_destroy_font(fonteMenu);
+	al_destroy_font(font);
 
 	//Opções
 	al_destroy_bitmap(backgroundOpcoes);
@@ -1144,6 +1167,13 @@ void destruidor() {
 	al_destroy_bitmap(pagina5);
 	al_destroy_bitmap(pagina6);
 	al_destroy_bitmap(pagina7);
+
+	//Introdução 4
+	al_destroy_bitmap(pag1);
+	al_destroy_bitmap(pag2);
+	al_destroy_bitmap(pag3);
+	al_destroy_bitmap(pag4);
+	al_destroy_bitmap(pag5);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);
