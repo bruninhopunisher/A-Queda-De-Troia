@@ -257,7 +257,7 @@ typedef struct {
 } posicaoInicial;
 
 typedef struct {
-	posicaoInicial posicoes[25];
+	posicaoInicial posicoes[26];
 } PosicaoInicialStruct;
 
 extern PosicaoInicialStruct posicoesIniciais;
@@ -281,11 +281,13 @@ extern bool first;
 extern bool quadranteSelecionado;
 extern int marcacaoX;
 extern int marcacaoY;
-extern int guardaMovimentacao[25];
+extern int guardaMovimentacao[26];
+extern int guardaIdPuzzle[26];
 extern int arrayVerificador[25];
 extern int somaVerificadora;
 extern int somaPosicao;
-
+extern int indiceQuadrante;
+extern int swapDaPeca;
 
 //Fase 4
 extern ALLEGRO_BITMAP* player;

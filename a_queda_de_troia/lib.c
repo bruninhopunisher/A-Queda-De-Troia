@@ -174,8 +174,11 @@ bool first = false;
 int marcacaoX;
 int marcacaoY;
 int somaVerificadora;
-int guardaMovimentacao[25];
+int guardaMovimentacao[26] = { 5745, 7854, 7581, 5404, 4540, 4540, 9980, 8845, 5408, 4804, 4878, 9870, 7487, 7854, 9804, 7870, 7874, 4548, 4840, 4540, 4570, 7874, 4960, 9807, 8707, 7087 };
+int guardaIdPuzzle[26] = { 5745, 7854, 7581, 5404, 4540, 4540, 9980, 8845, 5408, 4804, 4878, 9870, 7487, 7854, 9804, 7870, 7874, 4548, 4840, 4540, 4570, 7874, 4960, 9807, 8707, 7087 };
 int somaPosicao = 0;
+int indiceQuadrante = 0;
+int swapDaPeca;
 
 //Fase 04
 ALLEGRO_BITMAP* player;
@@ -557,15 +560,15 @@ void iniciarConstantes() {
 	posicoesIniciais.posicoes[24].contemPeca = true;
 
 	pecasPuzzle.pecas[0].id = 1;
-	pecasPuzzle.pecas[0].pos_inicial_x = 340;
-	pecasPuzzle.pecas[0].pos_inicial_y = 60;
+	pecasPuzzle.pecas[0].pos_inicial_x = 8;
+	pecasPuzzle.pecas[0].pos_inicial_y = 20;
 	pecasPuzzle.pecas[0].pos_atual_x = 8;
 	pecasPuzzle.pecas[0].pos_atual_y = 20;
 	pecasPuzzle.pecas[0].selecionada = false;
 
 	pecasPuzzle.pecas[1].id = 2;
 	pecasPuzzle.pecas[1].pos_inicial_x = 8;
-	pecasPuzzle.pecas[1].pos_inicial_y = 20;
+	pecasPuzzle.pecas[1].pos_inicial_y = 160;
 	pecasPuzzle.pecas[1].pos_atual_x = 8;
 	pecasPuzzle.pecas[1].pos_atual_y = 160;
 	pecasPuzzle.pecas[1].selecionada = false;
@@ -1169,19 +1172,6 @@ void destruidor() {
 	al_destroy_bitmap(barra_vida_baixa);
 	al_destroy_bitmap(barra_vidaRei_100);
 	al_destroy_bitmap(barra_vidaRei_50);
-	al_destroy_bitmap(ParisBaixoDir);
-	al_destroy_bitmap(ParisBaixoEsq);
-	al_destroy_bitmap(ParisBaixoNormal);
-	al_destroy_bitmap(ParisEsqDir);
-	al_destroy_bitmap(ParisEsqEsq);
-	al_destroy_bitmap(ParisEsqNormal);
-	al_destroy_bitmap(ParisCimaDir);
-	al_destroy_bitmap(ParisCimaEsq);
-	al_destroy_bitmap(ParisCimaNormal);
-	al_destroy_bitmap(ParisDirDir);
-	al_destroy_bitmap(ParisDirEsq);
-	al_destroy_bitmap(ParisDirNormal);
-	al_destroy_bitmap(soldadosEsparta);
 	al_destroy_bitmap(soldadosTroia);
 	al_destroy_bitmap(ParisAtaqueB1);
 	al_destroy_bitmap(ParisAtaqueB2);
@@ -1217,7 +1207,7 @@ void destruidor() {
 	al_destroy_bitmap(puzzle24);
 	al_destroy_bitmap(puzzle25);
 
-	//fese 4
+	//fase 4
 	al_destroy_bitmap (player);
 	al_destroy_bitmap (inimigo);
 	al_destroy_bitmap(flecha);
