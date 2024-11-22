@@ -31,6 +31,7 @@ extern ALLEGRO_BITMAP* backgroundMenu;
 extern ALLEGRO_FONT* fonteMenu;
 extern ALLEGRO_FONT* font;
 
+extern bool iniciarConst;
 extern int displayX;
 extern int displayY;
 extern int mouseX;
@@ -190,12 +191,26 @@ extern int vidaJogador;
 extern bool controleJogador;
 extern bool atacando;
 //REI MENELAU
-extern int positionX_espadaR;
-extern int positionY_espadaR;
+extern ALLEGRO_BITMAP* MenelauEsqDirN;
+extern ALLEGRO_BITMAP* MenelauEsqDir1;
+extern ALLEGRO_BITMAP* MenelauEsqDir2;
+extern ALLEGRO_BITMAP* MenelauEsqDir3;
+extern ALLEGRO_BITMAP* MenelauCimaN;
+extern ALLEGRO_BITMAP* MenelauCima1;
+extern ALLEGRO_BITMAP* MenelauCima2;
+extern ALLEGRO_BITMAP* MenelauCima3;
+extern ALLEGRO_BITMAP* MenelauBaixoN;
+extern ALLEGRO_BITMAP* MenelauBaixo1;
+extern ALLEGRO_BITMAP* MenelauBaixo2;
+extern ALLEGRO_BITMAP* MenelauBaixo3;
+extern int positionReiX;
+extern int positionReiY;
 extern int limiteAtaque;
-extern int limiteAtaqueR;
+extern int movimentoRei;
 extern int vidaReiX;
 extern int ataqueReiTimer;
+extern int pontoAndarX;
+extern int pontoAndarY;
 
 
 //Fase 3
@@ -273,7 +288,7 @@ extern PosicaoInicialStruct posicoesIniciais;
 extern Puzzle pecasPuzzle;
 extern Quadrante quadrantePuzzle;
 
-extern ALLEGRO_BITMAP* imagensPuzzle[25];
+//extern ALLEGRO_BITMAP* imagensPuzzle[25];
 extern bool verificaPuzzle;
 extern int posicaoInicialX[25];
 extern int posicaoInicialY[25];

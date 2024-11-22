@@ -1,53 +1,110 @@
 #include "fase2.h" 
 
-//void ataquePlayer(int* positionX, int* positionY, int positionPlayer, bool* atacando,int* limitAtaque) {
-//	switch (positionPlayer)
-//	{
-//	case 1:
-//		if (*limitAtaque < 10) {
-//			*positionY -= 2;
-//			*limitAtaque += 1;
-//		}
-//		else {
-//			*positionY += 20;
-//			*limitAtaque = 0;	
-//			*atacando = false;
-//		}
-//		break;
-//	case 2:
-//		positionX += 10;
-//		break;
-//	case 3: 
-//		if (*limitAtaque < 10) {
-//			*positionY += 2;
-//			*limitAtaque += 1;
-//		}else{
-//			if (positionX_espada1 + 20 >= 615 &&
-//				positionX_espada1 + 20 <= 665 &&
-//				positionY_espada1 + 91 >= 425 &&
-//				positionY_espada1 + 91<= 495 && controleJogador == true) {
-//				vidaReiX -= 500;
-//			}
-//			*positionY -= 20;
-//			*limitAtaque = 0;
-//			*atacando = false;
-//		}
-//		break;
-//	case 4:
-//		positionX += 10;
-//		break;
-//	}
-//}
+
+
 
 void fase2(ALLEGRO_EVENT evento) {
-	//printf("%d", vidaReiX);
+
+	al_draw_bitmap(background_f2, 0, 0, 0);
+	
+	if (positionReiX == pontoAndarX &&
+		positionReiY == pontoAndarY) {
+		pontoAndarX = rand() % 1280;
+		pontoAndarY = 180 + rand() % 320;
+	}
+	else {
+		if (positionReiY < pontoAndarY) {
+			if (movimentoRei >= 0 && movimentoRei < 20) {
+				al_draw_bitmap(MenelauBaixoN, positionReiX, positionReiY, 0);
+				movimentoRei += 1;
+			}
+			if (movimentoRei >= 20 && movimentoRei < 30) {
+				al_draw_bitmap(MenelauBaixo1, positionReiX, positionReiY, 0);
+				movimentoRei += 1;
+			}
+			if (movimentoRei >= 30 && movimentoRei < 40) {
+				al_draw_bitmap(MenelauBaixoN, positionReiX, positionReiY, 0);
+				movimentoRei += 1;
+			}
+			if (movimentoRei >= 40 && movimentoRei < 50) {
+				al_draw_bitmap(MenelauBaixo3, positionReiX, positionReiY, 0);
+				movimentoRei = 0;
+			}
+			positionReiY += 1;
+		}
+		else {
+			if (positionReiY > pontoAndarY) {
+				if (movimentoRei >= 0 && movimentoRei < 20) {
+					al_draw_bitmap(MenelauCimaN, positionReiX, positionReiY, 0);
+					movimentoRei += 1;
+				}
+				if (movimentoRei >= 20 && movimentoRei < 30) {
+					al_draw_bitmap(MenelauCima1, positionReiX, positionReiY, 0);
+					movimentoRei += 1;
+				}
+				if (movimentoRei >= 30 && movimentoRei < 40) {
+					al_draw_bitmap(MenelauCimaN, positionReiX, positionReiY, 0);
+					movimentoRei += 1;
+				}
+				if (movimentoRei >= 40 && movimentoRei < 50) {
+					al_draw_bitmap(MenelauCima3, positionReiX, positionReiY, 0);
+					movimentoRei = 0;
+				}
+				positionReiY -= 1;
+			}
+			else {
+				if (positionReiX < pontoAndarX) {
+					if (movimentoRei >= 0 && movimentoRei < 20) {
+						al_draw_bitmap(MenelauEsqDirN, positionReiX, positionReiY, 1);
+						movimentoRei += 1;
+					}
+					if (movimentoRei >= 20 && movimentoRei < 30) {
+						al_draw_bitmap(MenelauEsqDir1, positionReiX, positionReiY, 1);
+						movimentoRei += 1;
+					}
+					if (movimentoRei >= 30 && movimentoRei < 40) {
+						al_draw_bitmap(MenelauEsqDirN, positionReiX, positionReiY, 1);
+						movimentoRei += 1;
+					}
+					if (movimentoRei >= 40 && movimentoRei < 50) {
+						al_draw_bitmap(MenelauEsqDir3, positionReiX, positionReiY, 1);
+						movimentoRei = 0;
+					}
+					positionReiX += 1;
+				}
+				else {
+					if (positionReiX > pontoAndarX) {
+						if (movimentoRei >= 0 && movimentoRei < 20) {
+							al_draw_bitmap(MenelauEsqDirN, positionReiX, positionReiY, 0);
+							movimentoRei += 1;
+						}
+						if (movimentoRei >= 20 && movimentoRei < 30) {
+							al_draw_bitmap(MenelauEsqDir1, positionReiX, positionReiY, 0);
+							movimentoRei += 1;
+						}
+						if (movimentoRei >= 30 && movimentoRei < 40) {
+							al_draw_bitmap(MenelauEsqDirN, positionReiX, positionReiY, 0);
+							movimentoRei += 1;
+						}
+						if (movimentoRei >= 40 && movimentoRei < 50) {
+							al_draw_bitmap(MenelauEsqDir3, positionReiX, positionReiY, 0);
+							movimentoRei = 0;
+						}
+						positionReiX -= 1;
+					}
+				}
+			}
+		}
+	}
+	/*if (pontoAndarY < 180 || pontoAndarY > 500) {
+		printf("Pooooooooooooooooooooooooooooooooooooo");
+	}*/
+	printf("%d\n", pontoAndarX);
+	printf("%d\n", pontoAndarY);
 	if (vidaReiX <= 1000) {
 		controleJogador = true;
 	}
-	//printf("%d\n", positionX1_f2);
-	//printf("%d\n", positionY1_f2);
 
-	al_draw_bitmap(background_f2, 0, 0, 0);
 
 	//SOLDADOS DE BAIXO
 	al_draw_bitmap(soldadosEsparta, 100, 600, 0);
@@ -111,28 +168,10 @@ void fase2(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(soldadosTroia, 800, 150, 0);
 	al_draw_bitmap(soldadosTroia, 1000, 150, 0);
 
-	//ESPADA REI
-	al_draw_bitmap(espada_rei_f2, positionX_espadaR, positionY_espadaR, 0);
-
-	//REI DE ESPARTA
-	al_draw_filled_rectangle(615, 425, 665, 495, al_map_rgba(0, 244, 244, 0.5));
 
 	switch (controleJogador)
 	{
 	case false:
-
-		//BARRA DE VIDA PARIS
-		switch (vidaJogador)
-		{
-		case 100:
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 6, ALLEGRO_ALIGN_CENTRE, "PARIS");
-			al_draw_bitmap(barra_vida_cheia, 30, 30, 0);
-			break;
-		case 15:
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 6, ALLEGRO_ALIGN_CENTRE, "PARIS");
-			al_draw_bitmap(barra_vida_baixa, 30, 30, 0);
-			break;
-		}
 
 		//BARRA DE VIDA REI MENELAU
 		al_draw_filled_rectangle(1000, 25, vidaReiX, 45, al_map_rgba(255, 0, 0, 0.5));
@@ -140,7 +179,6 @@ void fase2(ALLEGRO_EVENT evento) {
 
 		switch (vidaJogador)
 		{
-
 		case 100:
 			//MOVIMENTAÇÃO DO PARIS VIDA 100%
 			if (positionY1_f2 < 450 && positionY1_f2 > 150) {

@@ -1,13 +1,14 @@
 #include "lib.h"
 
 //Variaveis Globais
-ALLEGRO_TIMER* timer;
-ALLEGRO_EVENT_QUEUE* evento;
-ALLEGRO_DISPLAY* display;
-ALLEGRO_BITMAP* backgroundMenu;
-ALLEGRO_FONT* fonteMenu;
-ALLEGRO_FONT* font;
+ALLEGRO_TIMER* timer; //Destruido
+ALLEGRO_EVENT_QUEUE* evento; //Destruido
+ALLEGRO_DISPLAY* display; // Destruido
+ALLEGRO_BITMAP* backgroundMenu; //Destruido
+ALLEGRO_FONT* fonteMenu; //Destruido
+ALLEGRO_FONT* font; // Destruido
 
+bool iniciarConst = false;
 int displayX;
 int displayY;
 int mouseX;
@@ -21,51 +22,51 @@ bool boolVolume = true;
 efeitoDigitacao[4];
 
 //Opções
-ALLEGRO_BITMAP* backgroundOpcoes;
-ALLEGRO_BITMAP* comVolume;
-ALLEGRO_BITMAP* semVolume;
-ALLEGRO_BITMAP* comVolumeHover;
-ALLEGRO_BITMAP* semVolumeHover;
+ALLEGRO_BITMAP* backgroundOpcoes; //Destruido
+ALLEGRO_BITMAP* comVolume; //Destruido
+ALLEGRO_BITMAP* semVolume; //Destruido
+ALLEGRO_BITMAP* comVolumeHover; //Destruido
+ALLEGRO_BITMAP* semVolumeHover; //Destruido
 
 //Introdução 1
-ALLEGRO_BITMAP* fundo1Intro1;
-ALLEGRO_BITMAP* fundo2Intro1;
-ALLEGRO_BITMAP* fundo3Intro1;
-ALLEGRO_BITMAP* fundoHelena;
-ALLEGRO_BITMAP* fundoParis;
-ALLEGRO_FONT* fonteIntro1;
-ALLEGRO_BITMAP* mapaAtenas;
-ALLEGRO_BITMAP* mapaTroia;
-ALLEGRO_BITMAP* mapaGrecia;
+ALLEGRO_BITMAP* fundo1Intro1; //Destruido
+ALLEGRO_BITMAP* fundo2Intro1; //Destruido
+ALLEGRO_BITMAP* fundo3Intro1; //Destruido
+ALLEGRO_BITMAP* fundoHelena; //Destruido
+ALLEGRO_BITMAP* fundoParis; //Destruido
+ALLEGRO_FONT* fonteIntro1; //Destruido
+ALLEGRO_BITMAP* mapaAtenas; //Destruido
+ALLEGRO_BITMAP* mapaTroia; //Destruido
+ALLEGRO_BITMAP* mapaGrecia; //Destruido
 bool renderizar = 0;
 
 //Introdução 2
-ALLEGRO_BITMAP* fundoAgamenom;
-ALLEGRO_BITMAP* fundoMenelau;
+ALLEGRO_BITMAP* fundoAgamenom; //Destruido
+ALLEGRO_BITMAP* fundoMenelau; //Destruido
  
 //Introdução 3
-ALLEGRO_BITMAP* pagina1;
-ALLEGRO_BITMAP* pagina2;
-ALLEGRO_BITMAP* pagina3;
-ALLEGRO_BITMAP* pagina4;
-ALLEGRO_BITMAP* pagina5;
-ALLEGRO_BITMAP* pagina6;
-ALLEGRO_BITMAP* pagina7;
+ALLEGRO_BITMAP* pagina1; //Destruido
+ALLEGRO_BITMAP* pagina2; //Destruido
+ALLEGRO_BITMAP* pagina3; //Destruido
+ALLEGRO_BITMAP* pagina4; //Destruido
+ALLEGRO_BITMAP* pagina5; //Destruido
+ALLEGRO_BITMAP* pagina6; //Destruido
+ALLEGRO_BITMAP* pagina7; //Destruido
 
 //Introdução 4
-ALLEGRO_BITMAP* pag1;
-ALLEGRO_BITMAP* pag2;
-ALLEGRO_BITMAP* pag3;
-ALLEGRO_BITMAP* pag4;
-ALLEGRO_BITMAP* pag5;
+ALLEGRO_BITMAP* pag1; //Destruido
+ALLEGRO_BITMAP* pag2; //Destruido
+ALLEGRO_BITMAP* pag3; //Destruido
+ALLEGRO_BITMAP* pag4; //Destruido
+ALLEGRO_BITMAP* pag5; //Destruido
 
 //Fase 1
-ALLEGRO_BITMAP* backgroundFaseUm;
-ALLEGRO_BITMAP* personagemHeitor;
-ALLEGRO_BITMAP* personagemHelena;
-ALLEGRO_BITMAP* frente_direito;
-ALLEGRO_BITMAP* frente_esquerdo;
-ALLEGRO_BITMAP* sprite_atual;
+ALLEGRO_BITMAP* backgroundFaseUm; //Destruido
+ALLEGRO_BITMAP* personagemHeitor; //Destruido
+ALLEGRO_BITMAP* personagemHelena; //Destruido
+ALLEGRO_BITMAP* frente_direito; //Destruido
+ALLEGRO_BITMAP* frente_esquerdo; //Destruido
+ALLEGRO_BITMAP* sprite_atual; //Destruido
 
 
 int personagemHeitorX = 115;
@@ -82,15 +83,15 @@ int ultima_direcaoY = 0; // Última direção vertical
 
 //Fase 2
 //Personagem paris;
-ALLEGRO_BITMAP* background_f2;
-ALLEGRO_BITMAP* espada_player1;
-ALLEGRO_BITMAP* espada_rei_f2;
-ALLEGRO_BITMAP* barra_vida_cheia;
-ALLEGRO_BITMAP* barra_vida_baixa;
-ALLEGRO_BITMAP* barra_vidaRei_100;
-ALLEGRO_BITMAP* barra_vidaRei_50;
-ALLEGRO_BITMAP* soldadosEsparta;
-ALLEGRO_BITMAP* soldadosTroia;
+ALLEGRO_BITMAP* background_f2; //Destruido
+ALLEGRO_BITMAP* espada_player1; //Destruido
+ALLEGRO_BITMAP* espada_rei_f2; //Destruido
+ALLEGRO_BITMAP* barra_vida_cheia; //Destruido
+ALLEGRO_BITMAP* barra_vida_baixa; //Destruido
+ALLEGRO_BITMAP* barra_vidaRei_100; //Destruido
+ALLEGRO_BITMAP* barra_vidaRei_50; //Destruido
+ALLEGRO_BITMAP* soldadosEsparta; //Destruido
+ALLEGRO_BITMAP* soldadosTroia; //Destruido
 int pressionado = 0;
 int ultPressionado = 0;
 int movimento = 0;
@@ -100,22 +101,22 @@ int positionX2_heitor = 665;
 int positionY1_heitor = 100;
 int positionY2_heitor = 170;
 //PARIS
-ALLEGRO_BITMAP* ParisBaixoEsq;
-ALLEGRO_BITMAP* ParisBaixoDir;
-ALLEGRO_BITMAP* ParisBaixoNormal;
-ALLEGRO_BITMAP* ParisEsqDir;
-ALLEGRO_BITMAP* ParisEsqEsq;
-ALLEGRO_BITMAP* ParisEsqNormal;
-ALLEGRO_BITMAP* ParisCimaNormal;
-ALLEGRO_BITMAP* ParisCimaEsq;
-ALLEGRO_BITMAP* ParisCimaDir;
-ALLEGRO_BITMAP* ParisDirNormal;
-ALLEGRO_BITMAP* ParisDirEsq;
-ALLEGRO_BITMAP* ParisDirDir;
-ALLEGRO_BITMAP* ParisAtaqueB1;
-ALLEGRO_BITMAP* ParisAtaqueB2;
-ALLEGRO_BITMAP* ParisAtaqueB3;
-ALLEGRO_BITMAP* ParisAtaqueB4;
+ALLEGRO_BITMAP* ParisBaixoEsq; //Destruido
+ALLEGRO_BITMAP* ParisBaixoDir; //Destruido
+ALLEGRO_BITMAP* ParisBaixoNormal; //Destruido
+ALLEGRO_BITMAP* ParisEsqDir; //Destruido
+ALLEGRO_BITMAP* ParisEsqEsq; //Destruido
+ALLEGRO_BITMAP* ParisEsqNormal; //Destruido
+ALLEGRO_BITMAP* ParisCimaNormal; //Destruido
+ALLEGRO_BITMAP* ParisCimaEsq; //Destruido
+ALLEGRO_BITMAP* ParisCimaDir; //Destruido
+ALLEGRO_BITMAP* ParisDirNormal; //Destruido
+ALLEGRO_BITMAP* ParisDirEsq; //Destruido
+ALLEGRO_BITMAP* ParisDirDir; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueB1; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueB2; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueB3; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueB4; //Destruido
 int positionX1_f2 = 615;
 int positionY1_f2 = 225;
 int positionX_espada1 = 605;
@@ -124,41 +125,55 @@ int limiteAtaque = 0;
 bool controleJogador = false;
 bool atacando = false;
 //REI MENELAU
-int positionX_espadaR = 630;
-int positionY_espadaR = 355;
+ALLEGRO_BITMAP* MenelauEsqDirN; //Destruido
+ALLEGRO_BITMAP* MenelauEsqDir1; //Destruido
+ALLEGRO_BITMAP* MenelauEsqDir2; //Destruido
+ALLEGRO_BITMAP* MenelauEsqDir3; //Destruido
+ALLEGRO_BITMAP* MenelauCimaN; //Destruido
+ALLEGRO_BITMAP* MenelauCima1; //Destruido
+ALLEGRO_BITMAP* MenelauCima2; //Destruido
+ALLEGRO_BITMAP* MenelauCima3; //Destruido
+ALLEGRO_BITMAP* MenelauBaixoN; //Destruido
+ALLEGRO_BITMAP* MenelauBaixo1; //Destruido
+ALLEGRO_BITMAP* MenelauBaixo2; //Destruido
+ALLEGRO_BITMAP* MenelauBaixo3; //Destruido
+int positionReiX = 650;
+int positionReiY = 450;
 int vidaJogador = 100;
-int limiteAtaqueR = 0;
+int movimentoRei = 0;
 int ataqueReiTimer = 0;
 int vidaReiX = 1200;
+int pontoAndarX = 650;
+int pontoAndarY = 450;
 
 //Fase 3
-ALLEGRO_BITMAP* imgPuzzle;
-ALLEGRO_BITMAP* imgFundoPuzzle;
-ALLEGRO_BITMAP* puzzle1;
-ALLEGRO_BITMAP* puzzle2;
-ALLEGRO_BITMAP* puzzle3;
-ALLEGRO_BITMAP* puzzle4;
-ALLEGRO_BITMAP* puzzle5;
-ALLEGRO_BITMAP* puzzle6;
-ALLEGRO_BITMAP* puzzle7;
-ALLEGRO_BITMAP* puzzle8;
-ALLEGRO_BITMAP* puzzle9;
-ALLEGRO_BITMAP* puzzle10;
-ALLEGRO_BITMAP* puzzle11;
-ALLEGRO_BITMAP* puzzle12;
-ALLEGRO_BITMAP* puzzle13;
-ALLEGRO_BITMAP* puzzle14;
-ALLEGRO_BITMAP* puzzle15;
-ALLEGRO_BITMAP* puzzle16;
-ALLEGRO_BITMAP* puzzle17;
-ALLEGRO_BITMAP* puzzle18;
-ALLEGRO_BITMAP* puzzle19;
-ALLEGRO_BITMAP* puzzle20;
-ALLEGRO_BITMAP* puzzle21;
-ALLEGRO_BITMAP* puzzle22;
-ALLEGRO_BITMAP* puzzle23;
-ALLEGRO_BITMAP* puzzle24;
-ALLEGRO_BITMAP* puzzle25;
+ALLEGRO_BITMAP* imgPuzzle; //Destruido
+ALLEGRO_BITMAP* imgFundoPuzzle; //Destruido
+ALLEGRO_BITMAP* puzzle1; //Destruido
+ALLEGRO_BITMAP* puzzle2; //Destruido
+ALLEGRO_BITMAP* puzzle3; //Destruido
+ALLEGRO_BITMAP* puzzle4; //Destruido
+ALLEGRO_BITMAP* puzzle5; //Destruido
+ALLEGRO_BITMAP* puzzle6; //Destruido
+ALLEGRO_BITMAP* puzzle7; //Destruido
+ALLEGRO_BITMAP* puzzle8; //Destruido
+ALLEGRO_BITMAP* puzzle9; //Destruido
+ALLEGRO_BITMAP* puzzle10; //Destruido
+ALLEGRO_BITMAP* puzzle11; //Destruido
+ALLEGRO_BITMAP* puzzle12; //Destruido
+ALLEGRO_BITMAP* puzzle13; //Destruido
+ALLEGRO_BITMAP* puzzle14; //Destruido
+ALLEGRO_BITMAP* puzzle15; //Destruido
+ALLEGRO_BITMAP* puzzle16; //Destruido
+ALLEGRO_BITMAP* puzzle17; //Destruido
+ALLEGRO_BITMAP* puzzle18; //Destruido
+ALLEGRO_BITMAP* puzzle19; //Destruido
+ALLEGRO_BITMAP* puzzle20; //Destruido
+ALLEGRO_BITMAP* puzzle21; //Destruido
+ALLEGRO_BITMAP* puzzle22; //Destruido
+ALLEGRO_BITMAP* puzzle23; //Destruido
+ALLEGRO_BITMAP* puzzle24; //Destruido
+ALLEGRO_BITMAP* puzzle25; //Destruido
 int contadorCreditos = 3;
 bool verificaPuzzle = true;
 int posicaoInicialX[25] = { 8, 8, 8, 8, 240, 125, 125, 125, 970, 240, 970, 125, 1100, 240, 970, 970, 970, 1100, 1100, 1100, 1100, 8, 240, 240, 125 };
@@ -189,9 +204,9 @@ int indiceQuadrante = 0;
 int swapDaPeca;
 
 //Fase 04
-ALLEGRO_BITMAP* player;
-ALLEGRO_BITMAP* inimigo;
-ALLEGRO_BITMAP* flecha;
+ALLEGRO_BITMAP* player; //Destruido
+ALLEGRO_BITMAP* inimigo; //Destruido
+ALLEGRO_BITMAP* flecha; //Destruido
 bool iniciarFase = true;
 bool gameOver = false;
 int iniVel = 1.5;//2; //Vel do inimigo
@@ -213,7 +228,7 @@ int fleZ[21] = { 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 }
 //Fim Fase 04
 
 //Audios e Musicas
-ALLEGRO_SAMPLE* audioMenu;
+ALLEGRO_SAMPLE* audioMenu; //Destruido
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -240,6 +255,7 @@ void iniciarConstantes() {
 	//Global
 	timer = al_create_timer(0.5 / 30.0);
 	evento = al_create_event_queue();
+	srand(time(NULL));
 
 	testeInicializar(timer, "timer");
 	testeInicializar(evento, "evento");
@@ -373,7 +389,31 @@ void iniciarConstantes() {
 	ParisAtaqueB2 = al_load_bitmap("Imagens/Fase_02/ataquebaixo2.jpg");
 	ParisAtaqueB3 = al_load_bitmap("Imagens/Fase_02/ataquebaixo3.jpg");
 	ParisAtaqueB4 = al_load_bitmap("Imagens/Fase_02/ataquebaixo4.jpg");
+	MenelauCimaN = al_load_bitmap("Imagens/Fase_02/MenelauCimaN.jpg");
+	MenelauCima1 = al_load_bitmap("Imagens/Fase_02/MenelauCima1.jpg");
+	MenelauCima2 = al_load_bitmap("Imagens/Fase_02/MenelauCima2.jpg");
+	MenelauCima3 = al_load_bitmap("Imagens/Fase_02/MenelauCima3.jpg");
+	MenelauEsqDirN = al_load_bitmap("Imagens/Fase_02/MenelauEsqN.jpg");
+	MenelauEsqDir1 = al_load_bitmap("Imagens/Fase_02/MenelauEsqDir1.jpg");
+	MenelauEsqDir2 = al_load_bitmap("Imagens/Fase_02/MenelauEsqDir2.jpg");
+	MenelauEsqDir3 = al_load_bitmap("Imagens/Fase_02/MenelauEsqDir3.jpg");
+	MenelauBaixoN = al_load_bitmap("Imagens/Fase_02/MenelauBaixoN.jpg");
+	MenelauBaixo1 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo1.jpg");
+	MenelauBaixo2 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo2.jpg");
+	MenelauBaixo3 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo3.jpg");
 
+	testeInicializar(MenelauCimaN, "menelau_cima_n");
+	testeInicializar(MenelauCima1, "menelau_cima_1");
+	testeInicializar(MenelauCima2, "menelau_cima_2");
+	testeInicializar(MenelauCima3, "menelau_cima_3");
+	testeInicializar(MenelauBaixoN, "menelau_baixo_n");
+	testeInicializar(MenelauBaixo1, "menelau_baixo_1");
+	testeInicializar(MenelauBaixo2, "menelau_baixo_2");
+	testeInicializar(MenelauBaixo3, "menelau_baixo_3");
+	testeInicializar(MenelauEsqDirN, "menelau_esq_dir_n");
+	testeInicializar(MenelauEsqDir1, "menelau_esq_dir_1");
+	testeInicializar(MenelauEsqDir2, "menelau_esq_dir_2");
+	testeInicializar(MenelauEsqDir3, "menelau_esq_dir_3");
 	testeInicializar(soldadosTroia, "soldados_troia");
 	testeInicializar(ParisAtaqueB1, "ataque_paris_b1");
 	testeInicializar(ParisAtaqueB2, "ataque_paris_b2");
@@ -890,6 +930,7 @@ void iniciarConstantes() {
 	testeInicializar(flecha, "flecha");
 }
 
+
 void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
 
 	//VERIFICA QUAL TECLA PRESSIONOU
@@ -1181,6 +1222,30 @@ void destruidor() {
 	al_destroy_bitmap(personagemHelena);
 	al_destroy_bitmap(frente_direito);
 	al_destroy_bitmap(frente_esquerdo);
+	al_destroy_bitmap(sprite_atual);
+
+	//Fase 2
+	al_destroy_bitmap(soldadosTroia);
+	al_destroy_bitmap(soldadosEsparta);
+	al_destroy_bitmap(background_f2);
+	//Menelau
+	al_destroy_bitmap(MenelauEsqDirN);
+	al_destroy_bitmap(MenelauEsqDir1);
+	al_destroy_bitmap(MenelauEsqDir2);
+	al_destroy_bitmap(MenelauEsqDir3);
+	al_destroy_bitmap(MenelauCimaN);
+	al_destroy_bitmap(MenelauCima1);
+	al_destroy_bitmap(MenelauCima2);
+	al_destroy_bitmap(MenelauCima3);
+	al_destroy_bitmap(MenelauBaixoN);
+	al_destroy_bitmap(MenelauBaixo1);
+	al_destroy_bitmap(MenelauBaixo2);
+	al_destroy_bitmap(MenelauBaixo3);
+	//Paris
+	al_destroy_bitmap(ParisAtaqueB1);
+	al_destroy_bitmap(ParisAtaqueB2);
+	al_destroy_bitmap(ParisAtaqueB3);
+	al_destroy_bitmap(ParisAtaqueB4);
 	al_destroy_bitmap(ParisCimaNormal);
 	al_destroy_bitmap(ParisCimaEsq);
 	al_destroy_bitmap(ParisCimaDir);
@@ -1193,20 +1258,13 @@ void destruidor() {
 	al_destroy_bitmap(ParisDirNormal);
 	al_destroy_bitmap(ParisDirEsq);
 	al_destroy_bitmap(ParisDirDir);
-
-	//Fase 2
-	al_destroy_bitmap(background_f2);
-	al_destroy_bitmap(espada_player1);
-	al_destroy_bitmap(espada_rei_f2);
+	//Remover
 	al_destroy_bitmap(barra_vida_cheia);
+	al_destroy_bitmap(espada_rei_f2);
+	al_destroy_bitmap(espada_player1);
 	al_destroy_bitmap(barra_vida_baixa);
 	al_destroy_bitmap(barra_vidaRei_100);
 	al_destroy_bitmap(barra_vidaRei_50);
-	al_destroy_bitmap(soldadosTroia);
-	al_destroy_bitmap(ParisAtaqueB1);
-	al_destroy_bitmap(ParisAtaqueB2);
-	al_destroy_bitmap(ParisAtaqueB3);
-	al_destroy_bitmap(ParisAtaqueB4);
 
 	//Fase 3
 	al_destroy_bitmap(imgPuzzle);

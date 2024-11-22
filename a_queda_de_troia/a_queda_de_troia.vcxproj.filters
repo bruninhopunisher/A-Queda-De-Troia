@@ -338,6 +338,42 @@
     <Image Include="..\..\..\Downloads\Untitled (1)\pag4.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
     </Image>
+    <Image Include="MenelauEsqN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCimaN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -444,6 +480,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Créditos">
       <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau">
+      <UniqueIdentifier>{ed5fbbef-9493-42be-b6eb-cc69e486db67}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

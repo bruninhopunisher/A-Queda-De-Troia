@@ -16,7 +16,7 @@ int main() {
 	al_start_timer(timer);
 
 	while (rodando) {
-		al_wait_for_event(evento, &event);
+		al_wait_for_event(evento, &event); 
 		if (event.type == ALLEGRO_EVENT_TIMER) {
 			redraw = true; 
 		}
@@ -43,14 +43,7 @@ int main() {
 
 		switch (navegacao) {
 			case 0:
-<<<<<<< HEAD
-				fase3(event);
-				/*introducao3(event);*/
-				/*menu(event);*/
-=======
-				/*fase3(event);*/;
 				menu(event);
->>>>>>> 034d2a315a3d8deec63fd408003ebfae55047223
 				//fase4(event);
 				//fase2(event);
 				break;
