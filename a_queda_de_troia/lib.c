@@ -1096,10 +1096,9 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 				movimento += 1;
 			}
 			if (movimento == 45) {
-				printf("%d", positionX1_f2);
-				if ((positionY1_f2 + 65 >= 425 && positionY1_f2 + 65 <= 495) &&
-					(positionX1_f2 + 10 >= 615 && positionX1_f2 + 10 <= 665 ||
-					positionX1_f2 + 60 >= 615 && positionX1_f2 + 60 <= 665))
+				if ((positionY1_f2 + 65 >= positionReiY && positionY1_f2 + 65 <= positionReiY + 60) &&
+					(positionX1_f2 >= positionReiX - 20 && positionX1_f2 - 20 <= positionReiX + 30 ||
+					positionX1_f2 + 60 >= positionReiX && positionX1_f2 + 60 <= positionReiX + 30))
 				{
 					vidaReiX -= 10;
 				}

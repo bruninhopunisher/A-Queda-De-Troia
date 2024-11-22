@@ -6,6 +6,11 @@
 void fase2(ALLEGRO_EVENT evento) {
 
 	al_draw_bitmap(background_f2, 0, 0, 0);
+
+	/*printf("ReiX = %d\n", positionReiX);
+	printf("ReiY = %d\n", positionReiY);
+	printf("PosY = %d\n", positionX1_f2);
+	printf("PosX = %d\n", positionY1_f2);*/
 	
 	if (positionReiX == pontoAndarX &&
 		positionReiY == pontoAndarY) {
@@ -99,8 +104,8 @@ void fase2(ALLEGRO_EVENT evento) {
 	/*if (pontoAndarY < 180 || pontoAndarY > 500) {
 		printf("Pooooooooooooooooooooooooooooooooooooo");
 	}*/
-	printf("%d\n", pontoAndarX);
-	printf("%d\n", pontoAndarY);
+	//printf("%d\n", pontoAndarX);
+	//printf("%d\n", pontoAndarY);
 	if (vidaReiX <= 1000) {
 		controleJogador = true;
 	}
@@ -186,9 +191,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			else {
 				printf("Y-%d", positionY1_f2);
-				switch (positionY1_f2)
-				{
-				case 451:
+				if (positionY1_f2 >= 451) {
 					printf("To aqui");
 					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
@@ -199,8 +202,8 @@ void fase2(ALLEGRO_EVENT evento) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
-					break;
-				case 149:
+				}
+				if (positionY1_f2 <= 149 || (positionY1_f2 >= positionReiY && positionY1_f2 <= positionReiY + 60)) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
@@ -210,7 +213,6 @@ void fase2(ALLEGRO_EVENT evento) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
-					break;
 				}
 			}
 			break;
