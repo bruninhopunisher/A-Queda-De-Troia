@@ -314,17 +314,29 @@ extern int indiceQuadrante;
 extern int swapDaPeca;
 
 //Fase 4
-extern ALLEGRO_BITMAP* player;
+extern ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Lado_0; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Lado_1; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Subindo_0;
+extern ALLEGRO_BITMAP* aquiles_Subindo_1;
+extern ALLEGRO_BITMAP* aquiles_Atual; //Destruido
+
+
+
 extern ALLEGRO_BITMAP* inimigo;
 extern ALLEGRO_BITMAP* flecha;
-extern bool iniciarFase;
 extern bool gameOver;
 extern int iniVel; //velocidade do inimigo
 //player
+
 extern int playX;
 extern int playY;
+extern int playZ;
 extern int PlayVel;
 extern int vidaF4;
+extern int PlayMov;
+
 //inimigo de lança
 extern int qtdLanc;
 extern int lancX[6];

@@ -266,9 +266,6 @@
     <Image Include="Imagens\Fase_04\inimigo.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
     </Image>
-    <Image Include="Imagens\Fase_04\player.jpg">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
-    </Image>
     <Image Include="..\..\introduçao 3\pagina1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
     </Image>
@@ -373,6 +370,21 @@
     </Image>
     <Image Include="MenelauEsqDir3.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo2.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -483,6 +495,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau">
       <UniqueIdentifier>{ed5fbbef-9493-42be-b6eb-cc69e486db67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles">
+      <UniqueIdentifier>{dcc22174-9352-4a9c-bb2a-723d0d07dc96}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

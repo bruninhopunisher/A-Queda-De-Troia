@@ -28,6 +28,10 @@ void reiniciar() { //Reinicia a fase
 }
 
 void fase4(ALLEGRO_EVENT evento) {
+	if(PlayMov == 0){
+		aquiles_Atual = aquiles_Descendo_0;
+		PlayMov += 1;
+	}
 	if(gameOver == false){
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
 		if (vidaF4 == 3){
@@ -42,41 +46,65 @@ void fase4(ALLEGRO_EVENT evento) {
 		if (vidaF4 == 0) {
 			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
 		}
+
+		al_draw_bitmap(aquiles_Atual, playX, playY, playZ);
+		
 		//Sistema de movimento do player (PADRONIZAR COM OUTRAS TELAS)
-		al_draw_bitmap(player, playX, playY, 0); //Player 70x70
+		
+		if (atraso_animacao >= 4) { // velocidade animação de mudar o pe dir e esq atualizada pro frame
+			contador_passos = (contador_passos + 1) % 2; // 0 e 1 direoiro e esquerdo
+			atraso_animacao = 0;
+		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_UP && playY > 80) {
 			playY -= PlayVel;
+			atraso_animacao++;
+			aquiles_Atual = contador_passos == 0 ? aquiles_Subindo_0 : aquiles_Subindo_1;
+			if (playZ == 0) {
+				playZ = 1;
+			}
+			else {
+				playZ = 0;
+			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && playY < 580) {
 			playY += PlayVel;
+			atraso_animacao++;
+			aquiles_Atual = contador_passos == 0 ? aquiles_Descendo_0 : aquiles_Descendo_1;
+			if (playZ == 0) {
+				playZ = 1;
+			}
+			else {
+				playZ = 0;
+			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT && playX > 0) {
 			playX -= PlayVel;
+			atraso_animacao++;
+			aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
+			playZ = 0;
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT && playX < 1210) {
 			playX += PlayVel;
+			atraso_animacao++;
+			aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
+			playZ = 1;
 		}
-		//Sistema do lanceiro
-		for (int i = 0; i < qtdLanc; i++) {
-			al_draw_bitmap(inimigo, lancX[i], lancY[i], lancZ[i]); //Inimigo 70x70 COLOCAR INIMIGO COM LANÇA
-			//Movimentacao
-			if (lancZ[i] == 0) {
-				lancX[i] += iniVel;
-				if (lancX[i] > 1210) {
-				lancZ[i] = 1;
-				}
-			}
-			else if (lancZ[i] == 1) {
-				lancX[i] -= iniVel;
-				if (lancX[i] < 0) {
-					lancZ[i] = 0;
-				}
-			}
-			//Colisao do lanceiro com player
-			if (playX + 70 > lancX[i] && playX < lancX[i] + 70 && playY + 70 > lancY[i] && playY < lancY[i] + 70) { //70x70 tamanho do lanceiro
-				reiniciar();
-			}
-		}
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
 		//Sistema da flecha
 		for (int i = 0; i < qtdFle; i++) {
 			al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //12x60 e o tamanho da flecha
@@ -93,7 +121,7 @@ void fase4(ALLEGRO_EVENT evento) {
 				}
 			}
 			//Colisao da flecha com player
-			if (playX + 70 > fleX[i] && playX < fleX[i] + 12 && playY + 70 > fleY[i] && playY < fleY[i] + 60) {
+			if (playX + 35 > fleX[i] && playX < fleX[i] + 12 && playY + 55 > fleY[i] && playY < fleY[i] + 60) {
 				reiniciar();
 			}
 		}
@@ -119,3 +147,27 @@ void fase4(ALLEGRO_EVENT evento) {
 		}
 	}
 }
+
+
+
+//Sistema do lanceiro
+//for (int i = 0; i < qtdLanc; i++) {
+//	al_draw_bitmap(inimigo, lancX[i], lancY[i], lancZ[i]); //Inimigo 70x70 COLOCAR INIMIGO COM LANÇA
+//	//Movimentacao
+//	if (lancZ[i] == 0) {
+//		lancX[i] += iniVel;
+//		if (lancX[i] > 1210) {
+//		lancZ[i] = 1;
+//		}
+//	}
+//	else if (lancZ[i] == 1) {
+//		lancX[i] -= iniVel;
+//		if (lancX[i] < 0) {
+//			lancZ[i] = 0;
+//		}
+//	}
+//	//Colisao do lanceiro com player
+//	if (playX + 70 > lancX[i] && playX < lancX[i] + 70 && playY + 70 > lancY[i] && playY < lancY[i] + 70) { //70x70 tamanho do lanceiro
+//		reiniciar();
+//	}
+//}

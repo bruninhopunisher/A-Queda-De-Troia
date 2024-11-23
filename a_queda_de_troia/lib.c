@@ -204,17 +204,29 @@ int indiceQuadrante = 0;
 int swapDaPeca;
 
 //Fase 04
-ALLEGRO_BITMAP* player; //Destruido
+ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
+ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido
+ALLEGRO_BITMAP* aquiles_Lado_0; //Destruido
+ALLEGRO_BITMAP* aquiles_Lado_1; //Destruido
+ALLEGRO_BITMAP* aquiles_Subindo_0; //Destruido
+ALLEGRO_BITMAP* aquiles_Subindo_1; //Destruido
+ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
+
+
+
+
+
 ALLEGRO_BITMAP* inimigo; //Destruido
 ALLEGRO_BITMAP* flecha; //Destruido
-bool iniciarFase = true;
 bool gameOver = false;
 int iniVel = 1.5;//2; //Vel do inimigo
 //player
 int playX = 605; //Centro da tela
 int playY = 325; //Centro da tela
-int PlayVel = 8; //Vel do player
+int playZ = 0;
+int PlayVel = 5; //Vel do player
 int vidaF4 = 3; //QTD de vidas
+int PlayMov = 0;
 //inimigo de lança
 int qtdLanc = 6;
 int lancX[6] = { 0, 1210, 0, 1210, 0, 1210 };
@@ -922,10 +934,20 @@ void iniciarConstantes() {
 	quadrantePuzzle.quadrantes[24].contemPeca = false;
 
 	//fase 4
-	player = al_load_bitmap("Imagens/Fase_04/player.jpg");
+	aquiles_Descendo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/frente_descendo0.png");
+	aquiles_Descendo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/frente_descendo1.png");
+	aquiles_Lado_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/lado_0.png");
+	aquiles_Lado_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/lado_1.png");
+	aquiles_Subindo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/subindo0.png");
+	aquiles_Subindo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/subindo1.png");
+	aquiles_Atual = NULL;
+
 	inimigo = al_load_bitmap("Imagens/Fase_04/inimigo.jpg");
 	flecha = al_load_bitmap("Imagens/Fase_04/flecha.jpg");
-	testeInicializar(player, "player");
+	testeInicializar(aquiles_Descendo_0, "frente_descendo0");
+	testeInicializar(aquiles_Descendo_1, "frente_descendo1");
+	testeInicializar(aquiles_Lado_0, "aquiles_Lado_0");
+	testeInicializar(aquiles_Lado_1, "aquiles_Lado_1");
 	testeInicializar(inimigo, "inimigo");
 	testeInicializar(flecha, "flecha");
 }
@@ -1295,7 +1317,13 @@ void destruidor() {
 	al_destroy_bitmap(puzzle25);
 
 	//fase 4
-	al_destroy_bitmap (player);
-	al_destroy_bitmap (inimigo);
+
+	al_destroy_bitmap(aquiles_Descendo_0);
+	al_destroy_bitmap(aquiles_Descendo_1);
+	al_destroy_bitmap(aquiles_Lado_0);
+	al_destroy_bitmap(aquiles_Lado_1);
+
+
+	al_destroy_bitmap(inimigo);
 	al_destroy_bitmap(flecha);
 }
