@@ -314,13 +314,15 @@ extern int indiceQuadrante;
 extern int swapDaPeca;
 
 //Fase 4
+extern ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Lado_0; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Lado_1; //Destruido
-extern ALLEGRO_BITMAP* aquiles_Subindo_0;
-extern ALLEGRO_BITMAP* aquiles_Subindo_1;
-extern ALLEGRO_BITMAP* aquiles_Atual; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Cima; //Destruido
+extern ALLEGRO_BITMAP* aquiles_Subindo_0;//Destruido
+extern ALLEGRO_BITMAP* aquiles_Subindo_1;//Destruido
+extern ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
 
 
 
@@ -335,7 +337,8 @@ extern int playY;
 extern int playZ;
 extern int PlayVel;
 extern int vidaF4;
-extern int PlayMov;
+extern int PlayPosicao;
+extern bool andando;
 
 //inimigo de lança
 extern int qtdLanc;

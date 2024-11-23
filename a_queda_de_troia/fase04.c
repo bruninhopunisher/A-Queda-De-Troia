@@ -28,10 +28,6 @@ void reiniciar() { //Reinicia a fase
 }
 
 void fase4(ALLEGRO_EVENT evento) {
-	if(PlayMov == 0){
-		aquiles_Atual = aquiles_Descendo_0;
-		PlayMov += 1;
-	}
 	if(gameOver == false){
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
 		if (vidaF4 == 3){
@@ -47,51 +43,73 @@ void fase4(ALLEGRO_EVENT evento) {
 			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
 		}
 
+		if (evento.type == ALLEGRO_EVENT_KEY_DOWN) {
+			andando = true;
+		}
+		else if (evento.type == ALLEGRO_EVENT_KEY_UP) {
+			andando = false;
+		}
+		if (andando) {
+			if (atraso_animacao > 4) { // velocidade animação de mudar imagem atualizada pro frame
+				contador_passos = (contador_passos + 1) % 2;
+				atraso_animacao = 0;
+			}
+			if (evento.keyboard.keycode == ALLEGRO_KEY_UP && playY > 80) {
+				playY -= PlayVel;
+				atraso_animacao++;
+				aquiles_Atual = contador_passos == 0 ? aquiles_Subindo_0 : aquiles_Subindo_1;
+				if (playZ == 1) {
+					playZ = 0;
+				}
+				PlayPosicao = 3;
+			}
+			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && playY < 580) {
+				playY += PlayVel;
+				atraso_animacao++;
+				aquiles_Atual = contador_passos == 0 ? aquiles_Descendo_0 : aquiles_Descendo_1;
+				if (playZ == 1) {
+					playZ = 0;
+				}
+				PlayPosicao = 0;
+			}
+			if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT && playX > 0) {
+				playX -= PlayVel;
+				atraso_animacao++;
+				aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
+				playZ = 0;
+				PlayPosicao = 1;
+			}
+			if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT && playX < 1210) {
+				playX += PlayVel;
+				atraso_animacao++;
+				aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
+				playZ = 1;
+				PlayPosicao = 2;
+			}
+		}
+		else {
+			if (PlayPosicao == 0) { //parado para baixo
+				aquiles_Atual = aquiles_Baixo;
+			}
+			if (PlayPosicao == 1) {//parado para esquerda
+				aquiles_Atual = aquiles_Lado_0;
+				playZ = 0;
+			}
+			if (PlayPosicao == 2) {//parado para direita
+				aquiles_Atual = aquiles_Lado_0;
+				playZ = 1;
+			}
+			if (PlayPosicao == 3) {//parado para cima
+				aquiles_Atual = aquiles_Cima;
+			}
+		}
 		al_draw_bitmap(aquiles_Atual, playX, playY, playZ);
-		
 		//Sistema de movimento do player (PADRONIZAR COM OUTRAS TELAS)
-		
-		if (atraso_animacao >= 4) { // velocidade animação de mudar o pe dir e esq atualizada pro frame
-			contador_passos = (contador_passos + 1) % 2; // 0 e 1 direoiro e esquerdo
-			atraso_animacao = 0;
-		}
-		if (evento.keyboard.keycode == ALLEGRO_KEY_UP && playY > 80) {
-			playY -= PlayVel;
-			atraso_animacao++;
-			aquiles_Atual = contador_passos == 0 ? aquiles_Subindo_0 : aquiles_Subindo_1;
-			if (playZ == 0) {
-				playZ = 1;
-			}
-			else {
-				playZ = 0;
-			}
-		}
-		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && playY < 580) {
-			playY += PlayVel;
-			atraso_animacao++;
-			aquiles_Atual = contador_passos == 0 ? aquiles_Descendo_0 : aquiles_Descendo_1;
-			if (playZ == 0) {
-				playZ = 1;
-			}
-			else {
-				playZ = 0;
-			}
-		}
-		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT && playX > 0) {
-			playX -= PlayVel;
-			atraso_animacao++;
-			aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
-			playZ = 0;
-		}
-		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT && playX < 1210) {
-			playX += PlayVel;
-			atraso_animacao++;
-			aquiles_Atual = contador_passos == 0 ? aquiles_Lado_0 : aquiles_Lado_1;
-			playZ = 1;
-		}
 
-		
-		
+
+
+
+
 
 
 

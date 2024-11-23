@@ -377,13 +377,16 @@
     <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo1.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
     </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo2.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
     <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_0.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
     </Image>
     <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo1.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
     </Image>
   </ItemGroup>

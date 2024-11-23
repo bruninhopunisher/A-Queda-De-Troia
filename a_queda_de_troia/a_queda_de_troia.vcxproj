@@ -190,10 +190,11 @@
     <Image Include="helenaIntro1.jpg" />
     <Image Include="ataquebaixo2.jpg" />
     <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo1.png" />
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo2.png" />
     <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo0.png" />
     <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_0.png" />
     <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_1.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo0.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo1.png" />
     <Image Include="Imagens\Fase_04\flexa.png" />
     <Image Include="Imagens\Fase_04\inimigo.jpg" />
     <Image Include="Imagens\Introducao_1\mapa_atenas.png" />
