@@ -389,6 +389,18 @@
     <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo1.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
     </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\baixo.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\Andando\cima.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Andando\Lanc_Lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Andando\Lanc_Lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -501,6 +513,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles">
       <UniqueIdentifier>{dcc22174-9352-4a9c-bb2a-723d0d07dc96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro">
+      <UniqueIdentifier>{51eed6fe-a1a1-477c-97f8-0d5140a66f42}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

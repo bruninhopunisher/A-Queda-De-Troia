@@ -42,13 +42,15 @@ void fase4(ALLEGRO_EVENT evento) {
 		if (vidaF4 == 0) {
 			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
 		}
-
+		//Movimentação do Player INICIO:
+		//Define se esta andando
 		if (evento.type == ALLEGRO_EVENT_KEY_DOWN) {
-			andando = true;
+			andando = true; //Define se esta andando
 		}
 		else if (evento.type == ALLEGRO_EVENT_KEY_UP) {
 			andando = false;
 		}
+		//Efeito da animação dos movimentos
 		if (andando) {
 			if (atraso_animacao > 4) { // velocidade animação de mudar imagem atualizada pro frame
 				contador_passos = (contador_passos + 1) % 2;
@@ -103,18 +105,48 @@ void fase4(ALLEGRO_EVENT evento) {
 				aquiles_Atual = aquiles_Cima;
 			}
 		}
-		al_draw_bitmap(aquiles_Atual, playX, playY, playZ);
-		//Sistema de movimento do player (PADRONIZAR COM OUTRAS TELAS)
+		al_draw_bitmap(aquiles_Atual, playX, playY, playZ); //Player 35x55
+		//Movimentação do Player FIM:
+		//Mobimentação do Lanceiro INICIO: 87x42
+		if (Lanc_Atual[0] == NULL) { //Inicializa a imagem do lanceiro
+			for (int i = 0; i < qtdLanc; i++) {
+				if (lancZ[i] == 0) {
+					Lanc_Atual[i] = Lanc_Lado_0;
+				}
+				else {
+					Lanc_Atual[i] = Lanc_Lado_1;
+				}
+			}
+		}
+		for (int i = 0; i < qtdLanc; i++) {
+			if (atraso_animacao_Lanc[i] > 10) { // velocidade animação de mudar imagem atualizada pro frame
+				contador_passos_Lanc[i] = (contador_passos_Lanc[i] + 1) % 2;
+				atraso_animacao_Lanc[i] = 0;
+			}
+			al_draw_bitmap(Lanc_Atual[i], lancX[i], lancY[i], lancZ[i]); //Inimigo 87x42
+			//Movimentacao
+			if (lancZ[i] == 0) { //Direita
+				lancX[i] += iniVel;
+				atraso_animacao_Lanc[i]++;
+				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //87x42
+				if (lancX[i] > 1210) {
+					lancZ[i] = 1;
+				}
+			}
+			else if (lancZ[i] == 1) { //Esquerda
+				lancX[i] -= iniVel;
+				atraso_animacao_Lanc[i]++;
+				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //87x42
+				if (lancX[i] < 0) {
+					lancZ[i] = 0;
+				}
+			}
+			//Colisao do lanceiro com player
+			if (playX + 35 > lancX[i] && playX < lancX[i] + 82 && playY + 55 > lancY[i] && playY < lancY[i] + 42) { //82x42 tamanho do lanceiro
+				reiniciar();
 
-
-
-
-
-
-
-
-
-
+			}
+		}
 
 
 
@@ -165,27 +197,3 @@ void fase4(ALLEGRO_EVENT evento) {
 		}
 	}
 }
-
-
-
-//Sistema do lanceiro
-//for (int i = 0; i < qtdLanc; i++) {
-//	al_draw_bitmap(inimigo, lancX[i], lancY[i], lancZ[i]); //Inimigo 70x70 COLOCAR INIMIGO COM LANÇA
-//	//Movimentacao
-//	if (lancZ[i] == 0) {
-//		lancX[i] += iniVel;
-//		if (lancX[i] > 1210) {
-//		lancZ[i] = 1;
-//		}
-//	}
-//	else if (lancZ[i] == 1) {
-//		lancX[i] -= iniVel;
-//		if (lancX[i] < 0) {
-//			lancZ[i] = 0;
-//		}
-//	}
-//	//Colisao do lanceiro com player
-//	if (playX + 70 > lancX[i] && playX < lancX[i] + 70 && playY + 70 > lancY[i] && playY < lancY[i] + 70) { //70x70 tamanho do lanceiro
-//		reiniciar();
-//	}
-//}

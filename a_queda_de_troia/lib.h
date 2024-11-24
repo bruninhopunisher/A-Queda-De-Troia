@@ -324,9 +324,10 @@ extern ALLEGRO_BITMAP* aquiles_Subindo_0;//Destruido
 extern ALLEGRO_BITMAP* aquiles_Subindo_1;//Destruido
 extern ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
 
+extern ALLEGRO_BITMAP* Lanc_Lado_0;//Destruido
+extern ALLEGRO_BITMAP* Lanc_Lado_1;//Destruido
+extern ALLEGRO_BITMAP* Lanc_Atual[6];
 
-
-extern ALLEGRO_BITMAP* inimigo;
 extern ALLEGRO_BITMAP* flecha;
 extern bool gameOver;
 extern int iniVel; //velocidade do inimigo
@@ -345,6 +346,8 @@ extern int qtdLanc;
 extern int lancX[6];
 extern int lancY[6];
 extern int lancZ[6];
+extern int atraso_animacao_Lanc[6];
+extern int contador_passos_Lanc[6];
 //flechas
 extern int qtdFle;
 extern int fleX[21];

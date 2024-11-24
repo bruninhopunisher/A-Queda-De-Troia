@@ -204,6 +204,7 @@ int indiceQuadrante = 0;
 int swapDaPeca;
 
 //Fase 04
+//IMAGENS DO AQUILES - INICIO:
 ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
 ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
 ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido
@@ -213,17 +214,21 @@ ALLEGRO_BITMAP* aquiles_Cima; //Destruido
 ALLEGRO_BITMAP* aquiles_Subindo_0; //Destruido
 ALLEGRO_BITMAP* aquiles_Subindo_1; //Destruido
 ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
+//IMAGENS DO AQUILES - FIM:
+//IMAGENS DO LANCEIRO - INICIO:
+ALLEGRO_BITMAP* Lanc_Lado_0; //Destruido
+ALLEGRO_BITMAP* Lanc_Lado_1; //Destruido
+ALLEGRO_BITMAP* Lanc_Atual[6]; //Não precisa destuir
+//IMAGENS DO LANCEIRO - FIM:
 
 
 
 
-
-ALLEGRO_BITMAP* inimigo; //Destruido
 ALLEGRO_BITMAP* flecha; //Destruido
 bool gameOver = false;
 
 
-int iniVel = 1.5;//2; //Vel do inimigo
+int iniVel = 1;//2; //Vel do inimigo
 //player
 int playX = 605; //Centro da tela
 int playY = 325; //Centro da tela
@@ -237,6 +242,8 @@ int qtdLanc = 6;
 int lancX[6] = { 0, 1210, 0, 1210, 0, 1210 };
 int lancY[6] = { 80, 180, 280, 380, 480, 580 };
 int lancZ[6] = { 0,1,0,1,0,1 };
+int atraso_animacao_Lanc[6] = { 0, 0, 0, 0, 0, 0 }; // Controlar a velocidade da animação
+int contador_passos_Lanc[6] = { 0, 0, 0, 0, 0, 0 };  // Contador para alternar entre os passos
 //flechas
 int qtdFle = 21;
 int fleX[21] = { 29, 99, 169, 239, 309, 379, 449, 519, 589, 659, 729, 799, 869, 939, 1009, 1079, 1149, 1219, 1289, 1359, 1429 };
@@ -949,7 +956,14 @@ void iniciarConstantes() {
 	aquiles_Cima = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/cima.png");
 	aquiles_Atual = NULL;
 
-	inimigo = al_load_bitmap("Imagens/Fase_04/inimigo.jpg");
+	Lanc_Lado_0 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_0.png");
+	Lanc_Lado_1 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_1.png");
+	Lanc_Atual[0] = NULL;
+	Lanc_Atual[1] = NULL;
+	Lanc_Atual[2] = NULL;
+	Lanc_Atual[3] = NULL;
+	Lanc_Atual[4] = NULL;
+	Lanc_Atual[5] = NULL;
 	flecha = al_load_bitmap("Imagens/Fase_04/flecha.jpg");
 	testeInicializar(aquiles_Baixo, "aquilesBaixo");
 	testeInicializar(aquiles_Descendo_0, "frente_descendo0");
@@ -959,7 +973,7 @@ void iniciarConstantes() {
 	testeInicializar(aquiles_Cima, "aquilesCima");
 	testeInicializar(aquiles_Subindo_0, "subindo0");
 	testeInicializar(aquiles_Subindo_1, "subindo1");
-	testeInicializar(inimigo, "inimigo");
+	testeInicializar(Lanc_Lado_0, "inimigo");
 	testeInicializar(flecha, "flecha");
 }
 
@@ -1336,6 +1350,8 @@ void destruidor() {
 	al_destroy_bitmap(aquiles_Cima);
 
 
-	al_destroy_bitmap(inimigo);
+	al_destroy_bitmap(Lanc_Lado_0);
+	al_destroy_bitmap(Lanc_Lado_1);
+
 	al_destroy_bitmap(flecha);
 }
