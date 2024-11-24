@@ -228,6 +228,9 @@ ALLEGRO_BITMAP* arq_Costas_2; //Destruido
 ALLEGRO_BITMAP* arq_Atual[32]; //Destruido
 ALLEGRO_BITMAP* flecha; //Não precisa destuir
 //IMAGENS DOS ARQUEIROS - FIM:
+ALLEGRO_TIMER* timerFase04; //Destruido
+int tempoRestante = 60; //Tempo da fase em segundos
+bool timerOn = false;
 bool gameOver = false;
 int iniVel = 1; //Vel do inimigo
 //player
@@ -960,6 +963,7 @@ void iniciarConstantes() {
 	quadrantePuzzle.quadrantes[24].contemPeca = false;
 
 	//fase 4
+	timerFase04 = al_create_timer(1.0); //Timer da fase4
 	aquiles_Baixo = al_load_bitmap("Imagens/Fase_04/Aquiles/baixo.png");
 	aquiles_Descendo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo0.png");
 	aquiles_Descendo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo1.png");
@@ -1115,7 +1119,6 @@ void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
 		break;
 	}
 }
-
 void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BITMAP* baixoD,
 	ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
 	ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
@@ -1397,6 +1400,7 @@ void destruidor() {
 	al_destroy_bitmap(puzzle25);
 
 	//fase 4
+	al_destroy_timer(timerFase04);
 	al_destroy_bitmap(aquiles_Baixo);
 	al_destroy_bitmap(aquiles_Descendo_0);
 	al_destroy_bitmap(aquiles_Descendo_1);

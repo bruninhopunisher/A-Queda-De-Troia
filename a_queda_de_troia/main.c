@@ -9,6 +9,7 @@ int main() {
 	al_register_event_source(evento, al_get_keyboard_event_source());
 	al_register_event_source(evento, al_get_display_event_source(display));
 	al_register_event_source(evento, al_get_timer_event_source(timer));
+	al_register_event_source(evento, al_get_timer_event_source(timerFase04)); //Timer da fase4
 	al_register_event_source(evento, al_get_mouse_event_source()); 
 
 	ALLEGRO_EVENT event;
@@ -40,11 +41,10 @@ int main() {
 		//	mouseY = event.mouse.y;
 		//	printf("X: %d Y: %d \n\n", mouseX, mouseY);
 		//}
-
 		switch (navegacao) {
 			case 0:
-				//menu(event);
-				fase4(event);
+				menu(event);
+				//fase4(event);
 				//fase2(event);
 				break;
 			case 1:  
@@ -76,7 +76,8 @@ int main() {
 				introducao4(event);
 				break;
 			case 10:
-				fase4(event);
+				//fase4(event);
+				printf("passou");
 				break;
 			case 11:
 				al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));

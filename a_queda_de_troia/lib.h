@@ -332,8 +332,9 @@ extern ALLEGRO_BITMAP* arq_Costas_1; //Destruido
 extern ALLEGRO_BITMAP* arq_Costas_2; //Destruido
 extern ALLEGRO_BITMAP* arq_Atual[32]; //NÃO PRECISA DESTRUIR
 extern ALLEGRO_BITMAP* flecha; //Destruido
-
-
+extern ALLEGRO_TIMER* timerFase04; //Destruido
+extern int tempoRestante;
+extern bool timerOn;
 extern bool gameOver;
 extern int iniVel; //velocidade do inimigo
 //player

@@ -8,7 +8,7 @@ void reiniciar() { //Reinicia a fase
 	playZ = 0;
 	PlayPosicao = 0;
 	andando = false;
-	//Reiniciar a posição do Player e retira 1 vida: FIM
+	tempoRestante = 60;//Reseta o timer
 	for (int i = 0; i < qtdLanc; i++) { //Reinicia posicao dos lanceiros
 		if (i % 2 == 0) {
 			lancX[i] = 0;
@@ -41,26 +41,33 @@ void reiniciar() { //Reinicia a fase
 }
 
 void fase4(ALLEGRO_EVENT evento) {
-	if(gameOver == false){
+	if (gameOver == false) {
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
-		if (vidaF4 == 3){
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 3");
+		if (vidaF4 == 3) {
+			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 3");
 		}
 		if (vidaF4 == 2) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 2");
+			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 2");
 		}
 		if (vidaF4 == 1) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 1");
+			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 1");
 		}
 		if (vidaF4 == 0) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
+			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
 		}
 		//Timer do tempo da fase INICIO:
-		
-
-		
+		if (!timerOn){ //Inicializa o timer
+			al_start_timer(timerFase04);
+			timerOn = true;
+		}
+		if (evento.type == ALLEGRO_EVENT_TIMER && evento.timer.source == timerFase04) {
+			tempoRestante--; //Vai decrementando de 1 em 1 segundo
+			if (tempoRestante <= 0) {
+				gameOver = true; // Tempo acabou
+			}
+		}
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 1100, 3, ALLEGRO_ALIGN_CENTER, "Tempo: %d", tempoRestante);
 		//Timer do tempo da fase FIM:
-		// 
 		//Movimentação do Player INICIO:
 		//Define se esta andando
 		if (evento.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -223,23 +230,36 @@ void fase4(ALLEGRO_EVENT evento) {
 		//Movimentação do Arqueiro/Flechas FIM: Arqueiro 50x65 Flecha 12x30
 		al_flip_display();
 	}
-	else {
+	else if (vidaF4 <= 0) {
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
 		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "GAME OVER");
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Menu"); //115tamanho // 50de espaço entre os 2
+		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Menu"); //580x695 340x375
 		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 430, ALLEGRO_ALIGN_CENTRE, "Continuar"); //215
 		al_flip_display();
-		if(evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP){
+		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			//Clicar Menu direciona para o Menu
-			if (mouseX >= 580 && mouseX <= 695 && mouseY >= 340 && mouseY <= 375) {
+			if (evento.mouse.x >= 580 && evento.mouse.x <= 695 && evento.mouse.y >= 340 && evento.mouse.y <= 375) {
 				navegacao = 0;
 			}
 			//Clicar continuar reseta a fase do comeco
-			if (mouseX >= 530 && mouseX <= 750 && mouseY >= 440 && mouseY <= 475) { //VerCoordenadas corretas, esta errado
+			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 440 && evento.mouse.y <= 475) {
 				gameOver = false;
 				vidaF4 = 4;
 				reiniciar();
 			}
+		}
+	}
+	else {
+		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
+		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "Parabens, voce venceu o desafio");
+		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Continuar"); //530x750 340x375
+		al_flip_display();
+		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+			//Clicar continuar direciona para próxima fase
+			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 340 && evento.mouse.y <= 375) {
+				navegacao += 1;
+			}
+
 		}
 	}
 }
