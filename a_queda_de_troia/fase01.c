@@ -6,7 +6,7 @@ void fase01(ALLEGRO_EVENT evento) {
     al_draw_bitmap(backgroundFaseUm, 0, 0, 0);
 
     // carregando sprite inicial
-   sprite_atual = ParisCimaNormal;
+    sprite_atual = ParisCimaNormal;
 
     if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
         mouseX = evento.mouse.x;
@@ -55,7 +55,7 @@ void fase01(ALLEGRO_EVENT evento) {
     }
 
     // Desenhar o sprite do personagem
-    al_draw_bitmap(sprite_atual, personagemHeitorX, personagemHeitorY, 0);
+    al_draw_bitmap(sprite_atual, personagemParisX, personagemParisY, 0);
 
     // Desenhar a Helena (caso exista)
     //al_draw_bitmap(personagemHelena, personagemHelenaX, personagemHelenaY, 0);
@@ -103,37 +103,103 @@ void fase01(ALLEGRO_EVENT evento) {
         }
     }
 
+
     // Definindo as novas áreas restritas
-    bool dentro_da_area_restrita1 = (personagemHeitorX >= 0 && personagemHeitorX <= 0 && personagemHeitorY >= 0 && personagemHeitorY <= 620);
-    bool dentro_da_area_restrita2 = (personagemHeitorX >= 0 && personagemHeitorX <= 695 && personagemHeitorY == 100);
-    bool dentro_da_area_restrita3 = (personagemHeitorX >= 0 && personagemHeitorX <= 695 && personagemHeitorY == 616);
+    bool dentro_da_area_restrita1 = (personagemParisX >= 0 && personagemParisX <= 0 && personagemParisY >= 0 && personagemParisY <= 620);
+    bool dentro_da_area_restrita2 = (personagemParisX >= 0 && personagemParisX <= 695 && personagemParisY == 100);
+    bool dentro_da_area_restrita3 = (personagemParisX >= 0 && personagemParisX <= 1200 && personagemParisY >= 575 && personagemParisY <= 620);
+    bool dentro_da_area_restrita4 = (personagemParisX >= 696 && personagemParisX <= 1069 && personagemParisY >= 100 && personagemParisY <= 292); // Nova área restrita
+
+    // Verifica colisão com a reta inclinada
+    bool colisao_com_reta = false;
+    float y_reta = 0.0f;
+
+    if (personagemParisX >= 698 && personagemParisX <= 1069) {
+        y_reta = 0.514f * personagemParisX - 254.572f;
+
+        if (personagemParisY == y_reta) {
+            colisao_com_reta = true;
+        }
+        else if (personagemParisY < y_reta) {
+            colisao_com_reta = true;
+            personagemParisY = y_reta;
+        }
+    }
+
+    bool colisao_com_reta2 = false;
+    float y_reta2 = 0.0f;
+
+    if (personagemParisX >= 692 && personagemParisX <= 1070) {
+        y_reta2 = -0.864f * personagemParisX + 1190.23f;
+
+        if (personagemParisY == y_reta2) {
+            colisao_com_reta = true;
+        }
+        else if (personagemParisY > y_reta2) {
+            colisao_com_reta2 = true;
+            personagemParisY = y_reta2;
+        }
+    }
+
+
 
     // Atualiza a posição do personagem se ele estiver em movimento
     if (esta_movendo) {
-        // Verifica se o personagem ta dentro das area de colisão, impede o movimento dentro delas
-        if (dentro_da_area_restrita1 || dentro_da_area_restrita2 || dentro_da_area_restrita3) {
-            // Se o movimento for para a direita, ele pode sair da área
-            if (direcaoX > 0 && !(personagemHeitorY == 621 && personagemHeitorX >= 0 && personagemHeitorX <= 693)) {
-                personagemHeitorX += direcaoX * 5;
+        // Verifica se o personagem está dentro de uma área restrita
+        if (dentro_da_area_restrita1 || dentro_da_area_restrita2 || dentro_da_area_restrita3 || dentro_da_area_restrita4 || colisao_com_reta || colisao_com_reta2) {
+            //escape reta 3
+            if (dentro_da_area_restrita3) {
+                if (direcaoY < 0) {
+                    personagemParisY += direcaoY * 5;
+                }
+                else if (direcaoX > 0 && personagemParisX > 693) {
+                    personagemParisX += direcaoX * 5;
+                }
+                else if (direcaoX < 0) {
+                    personagemParisX += direcaoX * 5;
+                }
             }
-            // Se o movimento for para baixo, ele pode sair da area
-            else if (direcaoY > 0) {
-                personagemHeitorY += direcaoY * 5;
+            else if (colisao_com_reta) {
+                // Impede movimento para dentro da área restrita abaixo da reta
+                if (direcaoY > 0) {
+                    personagemParisY += direcaoY * 5; // Permite subir
+                    dentro_da_area_restrita1 = false;
+                }
+
+            }
+            else if (colisao_com_reta2) {
+                if (direcaoY > 0) {
+                    personagemParisY += direcaoY * 5; // Permite subir
+                }
+
+            }
+            else {
+                if (direcaoX > 0 && personagemParisX < 1080) {
+                    personagemParisX += direcaoX * 5;
+                }
+                else if (direcaoX < 0 && personagemParisX > 0) {
+                    personagemParisX += direcaoX * 5;
+                }
+                else if (direcaoY > 0 && personagemParisY < 624) {
+                    personagemParisY += direcaoY * 5;
+                }
+                else if (direcaoY < 0 && personagemParisY > 100) {
+                    personagemParisY += direcaoY * 5;
+                }
             }
         }
         else {
-            // se nao estiver em colisao o personagem se move normalmente
-            personagemHeitorX += direcaoX * 5; // Ajuste a velocidade (5 pixels por frame)
-            personagemHeitorY += direcaoY * 5; // Ajuste a velocidade (5 pixels por frame)
+            // Movimentação normal fora de áreas restritas
+            personagemParisX += direcaoX * 5;
+            personagemParisY += direcaoY * 5;
         }
-
-        // Atualiza a direção aneterior personagem estava
         ultima_direcaoX = direcaoX;
         ultima_direcaoY = direcaoY;
     }
 
+
     // Verificar colisão com a area  da próxima fase
-    if ((personagemHeitorX >= 700 && personagemHeitorX <= 841) && (personagemHeitorY >= 250 && personagemHeitorY <= 304)) {
+    if ((personagemParisX >= 700 && personagemParisX <= 841) && (personagemParisY >= 250 && personagemParisY <= 304)) {
         al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgba(50, 50, 50, 128));
         al_draw_filled_rectangle(500, 350, 780, 410, al_map_rgba(50, 50, 50, 128));
         al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 360, ALLEGRO_ALIGN_CENTRE, "PROXIMA FASE");
@@ -152,6 +218,7 @@ void fase01(ALLEGRO_EVENT evento) {
             al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
         }
     }
+
 
     al_flip_display();
 }

@@ -68,7 +68,8 @@ ALLEGRO_BITMAP* frente_direito; //Destruido
 ALLEGRO_BITMAP* frente_esquerdo; //Destruido
 ALLEGRO_BITMAP* sprite_atual; //Destruido
 
-
+int personagemParisX = 115;
+int personagemParisY = 490;
 int personagemHeitorX = 115;
 int personagemHeitorY = 490;
 int personagemHelenaX = 1150;
