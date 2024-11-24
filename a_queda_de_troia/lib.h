@@ -323,16 +323,22 @@ extern ALLEGRO_BITMAP* aquiles_Cima; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Subindo_0;//Destruido
 extern ALLEGRO_BITMAP* aquiles_Subindo_1;//Destruido
 extern ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
-
 extern ALLEGRO_BITMAP* Lanc_Lado_0;//Destruido
 extern ALLEGRO_BITMAP* Lanc_Lado_1;//Destruido
-extern ALLEGRO_BITMAP* Lanc_Atual[6];
+extern ALLEGRO_BITMAP* Lanc_Atual[7];//NÃO PRECISA DESTRUIR
+extern ALLEGRO_BITMAP* arq_Frente_0; //Destruido
+extern ALLEGRO_BITMAP* arq_Frente_1; //Destruido
+extern ALLEGRO_BITMAP* arq_Frente_2; //Destruido
+extern ALLEGRO_BITMAP* arq_Costas_0; //Destruido
+extern ALLEGRO_BITMAP* arq_Costas_1; //Destruido
+extern ALLEGRO_BITMAP* arq_Costas_2; //Destruido
+extern ALLEGRO_BITMAP* arq_Atual[32]; //NÃO PRECISA DESTRUIR
+extern ALLEGRO_BITMAP* flecha; //Destruido
 
-extern ALLEGRO_BITMAP* flecha;
+
 extern bool gameOver;
 extern int iniVel; //velocidade do inimigo
 //player
-
 extern int playX;
 extern int playY;
 extern int playZ;
@@ -340,19 +346,26 @@ extern int PlayVel;
 extern int vidaF4;
 extern int PlayPosicao;
 extern bool andando;
-
-//inimigo de lança
+//Lanceiro
 extern int qtdLanc;
-extern int lancX[6];
-extern int lancY[6];
-extern int lancZ[6];
-extern int atraso_animacao_Lanc[6];
-extern int contador_passos_Lanc[6];
-//flechas
+extern int lancX[7];
+extern int lancY[7];
+extern int lancZ[7];
+extern int atraso_animacao_Lanc[7];
+extern int contador_passos_Lanc[7];
+//Arqueiros
+extern int qtdArq;
+extern int arqX[32];
+extern int arqY[32];
+extern int arqZ[32];
+extern int atraso_animacao_Arq[32];
+extern int contador_passos_Arq[32];
+extern bool atirando_Arq[32];
+//Flechas
 extern int qtdFle;
-extern int fleX[21];
-extern int fleY[21];
-extern int fleZ[21];
+extern int fleX[32];
+extern int fleY[32];
+extern int fleZ[32];
 //FimFase4
 
 

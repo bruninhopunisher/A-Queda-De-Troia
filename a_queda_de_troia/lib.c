@@ -218,16 +218,21 @@ ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
 //IMAGENS DO LANCEIRO - INICIO:
 ALLEGRO_BITMAP* Lanc_Lado_0; //Destruido
 ALLEGRO_BITMAP* Lanc_Lado_1; //Destruido
-ALLEGRO_BITMAP* Lanc_Atual[6]; //Não precisa destuir
+ALLEGRO_BITMAP* Lanc_Atual[7]; //Não precisa destuir
 //IMAGENS DO LANCEIRO - FIM:
+//IMAGENS DOS ARQUEIROS - INICIO:
+ALLEGRO_BITMAP* arq_Frente_0; //Destruido
+ALLEGRO_BITMAP* arq_Frente_1; //Destruido
+ALLEGRO_BITMAP* arq_Frente_2; //Destruido
+ALLEGRO_BITMAP* arq_Costas_0; //Destruido
+ALLEGRO_BITMAP* arq_Costas_1; //Destruido
+ALLEGRO_BITMAP* arq_Costas_2; //Destruido
+ALLEGRO_BITMAP* arq_Atual[32]; //Destruido
+ALLEGRO_BITMAP* flecha; //Não precisa destuir
+//IMAGENS DOS ARQUEIROS - FIM:
 
 
-
-
-ALLEGRO_BITMAP* flecha; //Destruido
 bool gameOver = false;
-
-
 int iniVel = 1;//2; //Vel do inimigo
 //player
 int playX = 605; //Centro da tela
@@ -238,19 +243,32 @@ int vidaF4 = 3; //QTD de vidas
 int PlayPosicao = 0;
 bool andando = false;
 //inimigo de lança
-int qtdLanc = 6;
-int lancX[6] = { 0, 1210, 0, 1210, 0, 1210 };
-int lancY[6] = { 80, 180, 280, 380, 480, 580 };
-int lancZ[6] = { 0,1,0,1,0,1 };
-int atraso_animacao_Lanc[6] = { 0, 0, 0, 0, 0, 0 }; // Controlar a velocidade da animação
-int contador_passos_Lanc[6] = { 0, 0, 0, 0, 0, 0 };  // Contador para alternar entre os passos
-//flechas
-int qtdFle = 21;
-int fleX[21] = { 29, 99, 169, 239, 309, 379, 449, 519, 589, 659, 729, 799, 869, 939, 1009, 1079, 1149, 1219, 1289, 1359, 1429 };
-int fleY[21] = { -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60, 720, -60 };
-int fleZ[21] = { 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 };
-//Fim Fase 04
+int qtdLanc = 7;
+int lancX[7] = { 0, 1210, 0, 1210, 0, 1210, 0 };
+int lancY[7] = { 105, 185, 265, 345, 425, 505, 585 };
+int lancZ[7] = { 0, 1, 0, 1, 0, 1, 0 };
+int atraso_animacao_Lanc[7] = { 0, 0, 0, 0, 0, 0, 0 }; // Controlar a velocidade da animação
+int contador_passos_Lanc[7] = { 0, 0, 0, 0, 0, 0, 0 };  // Contador para alternar entre os passos
+//Arqueiros
+int qtdArq = 32;
+int arqX[32] = { 0, 40, 80, 120, 160, 200, 240, 280, 320, 360, 400, 440, 480, 520, 560, 600, 640, 680, 
+				720, 760, 800, 840, 880, 920, 960, 1000, 1040, 1080, 1120, 1160, 1200, 1240 };
+int arqY[32] = { 45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655,
+				45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655, 45, 655 };
+int arqZ[32] = { 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 };
+int atraso_animacao_Arq[32] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // Controlar a velocidade da animação
+int contador_passos_Arq[32] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // Contador para alternar entre os passos
+bool atirando_Arq[32] = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,
+					false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
+
+//Flecha
+int qtdFle = 32;
+int fleX[32] = { 20, 60, 100, 140, 180, 220, 260, 300, 340, 380, 420, 460, 500, 540, 580, 620, 660, 700, 740, 780, 820, 860, 900, 940, 980, 1020, 1060, 1100, 1140, 1180, 1220, 1260 };
+int fleY[32] = { 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670,
+				70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670 };
+int fleZ[32] = { 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2 };
+//Fim Fase 04
 //Audios e Musicas
 ALLEGRO_SAMPLE* audioMenu; //Destruido
 
@@ -955,7 +973,6 @@ void iniciarConstantes() {
 	aquiles_Subindo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/subindo1.png");
 	aquiles_Cima = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/cima.png");
 	aquiles_Atual = NULL;
-
 	Lanc_Lado_0 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_0.png");
 	Lanc_Lado_1 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_1.png");
 	Lanc_Atual[0] = NULL;
@@ -964,6 +981,46 @@ void iniciarConstantes() {
 	Lanc_Atual[3] = NULL;
 	Lanc_Atual[4] = NULL;
 	Lanc_Atual[5] = NULL;
+	Lanc_Atual[6] = NULL;
+	arq_Frente_0 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_0.png");
+	arq_Frente_1 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_1.png");
+	arq_Frente_2 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_2.png");
+	arq_Costas_0 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_0.png");
+	arq_Costas_1 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_1.png");
+	arq_Costas_2 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_2.png");
+	arq_Atual[0] = NULL;
+	arq_Atual[1] = NULL;
+	arq_Atual[2] = NULL;
+	arq_Atual[3] = NULL;
+	arq_Atual[4] = NULL;
+	arq_Atual[5] = NULL;
+	arq_Atual[6] = NULL;
+	arq_Atual[7] = NULL;
+	arq_Atual[8] = NULL;
+	arq_Atual[9] = NULL;
+	arq_Atual[10] = NULL;
+	arq_Atual[11] = NULL;
+	arq_Atual[12] = NULL;
+	arq_Atual[13] = NULL;
+	arq_Atual[14] = NULL;
+	arq_Atual[15] = NULL;
+	arq_Atual[16] = NULL;
+	arq_Atual[17] = NULL;
+	arq_Atual[18] = NULL;
+	arq_Atual[19] = NULL;
+	arq_Atual[20] = NULL;
+	arq_Atual[21] = NULL;
+	arq_Atual[22] = NULL;
+	arq_Atual[23] = NULL;
+	arq_Atual[24] = NULL;
+	arq_Atual[25] = NULL;
+	arq_Atual[26] = NULL;
+	arq_Atual[27] = NULL;
+	arq_Atual[28] = NULL;
+	arq_Atual[29] = NULL;
+	arq_Atual[30] = NULL;
+	arq_Atual[31] = NULL;
+
 	flecha = al_load_bitmap("Imagens/Fase_04/flecha.jpg");
 	testeInicializar(aquiles_Baixo, "aquilesBaixo");
 	testeInicializar(aquiles_Descendo_0, "frente_descendo0");
@@ -973,7 +1030,14 @@ void iniciarConstantes() {
 	testeInicializar(aquiles_Cima, "aquilesCima");
 	testeInicializar(aquiles_Subindo_0, "subindo0");
 	testeInicializar(aquiles_Subindo_1, "subindo1");
-	testeInicializar(Lanc_Lado_0, "inimigo");
+	testeInicializar(Lanc_Lado_0, "Lanc_Lado_0");
+	testeInicializar(Lanc_Lado_1, "Lanc_Lado_1");
+	testeInicializar(arq_Frente_0, "arq_Frente_0");
+	testeInicializar(arq_Frente_1, "arq_Frente_1");
+	testeInicializar(arq_Frente_2, "arq_Frente_2");
+	testeInicializar(arq_Costas_0, "arq_Costas_0");
+	testeInicializar(arq_Costas_1, "arq_Costas_1");
+	testeInicializar(arq_Costas_2, "arq_Costas_2");
 	testeInicializar(flecha, "flecha");
 }
 
@@ -1348,10 +1412,13 @@ void destruidor() {
 	al_destroy_bitmap(aquiles_Lado_0);
 	al_destroy_bitmap(aquiles_Lado_1);
 	al_destroy_bitmap(aquiles_Cima);
-
-
 	al_destroy_bitmap(Lanc_Lado_0);
 	al_destroy_bitmap(Lanc_Lado_1);
-
+	al_destroy_bitmap(arq_Frente_0);
+	al_destroy_bitmap(arq_Frente_1);
+	al_destroy_bitmap(arq_Frente_2);
+	al_destroy_bitmap(arq_Costas_0);
+	al_destroy_bitmap(arq_Costas_1);
+	al_destroy_bitmap(arq_Costas_2);
 	al_destroy_bitmap(flecha);
 }

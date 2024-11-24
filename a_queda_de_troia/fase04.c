@@ -2,8 +2,8 @@
 
 void reiniciar() { //Reinicia a fase
 	vidaF4 -= 1;
-	playX = 595;
-	playY = 315;
+	playX = 605;
+	playY = 325;
 	for (int i = 0; i < qtdLanc; i++) { //Reinicia posicao dos lanceiros
 		if (i % 2 == 0) {
 			lancX[i] = 0;
@@ -14,11 +14,11 @@ void reiniciar() { //Reinicia a fase
 	}
 	for (int i = 0; i < qtdFle; i++) {
 		if (i % 2 == 0) {
-			fleY[i] = -60;
+			fleY[i] = 50;
 			fleZ[i] = 0;
 		}
 		else {
-			fleY[i] = 720;
+			fleY[i] = 670;
 			fleZ[i] = 2;
 		}
 	}
@@ -52,11 +52,11 @@ void fase4(ALLEGRO_EVENT evento) {
 		}
 		//Efeito da animação dos movimentos
 		if (andando) {
-			if (atraso_animacao > 4) { // velocidade animação de mudar imagem atualizada pro frame
+			if (atraso_animacao > 4) { // velocidade animação de mudar imagem atualizada por frame
 				contador_passos = (contador_passos + 1) % 2;
 				atraso_animacao = 0;
 			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_UP && playY > 80) {
+			if (evento.keyboard.keycode == ALLEGRO_KEY_UP && playY > 100) {
 				playY -= PlayVel;
 				atraso_animacao++;
 				aquiles_Atual = contador_passos == 0 ? aquiles_Subindo_0 : aquiles_Subindo_1;
@@ -65,7 +65,7 @@ void fase4(ALLEGRO_EVENT evento) {
 				}
 				PlayPosicao = 3;
 			}
-			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && playY < 580) {
+			if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN && playY < 585) {
 				playY += PlayVel;
 				atraso_animacao++;
 				aquiles_Atual = contador_passos == 0 ? aquiles_Descendo_0 : aquiles_Descendo_1;
@@ -107,7 +107,7 @@ void fase4(ALLEGRO_EVENT evento) {
 		}
 		al_draw_bitmap(aquiles_Atual, playX, playY, playZ); //Player 35x55
 		//Movimentação do Player FIM:
-		//Mobimentação do Lanceiro INICIO: 87x42
+		//Movimentação do Lanceiro INICIO: 82x42
 		if (Lanc_Atual[0] == NULL) { //Inicializa a imagem do lanceiro
 			for (int i = 0; i < qtdLanc; i++) {
 				if (lancZ[i] == 0) {
@@ -119,16 +119,16 @@ void fase4(ALLEGRO_EVENT evento) {
 			}
 		}
 		for (int i = 0; i < qtdLanc; i++) {
-			if (atraso_animacao_Lanc[i] > 10) { // velocidade animação de mudar imagem atualizada pro frame
+			if (atraso_animacao_Lanc[i] > 10) { // velocidade animação de mudar imagem atualizada por frame
 				contador_passos_Lanc[i] = (contador_passos_Lanc[i] + 1) % 2;
 				atraso_animacao_Lanc[i] = 0;
 			}
-			al_draw_bitmap(Lanc_Atual[i], lancX[i], lancY[i], lancZ[i]); //Inimigo 87x42
+			al_draw_bitmap(Lanc_Atual[i], lancX[i], lancY[i], lancZ[i]); //Inimigo 82x42
 			//Movimentacao
 			if (lancZ[i] == 0) { //Direita
 				lancX[i] += iniVel;
 				atraso_animacao_Lanc[i]++;
-				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //87x42
+				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //82x42
 				if (lancX[i] > 1210) {
 					lancZ[i] = 1;
 				}
@@ -136,7 +136,7 @@ void fase4(ALLEGRO_EVENT evento) {
 			else if (lancZ[i] == 1) { //Esquerda
 				lancX[i] -= iniVel;
 				atraso_animacao_Lanc[i]++;
-				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //87x42
+				Lanc_Atual[i] = contador_passos_Lanc[i] == 0 ? Lanc_Lado_0 : Lanc_Lado_1; //82x42
 				if (lancX[i] < 0) {
 					lancZ[i] = 0;
 				}
@@ -144,37 +144,87 @@ void fase4(ALLEGRO_EVENT evento) {
 			//Colisao do lanceiro com player
 			if (playX + 35 > lancX[i] && playX < lancX[i] + 82 && playY + 55 > lancY[i] && playY < lancY[i] + 42) { //82x42 tamanho do lanceiro
 				reiniciar();
-
 			}
 		}
-
-
-
-
-
-
-
-
-		//Sistema da flecha
-		for (int i = 0; i < qtdFle; i++) {
-			al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //12x60 e o tamanho da flecha
-			if (fleZ[i] == 0) {
-				fleY[i] += iniVel;
-				if (fleY[i] > 720) {
-					fleZ[i] = 2;
+		//Mobimentação do Lanceiro FIM: 82x42
+		//Movimentação do Arqueiro INICIO: 50x65
+		if (arq_Atual[0] == NULL) { //Inicializa a imagem do arqueiro
+			for (int i = 0; i < qtdArq; i++) {
+				if (arqZ[i] == 0) {
+					arq_Atual[i] = arq_Frente_1;
+				}
+				else {
+					arq_Atual[i] = arq_Costas_1;
 				}
 			}
-			else if (fleZ[i] == 2) {
+		}
+		for (int i = 0; i < qtdArq; i++) {
+			if (atraso_animacao_Arq[i] > 10) { // velocidade animação de mudar imagem atualizada por frame
+				contador_passos_Arq[i] = (contador_passos_Arq[i] + 1) % 2;
+				atraso_animacao_Arq[i] = 0;
+				atirando_Arq[i] = true;
+			}
+			al_draw_bitmap(arq_Atual[i], arqX[i], arqY[i], arqZ[i]); //Arqueiro 50x65
+
+			if (atirando_Arq[i]) {
+				al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //10x30 e o tamanho da flecha
+				if (fleZ[i] == 0) {
+					fleY[i] += iniVel;
+					if (fleY[i] > 720) {
+						atirando_Arq[i] = false;
+					}
+				}
+				else {
 					fleY[i] -= iniVel;
-				if (fleY[i] < -60) {
-					fleZ[i] = 0;
+					if (fleY[i] < -30) {
+						atirando_Arq[i] = false;
+					}
+				}
+				//Colisao da flecha com player
+				if (playX + 35 > fleX[i] && playX < fleX[i] + 12 && playY + 55 > fleY[i] && playY < fleY[i] + 30) {
+					reiniciar();
 				}
 			}
-			//Colisao da flecha com player
-			if (playX + 35 > fleX[i] && playX < fleX[i] + 12 && playY + 55 > fleY[i] && playY < fleY[i] + 60) {
-				reiniciar();
+			else {
+				if (arqZ[i] == 0) { //Cima
+					atraso_animacao_Arq[i]++;
+					arq_Atual[i] = contador_passos_Arq[i] == 0 ? arq_Frente_1 : arq_Frente_2;
+				}
+				else if (arqZ[i] == 2) { //Baixo
+					atraso_animacao_Arq[i]++;
+					arq_Atual[i] = contador_passos_Arq[i] == 0 ? arq_Costas_1 : arq_Costas_2;
+				}
+				if (fleZ[i] == 0) {
+					fleY[i] = 70;
+				}
+				else {
+					fleY[i] = 655;
+				}
 			}
 		}
+		//Movimentação do Arqueiro FIM: 50x65
+
+		//Mobimentação da Flecha INICIO: 12x30
+		//for (int i = 0; i < qtdFle; i++) {
+		//	al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //10x30 e o tamanho da flecha
+		//	if (fleZ[i] == 0) {
+		//		fleY[i] += iniVel;
+		//		if (fleY[i] > 720) {
+		//			fleZ[i] = 2;
+		//		}
+		//	}
+		//	else if (fleZ[i] == 2) {
+		//			fleY[i] -= iniVel;
+		//		if (fleY[i] < -60) {
+		//			fleZ[i] = 0;
+		//		}
+		//	}
+		//	//Colisao da flecha com player
+		//	if (playX + 35 > fleX[i] && playX < fleX[i] + 12 && playY + 55 > fleY[i] && playY < fleY[i] + 30) {
+		//		reiniciar();
+		//	}
+		//}
+		//Mobimentação da Flecha FIM: 12x30
 		al_flip_display();
 	}
 	else {
