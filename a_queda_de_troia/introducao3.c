@@ -54,8 +54,8 @@ void introducao3(ALLEGRO_EVENT evento) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+				intro = 1;
 				navegacao += 1;
-				navegacao = 1;
 			}
 		}
 		else {

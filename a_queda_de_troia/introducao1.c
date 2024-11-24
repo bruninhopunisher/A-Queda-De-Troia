@@ -85,7 +85,7 @@ int introducao1(ALLEGRO_EVENT event) {
 		if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1189 && mouseY <= 692) {
 				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-				intro += 1;
+				intro = 1;
 				navegacao += 1;
 			}
 		}

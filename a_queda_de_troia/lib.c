@@ -398,6 +398,7 @@ void iniciarConstantes() {
 	backgroundFaseUm = al_load_bitmap("Imagens/Fase_01/background_fase_um.jpg");
 	frente_direito = al_load_bitmap("Imagens/Fase_01/frente_descendo.jpg");
 	frente_esquerdo = al_load_bitmap("Imagens/Fase_01/frente_descendo_2.jpg");
+	sprite_atual = NULL;
 
 	testeInicializar(personagemHeitor, "personagemHeitor");
 	testeInicializar(personagemHelena, "personagemHelena");
@@ -1299,7 +1300,6 @@ void destruidor() {
 	al_destroy_bitmap(mapaAtenas);
 	al_destroy_bitmap(mapaGrecia);
 	al_destroy_bitmap(mapaTroia);
-	al_destroy_bitmap(sprite_atual);
 
 	//Introdução 2
 	al_destroy_bitmap(fundoAgamenom);
@@ -1327,7 +1327,6 @@ void destruidor() {
 	al_destroy_bitmap(personagemHelena);
 	al_destroy_bitmap(frente_direito);
 	al_destroy_bitmap(frente_esquerdo);
-	al_destroy_bitmap(sprite_atual);
 
 	//Fase 2
 	al_destroy_bitmap(soldadosTroia);
