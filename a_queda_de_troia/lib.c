@@ -221,24 +221,20 @@ ALLEGRO_BITMAP* Lanc_Lado_1; //Destruido
 ALLEGRO_BITMAP* Lanc_Atual[7]; //Não precisa destuir
 //IMAGENS DO LANCEIRO - FIM:
 //IMAGENS DOS ARQUEIROS - INICIO:
-ALLEGRO_BITMAP* arq_Frente_0; //Destruido
 ALLEGRO_BITMAP* arq_Frente_1; //Destruido
 ALLEGRO_BITMAP* arq_Frente_2; //Destruido
-ALLEGRO_BITMAP* arq_Costas_0; //Destruido
 ALLEGRO_BITMAP* arq_Costas_1; //Destruido
 ALLEGRO_BITMAP* arq_Costas_2; //Destruido
 ALLEGRO_BITMAP* arq_Atual[32]; //Destruido
 ALLEGRO_BITMAP* flecha; //Não precisa destuir
 //IMAGENS DOS ARQUEIROS - FIM:
-
-
 bool gameOver = false;
-int iniVel = 1;//2; //Vel do inimigo
+int iniVel = 1; //Vel do inimigo
 //player
 int playX = 605; //Centro da tela
 int playY = 325; //Centro da tela
 int playZ = 0;
-int PlayVel = 5; //Vel do player
+int PlayVel = 3; //Vel do player
 int vidaF4 = 3; //QTD de vidas
 int PlayPosicao = 0;
 bool andando = false;
@@ -964,17 +960,17 @@ void iniciarConstantes() {
 	quadrantePuzzle.quadrantes[24].contemPeca = false;
 
 	//fase 4
-	aquiles_Baixo = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/baixo.png");
-	aquiles_Descendo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/frente_descendo0.png");
-	aquiles_Descendo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/frente_descendo1.png");
-	aquiles_Lado_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/lado_0.png");
-	aquiles_Lado_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/lado_1.png");
-	aquiles_Subindo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/subindo0.png");
-	aquiles_Subindo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/subindo1.png");
-	aquiles_Cima = al_load_bitmap("Imagens/Fase_04/Aquiles/Andando/cima.png");
+	aquiles_Baixo = al_load_bitmap("Imagens/Fase_04/Aquiles/baixo.png");
+	aquiles_Descendo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo0.png");
+	aquiles_Descendo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo1.png");
+	aquiles_Lado_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/lado_0.png");
+	aquiles_Lado_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/lado_1.png");
+	aquiles_Subindo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/subindo0.png");
+	aquiles_Subindo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/subindo1.png");
+	aquiles_Cima = al_load_bitmap("Imagens/Fase_04/Aquiles/cima.png");
 	aquiles_Atual = NULL;
-	Lanc_Lado_0 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_0.png");
-	Lanc_Lado_1 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Andando/Lanc_Lado_1.png");
+	Lanc_Lado_0 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Lanc_Lado_0.png");
+	Lanc_Lado_1 = al_load_bitmap("Imagens/Fase_04/Lanceiro/Lanc_Lado_1.png");
 	Lanc_Atual[0] = NULL;
 	Lanc_Atual[1] = NULL;
 	Lanc_Atual[2] = NULL;
@@ -982,10 +978,8 @@ void iniciarConstantes() {
 	Lanc_Atual[4] = NULL;
 	Lanc_Atual[5] = NULL;
 	Lanc_Atual[6] = NULL;
-	arq_Frente_0 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_0.png");
 	arq_Frente_1 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_1.png");
 	arq_Frente_2 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Frente_2.png");
-	arq_Costas_0 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_0.png");
 	arq_Costas_1 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_1.png");
 	arq_Costas_2 = al_load_bitmap("Imagens/Fase_04/Arqueiro/arqueiro_Costas_2.png");
 	arq_Atual[0] = NULL;
@@ -1020,8 +1014,7 @@ void iniciarConstantes() {
 	arq_Atual[29] = NULL;
 	arq_Atual[30] = NULL;
 	arq_Atual[31] = NULL;
-
-	flecha = al_load_bitmap("Imagens/Fase_04/flecha.jpg");
+	flecha = al_load_bitmap("Imagens/Fase_04/Arqueiro/flecha.png");
 	testeInicializar(aquiles_Baixo, "aquilesBaixo");
 	testeInicializar(aquiles_Descendo_0, "frente_descendo0");
 	testeInicializar(aquiles_Descendo_1, "frente_descendo1");
@@ -1032,10 +1025,8 @@ void iniciarConstantes() {
 	testeInicializar(aquiles_Subindo_1, "subindo1");
 	testeInicializar(Lanc_Lado_0, "Lanc_Lado_0");
 	testeInicializar(Lanc_Lado_1, "Lanc_Lado_1");
-	testeInicializar(arq_Frente_0, "arq_Frente_0");
 	testeInicializar(arq_Frente_1, "arq_Frente_1");
 	testeInicializar(arq_Frente_2, "arq_Frente_2");
-	testeInicializar(arq_Costas_0, "arq_Costas_0");
 	testeInicializar(arq_Costas_1, "arq_Costas_1");
 	testeInicializar(arq_Costas_2, "arq_Costas_2");
 	testeInicializar(flecha, "flecha");
@@ -1414,10 +1405,8 @@ void destruidor() {
 	al_destroy_bitmap(aquiles_Cima);
 	al_destroy_bitmap(Lanc_Lado_0);
 	al_destroy_bitmap(Lanc_Lado_1);
-	al_destroy_bitmap(arq_Frente_0);
 	al_destroy_bitmap(arq_Frente_1);
 	al_destroy_bitmap(arq_Frente_2);
-	al_destroy_bitmap(arq_Costas_0);
 	al_destroy_bitmap(arq_Costas_1);
 	al_destroy_bitmap(arq_Costas_2);
 	al_destroy_bitmap(flecha);

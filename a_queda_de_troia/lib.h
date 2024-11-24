@@ -326,10 +326,8 @@ extern ALLEGRO_BITMAP* aquiles_Atual; //NÃO PRECISA DESTRUIR
 extern ALLEGRO_BITMAP* Lanc_Lado_0;//Destruido
 extern ALLEGRO_BITMAP* Lanc_Lado_1;//Destruido
 extern ALLEGRO_BITMAP* Lanc_Atual[7];//NÃO PRECISA DESTRUIR
-extern ALLEGRO_BITMAP* arq_Frente_0; //Destruido
 extern ALLEGRO_BITMAP* arq_Frente_1; //Destruido
 extern ALLEGRO_BITMAP* arq_Frente_2; //Destruido
-extern ALLEGRO_BITMAP* arq_Costas_0; //Destruido
 extern ALLEGRO_BITMAP* arq_Costas_1; //Destruido
 extern ALLEGRO_BITMAP* arq_Costas_2; //Destruido
 extern ALLEGRO_BITMAP* arq_Atual[32]; //NÃO PRECISA DESTRUIR

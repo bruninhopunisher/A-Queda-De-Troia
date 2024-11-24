@@ -260,9 +260,6 @@
     <Image Include="soldadosEsparta.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
-    <Image Include="Imagens\Fase_04\flexa.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4</Filter>
-    </Image>
     <Image Include="..\..\introduçao 3\pagina1.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
     </Image>
@@ -368,46 +365,10 @@
     <Image Include="MenelauEsqDir3.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
     </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo0.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\frente_descendo1.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_0.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\lado_1.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo0.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\subindo1.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\baixo.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Aquiles\Andando\cima.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Lanceiro\Andando\Lanc_Lado_0.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Lanceiro\Andando\Lanc_Lado_1.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_0.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
-    </Image>
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_1.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
     </Image>
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_2.png">
-      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
-    </Image>
-    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_0.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
     </Image>
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_1.png">
@@ -415,6 +376,39 @@
     </Image>
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_2.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\flexa.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\baixo.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\cima.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\subindo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\subindo1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +528,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro">
       <UniqueIdentifier>{ab5e7dd2-adc9-499e-8fc1-57eac3dfcc0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Background">
+      <UniqueIdentifier>{a636c96a-dfe3-401d-81fb-cec039dee2f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

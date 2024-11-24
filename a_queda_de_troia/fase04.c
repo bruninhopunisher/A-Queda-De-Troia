@@ -1,9 +1,14 @@
 #include "fase04.h"
 
 void reiniciar() { //Reinicia a fase
+	//Reiniciar a posição do Player e retira 1 vida: INICIO
 	vidaF4 -= 1;
 	playX = 605;
 	playY = 325;
+	playZ = 0;
+	PlayPosicao = 0;
+	andando = false;
+	//Reiniciar a posição do Player e retira 1 vida: FIM
 	for (int i = 0; i < qtdLanc; i++) { //Reinicia posicao dos lanceiros
 		if (i % 2 == 0) {
 			lancX[i] = 0;
@@ -12,14 +17,22 @@ void reiniciar() { //Reinicia a fase
 			lancX[i] = 1210;
 		}
 	}
-	for (int i = 0; i < qtdFle; i++) {
-		if (i % 2 == 0) {
-			fleY[i] = 50;
-			fleZ[i] = 0;
+	for (int i = 0; i < qtdArq; i++) { //Reinicia a animação do arqueiro e das flechas
+		if (arqZ[i] == 0) { //Arqueiros de cima
+			arq_Atual[i] = arq_Frente_1;
+			atraso_animacao_Arq[i] = 0;
+			contador_passos_Arq[i] = 0;
+			contador_passos_Arq[i] = (contador_passos_Arq[i] + 1) % 2; //Já para iniciar a animação do arqueiro
+			atirando_Arq[i] = false;
+			fleY[i] = 70; //Reinicia a posição da flecha
 		}
-		else {
-			fleY[i] = 670;
-			fleZ[i] = 2;
+		else if (arqZ[i] == 1) { //Arqueiros debaixo
+			arq_Atual[i] = arq_Costas_1;
+			atraso_animacao_Arq[i] = 0;
+			contador_passos_Arq[i] = 0;
+			contador_passos_Arq[i] = (contador_passos_Arq[i] + 1) % 2; //Já para iniciar a animação do arqueiro
+			atirando_Arq[i] = false;
+			fleY[i] = 670; //Reinicia a posição da flecha
 		}
 	}
 	if (vidaF4 == 0) {
@@ -42,6 +55,12 @@ void fase4(ALLEGRO_EVENT evento) {
 		if (vidaF4 == 0) {
 			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 5, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
 		}
+		//Timer do tempo da fase INICIO:
+		
+
+		
+		//Timer do tempo da fase FIM:
+		// 
 		//Movimentação do Player INICIO:
 		//Define se esta andando
 		if (evento.type == ALLEGRO_EVENT_KEY_DOWN) {
@@ -147,13 +166,13 @@ void fase4(ALLEGRO_EVENT evento) {
 			}
 		}
 		//Mobimentação do Lanceiro FIM: 82x42
-		//Movimentação do Arqueiro INICIO: 50x65
+		//Movimentação do Arqueiro/Flechas INICIO: Arqueiro 50x65 Flecha 12x30
 		if (arq_Atual[0] == NULL) { //Inicializa a imagem do arqueiro
 			for (int i = 0; i < qtdArq; i++) {
 				if (arqZ[i] == 0) {
 					arq_Atual[i] = arq_Frente_1;
 				}
-				else {
+				else if (arqZ[i] == 1) {
 					arq_Atual[i] = arq_Costas_1;
 				}
 			}
@@ -165,16 +184,15 @@ void fase4(ALLEGRO_EVENT evento) {
 				atirando_Arq[i] = true;
 			}
 			al_draw_bitmap(arq_Atual[i], arqX[i], arqY[i], arqZ[i]); //Arqueiro 50x65
-
 			if (atirando_Arq[i]) {
 				al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //10x30 e o tamanho da flecha
 				if (fleZ[i] == 0) {
 					fleY[i] += iniVel;
-					if (fleY[i] > 720) {
+					if (fleY[i] > 750) {
 						atirando_Arq[i] = false;
 					}
 				}
-				else {
+				else if (fleZ[i] == 2) {
 					fleY[i] -= iniVel;
 					if (fleY[i] < -30) {
 						atirando_Arq[i] = false;
@@ -190,7 +208,7 @@ void fase4(ALLEGRO_EVENT evento) {
 					atraso_animacao_Arq[i]++;
 					arq_Atual[i] = contador_passos_Arq[i] == 0 ? arq_Frente_1 : arq_Frente_2;
 				}
-				else if (arqZ[i] == 2) { //Baixo
+				else if (arqZ[i] == 1) { //Baixo
 					atraso_animacao_Arq[i]++;
 					arq_Atual[i] = contador_passos_Arq[i] == 0 ? arq_Costas_1 : arq_Costas_2;
 				}
@@ -198,33 +216,11 @@ void fase4(ALLEGRO_EVENT evento) {
 					fleY[i] = 70;
 				}
 				else {
-					fleY[i] = 655;
+					fleY[i] = 670;
 				}
 			}
 		}
-		//Movimentação do Arqueiro FIM: 50x65
-
-		//Mobimentação da Flecha INICIO: 12x30
-		//for (int i = 0; i < qtdFle; i++) {
-		//	al_draw_bitmap(flecha, fleX[i], fleY[i], fleZ[i]); //10x30 e o tamanho da flecha
-		//	if (fleZ[i] == 0) {
-		//		fleY[i] += iniVel;
-		//		if (fleY[i] > 720) {
-		//			fleZ[i] = 2;
-		//		}
-		//	}
-		//	else if (fleZ[i] == 2) {
-		//			fleY[i] -= iniVel;
-		//		if (fleY[i] < -60) {
-		//			fleZ[i] = 0;
-		//		}
-		//	}
-		//	//Colisao da flecha com player
-		//	if (playX + 35 > fleX[i] && playX < fleX[i] + 12 && playY + 55 > fleY[i] && playY < fleY[i] + 30) {
-		//		reiniciar();
-		//	}
-		//}
-		//Mobimentação da Flecha FIM: 12x30
+		//Movimentação do Arqueiro/Flechas FIM: Arqueiro 50x65 Flecha 12x30
 		al_flip_display();
 	}
 	else {
