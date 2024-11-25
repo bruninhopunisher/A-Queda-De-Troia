@@ -314,6 +314,9 @@ extern int somaVerificadora;
 extern int somaPosicao;
 extern int indiceQuadrante;
 extern int swapDaPeca;
+extern int contg;
+extern bool next;
+extern nextInt;
 
 //Fase 4
 extern ALLEGRO_BITMAP* aquiles_Baixo; //Destruido

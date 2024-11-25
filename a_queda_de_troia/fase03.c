@@ -26,16 +26,6 @@ void desenhaQuadrados() {
 	}
 }
 
-//void verificaPuzzleCompleto() {
-//	for (int i = 0; i < 25; i++) {
-//		//printf("Sequencia de id %d\n", quadrantePuzzle.quadrantes[i].idPecaRecebida);
-//		if (quadrantePuzzle.quadrantes[i].idPecaRecebida == arrayVerificador[i]) {
-//			somaVerificadora += 1;
-//			//printf("SOMAVERIFICADORA %d", somaVerificadora);
-//		}
-//	}
-//}
-
 void fase3(ALLEGRO_EVENT evento) {
 
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
@@ -79,6 +69,7 @@ void fase3(ALLEGRO_EVENT evento) {
 					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					somaPosicao += 1;
 					guardaIdPuzzle[j] = j;
+					nextInt += 1;
 					//indiceQuadrante += 1;
 					pecasPuzzle.pecas[indice].pos_atual_x = quadrantePuzzle.quadrantes[j].X;
 					pecasPuzzle.pecas[indice].pos_atual_y = quadrantePuzzle.quadrantes[j].Y;
@@ -87,27 +78,6 @@ void fase3(ALLEGRO_EVENT evento) {
 					printf("2 ID Quadrante %d\n", idQuadrante);
 				}
 			}
-
-			// Verifica imagem dentro do quadrante para retirala (apenas quadrantes que possuem peças)
-			// Acessas os quadrantes que contem peça posicionada
-			//if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == true) {
-			//	idPecaRetirada = quadrantePuzzle.quadrantes[j].idPecaRecebida;
-			//	idQuadrante = quadrantePuzzle.quadrantes[j].id - 1;
-			//	printf("\n 3 ID PECA RETIRADA %d\n", idPecaRetirada);
-			//	printf("3 ID EEEQUADRANTE %d\n", idQuadrante);
-			//	swapAtivo = true;
-			//}
-	
-			// Verifiça se tem peças na posição inicial (quadrado branco), não havendo, a peça e posicionada lá
-			//if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == false && swapAtivo == true) {
-			//	printf("\n4 ID POSICAO INICIAL %d\n", posicoesIniciais.posicoes[j].id);
-			//	printf("4 ID QUADRANTE %d\n", idQuadrante);
-			//	quadrantePuzzle.quadrantes[idQuadrante].contemPeca = false;
-			//	pecasPuzzle.pecas[idPecaRetirada - 1].pos_atual_x = posicoesIniciais.posicoes[j].x;
-			//	pecasPuzzle.pecas[idPecaRetirada - 1].pos_atual_y = posicoesIniciais.posicoes[j].y;
-			//	posicoesIniciais.posicoes[j].contemPeca = true;
-			//	swapAtivo = false;
-			//}
 
 			// movimentação do marcador em todas as posições do quadrante
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
@@ -128,59 +98,6 @@ void fase3(ALLEGRO_EVENT evento) {
 			}
 		}
 	}
-
-	if (contadorCreditos >= 1) {
-		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
-		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-		if ((mouseAxesX >= 460 && mouseAxesX <= 820) && (mouseAxesY >= 665 && mouseAxesY <= 710)) {
-			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
-				imagemPuzzle();
-			}
-		}
-		else {
-			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-		}
-	}
-	else if (contadorCreditos < 1) {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
-		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
-	}
-
-	// Faz o cada peça movida na sequencia voltar para sua posição inicial
-	al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
-	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
-	if ((mouseAxesX >= 75 && mouseAxesX <= 285) && (mouseAxesY >= 670 && mouseAxesY <= 712) && somaPosicao > 0) {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-			//for (int i = 1; i < 26; i++) {	
-			//	printf("GuardaMov %d\n", guardaMovimentacao[i]);
-			//	printf("GuardaId %d", guardaIdPuzzle[i]);
-			//}
-			somaPosicao -= 1;
-			swapDaPeca = guardaMovimentacao[somaPosicao];
-			quadrantePuzzle.quadrantes[guardaIdPuzzle[somaPosicao]].contemPeca = false;
-			quadrantePuzzle.quadrantes[swapDaPeca].contemPeca = false;
-			posicoesIniciais.posicoes[swapDaPeca].contemPeca = true;
-			pecasPuzzle.pecas[swapDaPeca].pos_atual_x = pecasPuzzle.pecas[swapDaPeca].pos_inicial_x;
-			pecasPuzzle.pecas[swapDaPeca].pos_atual_y = pecasPuzzle.pecas[swapDaPeca].pos_inicial_y;
-			printf("\n");
-		}
-	}
-
-	// Após a verificação, o botão leva para a próxia fase
-	al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
-	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
-	if ((mouseAxesX >= 1040 && mouseAxesX <= 1219) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-			navegacao += 1;
-		}
-	}
-
-	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
 
 	// Area imagem puzzle
 	al_draw_filled_rectangle(360, 65, 940, 645, al_map_rgb(255, 255, 255));
@@ -218,20 +135,92 @@ void fase3(ALLEGRO_EVENT evento) {
 		al_draw_rectangle(marcacaoX - 0.4, marcacaoY - 0.5, marcacaoX + 110, marcacaoY + 110, al_map_rgb(238, 173, 45), 6);
 	}
 
-	// Verifica Puzzle
-	//al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-	//al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(238, 173, 45));
-	//al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
-	//al_draw_filled_rectangle(972, 670, 1214, 710, al_map_rgb(238, 173, 45));
-	//al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1093, 670, ALLEGRO_ALIGN_CENTRE, "Validar Puzzle");
+	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
 
-	//for (int i = 0; i < 25; i++) {
-	//	//printf("Sequencia de id %d\n", quadrantePuzzle.quadrantes[i].idPecaRecebida);
-	//	if (quadrantePuzzle.quadrantes[i].idPecaRecebida == arrayVerificador[i]) {
-	//		somaVerificadora += 1;
-	//		//printf("SOMAVERIFICADORA %d", somaVerificadora);
-	//	}
-	//}
+	if (next == false) {
+		if (contadorCreditos >= 1) {
+			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+			if ((mouseAxesX >= 460 && mouseAxesX <= 820) && (mouseAxesY >= 665 && mouseAxesY <= 710)) {
+				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
+					imagemPuzzle();
+				}
+			}
+			else {
+				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+			}
+		}
+		else if (contadorCreditos < 1) {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
+		}
+
+		// Faz o cada peça movida na sequencia voltar para sua posição inicial
+		if (somaPosicao > 0) {
+			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+		}
+		else {
+			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
+		}
+		if ((mouseAxesX >= 75 && mouseAxesX <= 285) && (mouseAxesY >= 670 && mouseAxesY <= 712) && somaPosicao > 0) {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+				nextInt -= 1;
+				somaPosicao -= 1;
+				swapDaPeca = guardaMovimentacao[somaPosicao];
+				quadrantePuzzle.quadrantes[guardaIdPuzzle[somaPosicao]].contemPeca = false;
+				quadrantePuzzle.quadrantes[swapDaPeca].contemPeca = false;
+				posicoesIniciais.posicoes[swapDaPeca].contemPeca = true;
+				pecasPuzzle.pecas[swapDaPeca].pos_atual_x = pecasPuzzle.pecas[swapDaPeca].pos_inicial_x;
+				pecasPuzzle.pecas[swapDaPeca].pos_atual_y = pecasPuzzle.pecas[swapDaPeca].pos_inicial_y;
+				printf("\n");
+			}
+		}
+	}
+
+	// Valida as posições para liberar o botão de próximo
+	if (nextInt == 25) {
+		for (int i = 0; i < 25; i++) {
+			//printf("Sequencia de id %d\n", quadrantePuzzle.quadrantes[i].idPecaRecebida);
+			if (quadrantePuzzle.quadrantes[i].idPecaRecebida == arrayVerificador[i]) {
+				somaVerificadora += 1;
+				//printf("SOMAVERIFICADORA %d", somaVerificadora);
+			}
+			else {
+				somaVerificadora = 0;
+			}
+			if (somaVerificadora == 25) {
+				next = true;
+			}
+		}
+	}
+
+	if (next == true) {
+		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+		al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
+
+		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
+
+		al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+		al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
+
+		if ((mouseAxesX >= 1040 && mouseAxesX <= 1220) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+				navegacao += 1;
+			}
+		}
+	}
 
 	al_flip_display();
 }

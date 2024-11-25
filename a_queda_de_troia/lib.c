@@ -203,6 +203,9 @@ int guardaIdPuzzle[26] = { 5745, 7854, 7581, 5404, 4540, 4540, 9980, 8845, 5408,
 int somaPosicao = 0;
 int indiceQuadrante = 0;
 int swapDaPeca;
+int contg = 0;
+bool next = false;
+int nextInt = 0;
 
 //Fase 04
 //IMAGENS DO AQUILES - INICIO:
