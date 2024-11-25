@@ -59,14 +59,14 @@ void fase3(ALLEGRO_EVENT evento) {
 		// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 		for (int j = 0; j < 25; j++) {
 			// Seleciona a peça de sua posicao inicial
-			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110)/* && posicoesIniciais.posicoes[j].contemPeca == true*/) {
+			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
 				idPeca = pecasPuzzle.pecas[j].id;
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
 				indice = j;
 				first = true;
 				pecaSelecionada = true;
-				printf("\n1 ID PECA POSICAO INICIAL %d\n", idPeca);
+				//printf("\n1 ID PECA POSICAO INICIAL %d\n", idPeca);
 			}
 
 			// Verifica se há alguma peça selecionada, não havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
@@ -113,6 +113,8 @@ void fase3(ALLEGRO_EVENT evento) {
 			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
+				printf("\nContem Peca 1 %s\n", quadrantePuzzle.quadrantes[j].contemPeca ? "true" : "false");
+				printf("ID Quadrante %d\n", quadrantePuzzle.quadrantes[j].id);
 				first = true;
 			}
 
@@ -121,6 +123,7 @@ void fase3(ALLEGRO_EVENT evento) {
 				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
+				printf("\nContem Peca 2 %s\n", posicoesIniciais.posicoes[j].contemPeca ? "true" : "false");
 				first = true;
 			}
 		}
@@ -152,14 +155,15 @@ void fase3(ALLEGRO_EVENT evento) {
 	if ((mouseAxesX >= 75 && mouseAxesX <= 285) && (mouseAxesY >= 670 && mouseAxesY <= 712) && somaPosicao > 0) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-			for (int i = 1; i < 26; i++) {	
-				printf("GuardaMov %d\n", guardaMovimentacao[i]);
-				printf("GuardaId %d", guardaIdPuzzle[i]);
-			}
+			//for (int i = 1; i < 26; i++) {	
+			//	printf("GuardaMov %d\n", guardaMovimentacao[i]);
+			//	printf("GuardaId %d", guardaIdPuzzle[i]);
+			//}
 			somaPosicao -= 1;
 			swapDaPeca = guardaMovimentacao[somaPosicao];
 			quadrantePuzzle.quadrantes[guardaIdPuzzle[somaPosicao]].contemPeca = false;
 			quadrantePuzzle.quadrantes[swapDaPeca].contemPeca = false;
+			posicoesIniciais.posicoes[swapDaPeca].contemPeca = true;
 			pecasPuzzle.pecas[swapDaPeca].pos_atual_x = pecasPuzzle.pecas[swapDaPeca].pos_inicial_x;
 			pecasPuzzle.pecas[swapDaPeca].pos_atual_y = pecasPuzzle.pecas[swapDaPeca].pos_inicial_y;
 			printf("\n");
