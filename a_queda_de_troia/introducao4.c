@@ -36,12 +36,13 @@ void introducao4(ALLEGRO_EVENT evento) {
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 365, ALLEGRO_ALIGN_CENTRE, " E o unico jeito de Troia cair.");
 		break;
 	case 5:
-		imagemIntro(pag5, evento);
+		imagemIntro(pag4, evento);
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 165, ALLEGRO_ALIGN_CENTRE, "Lembre-se: sua vida e limitada!");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Se chegar ao fim com energia suficiente,");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "Troia sera sua. Mas, se cair no");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 365, ALLEGRO_ALIGN_CENTRE, "caminho... sera o fim de nosso sonho");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 415, ALLEGRO_ALIGN_CENTRE, "de vitoria.");
+
 	if ((mouseX >= 1016 && mouseX <= 1189) && (mouseY >= 653 && mouseY <= 692)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {

@@ -40,25 +40,22 @@ ALLEGRO_BITMAP* mapaTroia; //Destruido
 ALLEGRO_BITMAP* mapaGrecia; //Destruido
 bool renderizar = 0;
 
-//Introdução 2
-ALLEGRO_BITMAP* fundoAgamenom; //Destruido
+// Introdução 2
+ALLEGRO_BITMAP * fundoAgamenom; //Destruido
 ALLEGRO_BITMAP* fundoMenelau; //Destruido
- 
+ALLEGRO_BITMAP* fundoExplicacao;
+
 //Introdução 3
 ALLEGRO_BITMAP* pagina1; //Destruido
 ALLEGRO_BITMAP* pagina2; //Destruido
 ALLEGRO_BITMAP* pagina3; //Destruido
 ALLEGRO_BITMAP* pagina4; //Destruido
-ALLEGRO_BITMAP* pagina5; //Destruido
-ALLEGRO_BITMAP* pagina6; //Destruido
-ALLEGRO_BITMAP* pagina7; //Destruido
 
 //Introdução 4
 ALLEGRO_BITMAP* pag1; //Destruido
 ALLEGRO_BITMAP* pag2; //Destruido
 ALLEGRO_BITMAP* pag3; //Destruido
 ALLEGRO_BITMAP* pag4; //Destruido
-ALLEGRO_BITMAP* pag5; //Destruido
 
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm; //Destruido
@@ -348,39 +345,33 @@ void iniciarConstantes() {
 	//Introdução 2
 	fundoAgamenom = al_load_bitmap("Imagens/Introducao_2/fundoAgamenom.jpg");
 	fundoMenelau = al_load_bitmap("Imagens/Introducao_2/fundoMenelau.jpg");
+	fundoExplicacao = al_load_bitmap("Imagens/Introducao_2/fundoExplicacao.jpg");
 
 	testeInicializar(fundoAgamenom, "fundo-agamenom-Intro2");
-	testeInicializar(fundoAgamenom, "fundo-menelau-Intro2");
+	testeInicializar(fundoMenelau, "fundo-menelau-Intro2");
+	testeInicializar(fundoExplicacao, "fundo-explicacao-Intro2");
 
 	//Introdução 3
 	pagina1 = al_load_bitmap("Imagens/Introducao_3/pagina1.jpg");
 	pagina2 = al_load_bitmap("Imagens/Introducao_3/pagina2.jpg");
 	pagina3 = al_load_bitmap("Imagens/Introducao_3/pagina3.jpg");
 	pagina4 = al_load_bitmap("Imagens/Introducao_3/pagina4.jpg");
-	pagina5 = al_load_bitmap("Imagens/Introducao_3/pagina5.jpg");
-	pagina6 = al_load_bitmap("Imagens/Introducao_3/pagina6.jpg");
-	pagina7 = al_load_bitmap("Imagens/Introducao_3/pagina7.jpg");
 
 	testeInicializar(pagina1, "pagian-1-Intro3");
 	testeInicializar(pagina2, "pagian-2-Intro3");
 	testeInicializar(pagina3, "pagian-3-Intro3");
 	testeInicializar(pagina4, "pagian-4-Intro3");
-	testeInicializar(pagina5, "pagian-5-Intro3");
-	testeInicializar(pagina6, "pagian-6-Intro3");
-	testeInicializar(pagina7, "pagian-7-Intro3");
 
-	//Introdução 3
+	//Introdução 4
 	pag1 = al_load_bitmap("Imagens/Introducao_4/pag1.jpg");
 	pag2 = al_load_bitmap("Imagens/Introducao_4/pag2.jpg");
 	pag3 = al_load_bitmap("Imagens/Introducao_4/pag3.jpg");
 	pag4 = al_load_bitmap("Imagens/Introducao_4/pag4.jpg");
-	pag5 = al_load_bitmap("Imagens/Introducao_4/pag5.jpg");
 
 	testeInicializar(pagina1, "pag-1-Intro4");
 	testeInicializar(pagina2, "pag-2-Intro4");
 	testeInicializar(pagina3, "pag-3-Intro4");
 	testeInicializar(pagina4, "pag-4-Intro4");
-	testeInicializar(pagina5, "pag-5-Intro4");
 
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
@@ -1307,22 +1298,19 @@ void destruidor() {
 	//Introdução 2
 	al_destroy_bitmap(fundoAgamenom);
 	al_destroy_bitmap(fundoMenelau);
+	al_destroy_bitmap(fundoExplicacao);
 
 	//Introdução 3
 	al_destroy_bitmap(pagina1);
 	al_destroy_bitmap(pagina2);
 	al_destroy_bitmap(pagina3);
 	al_destroy_bitmap(pagina4);
-	al_destroy_bitmap(pagina5);
-	al_destroy_bitmap(pagina6);
-	al_destroy_bitmap(pagina7);
 
 	//Introdução 4
 	al_destroy_bitmap(pag1);
 	al_destroy_bitmap(pag2);
 	al_destroy_bitmap(pag3);
 	al_destroy_bitmap(pag4);
-	al_destroy_bitmap(pag5);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);

@@ -14,42 +14,42 @@ void introducao3(ALLEGRO_EVENT evento) {
 		break;
 	case 2:
 		imagemIntro(pagina2, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 580, ALLEGRO_ALIGN_CENTRE, "O destino de Troia esta em nossas maos.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 620, ALLEGRO_ALIGN_CENTRE, " Vamos entrar em suas portas");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 660, ALLEGRO_ALIGN_CENTRE, " de forma silenciosa.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 380, 525, ALLEGRO_ALIGN_CENTRE, "Ulisses");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 690, 580, ALLEGRO_ALIGN_CENTRE, "Agora, irmaos, nosso destino esta nas maos deste cavalo.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 615, ALLEGRO_ALIGN_CENTRE, "Ele sera a chave para a nossa vitoria. Mas para isso,");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 655, ALLEGRO_ALIGN_CENTRE, "devemos monta-lo com precisao.");
 		break;
 	case 3:
 		imagemIntro(pagina3, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 610, 620, ALLEGRO_ALIGN_CENTRE, "Os troianos festejam disaridos do que esta por vim");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 540, 535, ALLEGRO_ALIGN_CENTRE, "AGAMENONM");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 790, 580, ALLEGRO_ALIGN_CENTRE, "Troia caira, e o mundo se lembrara do poder dos gregos.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 710, 610, ALLEGRO_ALIGN_CENTRE, "Trabalhem rapido, mas com cuidado.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 710, 640, ALLEGRO_ALIGN_CENTRE, "Nossos homens ja estao prontos ");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 690, 670, ALLEGRO_ALIGN_CENTRE, "para atacar!");
 		break;
 	case 4:
 		imagemIntro(pagina4, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 115, ALLEGRO_ALIGN_CENTRE, "Abrir o portao e essencial.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 165, ALLEGRO_ALIGN_CENTRE, " Sem isso,nossos irmaos do lado de fora");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "nao terao chance de lutar.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, " E o unico jeito de Troia cair.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "O mecanismo do portao foi feito");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 365, ALLEGRO_ALIGN_CENTRE, " para impedir invasores.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 415, ALLEGRO_ALIGN_CENTRE, "Voce precisara resolver esse ");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 465, ALLEGRO_ALIGN_CENTRE, "quebra-cabeca para destrava-lo..");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 165, ALLEGRO_ALIGN_CENTRE, "Agora, e hora de ajudar os gregos");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, " a montar o Cavalo de Troia.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Este sera o artificio que levara a");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "queda de Troia.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 365, ALLEGRO_ALIGN_CENTRE, " Complete o quebra-cabeca para finalizar");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 415, ALLEGRO_ALIGN_CENTRE, " a construcao do cavalo.");
 		break;
 	case 5:
-		imagemIntro(pagina5, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 165, ALLEGRO_ALIGN_CENTRE, "Estude o mecanismo");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, " e memorize cada detalhe.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Voce podera consultar o diagrama");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, " original apenas tres vezes.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 365, ALLEGRO_ALIGN_CENTRE, "Depois disso, estara por sua conta!");
+		imagemIntro(pagina4, evento);
+		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 115, ALLEGRO_ALIGN_CENTRE, "Aqui estao as regras:");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "Arraste e posicione as pecas para formar a figura");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 680, 265, ALLEGRO_ALIGN_CENTRE, "Voce pode consultar a imagem original apenas 3 vezes.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 365, ALLEGRO_ALIGN_CENTRE, "Use-a com sabedoria!");
 		break;
 	case 6:
-		imagemIntro(pagina6, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "Cada movimento deve ser preciso.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Nao temos margem para erro!");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "Boa sorte, soldado.");
-		imagemIntro(pagina5, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 215, ALLEGRO_ALIGN_CENTRE, "Cada movimento deve ser preciso.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, "Nao temos margem para erro!");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 315, ALLEGRO_ALIGN_CENTRE, "Boa sorte, soldado!");
+		imagemIntro(pagina4, evento);
+		al_draw_text(font, al_map_rgb(0, 0, 0), 680, 215, ALLEGRO_ALIGN_CENTRE, "Use a logica e a memoria para resolver o quebra-cabeca.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 265, ALLEGRO_ALIGN_CENTRE, " Cada erro pode custar tempo valioso, e os gregos");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 680, 315, ALLEGRO_ALIGN_CENTRE, "contam com sua habilidade para que o plano funcione.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 640, 415, ALLEGRO_ALIGN_CENTRE, "Boa sorte!");
+
 		if ((mouseX >= 1016 && mouseX <= 1189) && (mouseY >= 653 && mouseY <= 692)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {

@@ -68,22 +68,19 @@ extern bool renderizar;
 //Introdução 2
 extern ALLEGRO_BITMAP* fundoAgamenom;
 extern ALLEGRO_BITMAP* fundoMenelau;
+extern ALLEGRO_BITMAP* fundoExplicacao;
 
 //Introdução 3
 extern ALLEGRO_BITMAP* pagina1;
 extern ALLEGRO_BITMAP* pagina2;
 extern ALLEGRO_BITMAP* pagina3;
 extern ALLEGRO_BITMAP* pagina4;
-extern ALLEGRO_BITMAP* pagina5;
-extern ALLEGRO_BITMAP* pagina6;
-extern ALLEGRO_BITMAP* pagina7;
 
 //Introdução 4
 extern ALLEGRO_BITMAP* pag1;
 extern ALLEGRO_BITMAP* pag2;
 extern ALLEGRO_BITMAP* pag3;
 extern ALLEGRO_BITMAP* pag4;
-extern ALLEGRO_BITMAP* pag5;
 
 //Fase 1
 extern ALLEGRO_BITMAP* backgroundFaseUm;
