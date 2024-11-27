@@ -1,5 +1,4 @@
 #include "fase04.h"
-
 void reiniciar() { //Reinicia a fase
 	//Reiniciar a posição do Player e retira 1 vida: INICIO
 	vidaF4 -= 1;
@@ -39,22 +38,10 @@ void reiniciar() { //Reinicia a fase
 		gameOver = true;
 	}
 }
-
 void fase4(ALLEGRO_EVENT evento) {
 	if (gameOver == false) {
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
-		if (vidaF4 == 3) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 3");
-		}
-		if (vidaF4 == 2) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 2");
-		}
-		if (vidaF4 == 1) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 1");
-		}
-		if (vidaF4 == 0) {
-			al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: 0");
-		}
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: %d", vidaF4);
 		//Timer do tempo da fase INICIO:
 		if (!timerOn){ //Inicializa o timer
 			al_start_timer(timerFase04);
@@ -259,7 +246,6 @@ void fase4(ALLEGRO_EVENT evento) {
 			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 340 && evento.mouse.y <= 375) {
 				navegacao += 1;
 			}
-
 		}
 	}
 }
