@@ -28,6 +28,21 @@ ALLEGRO_BITMAP* semVolume; //Destruido
 ALLEGRO_BITMAP* comVolumeHover; //Destruido
 ALLEGRO_BITMAP* semVolumeHover; //Destruido
 
+//Creditos
+char nomes[11][100] = {
+	"A QUEDA DE TROIA",
+	"OBRIGADO POR JOGAR!",
+	"Esperamos que tenha aprendido algo nesta aventura e se divertido!",
+	"DESENVOLVIDO POR",
+	"BCC - TURMA A 2024",
+	"Bruno",
+	"Caua",
+	"Keila",
+	"Lucas Pinheiro",
+	"Lucas Magalhaes",
+	"Ate a proxima!"
+};
+int credY[11] = { 720, 800, 850, 1000, 1100, 1200, 1250, 1300, 1350, 1400, 1500 };
 //Introdução 1
 ALLEGRO_BITMAP* fundo1Intro1; //Destruido
 ALLEGRO_BITMAP* fundo2Intro1; //Destruido

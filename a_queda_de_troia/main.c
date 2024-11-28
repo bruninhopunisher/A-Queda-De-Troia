@@ -49,8 +49,7 @@ int main() {
 				opcoes(event);
 				break;
 			case 2:
-				printf("ATENCAO \n\n\n Opcao creditos nao concluida"); // Criar creditos
-				rodando = false;
+				creditos(event);
 				break;
 			case 3:
 				introducao1(event);

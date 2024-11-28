@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="creditos.c" />
     <ClCompile Include="fase02.c" />
     <ClCompile Include="fase01.c" />
     <ClCompile Include="fase03.c" />
@@ -274,6 +275,7 @@
     <Image Include="soldadosTroia.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="creditos.h" />
     <ClInclude Include="fase02.h" />
     <ClInclude Include="fase03.h" />
     <ClInclude Include="fase04.h" />

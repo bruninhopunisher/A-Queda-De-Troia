@@ -13,11 +13,12 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 #include "menu.h"
+#include "opcoes.h"
+#include "creditos.h"
 #include "introducao1.h"
 #include "introducao2.h"
 #include "introducao3.h"
 #include "introducao4.h"
-#include "opcoes.h"
 #include "fase01.h"
 #include "fase02.h"
 #include "fase03.h"
@@ -52,6 +53,10 @@ extern ALLEGRO_BITMAP* comVolume;
 extern ALLEGRO_BITMAP* semVolume;
 extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
+
+//Creditos
+extern char nomes[11][100];
+extern int credY[11];
 
 //Introdução 1
 extern ALLEGRO_BITMAP* fundo1Intro1;

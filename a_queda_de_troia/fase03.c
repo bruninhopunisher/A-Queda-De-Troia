@@ -30,26 +30,26 @@ void fase3(ALLEGRO_EVENT evento) {
 
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
 
-	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
-		mouseAxesX = evento.mouse.x;
-		mouseAxesY = evento.mouse.y;
-		/*printf("\nMOUSE X %d\n", mouseX);
-		printf("MOUSE Y %d\n", mouseY);*/
-	}
+	//if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+	//	evento.mouse.x = evento.mouse.x;
+	//	evento.mouse.y = evento.mouse.y;
+	//	/*printf("\nMOUSE X %d\n", evento.mouse.x);
+	//	printf("MOUSE Y %d\n", evento.mouse.y);*/
+	//}
 
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-		mouseX = evento.mouse.x;
-		mouseY = evento.mouse.y;
-		/*printf("\nMOUSE X %d\n", mouseX);
-		printf("MOUSE Y %d\n", mouseY);*/
-	}
+	//if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+	//	evento.mouse.x = evento.mouse.x;
+	//	evento.mouse.y = evento.mouse.y;
+	//	/*printf("\nMOUSE X %d\n", evento.mouse.x);
+	//	printf("MOUSE Y %d\n", evento.mouse.y);*/
+	//}
 
 	// Lógica do Quebra-Cabeça
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 		for (int j = 0; j < 25; j++) {
 			// Seleciona a peça de sua posicao inicial
-			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
+			if ((evento.mouse.x >= posicoesIniciais.posicoes[j].x && evento.mouse.x <= posicoesIniciais.posicoes[j].x + 110) && (evento.mouse.y >= posicoesIniciais.posicoes[j].y && evento.mouse.y <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
 				idPeca = pecasPuzzle.pecas[j].id;
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
@@ -61,7 +61,7 @@ void fase3(ALLEGRO_EVENT evento) {
 
 			// Verifica se há alguma peça selecionada, não havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 			if (pecaSelecionada == true) {
-				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
+				if ((evento.mouse.x >= quadrantePuzzle.quadrantes[j].X && evento.mouse.x <= quadrantePuzzle.quadrantes[j].X + 105) && (evento.mouse.y >= quadrantePuzzle.quadrantes[j].Y && evento.mouse.y <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
 					quadrantePuzzle.quadrantes[j].idPecaRecebida = idPeca;
 					guardaMovimentacao[somaPosicao] = indice;
@@ -80,7 +80,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			}
 
 			// movimentação do marcador em todas as posições do quadrante
-			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
+			if ((evento.mouse.x >= quadrantePuzzle.quadrantes[j].X && evento.mouse.x <= quadrantePuzzle.quadrantes[j].X + 105) && (evento.mouse.y >= quadrantePuzzle.quadrantes[j].Y && evento.mouse.y <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
 				printf("\nContem Peca 1 %s\n", quadrantePuzzle.quadrantes[j].contemPeca ? "true" : "false");
@@ -89,7 +89,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			}
 
 			// Move o marcador para as áreas iniciais do quadrante branco das posições iniciais
-			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110)) {
+			if ((evento.mouse.x >= posicoesIniciais.posicoes[j].x && evento.mouse.x <= posicoesIniciais.posicoes[j].x + 110) && (evento.mouse.y >= posicoesIniciais.posicoes[j].y && evento.mouse.y <= posicoesIniciais.posicoes[j].y + 110)) {
 				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
@@ -141,7 +141,7 @@ void fase3(ALLEGRO_EVENT evento) {
 		if (contadorCreditos >= 1) {
 			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
 			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-			if ((mouseAxesX >= 460 && mouseAxesX <= 820) && (mouseAxesY >= 665 && mouseAxesY <= 710)) {
+			if ((evento.mouse.x >= 460 && evento.mouse.x <= 820) && (evento.mouse.y >= 665 && evento.mouse.y <= 710)) {
 				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
 					imagemPuzzle();
@@ -168,7 +168,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
 			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
 		}
-		if ((mouseAxesX >= 75 && mouseAxesX <= 285) && (mouseAxesY >= 670 && mouseAxesY <= 712) && somaPosicao > 0) {
+		if ((evento.mouse.x >= 75 && evento.mouse.x <= 285) && (evento.mouse.y >= 670 && evento.mouse.y <= 712) && somaPosicao > 0) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 				nextInt -= 1;
@@ -214,7 +214,7 @@ void fase3(ALLEGRO_EVENT evento) {
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
 		al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
 
-		if ((mouseAxesX >= 1040 && mouseAxesX <= 1220) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
+		if ((evento.mouse.x >= 1040 && evento.mouse.x <= 1220) && (evento.mouse.y >= 650 && evento.mouse.y <= 690)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 				navegacao += 1;

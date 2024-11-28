@@ -37,6 +37,9 @@
     <ClCompile Include="introducao4.c">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
     </ClCompile>
+    <ClCompile Include="creditos.c">
+      <Filter>Arquivos de Cabeçalho\Créditos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -71,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="introducao4.h">
       <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
+    </ClInclude>
+    <ClInclude Include="creditos.h">
+      <Filter>Arquivos de Cabeçalho\Créditos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -531,6 +537,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Background">
       <UniqueIdentifier>{a636c96a-dfe3-401d-81fb-cec039dee2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Créditos">
+      <UniqueIdentifier>{630da208-7477-4041-8fac-1bc6fc4865b9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
