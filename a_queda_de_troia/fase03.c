@@ -56,7 +56,7 @@ void fase3(ALLEGRO_EVENT evento) {
 				indice = j;
 				first = true;
 				pecaSelecionada = true;
-				//printf("\n1 ID PECA POSICAO INICIAL %d\n", idPeca);
+				printf("\n1 ID PECA POSICAO INICIAL %d\n", idPeca);
 			}
 
 			// Verifica se há alguma peça selecionada, não havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
@@ -93,7 +93,7 @@ void fase3(ALLEGRO_EVENT evento) {
 				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
-				printf("\nContem Peca 2 %s\n", posicoesIniciais.posicoes[j].contemPeca ? "true" : "false");
+				/*printf("\nContem Peca 2 %s\n", posicoesIniciais.posicoes[j].contemPeca ? "true" : "false");*/
 				first = true;
 			}
 		}
