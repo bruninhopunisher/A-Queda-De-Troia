@@ -217,7 +217,7 @@ int somaPosicao = 0;
 int indiceQuadrante = 0;
 int swapDaPeca;
 int contg = 0;
-bool next = true;
+bool next = false;
 int nextInt = 0;
 
 //Fase 04

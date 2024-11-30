@@ -36,18 +36,10 @@ int main() {
 		}
 		/*audioJogo(navegacao);*/
 
-		//if (event.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
-		//	mouseX = event.mouse.x;
-		//	mouseY = event.mouse.y;
-		//	printf("X: %d Y: %d \n\n", mouseX, mouseY);
-		//}
-
-		
-
 		switch (navegacao) {
 			case 0:
-				fase3(event);
-				/*menu(event);*/
+				/*fase3(event);*/
+				menu(event);
 				break;
 			case 1:  
 				opcoes(event);
