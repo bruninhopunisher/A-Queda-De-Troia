@@ -21,7 +21,7 @@ void desenhaQuadrados() {
 	// Desenha linhas brancas nas posições iniciais
 	for (int m = 0; m < 25; m++) {
 		for (int n = 0; n < 25; n++) {
-			al_draw_rectangle(posicaoInicialX[n] - 0.5, posicaoInicialY[n] - 0.5, posicaoInicialX[n] + 110, posicaoInicialY[n] + 110, al_map_rgb(255, 255, 255), 6);
+			al_draw_rectangle(posicaoInicialX[n] - 3, posicaoInicialY[n] - 3, posicaoInicialX[n] + 114, posicaoInicialY[n] + 114, al_map_rgb(255, 255, 255), 7);
 		}
 	}
 }
@@ -90,7 +90,7 @@ void fase3(ALLEGRO_EVENT evento) {
 
 			// Move o marcador para as áreas iniciais do quadrante branco das posições iniciais
 			if ((evento.mouse.x >= posicoesIniciais.posicoes[j].x && evento.mouse.x <= posicoesIniciais.posicoes[j].x + 110) && (evento.mouse.y >= posicoesIniciais.posicoes[j].y && evento.mouse.y <= posicoesIniciais.posicoes[j].y + 110)) {
-				/*printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);*/
+				printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
 				/*printf("\nContem Peca 2 %s\n", posicoesIniciais.posicoes[j].contemPeca ? "true" : "false");*/
@@ -132,7 +132,7 @@ void fase3(ALLEGRO_EVENT evento) {
 
 	// Verificação para desenhar um quadrado no entorno da peça selecionada apenas quando tiver uma peça selecionada
 	if (first == true) {
-		al_draw_rectangle(marcacaoX - 0.4, marcacaoY - 0.5, marcacaoX + 110, marcacaoY + 110, al_map_rgb(238, 173, 45), 6);
+		al_draw_rectangle(marcacaoX - 4.5, marcacaoY - 4.5, marcacaoX + 115, marcacaoY + 115, al_map_rgb(238, 173, 45), 9);
 	}
 
 	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
