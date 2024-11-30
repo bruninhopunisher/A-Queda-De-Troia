@@ -12,7 +12,7 @@ void imagemPuzzle() {
 
 void desenhaQuadrados() {
 	//Desenha quadrante
-	for (int x = 360; x < 360 + 550; x += 116) {
+	for (float x = 410.5; x < 410.5 + 550; x += 116) {
 		for (int y = 65; y < 65 + 550; y += 116) {
 			al_draw_rectangle(x, y, x + 116, y + 116, al_map_rgb(0, 0, 0), 10);
 		}
@@ -30,26 +30,25 @@ void fase3(ALLEGRO_EVENT evento) {
 
 	al_draw_bitmap(imgFundoPuzzle, 0, 0, 0);
 
-	//if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
-	//	evento.mouse.x = evento.mouse.x;
-	//	evento.mouse.y = evento.mouse.y;
-	//	/*printf("\nMOUSE X %d\n", evento.mouse.x);
-	//	printf("MOUSE Y %d\n", evento.mouse.y);*/
-	//}
-
-	//if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-	//	evento.mouse.x = evento.mouse.x;
-	//	evento.mouse.y = evento.mouse.y;
-	//	/*printf("\nMOUSE X %d\n", evento.mouse.x);
-	//	printf("MOUSE Y %d\n", evento.mouse.y);*/
-	//}
+	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		mouseAxesX = evento.mouse.x;
+		mouseAxesY = evento.mouse.y;
+		/*printf("\nMOUSE X %d\n", mouseX);
+		printf("MOUSE Y %d\n", mouseY);*/
+	}
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+		mouseX = evento.mouse.x;
+		mouseY = evento.mouse.y;
+		printf("\nMOUSE X %d\n", mouseX);
+		printf("MOUSE Y %d\n", mouseY);
+	}
 
 	// Lógica do Quebra-Cabeça
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		// Verifica se há alguma peça selecionada, havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 		for (int j = 0; j < 25; j++) {
 			// Seleciona a peça de sua posicao inicial
-			if ((evento.mouse.x >= posicoesIniciais.posicoes[j].x && evento.mouse.x <= posicoesIniciais.posicoes[j].x + 110) && (evento.mouse.y >= posicoesIniciais.posicoes[j].y && evento.mouse.y <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
+			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110) && posicoesIniciais.posicoes[j].contemPeca == true) {
 				idPeca = pecasPuzzle.pecas[j].id;
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
@@ -61,7 +60,7 @@ void fase3(ALLEGRO_EVENT evento) {
 
 			// Verifica se há alguma peça selecionada, não havendo, a peça é colocada dentro do quadrante clicado setado falso para peça selecionada
 			if (pecaSelecionada == true) {
-				if ((evento.mouse.x >= quadrantePuzzle.quadrantes[j].X && evento.mouse.x <= quadrantePuzzle.quadrantes[j].X + 105) && (evento.mouse.y >= quadrantePuzzle.quadrantes[j].Y && evento.mouse.y <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
+				if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105) && quadrantePuzzle.quadrantes[j].contemPeca == false) {
 					//idQuadrante = quadrantePuzzle.quadrantes[j].id;
 					quadrantePuzzle.quadrantes[j].idPecaRecebida = idPeca;
 					guardaMovimentacao[somaPosicao] = indice;
@@ -80,7 +79,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			}
 
 			// movimentação do marcador em todas as posições do quadrante
-			if ((evento.mouse.x >= quadrantePuzzle.quadrantes[j].X && evento.mouse.x <= quadrantePuzzle.quadrantes[j].X + 105) && (evento.mouse.y >= quadrantePuzzle.quadrantes[j].Y && evento.mouse.y <= quadrantePuzzle.quadrantes[j].Y + 105)) {
+			if ((mouseX >= quadrantePuzzle.quadrantes[j].X && mouseX <= quadrantePuzzle.quadrantes[j].X + 105) && (mouseY >= quadrantePuzzle.quadrantes[j].Y && mouseY <= quadrantePuzzle.quadrantes[j].Y + 105)) {
 				marcacaoX = quadrantePuzzle.quadrantes[j].X;
 				marcacaoY = quadrantePuzzle.quadrantes[j].Y;
 				printf("\nContem Peca 1 %s\n", quadrantePuzzle.quadrantes[j].contemPeca ? "true" : "false");
@@ -89,7 +88,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			}
 
 			// Move o marcador para as áreas iniciais do quadrante branco das posições iniciais
-			if ((evento.mouse.x >= posicoesIniciais.posicoes[j].x && evento.mouse.x <= posicoesIniciais.posicoes[j].x + 110) && (evento.mouse.y >= posicoesIniciais.posicoes[j].y && evento.mouse.y <= posicoesIniciais.posicoes[j].y + 110)) {
+			if ((mouseX >= posicoesIniciais.posicoes[j].x && mouseX <= posicoesIniciais.posicoes[j].x + 110) && (mouseY >= posicoesIniciais.posicoes[j].y && mouseY <= posicoesIniciais.posicoes[j].y + 110)) {
 				printf("\nID FORA %d\n", posicoesIniciais.posicoes[j].id);
 				marcacaoX = posicoesIniciais.posicoes[j].x;
 				marcacaoY = posicoesIniciais.posicoes[j].y;
@@ -100,7 +99,7 @@ void fase3(ALLEGRO_EVENT evento) {
 	}
 
 	// Area imagem puzzle
-	al_draw_filled_rectangle(360, 65, 940, 645, al_map_rgb(255, 255, 255));
+	al_draw_filled_rectangle(415, 65, 990, 645, al_map_rgb(255, 255, 255));
 	desenhaQuadrados();
 
 	//Colocando as imagens fora da área do retângulo
@@ -135,13 +134,13 @@ void fase3(ALLEGRO_EVENT evento) {
 		al_draw_rectangle(marcacaoX - 4.5, marcacaoY - 4.5, marcacaoX + 115, marcacaoY + 115, al_map_rgb(238, 173, 45), 9);
 	}
 
-	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
+	al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 680, 10, ALLEGRO_ALIGN_CENTRE, "Creditos de Imagem: %d", contadorCreditos);
 
 	if (next == false) {
 		if (contadorCreditos >= 1) {
-			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-			if ((evento.mouse.x >= 460 && evento.mouse.x <= 820) && (evento.mouse.y >= 665 && evento.mouse.y <= 710)) {
+			al_draw_filled_rectangle(520, 665, 880, 710, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 700, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+			if ((mouseAxesX >= 520 && mouseAxesX <= 880) && (mouseAxesY >= 665 && mouseAxesY <= 710)) {
 				al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP && contadorCreditos > 0) {
 					imagemPuzzle();
@@ -153,22 +152,22 @@ void fase3(ALLEGRO_EVENT evento) {
 		}
 		else if (contadorCreditos < 1) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-			al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
+			al_draw_filled_rectangle(520, 665, 880, 710, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 700, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+			al_draw_filled_rectangle(520, 665, 880, 710, al_map_rgba(50, 50, 50, 128));
 		}
 
 		// Faz o cada peça movida na sequencia voltar para sua posição inicial
 		if (somaPosicao > 0) {
-			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+			al_draw_filled_rectangle(91, 640, 301, 682, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 195, 640, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
 		}
 		else {
-			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
-			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
-			al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
+			al_draw_filled_rectangle(91, 640, 301, 682, al_map_rgb(222, 158, 30));
+			al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 195, 640, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+			al_draw_filled_rectangle(91, 640, 301, 682, al_map_rgba(50, 50, 50, 128));
 		}
-		if ((evento.mouse.x >= 75 && evento.mouse.x <= 285) && (evento.mouse.y >= 670 && evento.mouse.y <= 712) && somaPosicao > 0) {
+		if ((mouseAxesX >= 91 && mouseAxesX <= 301) && (mouseAxesY >= 640 && mouseAxesY <= 682) && somaPosicao > 0) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 				nextInt -= 1;
@@ -203,24 +202,23 @@ void fase3(ALLEGRO_EVENT evento) {
 
 	if (next == true) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-		al_draw_filled_rectangle(1040, 650, 1220, 690, al_map_rgb(222, 158, 30));
-		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1130, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
+		al_draw_filled_rectangle(1065, 650, 1225, 690, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1145, 648, ALLEGRO_ALIGN_CENTRE, "Proximo");
 
-		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgb(222, 158, 30));
-		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
-		al_draw_filled_rectangle(460, 665, 820, 710, al_map_rgba(50, 50, 50, 128));
+		al_draw_filled_rectangle(520, 665, 880, 710, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 700, 665, ALLEGRO_ALIGN_CENTRE, "Ver Puzzle Completo");
+		al_draw_filled_rectangle(520, 665, 880, 710, al_map_rgba(50, 50, 50, 128));
 
-		al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgb(222, 158, 30));
-		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 180, 670, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
-		al_draw_filled_rectangle(75, 670, 285, 712, al_map_rgba(50, 50, 50, 128));
+		al_draw_filled_rectangle(91, 640, 301, 682, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 195, 640, ALLEGRO_ALIGN_CENTRE, "Voltar Peca");
+		al_draw_filled_rectangle(91, 640, 301, 682, al_map_rgba(50, 50, 50, 128));
 
-		if ((evento.mouse.x >= 1040 && evento.mouse.x <= 1220) && (evento.mouse.y >= 650 && evento.mouse.y <= 690)) {
+		if ((mouseAxesX >= 1065 && mouseAxesX <= 1225) && (mouseAxesY >= 650 && mouseAxesY <= 690)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 				navegacao += 1;
 			}
 		}
 	}
-
 	al_flip_display();
 }

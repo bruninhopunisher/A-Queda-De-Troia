@@ -216,7 +216,7 @@ int somaPosicao = 0;
 int indiceQuadrante = 0;
 int swapDaPeca;
 int contg = 0;
-bool next = false;
+bool next = true;
 int nextInt = 0;
 
 //Fase 04
@@ -849,127 +849,127 @@ void iniciarConstantes() {
 	pecasPuzzle.pecas[24].selecionada = false;
 
 	quadrantePuzzle.quadrantes[0].id = 1;
-	quadrantePuzzle.quadrantes[0].X = 365;
+	quadrantePuzzle.quadrantes[0].X = 415;
 	quadrantePuzzle.quadrantes[0].Y = 70;
 	quadrantePuzzle.quadrantes[0].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[1].id = 2;
-	quadrantePuzzle.quadrantes[1].X = 480;
+	quadrantePuzzle.quadrantes[1].X = 530;
 	quadrantePuzzle.quadrantes[1].Y = 70;
 	quadrantePuzzle.quadrantes[1].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[2].id = 3;
-	quadrantePuzzle.quadrantes[2].X = 595;
+	quadrantePuzzle.quadrantes[2].X = 645;
 	quadrantePuzzle.quadrantes[2].Y = 70;
 	quadrantePuzzle.quadrantes[2].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[3].id = 4;
-	quadrantePuzzle.quadrantes[3].X = 710;
+	quadrantePuzzle.quadrantes[3].X = 760;
 	quadrantePuzzle.quadrantes[3].Y = 70;
 	quadrantePuzzle.quadrantes[3].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[4].id = 5;
-	quadrantePuzzle.quadrantes[4].X = 825;
+	quadrantePuzzle.quadrantes[4].X = 875;
 	quadrantePuzzle.quadrantes[4].Y = 70;
 	quadrantePuzzle.quadrantes[4].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[5].id = 6;
-	quadrantePuzzle.quadrantes[5].X = 365;
+	quadrantePuzzle.quadrantes[5].X = 415;
 	quadrantePuzzle.quadrantes[5].Y = 185;
 	quadrantePuzzle.quadrantes[5].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[6].id = 7;
-	quadrantePuzzle.quadrantes[6].X = 480;
+	quadrantePuzzle.quadrantes[6].X = 530;
 	quadrantePuzzle.quadrantes[6].Y = 185;
 	quadrantePuzzle.quadrantes[6].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[7].id = 8;
-	quadrantePuzzle.quadrantes[7].X = 595;
+	quadrantePuzzle.quadrantes[7].X = 645;
 	quadrantePuzzle.quadrantes[7].Y = 185;
 	quadrantePuzzle.quadrantes[7].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[8].id = 9;
-	quadrantePuzzle.quadrantes[8].X = 710;
+	quadrantePuzzle.quadrantes[8].X = 760;
 	quadrantePuzzle.quadrantes[8].Y = 185;
 	quadrantePuzzle.quadrantes[8].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[9].id = 10;
-	quadrantePuzzle.quadrantes[9].X = 825;
+	quadrantePuzzle.quadrantes[9].X = 875;
 	quadrantePuzzle.quadrantes[9].Y = 185;
 	quadrantePuzzle.quadrantes[9].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[10].id = 11;
-	quadrantePuzzle.quadrantes[10].X = 365;
+	quadrantePuzzle.quadrantes[10].X = 415;
 	quadrantePuzzle.quadrantes[10].Y = 300;
 	quadrantePuzzle.quadrantes[10].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[11].id = 12;
-	quadrantePuzzle.quadrantes[11].X = 480;
+	quadrantePuzzle.quadrantes[11].X = 530;
 	quadrantePuzzle.quadrantes[11].Y = 300;
 	quadrantePuzzle.quadrantes[11].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[12].id = 13;
-	quadrantePuzzle.quadrantes[12].X = 595;
+	quadrantePuzzle.quadrantes[12].X = 645;
 	quadrantePuzzle.quadrantes[12].Y = 300;
 	quadrantePuzzle.quadrantes[12].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[13].id = 14;
-	quadrantePuzzle.quadrantes[13].X = 710;
+	quadrantePuzzle.quadrantes[13].X = 760;
 	quadrantePuzzle.quadrantes[13].Y = 300;
 	quadrantePuzzle.quadrantes[13].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[14].id = 15;
-	quadrantePuzzle.quadrantes[14].X = 825;
+	quadrantePuzzle.quadrantes[14].X = 875;
 	quadrantePuzzle.quadrantes[14].Y = 300;
 	quadrantePuzzle.quadrantes[14].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[15].id = 16;
-	quadrantePuzzle.quadrantes[15].X = 365;
+	quadrantePuzzle.quadrantes[15].X = 415;
 	quadrantePuzzle.quadrantes[15].Y = 415;
 	quadrantePuzzle.quadrantes[15].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[16].id = 17;
-	quadrantePuzzle.quadrantes[16].X = 480;
+	quadrantePuzzle.quadrantes[16].X = 530;
 	quadrantePuzzle.quadrantes[16].Y = 415;
 	quadrantePuzzle.quadrantes[16].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[17].id = 18;
-	quadrantePuzzle.quadrantes[17].X = 595;
+	quadrantePuzzle.quadrantes[17].X = 645;
 	quadrantePuzzle.quadrantes[17].Y = 415;
 	quadrantePuzzle.quadrantes[17].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[18].id = 19;
-	quadrantePuzzle.quadrantes[18].X = 710;
+	quadrantePuzzle.quadrantes[18].X = 760;
 	quadrantePuzzle.quadrantes[18].Y = 415;
 	quadrantePuzzle.quadrantes[18].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[19].id = 20;
-	quadrantePuzzle.quadrantes[19].X = 825;
+	quadrantePuzzle.quadrantes[19].X = 875;
 	quadrantePuzzle.quadrantes[19].Y = 415;
 	quadrantePuzzle.quadrantes[19].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[20].id = 21;
-	quadrantePuzzle.quadrantes[20].X = 365;
+	quadrantePuzzle.quadrantes[20].X = 415;
 	quadrantePuzzle.quadrantes[20].Y = 530;
 	quadrantePuzzle.quadrantes[20].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[21].id = 22;
-	quadrantePuzzle.quadrantes[21].X = 480;
+	quadrantePuzzle.quadrantes[21].X = 530;
 	quadrantePuzzle.quadrantes[21].Y = 530;
 	quadrantePuzzle.quadrantes[21].contemPeca = false;
 	
 	quadrantePuzzle.quadrantes[22].id = 23;
-	quadrantePuzzle.quadrantes[22].X = 595;
+	quadrantePuzzle.quadrantes[22].X = 645;
 	quadrantePuzzle.quadrantes[22].Y = 530;
 	quadrantePuzzle.quadrantes[22].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[23].id = 24;
-	quadrantePuzzle.quadrantes[23].X = 710;
+	quadrantePuzzle.quadrantes[23].X = 760;
 	quadrantePuzzle.quadrantes[23].Y = 530;
 	quadrantePuzzle.quadrantes[23].contemPeca = false;
 
 	quadrantePuzzle.quadrantes[24].id = 25;
-	quadrantePuzzle.quadrantes[24].X = 825;
+	quadrantePuzzle.quadrantes[24].X = 875;
 	quadrantePuzzle.quadrantes[24].Y = 530;
 	quadrantePuzzle.quadrantes[24].contemPeca = false;
 
