@@ -41,6 +41,9 @@ int main() {
 		//	mouseY = event.mouse.y;
 		//	printf("X: %d Y: %d \n\n", mouseX, mouseY);
 		//}
+
+		
+
 		switch (navegacao) {
 			case 0:
 				fase3(event);

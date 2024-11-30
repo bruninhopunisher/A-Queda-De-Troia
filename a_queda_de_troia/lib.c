@@ -5,6 +5,7 @@ ALLEGRO_TIMER* timer; //Destruido
 ALLEGRO_EVENT_QUEUE* evento; //Destruido
 ALLEGRO_DISPLAY* display; // Destruido
 ALLEGRO_BITMAP* backgroundMenu; //Destruido
+ALLEGRO_BITMAP* logo; //Destruido
 ALLEGRO_FONT* fonteMenu; //Destruido
 ALLEGRO_FONT* font; // Destruido
 
@@ -335,6 +336,7 @@ void iniciarConstantes() {
 	//Menu
 	backgroundMenu = al_load_bitmap("Imagens/Menu/background_login.jpg");
 	testeInicializar(backgroundMenu, "imagem_menu");
+	logo = al_load_bitmap("Imagens/Menu/logo.png");
 
 	//Introdução 1
 	fundo1Intro1 = al_load_bitmap("Imagens/Introducao_1/fundo1Intro1.jpg");
@@ -1274,6 +1276,14 @@ void imagemIntro(ALLEGRO_BITMAP* imagem, ALLEGRO_EVENT evento) {
 			intro += 1;
 		}
 	}
+}
+
+void splash_screen(ALLEGRO_BITMAP* splashImage, int displayX, int displayY) {
+	al_draw_bitmap(backgroundMenu, 0, 0, 0);
+	al_flip_display();
+	al_rest(3.0);
+
+
 }
 
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA

@@ -6,25 +6,28 @@ void menu(ALLEGRO_EVENT evento) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 	}
+
+
 	al_draw_bitmap(backgroundMenu, 0, 0, 0);
-	al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(238, 173, 45)); 
-	al_draw_filled_rectangle(540, 410, 740, 470, al_map_rgb(238, 173, 45)); 
-	al_draw_filled_rectangle(540, 490, 740, 550, al_map_rgb(238, 173, 45)); 
+	al_draw_bitmap(logo, 450, 0, 0);
+	al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(140, 70, 20));
+	al_draw_filled_rectangle(540, 410, 740, 470, al_map_rgb(140, 70, 20));
+	al_draw_filled_rectangle(540, 490, 740, 550, al_map_rgb(140, 70, 20));
 	if (mouseX >= (displayX / 2) - 100 && mouseX <= (displayX / 2) + 100 && mouseY >= (displayY / 2) - 30 && mouseY <= (displayY / 2) + 30){
-		al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(255,165,0));
+		al_draw_filled_rectangle((displayX / 2) - 100, (displayY / 2) - 30, (displayX / 2) + 100, (displayY / 2) + 30, al_map_rgb(200, 100, 20));
 	}else {
 		if (mouseX >= (displayX / 2) - 100 && mouseX <= (displayX / 2) + 100 && mouseY >= 410 && mouseY <= 470) {
-	 		al_draw_filled_rectangle((displayX / 2) - 100, 410, (displayX / 2) + 100, 470, al_map_rgb(255, 165, 0));
+	 		al_draw_filled_rectangle((displayX / 2) - 100, 410, (displayX / 2) + 100, 470, al_map_rgb(200, 100, 20));
 		}
 		else {
 			if (mouseX >= (displayX / 2) - 100 && mouseX <= (displayX / 2) + 100 && mouseY >= 490 && mouseY <= 550) {
-			 	al_draw_filled_rectangle((displayX / 2) - 100, 490, (displayX / 2) + 100, 550, al_map_rgb(255, 165, 0));
+			 	al_draw_filled_rectangle((displayX / 2) - 100, 490, (displayX / 2) + 100, 550, al_map_rgb(200, 100, 20));
 			}
 		}
 	}
-	al_draw_filled_rectangle(38, 650, 150, 690, al_map_rgb(238, 173, 45)); 
+	al_draw_filled_rectangle(38, 650, 150, 690, al_map_rgb(140, 70, 20)); 
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) - 25, ALLEGRO_ALIGN_CENTRE, "INICIAR"); 
-	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 55, ALLEGRO_ALIGN_CENTRE, "AUDIO");
+	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 55, ALLEGRO_ALIGN_CENTRE, "OPCOES");
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), (displayX / 2), (displayY / 2) + 135, ALLEGRO_ALIGN_CENTRE, "CREDITOS");
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 96, 648, ALLEGRO_ALIGN_CENTRE, "SAIR");
 	al_flip_display();
