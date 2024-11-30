@@ -1292,7 +1292,7 @@ void destruidor() {
 	//Global
 	al_destroy_timer(timer);
 	al_destroy_event_queue(evento);
-	al_destroy_display(display);
+	/*al_destroy_display(display);*/
 
 	//Audios e Musicas
 	al_destroy_sample(audioMenu);
