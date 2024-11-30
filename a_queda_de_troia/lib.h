@@ -29,6 +29,7 @@ extern ALLEGRO_TIMER* timer;
 extern ALLEGRO_EVENT_QUEUE* evento;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_BITMAP* backgroundMenu;
+extern ALLEGRO_BITMAP* logo;
 extern ALLEGRO_FONT* fonteMenu;
 extern ALLEGRO_FONT* font;
 
