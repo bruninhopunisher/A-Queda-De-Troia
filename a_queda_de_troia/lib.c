@@ -221,6 +221,8 @@ bool next = false;
 int nextInt = 0;
 
 //Fase 04
+//Background fase 4
+ALLEGRO_BITMAP* backgroundFase04; //Destruido
 //IMAGENS DO AQUILES - INICIO:
 ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
 ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
@@ -977,6 +979,7 @@ void iniciarConstantes() {
 
 	//fase 4
 	timerFase04 = al_create_timer(1.0); //Timer da fase4
+	backgroundFase04 = al_load_bitmap("Imagens/Fase_04/Background/backgroundF4.png");
 	aquiles_Baixo = al_load_bitmap("Imagens/Fase_04/Aquiles/baixo.png");
 	aquiles_Descendo_0 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo0.png");
 	aquiles_Descendo_1 = al_load_bitmap("Imagens/Fase_04/Aquiles/frente_descendo1.png");
@@ -1032,6 +1035,7 @@ void iniciarConstantes() {
 	arq_Atual[30] = NULL;
 	arq_Atual[31] = NULL;
 	flecha = al_load_bitmap("Imagens/Fase_04/Arqueiro/flecha.png");
+	testeInicializar(backgroundFase04, "backgroundF4");
 	testeInicializar(aquiles_Baixo, "aquilesBaixo");
 	testeInicializar(aquiles_Descendo_0, "frente_descendo0");
 	testeInicializar(aquiles_Descendo_1, "frente_descendo1");
@@ -1416,6 +1420,7 @@ void destruidor() {
 	al_destroy_bitmap(puzzle25);
 
 	//fase 4
+	al_destroy_bitmap(backgroundFase04);
 	al_destroy_timer(timerFase04);
 	al_destroy_bitmap(aquiles_Baixo);
 	al_destroy_bitmap(aquiles_Descendo_0);

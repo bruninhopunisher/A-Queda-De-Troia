@@ -322,6 +322,7 @@ extern bool next;
 extern nextInt;
 
 //Fase 4
+extern ALLEGRO_BITMAP* backgroundFase04;
 extern ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido

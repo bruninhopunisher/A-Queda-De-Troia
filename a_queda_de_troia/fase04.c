@@ -40,8 +40,8 @@ void reiniciar() { //Reinicia a fase
 }
 void fase4(ALLEGRO_EVENT evento) {
 	if (gameOver == false) {
-		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
-		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: %d", vidaF4);
+		al_draw_bitmap(backgroundFase04, 0, 0, 0); //Background 1280x720
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 0, ALLEGRO_ALIGN_CENTRE, "vidas: %d", vidaF4);
 		//Timer do tempo da fase INICIO:
 		if (!timerOn){ //Inicializa o timer
 			al_start_timer(timerFase04);
@@ -53,7 +53,7 @@ void fase4(ALLEGRO_EVENT evento) {
 				gameOver = true; // Tempo acabou
 			}
 		}
-		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 1100, 3, ALLEGRO_ALIGN_CENTER, "Tempo: %d", tempoRestante);
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 1100, 0, ALLEGRO_ALIGN_CENTER, "tempo: %d", tempoRestante);
 		//Timer do tempo da fase FIM:
 		//Movimentação do Player INICIO:
 		//Define se esta andando
