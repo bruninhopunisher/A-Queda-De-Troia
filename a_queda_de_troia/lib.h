@@ -376,6 +376,10 @@ extern int fleY[32];
 extern int fleZ[32];
 //FimFase4
 
+//telas finais
+extern ALLEGRO_BITMAP* vitoria;
+extern ALLEGRO_BITMAP* derrota;
+
 
 //Movimentação Jogador
 void movimentarPlayer(ALLEGRO_EVENT evento,int* posicaoX,int* posicaoY);
