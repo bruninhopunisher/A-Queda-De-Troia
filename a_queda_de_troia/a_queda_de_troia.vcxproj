@@ -190,6 +190,7 @@
     <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
     <Image Include="ataquebaixo2.jpg" />
+    <Image Include="Imagens\Creditos\backgroundCreditos.png" />
     <Image Include="Imagens\Fase_04\Aquiles\baixo.png" />
     <Image Include="Imagens\Fase_04\Aquiles\cima.png" />
     <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png" />
@@ -202,6 +203,7 @@
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_2.png" />
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_1.png" />
     <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_2.png" />
+    <Image Include="Imagens\Fase_04\Background\backgroundF4.png" />
     <Image Include="Imagens\Fase_04\flexa.png" />
     <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_0.png" />
     <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_1.png" />

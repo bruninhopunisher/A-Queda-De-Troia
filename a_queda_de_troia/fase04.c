@@ -40,8 +40,8 @@ void reiniciar() { //Reinicia a fase
 }
 void fase4(ALLEGRO_EVENT evento) {
 	if (gameOver == false) {
-		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 255, 0)); //Criar um mapa de fundo
-		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 3, ALLEGRO_ALIGN_CENTRE, "Vidas: %d", vidaF4);
+		al_draw_bitmap(backgroundFase04, 0, 0, 0); //Background 1280x720
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 0, ALLEGRO_ALIGN_CENTRE, "vidas: %d", vidaF4);
 		//Timer do tempo da fase INICIO:
 		if (!timerOn){ //Inicializa o timer
 			al_start_timer(timerFase04);
@@ -53,7 +53,10 @@ void fase4(ALLEGRO_EVENT evento) {
 				gameOver = true; // Tempo acabou
 			}
 		}
-		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 1100, 3, ALLEGRO_ALIGN_CENTER, "Tempo: %d", tempoRestante);
+		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 1100, 0, ALLEGRO_ALIGN_CENTER, "tempo: %d", tempoRestante);
+		if (evento.keyboard.keycode == ALLEGRO_KEY_T) { // Atalho para diminuir TIMER (APENAS DESENVOLVEDORES :p )
+			tempoRestante -= 10;;
+		}
 		//Timer do tempo da fase FIM:
 		//Movimentação do Player INICIO:
 		//Define se esta andando
@@ -218,33 +221,43 @@ void fase4(ALLEGRO_EVENT evento) {
 		al_flip_display();
 	}
 	else if (vidaF4 <= 0) {
-		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "GAME OVER");
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Menu"); //580x695 340x375
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 430, ALLEGRO_ALIGN_CENTRE, "Continuar"); //215
+		al_draw_bitmap(derrota, 0, 0, 0);
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 100, ALLEGRO_ALIGN_CENTRE, "GAME OVER");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 190, ALLEGRO_ALIGN_CENTRE, "Foi uma boa tentativa, mas Troia");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 240, ALLEGRO_ALIGN_CENTRE, "nao cai facilmente. Treine mais,");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 290, ALLEGRO_ALIGN_CENTRE, "talvez na proxima eu possa me");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 340, ALLEGRO_ALIGN_CENTRE, "divertir, essa foi muito facil");
+		al_draw_filled_rectangle(561, 573, 719, 615, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 570, ALLEGRO_ALIGN_CENTRE, "Menu");
 		al_flip_display();
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			//Clicar Menu direciona para o Menu
-			if (evento.mouse.x >= 580 && evento.mouse.x <= 695 && evento.mouse.y >= 340 && evento.mouse.y <= 375) {
-				navegacao = 0;
-			}
-			//Clicar continuar reseta a fase do comeco
-			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 440 && evento.mouse.y <= 475) {
-				gameOver = false;
+			if (evento.mouse.x >= 560 && evento.mouse.x <= 720 && evento.mouse.y >= 565 && evento.mouse.y <= 615) {
 				vidaF4 = 4;
 				reiniciar();
+				gameOver = false;
+				navegacao = 0;
 			}
 		}
 	}
 	else {
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "Parabens, voce venceu o desafio");
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Continuar"); //530x750 340x375
+		al_draw_bitmap(vitoria, 0, 0, 0);
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 100, ALLEGRO_ALIGN_CENTRE, "PARABENS");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 190, ALLEGRO_ALIGN_CENTRE, "O destino nao favoreceu os fracos.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 260, ALLEGRO_ALIGN_CENTRE, "Espartanos, esta vitoria e nossa!");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 310, ALLEGRO_ALIGN_CENTRE, "Hoje, mostramos o que significa");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 360, ALLEGRO_ALIGN_CENTRE, "lutar com coragem e honra!");
+		al_draw_filled_rectangle(561, 573, 719, 615, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 570, ALLEGRO_ALIGN_CENTRE, "Menu");
 		al_flip_display();
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-			//Clicar continuar direciona para próxima fase
-			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 340 && evento.mouse.y <= 375) {
-				navegacao += 1;
+			//Clicar Menu direciona para o Menu
+			if (evento.mouse.x >= 560 && evento.mouse.x <= 720 && evento.mouse.y >= 565 && evento.mouse.y <= 615) {
+				vidaF4 = 4;
+				reiniciar();
+				gameOver = false;
+				navegacao = 0;
 			}
 		}
 	}

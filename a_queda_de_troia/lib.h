@@ -56,8 +56,9 @@ extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
 
 //Creditos
-extern char nomes[11][100];
-extern int credY[11];
+extern ALLEGRO_BITMAP* backgroundCreditos;
+extern char nomes[13][100];
+extern int credY[13];
 
 //Introdução 1
 extern ALLEGRO_BITMAP* fundo1Intro1;
@@ -329,6 +330,7 @@ extern int salvaIndice[25];
 extern int swapIndice;
 
 //Fase 4
+extern ALLEGRO_BITMAP* backgroundFase04;
 extern ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_0; //Destruido
 extern ALLEGRO_BITMAP* aquiles_Descendo_1; //Destruido
@@ -381,6 +383,10 @@ extern int fleX[32];
 extern int fleY[32];
 extern int fleZ[32];
 //FimFase4
+
+//telas finais
+extern ALLEGRO_BITMAP* vitoria;
+extern ALLEGRO_BITMAP* derrota;
 
 
 //Movimentação Jogador
