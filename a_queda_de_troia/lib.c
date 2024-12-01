@@ -205,20 +205,28 @@ int idPeca;
 int idPecaRetirada;
 int idQuadrante;
 int indice;
+//bool pecaSelecionada[25] = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,false, false, false, false, false };
 bool pecaSelecionada = false;
-bool quadranteSelecionado = false;
 bool first = false;
 int marcacaoX;
 int marcacaoY;
 int somaVerificadora;
-int guardaMovimentacao[26] = { 5745, 7854, 7581, 5404, 4540, 4540, 9980, 8845, 5408, 4804, 4878, 9870, 7487, 7854, 9804, 7870, 7874, 4548, 4840, 4540, 4570, 7874, 4960, 9807, 8707, 7087 };
-int guardaIdPuzzle[26] = { 5745, 7854, 7581, 5404, 4540, 4540, 9980, 8845, 5408, 4804, 4878, 9870, 7487, 7854, 9804, 7870, 7874, 4548, 4840, 4540, 4570, 7874, 4960, 9807, 8707, 7087 };
+int guardaIdQuadrante[26];
+int guardaIdPeca[25];
+int salvaIndice[25];
 int somaPosicao = 0;
 int indiceQuadrante = 0;
 int swapDaPeca;
 int contg = 0;
 bool next = false;
 int nextInt = 0;
+bool acabouDeSerPosicionada = false;
+int btoVolta = 0;
+int swapPecaX;
+int swapPecaY;
+int swapIDPeca;
+int swapIDQuadrante;
+int swapIndice;
 
 //Fase 04
 //IMAGENS DO AQUILES - INICIO:

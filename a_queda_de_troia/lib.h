@@ -307,11 +307,10 @@ extern indice;
 extern bool pecaPosicionada;
 extern bool pecaSelecionada;
 extern bool first;
-extern bool quadranteSelecionado;
 extern int marcacaoX;
 extern int marcacaoY;
-extern int guardaMovimentacao[26];
-extern int guardaIdPuzzle[26];
+extern int guardaIdQuadrante[26];
+extern int guardaIdPeca[25];
 extern int arrayVerificador[25];
 extern int somaVerificadora;
 extern int somaPosicao;
@@ -320,6 +319,14 @@ extern int swapDaPeca;
 extern int contg;
 extern bool next;
 extern nextInt;
+extern bool acabouDeSerPosicionada;
+extern int btoVolta;
+extern int swapPecaX;
+extern int swapPecaY;
+extern int swapIDPeca;
+extern int swapIDQuadrante;
+extern int salvaIndice[25];
+extern int swapIndice;
 
 //Fase 4
 extern ALLEGRO_BITMAP* aquiles_Baixo; //Destruido
