@@ -78,6 +78,10 @@ ALLEGRO_BITMAP* pag2; //Destruido
 ALLEGRO_BITMAP* pag3; //Destruido
 ALLEGRO_BITMAP* pag4; //Destruido
 
+//Telas finais
+ALLEGRO_BITMAP* vitoria; //Destruido
+ALLEGRO_BITMAP* derrota; //Destruido
+
 //Fase 1
 ALLEGRO_BITMAP* backgroundFaseUm; //Destruido
 ALLEGRO_BITMAP* personagemHeitor; //Destruido
@@ -400,6 +404,13 @@ void iniciarConstantes() {
 	testeInicializar(pagina2, "pag-2-Intro4");
 	testeInicializar(pagina3, "pag-3-Intro4");
 	testeInicializar(pagina4, "pag-4-Intro4");
+
+	//telas finais
+	vitoria = al_load_bitmap("Imagens/Final/vitoria.jpg");
+	derrota = al_load_bitmap("Imagens/Final/derrota.jpg");
+
+	testeInicializar(vitoria, "vitoria");
+	testeInicializar(derrota, "derrota");
 
 	//Opções
 	backgroundOpcoes = al_load_bitmap("Imagens/Opcoes/background_opcoes.png");
@@ -1291,14 +1302,6 @@ void imagemIntro(ALLEGRO_BITMAP* imagem, ALLEGRO_EVENT evento) {
 	}
 }
 
-void splash_screen(ALLEGRO_BITMAP* splashImage, int displayX, int displayY) {
-	al_draw_bitmap(backgroundMenu, 0, 0, 0);
-	al_flip_display();
-	al_rest(3.0);
-
-
-}
-
 //FUNÇÃO QUE DESTROI TODAS AS ALOCAÇÕES DE MEMÓRIA
 void destruidor() {
 
@@ -1352,6 +1355,10 @@ void destruidor() {
 	al_destroy_bitmap(pag2);
 	al_destroy_bitmap(pag3);
 	al_destroy_bitmap(pag4);
+
+	//telas finais
+	al_destroy_bitmap(vitoria);
+	al_destroy_bitmap(derrota);
 
 	//Fase 1
 	al_destroy_bitmap(backgroundFaseUm);
@@ -1447,4 +1454,5 @@ void destruidor() {
 	al_destroy_bitmap(arq_Costas_1);
 	al_destroy_bitmap(arq_Costas_2);
 	al_destroy_bitmap(flecha);
+
 }

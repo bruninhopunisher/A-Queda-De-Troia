@@ -218,10 +218,19 @@ void fase4(ALLEGRO_EVENT evento) {
 		al_flip_display();
 	}
 	else if (vidaF4 <= 0) {
-		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "GAME OVER");
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Menu"); //580x695 340x375
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 430, ALLEGRO_ALIGN_CENTRE, "Continuar"); //215
+		//al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
+		//al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "GAME OVER");
+		//al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Menu"); //580x695 340x375
+		//al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 430, ALLEGRO_ALIGN_CENTRE, "Continuar"); //215
+		//al_flip_display();
+		al_draw_bitmap(derrota, 0, 0, 0);
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 190, ALLEGRO_ALIGN_CENTRE, "Foi uma boa tentativa, mas Troia");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 240, ALLEGRO_ALIGN_CENTRE, "nao cai facilmente. Treine mais,");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 290, ALLEGRO_ALIGN_CENTRE, "proxima vez voce seja digno de");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 340, ALLEGRO_ALIGN_CENTRE, "volte mais forte e talvez na");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 390, ALLEGRO_ALIGN_CENTRE, "nossa batalha.");
+		al_draw_filled_rectangle(1016, 653, 1175, 692, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1095, 650, ALLEGRO_ALIGN_CENTRE, "Menu");
 		al_flip_display();
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			//Clicar Menu direciona para o Menu
@@ -229,17 +238,24 @@ void fase4(ALLEGRO_EVENT evento) {
 				navegacao = 0;
 			}
 			//Clicar continuar reseta a fase do comeco
-			if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 440 && evento.mouse.y <= 475) {
-				gameOver = false;
-				vidaF4 = 4;
-				reiniciar();
-			}
+			//if (evento.mouse.x >= 530 && evento.mouse.x <= 750 && evento.mouse.y >= 440 && evento.mouse.y <= 475) {
+			//	gameOver = false;
+			//	vidaF4 = 4;
+			//	reiniciar();
+			//}
 		}
 	}
 	else {
 		al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgb(0, 0, 0));
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "Parabens, voce venceu o desafio");
-		al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Continuar"); //530x750 340x375
+		//al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 250, ALLEGRO_ALIGN_CENTRE, "Parabens, voce venceu o desafio");
+		//al_draw_text(fonteIntro1, al_map_rgb(255, 255, 255), 640, 330, ALLEGRO_ALIGN_CENTRE, "Continuar"); //530x750 340x375
+		al_draw_bitmap(vitoria, 0, 0, 0);
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 190, ALLEGRO_ALIGN_CENTRE, "O destino nao favoreceu os fracos.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 260, ALLEGRO_ALIGN_CENTRE, "Espartanos, esta vitoria e nossa!");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 310, ALLEGRO_ALIGN_CENTRE, "Hoje, mostramos o que significa");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 360, ALLEGRO_ALIGN_CENTRE, "lutar com coragem e honra!");
+		al_draw_filled_rectangle(1016, 653, 1175, 692, al_map_rgb(222, 158, 30));
+		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1095, 650, ALLEGRO_ALIGN_CENTRE, "Menu");
 		al_flip_display();
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			//Clicar continuar direciona para próxima fase
