@@ -5,6 +5,7 @@ void creditos(ALLEGRO_EVENT evento) {
 		mouseX = evento.mouse.x;
 		mouseY = evento.mouse.y;
 	}
+	al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgba(50, 50, 50, 128));
 	for (int i = 0; i < 13; i++) {
 		al_draw_textf(fonteMenu, al_map_rgb(255, 255, 255), 640, credY[i], ALLEGRO_ALIGN_CENTRE, "%s", nomes[i]);
 		//credY[i] -= 1;
