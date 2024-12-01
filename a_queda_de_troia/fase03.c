@@ -70,7 +70,7 @@ void fase3(ALLEGRO_EVENT evento) {
 					quadrantePuzzle.quadrantes[j].contemPeca = true;
 					posicoesIniciais.posicoes[indice].contemPeca = false;
 					salvaIndice[btoVolta] = indice;
-					acabouDeSerPosicionada = true;
+					foiPosicionada = true;
 					pecaSelecionada = false;
 					btoVolta += 1;
 					somaPosicao += 1;
@@ -98,9 +98,9 @@ void fase3(ALLEGRO_EVENT evento) {
 			/*printf("GUARDA ID %d", guardaIdPeca[i]);
 			printf(" - GUARDA ID QUADRANTE %d ", guardaIdQuadrante[i]);*/
 			/*printf("ID PECA %d ", guardaIdPeca[i]);*/
-			/*printf("ID SALVA INDICE %d ", salvaIndice[i]);*/
-			/*printf("Quadrante %d %s", i, quadrantePuzzle.quadrantes[i].contemPeca ? "true" : "false");*/
-			/*printf("Posicao Inicial %d %s", i, posicoesIniciais.posicoes[i].contemPeca ? "true" : "false");*/
+			//printf("ID SALVA INDICE %d ", salvaIndice[i]);
+			//printf("Quadrante %d %s", i, quadrantePuzzle.quadrantes[i].contemPeca ? "true" : "false");
+			//printf("Posicao Inicial %d %s", i, posicoesIniciais.posicoes[i].contemPeca ? "true" : "false");
 			printf("\n");
 		}
 		printf("\n");
@@ -139,10 +139,10 @@ void fase3(ALLEGRO_EVENT evento) {
 	al_draw_bitmap(puzzle24, pecasPuzzle.pecas[23].pos_atual_x, pecasPuzzle.pecas[23].pos_atual_y, 0); // Centro direita
 	al_draw_bitmap(puzzle25, pecasPuzzle.pecas[24].pos_atual_x, pecasPuzzle.pecas[24].pos_atual_y, 0);	// Centro direita
 
-	if (acabouDeSerPosicionada == true) {
+	if (foiPosicionada == true) {
 		marcacaoX = -78745;
 		marcacaoY = -78745;
-		acabouDeSerPosicionada = false;
+		foiPosicionada = false;
 	}
 
 	// Verificação para desenhar um quadrado no entorno da peça selecionada apenas quando tiver uma peça selecionada

@@ -44,6 +44,8 @@ extern int mouseAxesX;
 extern int mouseAxesY;
 extern bool rodando;
 extern bool boolVolume;
+extern bool iniciaFuncao;
+extern bool destroiVariaveis;
 
 //Audios e Musicas
 extern ALLEGRO_SAMPLE* audioMenu;
@@ -290,44 +292,37 @@ typedef struct {
 	posicaoInicial posicoes[26];
 } PosicaoInicialStruct;
 
-extern PosicaoInicialStruct posicoesIniciais;
 extern Puzzle pecasPuzzle;
 extern Quadrante quadrantePuzzle;
-
-//extern ALLEGRO_BITMAP* imagensPuzzle[25];
-extern bool verificaPuzzle;
+extern PosicaoInicialStruct posicoesIniciais;
+extern int salvaIndice[25];
+extern int guardaIdPeca[25];
 extern int posicaoInicialX[25];
 extern int posicaoInicialY[25];
-extern int swapX;
-extern int swapY;
-extern bool swapAtivo;
+extern int arrayVerificador[25];
+extern int guardaIdQuadrante[26];
 extern int idPeca;
-extern int idPecaRetirada;
-extern int idQuadrante;
-extern indice;
-extern bool pecaPosicionada;
-extern bool pecaSelecionada;
-extern bool first;
+extern int nextInt;
+extern int indice;
+extern int btoVolta;
 extern int marcacaoX;
 extern int marcacaoY;
-extern int guardaIdQuadrante[26];
-extern int guardaIdPeca[25];
-extern int arrayVerificador[25];
-extern int somaVerificadora;
-extern int somaPosicao;
-extern int indiceQuadrante;
-extern int swapDaPeca;
-extern int contg;
-extern bool next;
-extern nextInt;
-extern bool acabouDeSerPosicionada;
-extern int btoVolta;
 extern int swapPecaX;
 extern int swapPecaY;
 extern int swapIDPeca;
-extern int swapIDQuadrante;
-extern int salvaIndice[25];
 extern int swapIndice;
+extern int somaPosicao;
+extern int idQuadrante;
+extern int idPecaRetirada;
+extern int swapIDQuadrante;
+extern int somaVerificadora;
+extern int contadorCreditos;
+extern bool next;
+extern bool first;
+extern bool swapAtivo;
+extern bool foiPosicionada;
+extern bool verificaPuzzle;
+extern bool pecaSelecionada;
 
 //Fase 4
 extern ALLEGRO_BITMAP* backgroundFase04;

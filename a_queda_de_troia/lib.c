@@ -9,6 +9,8 @@ ALLEGRO_BITMAP* logo; //Destruido
 ALLEGRO_FONT* fonteMenu; //Destruido
 ALLEGRO_FONT* font; // Destruido
 
+bool iniciaFuncao = true;
+bool destroiVariaveis = false;
 bool iniciarConst = false;
 int displayX;
 int displayY;
@@ -168,6 +170,8 @@ int ataqueReiTimer = 0;
 int vidaReiX = 1200;
 int pontoAndarX = 650;
 int pontoAndarY = 450;
+int swapX;
+int swapY;
 
 //Fase 3
 ALLEGRO_BITMAP* imgPuzzle; //Destruido
@@ -197,45 +201,37 @@ ALLEGRO_BITMAP* puzzle22; //Destruido
 ALLEGRO_BITMAP* puzzle23; //Destruido
 ALLEGRO_BITMAP* puzzle24; //Destruido
 ALLEGRO_BITMAP* puzzle25; //Destruido
-int contadorCreditos = 3;
-bool verificaPuzzle = true;
-int posicaoInicialX[25] = { 20, 20, 20, 20, 260, 140, 140, 140, 1030, 260, 1030, 140, 1150, 260, 1030, 1030, 1030, 1150, 1150, 1150, 1150, 20, 260, 260, 140 };
-int posicaoInicialY[25] = { 20, 140, 260, 380, 20, 20, 140, 260, 20, 500, 500, 380, 20, 140, 140, 260, 380, 140, 260, 380, 500, 500, 260, 380, 500 };
-int arrayVerificador[25] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
-//int posicaoCorretaX[25] = { 365, 480, 710, 825, 325, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825, 365, 480, 595, 710, 825 };
-//int posicaoCorretaY[25] = { 70, 70, 70, 70, 185, 185, 185, 185, 185, 300, 300, 300, 300, 300, 415, 415, 415, 415, 415, 530, 530, 530, 530, 530 };
 Puzzle pecasPuzzle;
 Quadrante quadrantePuzzle;
 PosicaoInicialStruct posicoesIniciais;
-int swapX;
-int swapY;
-bool swapAtivo = false;
-int idPeca;
-int idPecaRetirada;
-int idQuadrante;
-int indice;
-//bool pecaSelecionada[25] = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false,false, false, false, false, false };
-bool pecaSelecionada = false;
-bool first = false;
-int marcacaoX;
-int marcacaoY;
-int somaVerificadora;
+int posicaoInicialX[25] = { 20, 20, 20, 20, 260, 140, 140, 140, 1030, 260, 1030, 140, 1150, 260, 1030, 1030, 1030, 1150, 1150, 1150, 1150, 20, 260, 260, 140 };
+int posicaoInicialY[25] = { 20, 140, 260, 380, 20, 20, 140, 260, 20, 500, 500, 380, 20, 140, 140, 260, 380, 140, 260, 380, 500, 500, 260, 380, 500 };
+int arrayVerificador[25] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 };
 int guardaIdQuadrante[26];
 int guardaIdPeca[25];
 int salvaIndice[25];
-int somaPosicao = 0;
-int indiceQuadrante = 0;
-int swapDaPeca;
-int contg = 0;
-bool next = false;
 int nextInt = 0;
-bool acabouDeSerPosicionada = false;
 int btoVolta = 0;
+int somaPosicao = 0;
+int contadorCreditos = 3;
+int idPeca;
+int indice;
+int marcacaoX;
+int marcacaoY;
 int swapPecaX;
 int swapPecaY;
 int swapIDPeca;
-int swapIDQuadrante;
 int swapIndice;
+int idQuadrante;
+int idPecaRetirada;
+int swapIDQuadrante;
+int somaVerificadora;
+bool first = false;
+bool next = false;
+bool swapAtivo = false;
+bool verificaPuzzle = true;
+bool foiPosicionada = false;
+bool pecaSelecionada = false;
 
 //Fase 04
 //Background fase 4
