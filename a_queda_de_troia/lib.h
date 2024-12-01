@@ -56,8 +56,9 @@ extern ALLEGRO_BITMAP* comVolumeHover;
 extern ALLEGRO_BITMAP* semVolumeHover;
 
 //Creditos
-extern char nomes[11][100];
-extern int credY[11];
+extern ALLEGRO_BITMAP* backgroundCreditos;
+extern char nomes[13][100];
+extern int credY[13];
 
 //Introdução 1
 extern ALLEGRO_BITMAP* fundo1Intro1;

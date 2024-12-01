@@ -38,8 +38,7 @@ int main() {
 
 		switch (navegacao) {
 			case 0:
-				fase4(event);
-				//menu(event);
+				menu(event);
 				break;
 			case 1:  
 				opcoes(event);

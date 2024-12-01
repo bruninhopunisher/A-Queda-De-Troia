@@ -30,20 +30,25 @@ ALLEGRO_BITMAP* comVolumeHover; //Destruido
 ALLEGRO_BITMAP* semVolumeHover; //Destruido
 
 //Creditos
-char nomes[11][100] = {
+ALLEGRO_BITMAP* backgroundCreditos; //Destruido
+char nomes[13][100] = {
 	"A QUEDA DE TROIA",
-	"OBRIGADO POR JOGAR!",
-	"Esperamos que tenha aprendido algo nesta aventura e se divertido!",
+	"Este jogo foi baseado no filme Troia (2004)",
+	"Esperamos que tenha aproveitado essa jornada",
+	"se divertido e tenha aprendido sobre Troia",
 	"DESENVOLVIDO POR",
-	"BCC - TURMA A 2024",
-	"Bruno",
+	"BCC - TURMA A - 2024",
+	"Bruno Silva Souza",
 	"Caua",
 	"Keila",
 	"Lucas Pinheiro",
-	"Lucas Magalhaes",
+	"Lucas Sa Magalhaes",
+	"OBRIGADO POR JOGAR!",
 	"Ate a proxima!"
 };
-int credY[11] = { 720, 800, 850, 1000, 1100, 1200, 1250, 1300, 1350, 1400, 1500 };
+int credY[13] = { 720, 790, 860, 900, 985, 1015, 1085, 1115, 1150, 1185, 1215, 1295, 1345 };
+//int credY[13] = { 10, 80, 150, 190, 275, 310, 380, 415, 450, 485, 520, 600, 650 };
+
 //Introdução 1
 ALLEGRO_BITMAP* fundo1Intro1; //Destruido
 ALLEGRO_BITMAP* fundo2Intro1; //Destruido
@@ -339,6 +344,10 @@ void iniciarConstantes() {
 	backgroundMenu = al_load_bitmap("Imagens/Menu/background_login.jpg");
 	testeInicializar(backgroundMenu, "imagem_menu");
 	logo = al_load_bitmap("Imagens/Menu/logo.png");
+
+	//creditos
+	backgroundCreditos = al_load_bitmap("Imagens/Creditos/backgroundCreditos.png");
+	testeInicializar(backgroundCreditos, "creditos");
 
 	//Introdução 1
 	fundo1Intro1 = al_load_bitmap("Imagens/Introducao_1/fundo1Intro1.jpg");
@@ -1312,6 +1321,9 @@ void destruidor() {
 	al_destroy_bitmap(semVolume);
 	al_destroy_bitmap(comVolumeHover);
 	al_destroy_bitmap(semVolumeHover);
+
+	//Créditos
+	al_destroy_bitmap(backgroundCreditos);
 
 	//Introdução 1
 	al_destroy_bitmap(fundo1Intro1);

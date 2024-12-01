@@ -190,6 +190,7 @@
     <Image Include="fundoMenelau.jpg" />
     <Image Include="helenaIntro1.jpg" />
     <Image Include="ataquebaixo2.jpg" />
+    <Image Include="Imagens\Creditos\backgroundCreditos.png" />
     <Image Include="Imagens\Fase_04\Aquiles\baixo.png" />
     <Image Include="Imagens\Fase_04\Aquiles\cima.png" />
     <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png" />

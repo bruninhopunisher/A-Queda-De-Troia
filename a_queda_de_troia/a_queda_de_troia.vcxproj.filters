@@ -419,6 +419,9 @@
     <Image Include="Imagens\Fase_04\Background\backgroundF4.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Background</Filter>
     </Image>
+    <Image Include="Imagens\Creditos\backgroundCreditos.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Créditos</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
