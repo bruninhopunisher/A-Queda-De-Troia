@@ -125,6 +125,11 @@ extern int ultima_direcaoX;
 extern int ultima_direcaoY;
 
 //Fase 2
+extern ALLEGRO_BITMAP* Intro1Fase2;
+extern ALLEGRO_BITMAP* Intro2Fase2;
+extern ALLEGRO_BITMAP* Intro3Fase2;
+extern ALLEGRO_BITMAP* GameOverFase2;
+extern ALLEGRO_BITMAP* VitoriaFase2;
 extern ALLEGRO_BITMAP* background_f2;
 extern ALLEGRO_BITMAP* espada_player1;
 extern ALLEGRO_BITMAP* espada_rei_f2;
@@ -134,6 +139,7 @@ extern ALLEGRO_BITMAP* barra_vidaRei_100;
 extern ALLEGRO_BITMAP* barra_vidaRei_50;
 extern ALLEGRO_BITMAP* soldadosEsparta;
 extern ALLEGRO_BITMAP* soldadosTroia;
+extern ALLEGRO_FONT* fonteFase2;
 extern int pressionado;
 extern int ultPressionado;
 extern int movimento;

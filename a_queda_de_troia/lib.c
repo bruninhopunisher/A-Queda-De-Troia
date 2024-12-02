@@ -107,6 +107,12 @@ int ultima_direcaoX = 0; // Última direção horizontal
 int ultima_direcaoY = 0; // Última direção vertical
 
 //Fase 2
+// // Introduções
+ALLEGRO_BITMAP* Intro1Fase2;
+ALLEGRO_BITMAP* Intro2Fase2;
+ALLEGRO_BITMAP* Intro3Fase2;
+ALLEGRO_BITMAP* GameOverFase2;
+ALLEGRO_BITMAP* VitoriaFase2;
 //Personagem paris;
 ALLEGRO_BITMAP* background_f2; //Destruido
 ALLEGRO_BITMAP* espada_player1; //Destruido
@@ -117,6 +123,7 @@ ALLEGRO_BITMAP* barra_vidaRei_100; //Destruido
 ALLEGRO_BITMAP* barra_vidaRei_50; //Destruido
 ALLEGRO_BITMAP* soldadosEsparta; //Destruido
 ALLEGRO_BITMAP* soldadosTroia; //Destruido
+ALLEGRO_FONT* fonteFase2;
 int pressionado = 0;
 int ultPressionado = 0;
 int movimento = 0;
@@ -222,7 +229,7 @@ float positionReiX = 650;
 float positionReiY = 450;
 int movimentoRei = 0;
 int ataqueReiTimer = 0;
-int vidaReiX = 1200;
+int vidaReiX = 1170;
 int pontoAndarX = 650;
 int pontoAndarY = 450;
 int movRei = 0;
@@ -566,7 +573,6 @@ void iniciarConstantes() {
 	ParisCaindo3 = al_load_bitmap("Imagens/Fase_02/parisCaindo3.jpg");
 	ParisCaindo4 = al_load_bitmap("Imagens/Fase_02/ParisCaindo4.jpg");
 	ParisCaindo5 = al_load_bitmap("Imagens/Fase_02/ParisCaindo5.jpg");
-
 	HeitorCimaN = al_load_bitmap("Imagens/Fase_02/heitorCimaN.jpg");
 	HeitorCimaE = al_load_bitmap("Imagens/Fase_02/heitorCimaE.jpg");
 	HeitorCimaD = al_load_bitmap("Imagens/Fase_02/heitorCimaD.jpg");
@@ -576,7 +582,6 @@ void iniciarConstantes() {
 	HeitorBaixoN = al_load_bitmap("Imagens/Fase_02/heitorBaixoN.jpg");
 	HeitorBaixoE = al_load_bitmap("Imagens/Fase_02/heitorBaixoE.jpg");
 	HeitorBaixoD = al_load_bitmap("Imagens/Fase_02/heitorbaixoD.jpg");
-
 	HeitorAtaqueB1 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo1.jpg");
 	HeitorAtaqueB2 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo2.jpg");
 	HeitorAtaqueB3 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo3.jpg");
@@ -589,7 +594,19 @@ void iniciarConstantes() {
 	HeitorAtaqueL2 = al_load_bitmap("Imagens/Fase_02/HataqueLado2.jpg");
 	HeitorAtaqueL3 = al_load_bitmap("Imagens/Fase_02/HataqueLado3.jpg");
 	HeitorAtaqueL4 = al_load_bitmap("Imagens/Fase_02/HataqueLado4.jpg");
+	fonteFase2 = al_load_font("Fontes/MateSC-Regular.ttf", 25, 0);
+	Intro1Fase2 = al_load_bitmap("Imagens/Fase_02/intro1Fase2.jpg");
+	Intro2Fase2 = al_load_bitmap("Imagens/Fase_02/intro2Fase2.jpg");
+	Intro3Fase2 = al_load_bitmap("Imagens/Fase_02/intro3Fase2.jpg");
+	GameOverFase2 = al_load_bitmap("Imagens/Fase_02/GameOver.jpg");
+	VitoriaFase2 = al_load_bitmap("Imagens/Fase_02/VitoriaFase2.jpg");
 
+	testeInicializar(VitoriaFase2, "vitoria_fase2");
+	testeInicializar(GameOverFase2, "GameOver_Fase2");
+	testeInicializar(Intro1Fase2, "intro_1_fase2");
+	testeInicializar(Intro2Fase2, "intro_1_fase2");
+	testeInicializar(Intro3Fase2, "intro_1_fase2");
+	testeInicializar(fonteFase2, "fonte_fase2");
 	testeInicializar(HeitorAtaqueB1, "heitor_ataque_b1");
 	testeInicializar(HeitorAtaqueB2, "heitor_ataque_b2");
 	testeInicializar(HeitorAtaqueB3, "heitor_ataque_b3");
@@ -1363,15 +1380,15 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 		break;
 	case 2:
 		if (movimento >= 0 && movimento < 20 && atacando == false) {
-			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 0);
+			al_draw_bitmap(direitaN, posicaoX, posicaoY, 1);
 			movimento += 1;
 		}
 		if (movimento >= 20 && movimento < 40 && atacando == false) {
-			al_draw_bitmap(esquerdaE, posicaoX, posicaoY, 0);
+			al_draw_bitmap(direitaE, posicaoX, posicaoY, 1);
 			movimento += 1;
 		}
 		if (movimento == 40 && atacando == false) {
-			al_draw_bitmap(esquerdaD, posicaoX, posicaoY, 0);
+			al_draw_bitmap(direitaD, posicaoX, posicaoY, 1);
 			movimento = 0;
 		}
 		break;
@@ -1421,7 +1438,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX + 8, posicaoY - 1, 70, 41, positionReiX, positionReiY + 11, 37, 54) == true) {
 					if (atacou == false)
-						vidaReiX -= 2;
+						vidaReiX -= 4;
 
 					atacou = true;
 				}
@@ -1454,7 +1471,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 				if (areaAtaque(posicaoX, posicaoY, 29, 45, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
 					if (atacou == false)
-						vidaReiX -= 2;
+						vidaReiX -= 4;
 
 					atacou = true;
 				}
@@ -1487,7 +1504,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 				if (areaAtaque(posicaoX + 37, posicaoY, 63, 45, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
 					if (atacou == false)
-						vidaReiX -= 2;
+						vidaReiX -= 4;
 
 					atacou = true;
 				}
@@ -1519,9 +1536,8 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX, posicaoY + 35, 80, 30, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
-					printf("Bati!");
 					if (atacou == false)
-						vidaReiX -= 2;
+						vidaReiX -= 4;
 
 					atacou = true;
 				}
@@ -1658,6 +1674,11 @@ void destruidor() {
 	al_destroy_bitmap(frente_esquerdo);
 
 	//Fase 2
+	al_destroy_bitmap(Intro1Fase2);
+	al_destroy_bitmap(Intro2Fase2);
+	al_destroy_bitmap(Intro3Fase2);
+	al_destroy_bitmap(GameOverFase2);
+	al_destroy_bitmap(VitoriaFase2);
 	al_destroy_bitmap(soldadosTroia);
 	al_destroy_bitmap(soldadosEsparta);
 	al_destroy_bitmap(background_f2);

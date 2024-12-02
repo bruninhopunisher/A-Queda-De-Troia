@@ -231,6 +231,7 @@
     <Image Include="heitorLadoN.jpg" />
     <Image Include="helenaIntro1.jpg" />
     <Image Include="ataquebaixo2.jpg" />
+    <Image Include="GameOver.jpg" />
     <Image Include="Imagens\Creditos\backgroundCreditos.png" />
     <Image Include="Imagens\Fase_04\Aquiles\baixo.png" />
     <Image Include="Imagens\Fase_04\Aquiles\cima.png" />
@@ -251,6 +252,9 @@
     <Image Include="Imagens\Introducao_1\mapa_atenas.png" />
     <Image Include="Imagens\Introducao_1\mapa_grecia.png" />
     <Image Include="Imagens\Introducao_1\mapa_troia.png" />
+    <Image Include="intro1Fase2.jpg" />
+    <Image Include="intro2Fase2.jpg" />
+    <Image Include="intro3Fase2.jpg" />
     <Image Include="MenelauBaixo1.jpg" />
     <Image Include="MenelauBaixo2.jpg" />
     <Image Include="MenelauBaixo3.jpg" />
@@ -321,6 +325,7 @@
     <Image Include="ParisIntro1.jpg" />
     <Image Include="soldadosEsparta.jpg" />
     <Image Include="soldadosTroia.jpg" />
+    <Image Include="VitoriaFase2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="creditos.h" />

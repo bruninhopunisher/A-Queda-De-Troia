@@ -2,6 +2,12 @@
 
 void fase2(ALLEGRO_EVENT evento) {
 
+	//Pegar Posição do Mouse
+	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		mouseX = evento.mouse.x;
+		mouseY = evento.mouse.y;
+	}
+
 	al_draw_bitmap(background_f2, 0, 0, 0);
 
 	if (vidaReiX <= 1000) {
@@ -76,11 +82,19 @@ void fase2(ALLEGRO_EVENT evento) {
 	{
 	case false:
 
+		//Nome Paris Personagem
+		al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 1020, 6, ALLEGRO_ALIGN_CENTRE, "Rei Menelau");
+		//Background Barra de Vida
+		al_draw_bitmap(barra_vida_cheia, 950, 38, 0);
 		//BARRA DE VIDA REI MENELAU
-		al_draw_filled_rectangle(1000, 25, vidaReiX, 55, al_map_rgba(255, 0, 0, 1));
+		al_draw_filled_rectangle(958, 45, vidaReiX, 61, al_map_rgba(255, 0, 0, 1));
+
+		//Nome Paris Personagem
+		al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 180, 6, ALLEGRO_ALIGN_CENTRE, "Paris ( Jogador )");
+		//Background Barra de Vida
+		al_draw_bitmap(barra_vida_cheia, 80, 38, 0);
 		//BARRA DE VIDA PARIS ( JOGADOR )
-		if (vidaJogador > 100)
-			al_draw_filled_rectangle(100, 25, vidaJogador, 55, al_map_rgba(255, 0, 0, 1));
+		al_draw_filled_rectangle(88, 45, vidaJogador, 61, al_map_rgba(255, 0, 0, 1));
 
 		//Timer Ataque Rei
 		if (timerAtaqueRei > 0) {
@@ -91,7 +105,7 @@ void fase2(ALLEGRO_EVENT evento) {
 		if (positionReiX == pontoAndarX &&
 			positionReiY == pontoAndarY) {
 			pontoAndarX = rand() % 1280;
-			pontoAndarY = 180 + rand() % 320;
+			pontoAndarY = 190 + rand() % 260;
 		}
 		else {
 			if ((positionReiY < pontoAndarY) && (movRei == 0)) {
@@ -183,7 +197,7 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 
 		//Ataque para Cima Rei
-		if (((areaAtaque(positionReiX + 2, positionReiY + 5, 83, 40, positionX1_f2 + 10, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 1) && (vidaJogador > 100)) {
+		if (((areaAtaque(positionReiX + 2, positionReiY + 5, 83, 40, positionX1_f2 + 10, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 1) && (vidaJogador > 88)) {
 			printf("aqui");
 			if (movRei >= 0 && movRei < 10) {
 				printf("Entrei");
@@ -200,15 +214,17 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 2;
+					vidaJogador -= 6;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRcima4, positionReiX, positionReiY, 0);
 				movRei += 1;
 				if (movRei == 40) {
 					movRei = 0;
+					timerAtaqueRei = 200;
+				}
+				if (timerAtaqueRei == 0) {
 					atacouRei = false;
-					timerAtaqueRei = 10;
 				}
 			}
 		}
@@ -218,7 +234,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 		}
 		//Ataque para Esquerda Rei
-		if (((areaAtaque((positionReiX - 50) + 2, positionReiY + 15, 113, 65, positionX1_f2 + 5, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 2) && (vidaJogador > 100)) {
+		if (((areaAtaque((positionReiX - 50) + 2, positionReiY + 15, 100, 50, positionX1_f2 + 5, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 2) && (vidaJogador > 88)) {
 			printf("aqui");
 			if (movRei >= 0 && movRei < 10) {
 				printf("Entrei");
@@ -235,15 +251,17 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 2;
+					vidaJogador -= 6;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRlado4, positionReiX - 50, positionReiY, 0);
 				movRei += 1;
 				if (movRei == 40) {
 					movRei = 0;
+					timerAtaqueRei = 200;
+				}
+				if (timerAtaqueRei == 0) {
 					atacouRei = false;
-					timerAtaqueRei = 50;
 				}
 			}
 		}
@@ -253,7 +271,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 		}
 		//Ataque para Direita Rei
-		if (((areaAtaque(positionX1_f2 + 10, positionY1_f2 + 5, 30, 50, positionReiX + 40, positionReiY + 20, 35, 30) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 3) && (vidaJogador > 100)) {
+		if (((areaAtaque(positionX1_f2 + 10, positionY1_f2 + 5, 30, 50, positionReiX + 40, positionReiY + 20, 35, 30) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 3) && (vidaJogador > 88)) {
 			printf("aqui");
 			if (movRei >= 0 && movRei < 10) {
 				printf("Entrei");
@@ -270,15 +288,17 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 2;
+					vidaJogador -= 6;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRlado4, positionReiX, positionReiY, 1);
 				movRei += 1;
 				if (movRei == 40) {
 					movRei = 0;
+					timerAtaqueRei = 200;
+				}
+				if (timerAtaqueRei == 0) {
 					atacouRei = false;
-					timerAtaqueRei = 50;
 				}
 			}
 		}
@@ -288,7 +308,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 		}
 		//Ataque para Baixo Rei
-		if (((areaAtaque(positionReiX + 5, positionReiY + 20, 55, 55, positionX1_f2 + 10, positionY1_f2 + 15, 30, 40) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 4) && (vidaJogador > 100)) {
+		if (((areaAtaque(positionReiX + 5, positionReiY + 20, 55, 55, positionX1_f2 + 10, positionY1_f2 + 15, 30, 40) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 4) && (vidaJogador > 88)) {
 			printf("aqui");
 			if (movRei >= 0 && movRei < 10) {
 				printf("Entrei");
@@ -305,15 +325,17 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 2;
+					vidaJogador -= 6;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRbaixo4, positionReiX, positionReiY, 0);
 				movRei += 1;
 				if (movRei == 40) {
 					movRei = 0;
+					timerAtaqueRei = 200;
+				}
+				if (timerAtaqueRei == 0) {
 					atacouRei = false;
-					timerAtaqueRei = 50;
 				}
 			}
 		}
@@ -324,7 +346,7 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 
 
-		if (vidaJogador > 100 && vidaJogador <= 300) {
+		if (vidaJogador > 88 && vidaJogador <= 300) {
 			//MOVIMENTAÇÃO DO PARIS VIDA 100%
 			if (positionY1_f2 < 450 && positionY1_f2 > 150) {
 				movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
@@ -357,13 +379,15 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			//PARIS - CONTROLANDO
 			movimentoSprite(ParisBaixoNormal, ParisBaixoEsq, ParisBaixoDir,
-				ParisEsqNormal, ParisEsqEsq, ParisEsqDir,
+				ParisDirNormal, ParisDirEsq, ParisDirDir,
 				ParisCimaNormal, ParisCimaEsq, ParisCimaDir,
 				ParisDirNormal, ParisDirEsq, ParisDirDir,
 				ParisAtaqueB1, ParisAtaqueB2, ParisAtaqueB3, ParisAtaqueB4,
 				ParisAtaqueC1, ParisAtaqueC2, ParisAtaqueC3, ParisAtaqueC4,
 				ParisAtaqueL1, ParisAtaqueL2, ParisAtaqueL3, ParisAtaqueL4,
 				positionX1_f2, positionY1_f2);
+			//HEITOR
+			al_draw_bitmap(HeitorBaixoN, positionX1_heitor, positionY1_heitor, 0);
 		}
 		else {
 			if (positionX1_f2 < 650) {
@@ -381,6 +405,8 @@ void fase2(ALLEGRO_EVENT evento) {
 					al_draw_bitmap(ParisDirDir, positionX1_f2, positionY1_f2, 0);
 					movimento = 0;
 				}
+				//HEITOR
+				al_draw_bitmap(HeitorBaixoN, positionX1_heitor, positionY1_heitor, 0);
 			}
 			else {
 				if (positionX1_f2 > 650) {
@@ -398,6 +424,8 @@ void fase2(ALLEGRO_EVENT evento) {
 						al_draw_bitmap(ParisEsqDir, positionX1_f2, positionY1_f2, 0);
 						movimento = 0;
 					}
+					//HEITOR
+					al_draw_bitmap(HeitorBaixoN, positionX1_heitor, positionY1_heitor, 0);
 				}
 				else {
 					if (positionY1_f2 > 190) {
@@ -415,35 +443,55 @@ void fase2(ALLEGRO_EVENT evento) {
 							al_draw_bitmap(ParisCimaDir, positionX1_f2, positionY1_f2, 0);
 							movimento = 0;
 						}
+						//HEITOR
+						al_draw_bitmap(HeitorBaixoN, positionX1_heitor, positionY1_heitor, 0);
 					}
 					else {
 						if (positionY1_f2 <= 190) {
-							vidaJogador = 300;
-							vidaReiX = 1200;
-							pressionado = 0;
-							ultPressionado = 0;
-							controleJogador = true;
+							switch (intro)
+							{
+							case 1:
+								imagemIntro(Intro1Fase2, evento);
+								break;
+							case 2:
+								imagemIntro(Intro2Fase2, evento);
+								break;
+							case 3:
+								imagemIntro(Intro3Fase2, evento);
+								break;
+							case 4:
+								vidaJogador = 300;
+								vidaReiX = 1170;
+								pressionado = 0;
+								ultPressionado = 0;
+								controleJogador = true;
+								break;
+							}
 						}
 					}
 				}
 			}
 		}
 
-
-		//HEITOR
-		al_draw_bitmap(HeitorBaixoN, positionX1_heitor, positionY1_heitor, 0);
-
-		controleJogador = true;
-
 		break;
 
 	case true:
 
-		if (vidaJogador > 100) {
-			//BARRA DE VIDA REI MENELAU
-			al_draw_filled_rectangle(1000, 25, vidaReiX, 55, al_map_rgba(255, 0, 0, 1));
-			//BARRA DE VIDA PARIS ( JOGADOR )
-			al_draw_filled_rectangle(100, 25, vidaJogador, 55, al_map_rgba(255, 0, 0, 1));
+		//Nome Paris Personagem
+		al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 1020, 6, ALLEGRO_ALIGN_CENTRE, "Rei Menelau");
+		//Background Barra de Vida
+		al_draw_bitmap(barra_vida_cheia, 950, 38, 0);
+		//BARRA DE VIDA REI MENELAU
+		al_draw_filled_rectangle(958, 45, vidaReiX, 61, al_map_rgba(255, 0, 0, 1));
+
+		//Nome Paris Personagem
+		al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 180, 6, ALLEGRO_ALIGN_CENTRE, "Heitor ( Jogador )");
+		//Background Barra de Vida
+		al_draw_bitmap(barra_vida_cheia, 80, 38, 0);
+		//BARRA DE VIDA PARIS ( JOGADOR )
+		al_draw_filled_rectangle(88, 45, vidaJogador, 61, al_map_rgba(255, 0, 0, 1));
+
+		if (vidaJogador > 88 && vidaReiX > 958) {
 
 			//Timer Ataque Rei
 			if (timerAtaqueRei > 0) {
@@ -455,12 +503,12 @@ void fase2(ALLEGRO_EVENT evento) {
 				positionReiY == pontoAndarY) {
 				if ((areaAtaque(positionX1_heitor, positionY1_heitor, 50, 65, positionReiX, positionReiY, 50, 70) == true) && positionY1_heitor + 50 > pontoAndarY) {
 					while (pontoAndarY < positionY1_heitor + 60) {
-						pontoAndarY = 180 + rand() % 320;
+						pontoAndarY = 190 + rand() % 260;
 					}
 					pontoAndarX = rand() % 1280;
 				}
 				else {
-					pontoAndarY = 180 + rand() % 320;
+					pontoAndarY = 190 + rand() % 260;
 					pontoAndarX = rand() % 1280;
 				}
 			}
@@ -555,9 +603,7 @@ void fase2(ALLEGRO_EVENT evento) {
 
 			//Ataque para Cima Rei
 			if (((areaAtaque(positionReiX + 2, positionReiY + 5, 83, 40, positionX1_heitor + 10, positionY1_heitor + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 1)) {
-				printf("aqui");
 				if (movRei >= 0 && movRei < 10) {
-					printf("Entrei");
 					al_draw_bitmap(AtaqueRcima1, positionReiX, positionReiY, 0);
 					movRei += 1;
 				}
@@ -578,8 +624,10 @@ void fase2(ALLEGRO_EVENT evento) {
 					movRei += 1;
 					if (movRei == 40) {
 						movRei = 0;
+						timerAtaqueRei = 200;
+					}
+					if (timerAtaqueRei == 0) {
 						atacouRei = false;
-						timerAtaqueRei = 10;
 					}
 				}
 			}
@@ -590,9 +638,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			//Ataque para Esquerda Rei
 			if (((areaAtaque((positionReiX - 50) + 2, positionReiY + 15, 113, 65, positionX1_heitor + 5, positionY1_heitor + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 2)) {
-				printf("aqui");
 				if (movRei >= 0 && movRei < 10) {
-					printf("Entrei");
 					al_draw_bitmap(AtaqueRlado1, positionReiX, positionReiY, 0);
 					movRei += 1;
 				}
@@ -613,8 +659,10 @@ void fase2(ALLEGRO_EVENT evento) {
 					movRei += 1;
 					if (movRei == 40) {
 						movRei = 0;
+						timerAtaqueRei = 200;
+					}
+					if (timerAtaqueRei == 0) {
 						atacouRei = false;
-						timerAtaqueRei = 50;
 					}
 				}
 			}
@@ -625,9 +673,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			//Ataque para Direita Rei
 			if (((areaAtaque(positionX1_heitor + 10, positionY1_heitor + 5, 30, 50, positionReiX + 40, positionReiY + 20, 35, 30) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 3)) {
-				printf("aqui");
 				if (movRei >= 0 && movRei < 10) {
-					printf("Entrei");
 					al_draw_bitmap(AtaqueRlado1, positionReiX, positionReiY, 1);
 					movRei += 1;
 				}
@@ -648,8 +694,10 @@ void fase2(ALLEGRO_EVENT evento) {
 					movRei += 1;
 					if (movRei == 40) {
 						movRei = 0;
+						timerAtaqueRei = 200;
+					}
+					if (timerAtaqueRei == 0) {
 						atacouRei = false;
-						timerAtaqueRei = 50;
 					}
 				}
 			}
@@ -660,9 +708,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			//Ataque para Baixo Rei
 			if (((areaAtaque(positionReiX + 5, positionReiY + 20, 55, 55, positionX1_heitor + 10, positionY1_heitor + 15, 30, 40) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 4)) {
-				printf("aqui");
 				if (movRei >= 0 && movRei < 10) {
-					printf("Entrei");
 					al_draw_bitmap(AtaqueRbaixo1, positionReiX, positionReiY, 0);
 					movRei += 1;
 				}
@@ -683,8 +729,10 @@ void fase2(ALLEGRO_EVENT evento) {
 					movRei += 1;
 					if (movRei == 40) {
 						movRei = 0;
+						timerAtaqueRei = 200;
+					}
+					if (timerAtaqueRei == 0) {
 						atacouRei = false;
-						timerAtaqueRei = 50;
 					}
 				}
 			}
@@ -716,13 +764,11 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 
 			//Controlando Heitor
-			if ((positionY1_heitor < 450 && positionY1_heitor > 150)) {
+			if ((positionY1_heitor < 450 && positionY1_heitor > 190)) {
 				movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 			}
 			else {
-				printf("Y-%d", positionY1_heitor);
 				if (positionY1_heitor >= 450) {
-					printf("To aqui");
 					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
@@ -733,7 +779,7 @@ void fase2(ALLEGRO_EVENT evento) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
 				}
-				if (positionY1_heitor <= 150) {
+				if (positionY1_heitor <= 190) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
@@ -757,9 +803,69 @@ void fase2(ALLEGRO_EVENT evento) {
 				positionX1_heitor, positionY1_heitor);
 		}
 		else {
-			navegacao += 1;
+			if (vidaJogador <= 88) {
+				al_draw_bitmap(GameOverFase2, 0, 0, 0);
+				al_draw_filled_rectangle(525, 360, 755, 410, al_map_rgb(86, 86, 86));
+				al_draw_filled_rectangle(525, 460, 755, 510, al_map_rgb(86, 86, 86));
+				al_draw_text(fonteFase2, al_map_rgb(255, 255, 255), 640, 367, ALLEGRO_ALIGN_CENTRE, "Menu Inicial");
+				al_draw_text(fonteFase2, al_map_rgb(255, 255, 255), 640, 467, ALLEGRO_ALIGN_CENTRE, "Fechar Jogo");
+
+				if ((mouseX >= 525 && mouseY >= 360 && mouseX <= 755 && mouseY <= 410) || (mouseX >= 525 && mouseY >= 460 && mouseX <= 755 && mouseY <= 510)) {
+					al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+				}
+				else {
+					al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+				}
+				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+					if (mouseX >= 525 && mouseY >= 360 && mouseX <= 755 && mouseY <= 410) {
+						al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+						//Configs
+						intro = 1;
+						controleJogador = false;
+						navegacao = 0;
+
+						//Rei
+						positionReiX = 650;
+						positionReiY = 450;
+						vidaReiX = 1170;
+
+						//Paris e Heitor
+						vidaJogador = 300;
+						positionX1_f2 = 650;
+						positionY1_f2 = 225;
+						positionX1_heitor = 615;
+						positionY1_heitor = 200;
+					}
+				}
+
+				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+					if (mouseX >= 525 && mouseY >= 460 && mouseX <= 755 && mouseY <= 510) {
+						al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+						rodando = false;
+					}
+				}
+			}
+
+
+			if (vidaReiX <= 958) {
+				al_draw_bitmap(VitoriaFase2, 0, 0, 0);
+				al_draw_filled_rectangle(525, 480, 755, 530, al_map_rgb(242, 183, 64));
+				al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 640, 488, ALLEGRO_ALIGN_CENTRE, "Continuar");
+				if ((mouseX >= 525 && mouseY >= 480 && mouseX <= 755 && mouseY <= 530) || (mouseX >= 525 && mouseY >= 460 && mouseX <= 755 && mouseY <= 510)) {
+					al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+				}
+				else {
+					al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+				}
+				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+					if (mouseX >= 525 && mouseY >= 480 && mouseX <= 755 && mouseY <= 530) {
+						al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+						navegacao += 1;
+					}
+				}
+			}
 		}
-			break;
-		}
+		break;
+	}
 	al_flip_display();
 }
