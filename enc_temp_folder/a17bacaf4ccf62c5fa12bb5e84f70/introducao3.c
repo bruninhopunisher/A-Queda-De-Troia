@@ -55,16 +55,12 @@ void introducao3(ALLEGRO_EVENT evento) {
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 450, ALLEGRO_ALIGN_CENTRE, "Boa sorte!");
 	case 7:
 		imagemIntro(pagina4, evento);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 90, ALLEGRO_ALIGN_CENTRE, "Aqui estao as regras:");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 670, 160, ALLEGRO_ALIGN_CENTRE, "Clique na peca e em seguida"); 
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 210, ALLEGRO_ALIGN_CENTRE, "clique no tabuleiro quadriculado");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 260, ALLEGRO_ALIGN_CENTRE, "Voce pode consultar a");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 690, 310, ALLEGRO_ALIGN_CENTRE, "imagem original apenas 3 vezes.");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 690, 360, ALLEGRO_ALIGN_CENTRE, "Mas tenha muito cuidado, caso coloque");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 410, ALLEGRO_ALIGN_CENTRE, "uma peca errada no comeco, voce tera que");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 460, ALLEGRO_ALIGN_CENTRE, "retroceder todas as pecas ja posicionadas");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 690, 510, ALLEGRO_ALIGN_CENTRE, "em seus lugares corretos!");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 700, 560, ALLEGRO_ALIGN_CENTRE, "Use-a com sabedoria!");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 115, ALLEGRO_ALIGN_CENTRE, "Aqui estao as regras:");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 670, 220, ALLEGRO_ALIGN_CENTRE, "Clique na peca e em seguida"); 
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 275, ALLEGRO_ALIGN_CENTRE, "clique no tabuleiro quadriculado");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 680, 325, ALLEGRO_ALIGN_CENTRE, "Voce pode consultar a");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 690, 375, ALLEGRO_ALIGN_CENTRE, "imagem original apenas 3 vezes.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 700, 425, ALLEGRO_ALIGN_CENTRE, "Use-a com sabedoria!");
 		if ((mouseX >= 1016 && mouseX <= 1189) && (mouseY >= 653 && mouseY <= 692)) {
 			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 			if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {

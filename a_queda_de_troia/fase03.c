@@ -95,6 +95,8 @@ void fase3(ALLEGRO_EVENT evento) {
 		}
 		printf("\n");
 		for (int i = 0; i < 25; i++) {
+			
+			/*printf("PECA RECEBIDA %d", quadrantePuzzle.quadrantes[i].idPecaRecebida);*/
 			/*printf("GUARDA ID %d", guardaIdPeca[i]);
 			printf(" - GUARDA ID QUADRANTE %d ", guardaIdQuadrante[i]);*/
 			/*printf("ID PECA %d ", guardaIdPeca[i]);*/
@@ -104,7 +106,7 @@ void fase3(ALLEGRO_EVENT evento) {
 			printf("\n");
 		}
 		printf("\n");
-
+		printf("NEXT INT %d\n", nextInt);
 		printf("BTO VOLTA %d\n", btoVolta);
 	}
 
@@ -198,6 +200,7 @@ void fase3(ALLEGRO_EVENT evento) {
 				salvaIndice[btoVolta - 1] = 8781;
 				somaPosicao -= 1;
 				btoVolta -= 1;
+				nextInt -= 1;
 			}
 		}
 	}
