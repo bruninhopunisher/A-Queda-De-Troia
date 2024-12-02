@@ -170,6 +170,30 @@ extern int movimento;
 //} Personagem;
 
 //HEITOR
+extern ALLEGRO_BITMAP* HeitorCimaN;
+extern ALLEGRO_BITMAP* HeitorCimaE;
+extern ALLEGRO_BITMAP* HeitorCimaD;
+extern ALLEGRO_BITMAP* HeitorBaixoN;
+extern ALLEGRO_BITMAP* HeitorBaixoE;
+extern ALLEGRO_BITMAP* HeitorBaixoD;
+extern ALLEGRO_BITMAP* HeitorLadoN;
+extern ALLEGRO_BITMAP* HeitorLadoE;
+extern ALLEGRO_BITMAP* HeitorLadoD;
+
+extern ALLEGRO_BITMAP* HeitorAtaqueB1;
+extern ALLEGRO_BITMAP* HeitorAtaqueB2;
+extern ALLEGRO_BITMAP* HeitorAtaqueB3;
+extern ALLEGRO_BITMAP* HeitorAtaqueB4;
+extern ALLEGRO_BITMAP* HeitorAtaqueC1;
+extern ALLEGRO_BITMAP* HeitorAtaqueC2;
+extern ALLEGRO_BITMAP* HeitorAtaqueC3;
+extern ALLEGRO_BITMAP* HeitorAtaqueC4;
+extern ALLEGRO_BITMAP* HeitorAtaqueL1;
+extern ALLEGRO_BITMAP* HeitorAtaqueL2;
+extern ALLEGRO_BITMAP* HeitorAtaqueL3;
+extern ALLEGRO_BITMAP* HeitorAtaqueL4;
+
+
 extern int positionX1_heitor;
 extern int positionX2_heitor;
 extern int positionY1_heitor;
@@ -191,13 +215,24 @@ extern ALLEGRO_BITMAP* ParisAtaqueB1;
 extern ALLEGRO_BITMAP* ParisAtaqueB2;
 extern ALLEGRO_BITMAP* ParisAtaqueB3;
 extern ALLEGRO_BITMAP* ParisAtaqueB4;
+extern ALLEGRO_BITMAP* ParisAtaqueC1;
+extern ALLEGRO_BITMAP* ParisAtaqueC2;
+extern ALLEGRO_BITMAP* ParisAtaqueC3;
+extern ALLEGRO_BITMAP* ParisAtaqueC4;
+extern ALLEGRO_BITMAP* ParisAtaqueL1;
+extern ALLEGRO_BITMAP* ParisAtaqueL2;
+extern ALLEGRO_BITMAP* ParisAtaqueL3;
+extern ALLEGRO_BITMAP* ParisAtaqueL4;
 extern int positionX1_f2;
 extern int positionY1_f2;
 extern int positionX_espada1;
 extern int positionY_espada1;
 extern int vidaJogador;
+extern int ladoAtaque;
+extern int parisCaindoTimer;
 extern bool controleJogador;
 extern bool atacando;
+extern bool atacou;
 //REI MENELAU
 extern ALLEGRO_BITMAP* MenelauEsqDirN;
 extern ALLEGRO_BITMAP* MenelauEsqDir1;
@@ -211,14 +246,42 @@ extern ALLEGRO_BITMAP* MenelauBaixoN;
 extern ALLEGRO_BITMAP* MenelauBaixo1;
 extern ALLEGRO_BITMAP* MenelauBaixo2;
 extern ALLEGRO_BITMAP* MenelauBaixo3;
-extern int positionReiX;
-extern int positionReiY;
+
+//Ataque do REI
+extern ALLEGRO_BITMAP* AtaqueRcima1;
+extern ALLEGRO_BITMAP* AtaqueRcima2;
+extern ALLEGRO_BITMAP* AtaqueRcima3;
+extern ALLEGRO_BITMAP* AtaqueRcima4;
+
+extern ALLEGRO_BITMAP* AtaqueRbaixo1;
+extern ALLEGRO_BITMAP* AtaqueRbaixo2;
+extern ALLEGRO_BITMAP* AtaqueRbaixo3;
+extern ALLEGRO_BITMAP* AtaqueRbaixo4;
+
+extern ALLEGRO_BITMAP* AtaqueRlado1;
+extern ALLEGRO_BITMAP* AtaqueRlado2;
+extern ALLEGRO_BITMAP* AtaqueRlado3;
+extern ALLEGRO_BITMAP* AtaqueRlado4;
+
+extern ALLEGRO_BITMAP* ParisAtaqueL4;
+extern ALLEGRO_BITMAP* ParisCaindo1;
+extern ALLEGRO_BITMAP* ParisCaindo2;
+extern ALLEGRO_BITMAP* ParisCaindo3;
+extern ALLEGRO_BITMAP* ParisCaindo4;
+extern ALLEGRO_BITMAP* ParisCaindo5;
+
+extern float positionReiX;
+extern float positionReiY;
 extern int limiteAtaque;
 extern int movimentoRei;
 extern int vidaReiX;
 extern int ataqueReiTimer;
 extern int pontoAndarX;
 extern int pontoAndarY;
+extern int movRei;
+extern int atacouRei;
+extern int timerAtaqueRei;
+extern int posicaoRei;
 
 
 //Fase 3
@@ -387,13 +450,19 @@ extern ALLEGRO_BITMAP* derrota;
 //Movimentação Jogador
 void movimentarPlayer(ALLEGRO_EVENT evento,int* posicaoX,int* posicaoY);
 
+//Verificar ataque na area do BOT
+bool areaAtaque(int x1Player, int y1Player, int larguraP, int alturaP, int x1Bot, int y1Bot, int larguraB, int alturaB);
+
+
 //Movimento Sprite
 void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BITMAP* baixoD,
-    ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
-    ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
-    ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
-    ALLEGRO_BITMAP* ataqueBaixo1, ALLEGRO_BITMAP* ataqueBaixo2, ALLEGRO_BITMAP* ataqueBaixo3, ALLEGRO_BITMAP* ataquebaixo4,
-    int posicaoX, int posicaoY);
+	ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
+	ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
+	ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
+	ALLEGRO_BITMAP* ataqueBaixo1, ALLEGRO_BITMAP* ataqueBaixo2, ALLEGRO_BITMAP* ataqueBaixo3, ALLEGRO_BITMAP* ataqueBaixo4,
+	ALLEGRO_BITMAP* ataqueCima1, ALLEGRO_BITMAP* ataqueCima2, ALLEGRO_BITMAP* ataqueCima3, ALLEGRO_BITMAP* ataqueCima4,
+	ALLEGRO_BITMAP* ataqueLado1, ALLEGRO_BITMAP* ataqueLado2, ALLEGRO_BITMAP* ataqueLado3, ALLEGRO_BITMAP* ataqueLado4,
+	int posicaoX, int posicaoY);
 
 //Funções Iniciadoras e Destruidora
 void testeInicializar(bool metodo, char* referencia);

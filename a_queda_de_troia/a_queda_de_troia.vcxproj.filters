@@ -422,6 +422,144 @@
     <Image Include="Imagens\Creditos\backgroundCreditos.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Créditos</Filter>
     </Image>
+    <Image Include="ataquecima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="heitorLadoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorLadoE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorLadoD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="ataqueRlado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -546,6 +684,9 @@
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Créditos">
       <UniqueIdentifier>{630da208-7477-4041-8fac-1bc6fc4865b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor">
+      <UniqueIdentifier>{e8e46ef0-2711-4a92-9dc4-84f7119e705e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

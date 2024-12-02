@@ -23,7 +23,7 @@ int mouseAxesY;
 bool rodando = true;
 bool boolVolume = true;
 efeitoDigitacao[4];
-
+ 
 //Opções
 ALLEGRO_BITMAP* backgroundOpcoes; //Destruido
 ALLEGRO_BITMAP* comVolume; //Destruido
@@ -121,10 +121,31 @@ int pressionado = 0;
 int ultPressionado = 0;
 int movimento = 0;
 //HEITOR
+ALLEGRO_BITMAP* HeitorCimaN;
+ALLEGRO_BITMAP* HeitorCimaE;
+ALLEGRO_BITMAP* HeitorCimaD;
+ALLEGRO_BITMAP* HeitorBaixoN;
+ALLEGRO_BITMAP* HeitorBaixoE;
+ALLEGRO_BITMAP* HeitorBaixoD;
+ALLEGRO_BITMAP* HeitorLadoN;
+ALLEGRO_BITMAP* HeitorLadoE;
+ALLEGRO_BITMAP* HeitorLadoD;
+
+ALLEGRO_BITMAP* HeitorAtaqueB1;
+ALLEGRO_BITMAP* HeitorAtaqueB2;
+ALLEGRO_BITMAP* HeitorAtaqueB3;
+ALLEGRO_BITMAP* HeitorAtaqueB4;
+ALLEGRO_BITMAP* HeitorAtaqueC1;
+ALLEGRO_BITMAP* HeitorAtaqueC2;
+ALLEGRO_BITMAP* HeitorAtaqueC3;
+ALLEGRO_BITMAP* HeitorAtaqueC4;
+ALLEGRO_BITMAP* HeitorAtaqueL1;
+ALLEGRO_BITMAP* HeitorAtaqueL2;
+ALLEGRO_BITMAP* HeitorAtaqueL3;
+ALLEGRO_BITMAP* HeitorAtaqueL4;
+
 int positionX1_heitor = 615;
-int positionX2_heitor = 665;
-int positionY1_heitor = 100;
-int positionY2_heitor = 170;
+int positionY1_heitor = 200;
 //PARIS
 ALLEGRO_BITMAP* ParisBaixoEsq; //Destruido
 ALLEGRO_BITMAP* ParisBaixoDir; //Destruido
@@ -142,13 +163,30 @@ ALLEGRO_BITMAP* ParisAtaqueB1; //Destruido
 ALLEGRO_BITMAP* ParisAtaqueB2; //Destruido
 ALLEGRO_BITMAP* ParisAtaqueB3; //Destruido
 ALLEGRO_BITMAP* ParisAtaqueB4; //Destruido
-int positionX1_f2 = 615;
+ALLEGRO_BITMAP* ParisAtaqueC1; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueC2; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueC3; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueC4; //Destruido
+ALLEGRO_BITMAP* ParisAtaqueL1;
+ALLEGRO_BITMAP* ParisAtaqueL2;
+ALLEGRO_BITMAP* ParisAtaqueL3;
+ALLEGRO_BITMAP* ParisAtaqueL4;
+ALLEGRO_BITMAP* ParisCaindo1;
+ALLEGRO_BITMAP* ParisCaindo2;
+ALLEGRO_BITMAP* ParisCaindo3;
+ALLEGRO_BITMAP* ParisCaindo4;
+ALLEGRO_BITMAP* ParisCaindo5;
+int positionX1_f2 = 650;
 int positionY1_f2 = 225;
 int positionX_espada1 = 605;
 int positionY_espada1 = 275;
+int ladoAtaque = 0;
+int parisCaindoTimer = 0;
+int vidaJogador = 300;
 int limiteAtaque = 0;
 bool controleJogador = false;
 bool atacando = false;
+bool atacou = false;
 //REI MENELAU
 ALLEGRO_BITMAP* MenelauEsqDirN; //Destruido
 ALLEGRO_BITMAP* MenelauEsqDir1; //Destruido
@@ -162,14 +200,35 @@ ALLEGRO_BITMAP* MenelauBaixoN; //Destruido
 ALLEGRO_BITMAP* MenelauBaixo1; //Destruido
 ALLEGRO_BITMAP* MenelauBaixo2; //Destruido
 ALLEGRO_BITMAP* MenelauBaixo3; //Destruido
-int positionReiX = 650;
-int positionReiY = 450;
-int vidaJogador = 100;
+
+
+//Ataque do REI
+ALLEGRO_BITMAP* AtaqueRcima1;
+ALLEGRO_BITMAP* AtaqueRcima2;
+ALLEGRO_BITMAP* AtaqueRcima3;
+ALLEGRO_BITMAP* AtaqueRcima4;
+
+ALLEGRO_BITMAP* AtaqueRbaixo1;
+ALLEGRO_BITMAP* AtaqueRbaixo2;
+ALLEGRO_BITMAP* AtaqueRbaixo3;
+ALLEGRO_BITMAP* AtaqueRbaixo4;
+
+ALLEGRO_BITMAP* AtaqueRlado1;
+ALLEGRO_BITMAP* AtaqueRlado2;
+ALLEGRO_BITMAP* AtaqueRlado3;
+ALLEGRO_BITMAP* AtaqueRlado4;
+
+float positionReiX = 650;
+float positionReiY = 450;
 int movimentoRei = 0;
 int ataqueReiTimer = 0;
 int vidaReiX = 1200;
 int pontoAndarX = 650;
 int pontoAndarY = 450;
+int movRei = 0;
+int atacouRei = false;
+int timerAtaqueRei = 0;
+int posicaoRei = 4;
 int swapX;
 int swapY;
 
@@ -481,7 +540,103 @@ void iniciarConstantes() {
 	MenelauBaixo1 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo1.jpg");
 	MenelauBaixo2 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo2.jpg");
 	MenelauBaixo3 = al_load_bitmap("Imagens/Fase_02/MenelauBaixo3.jpg");
+	ParisAtaqueC1 = al_load_bitmap("Imagens/Fase_02/ataquecima1.jpg");
+	ParisAtaqueC2 = al_load_bitmap("Imagens/Fase_02/ataquecima2.jpg");
+	ParisAtaqueC3 = al_load_bitmap("Imagens/Fase_02/ataquecima3.jpg");
+	ParisAtaqueC4 = al_load_bitmap("Imagens/Fase_02/ataquecima4.jpg");
+	ParisAtaqueL1 = al_load_bitmap("Imagens/Fase_02/ataquelado1.jpg");
+	ParisAtaqueL2 = al_load_bitmap("Imagens/Fase_02/ataquelado2.jpg");
+	ParisAtaqueL3 = al_load_bitmap("Imagens/Fase_02/ataquelado3.jpg");
+	ParisAtaqueL4 = al_load_bitmap("Imagens/Fase_02/ataquelado4.jpg");
+	AtaqueRcima1 = al_load_bitmap("Imagens/Fase_02/ataqueRcima1.jpg");
+	AtaqueRcima2 = al_load_bitmap("Imagens/Fase_02/ataqueRcima2.jpg");
+	AtaqueRcima3 = al_load_bitmap("Imagens/Fase_02/ataqueRcima3.jpg");
+	AtaqueRcima4 = al_load_bitmap("Imagens/Fase_02/ataqueRcima4.jpg");
+	AtaqueRbaixo1 = al_load_bitmap("Imagens/Fase_02/ataqueRbaixo1.jpg");
+	AtaqueRbaixo2 = al_load_bitmap("Imagens/Fase_02/ataqueRbaixo2.jpg");
+	AtaqueRbaixo3 = al_load_bitmap("Imagens/Fase_02/ataqueRbaixo3.jpg");
+	AtaqueRbaixo4 = al_load_bitmap("Imagens/Fase_02/ataqueRbaixo4.jpg");
+	AtaqueRlado1 = al_load_bitmap("Imagens/Fase_02/ataqueRlado1.jpg");
+	AtaqueRlado2 = al_load_bitmap("Imagens/Fase_02/ataqueRlado2.jpg");
+	AtaqueRlado3 = al_load_bitmap("Imagens/Fase_02/ataqueRlado3.jpg");
+	AtaqueRlado4 = al_load_bitmap("Imagens/Fase_02/ataqueRlado4.jpg");
+	ParisCaindo1 = al_load_bitmap("Imagens/Fase_02/parisCaindo1.jpg");
+	ParisCaindo2 = al_load_bitmap("Imagens/Fase_02/parisCaindo2.jpg");
+	ParisCaindo3 = al_load_bitmap("Imagens/Fase_02/parisCaindo3.jpg");
+	ParisCaindo4 = al_load_bitmap("Imagens/Fase_02/ParisCaindo4.jpg");
+	ParisCaindo5 = al_load_bitmap("Imagens/Fase_02/ParisCaindo5.jpg");
 
+	HeitorCimaN = al_load_bitmap("Imagens/Fase_02/heitorCimaN.jpg");
+	HeitorCimaE = al_load_bitmap("Imagens/Fase_02/heitorCimaE.jpg");
+	HeitorCimaD = al_load_bitmap("Imagens/Fase_02/heitorCimaD.jpg");
+	HeitorLadoN = al_load_bitmap("Imagens/Fase_02/heitorLadoN.jpg");
+	HeitorLadoE = al_load_bitmap("Imagens/Fase_02/heitorLadoE.jpg");
+	HeitorLadoD = al_load_bitmap("Imagens/Fase_02/heitorLadoD.jpg");
+	HeitorBaixoN = al_load_bitmap("Imagens/Fase_02/heitorBaixoN.jpg");
+	HeitorBaixoE = al_load_bitmap("Imagens/Fase_02/heitorBaixoE.jpg");
+	HeitorBaixoD = al_load_bitmap("Imagens/Fase_02/heitorbaixoD.jpg");
+
+	HeitorAtaqueB1 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo1.jpg");
+	HeitorAtaqueB2 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo2.jpg");
+	HeitorAtaqueB3 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo3.jpg");
+	HeitorAtaqueB4 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo4.jpg");
+	HeitorAtaqueC1 = al_load_bitmap("Imagens/Fase_02/HataqueCima1.jpg");
+	HeitorAtaqueC2 = al_load_bitmap("Imagens/Fase_02/HataqueCima2.jpg");
+	HeitorAtaqueC3 = al_load_bitmap("Imagens/Fase_02/HataqueCima3.jpg");
+	HeitorAtaqueC4 = al_load_bitmap("Imagens/Fase_02/HataqueCima4.jpg");
+	HeitorAtaqueL1 = al_load_bitmap("Imagens/Fase_02/HataqueLado1.jpg");
+	HeitorAtaqueL2 = al_load_bitmap("Imagens/Fase_02/HataqueLado2.jpg");
+	HeitorAtaqueL3 = al_load_bitmap("Imagens/Fase_02/HataqueLado3.jpg");
+	HeitorAtaqueL4 = al_load_bitmap("Imagens/Fase_02/HataqueLado4.jpg");
+
+	testeInicializar(HeitorAtaqueB1, "heitor_ataque_b1");
+	testeInicializar(HeitorAtaqueB2, "heitor_ataque_b2");
+	testeInicializar(HeitorAtaqueB3, "heitor_ataque_b3");
+	testeInicializar(HeitorAtaqueB4, "heitor_ataque_b4");
+	testeInicializar(HeitorAtaqueC1, "heitor_ataque_c1");
+	testeInicializar(HeitorAtaqueC2, "heitor_ataque_c2");
+	testeInicializar(HeitorAtaqueC3, "heitor_ataque_c3");
+	testeInicializar(HeitorAtaqueC4, "heitor_ataque_c4");
+	testeInicializar(HeitorAtaqueL1, "heitor_ataque_l1");
+	testeInicializar(HeitorAtaqueL2, "heitor_ataque_l2");
+	testeInicializar(HeitorAtaqueL3, "heitor_ataque_l3");
+	testeInicializar(HeitorAtaqueL4, "heitor_ataque_l4");
+
+	testeInicializar(HeitorCimaN, "heitor_cimaN");
+	testeInicializar(HeitorCimaE, "heitor_cimaE");
+	testeInicializar(HeitorCimaD, "heitor_cimaD");
+	testeInicializar(HeitorLadoN, "heitor_ladoN");
+	testeInicializar(HeitorLadoE, "heitor_ladoE");
+	testeInicializar(HeitorLadoD, "heitor_ladoD");
+	testeInicializar(HeitorBaixoN, "heitor_baixoN");
+	testeInicializar(HeitorBaixoE, "heitor_baixoE");
+	testeInicializar(HeitorBaixoD, "heitor_baixoD");
+
+	testeInicializar(ParisCaindo1, "paris_caindo_1");
+	testeInicializar(ParisCaindo2, "paris_caindo_2");
+	testeInicializar(ParisCaindo3, "paris_caindo_3");
+	testeInicializar(ParisCaindo4, "paris_caindo_4");
+	testeInicializar(ParisCaindo5, "paris_caindo_5");
+	testeInicializar(AtaqueRlado1, "ataque_rei_l1");
+	testeInicializar(AtaqueRlado2, "ataque_rei_l2");
+	testeInicializar(AtaqueRlado3, "ataque_rei_l3");
+	testeInicializar(AtaqueRlado4, "ataque_rei_l4");
+	testeInicializar(AtaqueRbaixo1, "ataque_rei_b1");
+	testeInicializar(AtaqueRbaixo2, "ataque_rei_b2");
+	testeInicializar(AtaqueRbaixo3, "ataque_rei_b3");
+	testeInicializar(AtaqueRbaixo4, "ataque_rei_b4");
+	testeInicializar(AtaqueRcima1, "ataque_rei_c1");
+	testeInicializar(AtaqueRcima2, "ataque_rei_c2");
+	testeInicializar(AtaqueRcima3, "ataque_rei_c3");
+	testeInicializar(AtaqueRcima4, "ataque_rei_c4");
+	testeInicializar(ParisAtaqueL1, "ataque_paris_l1");
+	testeInicializar(ParisAtaqueL2, "ataque_paris_l2");
+	testeInicializar(ParisAtaqueL3, "ataque_paris_l3");
+	testeInicializar(ParisAtaqueL4, "ataque_paris_l4");
+	testeInicializar(ParisAtaqueC1, "ataque_paris_c1");
+	testeInicializar(ParisAtaqueC2, "ataque_paris_c2");
+	testeInicializar(ParisAtaqueC3, "ataque_paris_c3");
+	testeInicializar(ParisAtaqueC4, "ataque_paris_c4");
 	testeInicializar(MenelauCimaN, "menelau_cima_n");
 	testeInicializar(MenelauCima1, "menelau_cima_1");
 	testeInicializar(MenelauCima2, "menelau_cima_2");
@@ -1088,25 +1243,30 @@ void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
 		if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 			if (atacando == false) {
 				pressionado = 1;
+				ladoAtaque = 1;
 			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
 			if (atacando == false) {
 				pressionado = 2;
+				ladoAtaque = 2;
 			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
 			if (atacando == false) {
 				pressionado = 3;
+				ladoAtaque = 3;
 			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
 			if (atacando == false) {
 				pressionado = 4;
+				ladoAtaque = 4;
 			}
 		}
 		if (evento.keyboard.keycode == ALLEGRO_KEY_SPACE) {
 			if (atacando == false) {
+				pressionado = 5;
 				pressionado = 5;
 			}
 			atacando = true;
@@ -1130,7 +1290,6 @@ void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
 		}
 		if (pressionado == ultPressionado && ultPressionado != 5) {
 			pressionado = 0;
-			ultPressionado = 0;
 		}
 	}
 
@@ -1160,16 +1319,34 @@ void movimentarPlayer(ALLEGRO_EVENT evento, int* posicaoX, int* posicaoY) {
 		break;
 	}
 }
+
+bool areaAtaque(int x1Player, int y1Player, int larguraP, int alturaP, int x1Bot, int y1Bot, int larguraB, int alturaB) {
+	bool resposta = ((x1Bot >= x1Player && x1Bot <= (x1Player + larguraP) ||
+		(x1Bot + larguraB) >= x1Player && (x1Bot + larguraB) <= (x1Player + larguraP)) &&
+		(y1Bot >= y1Player && y1Bot <= (y1Player + alturaP) ||
+			(y1Bot + alturaB) >= y1Player && (y1Bot + alturaB) <= (y1Player + alturaP)));
+	return resposta;
+}
+
 void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BITMAP* baixoD,
 	ALLEGRO_BITMAP* esquerdaN, ALLEGRO_BITMAP* esquerdaE, ALLEGRO_BITMAP* esquerdaD,
 	ALLEGRO_BITMAP* cimaN, ALLEGRO_BITMAP* cimaE, ALLEGRO_BITMAP* cimaD,
 	ALLEGRO_BITMAP* direitaN, ALLEGRO_BITMAP* direitaE, ALLEGRO_BITMAP* direitaD,
-	ALLEGRO_BITMAP* ataqueBaixo1, ALLEGRO_BITMAP* ataqueBaixo2, ALLEGRO_BITMAP* ataqueBaixo3, ALLEGRO_BITMAP* ataquebaixo4,
+	ALLEGRO_BITMAP* ataqueBaixo1, ALLEGRO_BITMAP* ataqueBaixo2, ALLEGRO_BITMAP* ataqueBaixo3, ALLEGRO_BITMAP* ataqueBaixo4,
+	ALLEGRO_BITMAP* ataqueCima1, ALLEGRO_BITMAP* ataqueCima2, ALLEGRO_BITMAP* ataqueCima3, ALLEGRO_BITMAP* ataqueCima4,
+	ALLEGRO_BITMAP* ataqueLado1, ALLEGRO_BITMAP* ataqueLado2, ALLEGRO_BITMAP* ataqueLado3, ALLEGRO_BITMAP* ataqueLado4,
 	int posicaoX, int posicaoY) {
 	switch (pressionado)
 	{
 	case 0:
-		al_draw_bitmap(baixoN, posicaoX, posicaoY, 0);
+		if (ultPressionado == 1)
+			al_draw_bitmap(cimaN, posicaoX, posicaoY, 0);
+		if (ultPressionado == 2)
+			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 0);
+		if (ultPressionado == 3)
+			al_draw_bitmap(direitaN, posicaoX, posicaoY, 0);
+		if (ultPressionado == 4 || ultPressionado == 0 || ultPressionado == 5)
+			al_draw_bitmap(baixoN, posicaoX, posicaoY, 0);
 		break;
 	case 1:
 		if (movimento >= 0 && movimento < 20 && atacando == false) {
@@ -1228,31 +1405,136 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 		}
 		break;
 	case 5:
-		if (atacando == true) {
-			if (movimento >= 0 && movimento < 15) {
-				al_draw_bitmap(ParisAtaqueB1, posicaoX, posicaoY, 0);
+		//Atacando para cima
+		if (atacando == true && ladoAtaque == 1) {
+			if (movimento >= 0 && movimento < 10) {
+				al_draw_bitmap(ataqueCima1, posicaoX, posicaoY, 0);
 				movimento += 1;
 			}
-			if (movimento >= 15 && movimento < 25) {
-				al_draw_bitmap(ParisAtaqueB2, posicaoX, posicaoY, 0);
+			if (movimento >= 10 && movimento < 20) {
+				al_draw_bitmap(ataqueCima2, posicaoX, posicaoY, 0);
 				movimento += 1;
 			}
-			if (movimento >= 25 && movimento < 45) {
-				al_draw_bitmap(ParisAtaqueB3, posicaoX, posicaoY, 0);
+			if (movimento >= 20 && movimento < 30) {
+				al_draw_bitmap(ataqueCima3, posicaoX, posicaoY, 0);
 				movimento += 1;
 			}
-			if (movimento == 45) {
-				if ((positionY1_f2 + 65 >= positionReiY && positionY1_f2 + 65 <= positionReiY + 60) &&
-					(positionX1_f2 >= positionReiX - 20 && positionX1_f2 - 20 <= positionReiX + 30 ||
-					positionX1_f2 + 60 >= positionReiX && positionX1_f2 + 60 <= positionReiX + 30))
-				{
-					vidaReiX -= 10;
+			if (movimento >= 30 && movimento <= 40) {
+				if (areaAtaque(posicaoX + 8, posicaoY - 1, 70, 41, positionReiX, positionReiY + 11, 37, 54) == true) {
+					if (atacou == false)
+						vidaReiX -= 2;
+
+					atacou = true;
 				}
-				al_draw_bitmap(ParisAtaqueB4, posicaoX, posicaoY, 0);
-				movimento = 0;
-				atacando = false;
-				ultPressionado = 0;
-				pressionado = 0;
+				al_draw_bitmap(ataqueCima4, posicaoX, posicaoY, 0);
+				movimento += 1;
+				if (movimento == 40) {
+					movimento = 0;
+					atacando = false;
+					ultPressionado = 1;
+					pressionado = 0;
+					atacou = false;
+				}
+			}
+		}
+		//Atacando para Esquerda
+		if (atacando == true && ladoAtaque == 2) {
+			if (movimento >= 0 && movimento < 10) {
+				al_draw_bitmap(ataqueLado1, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 10 && movimento < 20) {
+				al_draw_bitmap(ataqueLado2, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 30) {
+				al_draw_bitmap(ataqueLado3, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 30 && movimento <= 40) {
+				if (areaAtaque(posicaoX, posicaoY, 29, 45, positionReiX, positionReiY + 11, 37, 54) == true)
+				{
+					if (atacou == false)
+						vidaReiX -= 2;
+
+					atacou = true;
+				}
+				al_draw_bitmap(ataqueLado4, posicaoX, posicaoY, 0);
+				movimento += 1;
+				if (movimento == 40) {
+					movimento = 0;
+					atacando = false;
+					ultPressionado = 2;
+					pressionado = 0;
+					atacou = false;
+				}
+			}
+		}
+		//Atacando para Direita
+		if (atacando == true && ladoAtaque == 3) {
+			if (movimento >= 0 && movimento < 10) {
+				al_draw_bitmap(ataqueLado1, posicaoX, posicaoY, 1);
+				movimento += 1;
+			}
+			if (movimento >= 10 && movimento < 20) {
+				al_draw_bitmap(ataqueLado2, posicaoX, posicaoY, 1);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 30) {
+				al_draw_bitmap(ataqueLado3, posicaoX, posicaoY, 1);
+				movimento += 1;
+			}
+			if (movimento >= 30 && movimento <= 40) {
+				if (areaAtaque(posicaoX + 37, posicaoY, 63, 45, positionReiX, positionReiY + 11, 37, 54) == true)
+				{
+					if (atacou == false)
+						vidaReiX -= 2;
+
+					atacou = true;
+				}
+				al_draw_bitmap(ataqueLado4, posicaoX, posicaoY, 1);
+				movimento += 1;
+				if (movimento == 40) {
+					movimento = 0;
+					atacando = false;
+					ultPressionado = 3;
+					pressionado = 0;
+					atacou = false;
+				}
+			}
+		}
+		//Atacando para Baixo
+		if (atacando == true && ladoAtaque == 4 || ladoAtaque == 0) {
+			if (movimento >= 0 && movimento < 10) {
+				al_draw_bitmap(ataqueBaixo1, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 10 && movimento < 20) {
+				al_draw_bitmap(ataqueBaixo2, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 20 && movimento < 30) {
+				al_draw_bitmap(ataqueBaixo3, posicaoX, posicaoY, 0);
+				movimento += 1;
+			}
+			if (movimento >= 30 && movimento <= 40) {
+				if (areaAtaque(posicaoX, posicaoY + 35, 80, 30, positionReiX, positionReiY + 11, 37, 54) == true)
+				{
+					printf("Bati!");
+					if (atacou == false)
+						vidaReiX -= 2;
+
+					atacou = true;
+				}
+				al_draw_bitmap(ataqueBaixo4, posicaoX, posicaoY, 0);
+				movimento += 1;
+				if (movimento == 40) {
+					movimento = 0;
+					atacando = false;
+					ultPressionado = 4;
+					pressionado = 0;
+					atacou = false;
+				}
 			}
 		}
 	}
@@ -1375,6 +1657,29 @@ void destruidor() {
 	al_destroy_bitmap(soldadosTroia);
 	al_destroy_bitmap(soldadosEsparta);
 	al_destroy_bitmap(background_f2);
+	//Heitor
+	al_destroy_bitmap(HeitorBaixoN);
+	al_destroy_bitmap(HeitorBaixoE);
+	al_destroy_bitmap(HeitorBaixoD);
+	al_destroy_bitmap(HeitorLadoN);
+	al_destroy_bitmap(HeitorLadoE);
+	al_destroy_bitmap(HeitorLadoD);
+	al_destroy_bitmap(HeitorCimaN);
+	al_destroy_bitmap(HeitorCimaE);
+	al_destroy_bitmap(HeitorCimaD);
+
+	al_destroy_bitmap(HeitorAtaqueB1);
+	al_destroy_bitmap(HeitorAtaqueB2);
+	al_destroy_bitmap(HeitorAtaqueB3);
+	al_destroy_bitmap(HeitorAtaqueB4);
+	al_destroy_bitmap(HeitorAtaqueC1);
+	al_destroy_bitmap(HeitorAtaqueC2);
+	al_destroy_bitmap(HeitorAtaqueC3);
+	al_destroy_bitmap(HeitorAtaqueC4);
+	al_destroy_bitmap(HeitorAtaqueL1);
+	al_destroy_bitmap(HeitorAtaqueL2);
+	al_destroy_bitmap(HeitorAtaqueL3);
+	al_destroy_bitmap(HeitorAtaqueL4);
 	//Menelau
 	al_destroy_bitmap(MenelauEsqDirN);
 	al_destroy_bitmap(MenelauEsqDir1);
@@ -1388,6 +1693,18 @@ void destruidor() {
 	al_destroy_bitmap(MenelauBaixo1);
 	al_destroy_bitmap(MenelauBaixo2);
 	al_destroy_bitmap(MenelauBaixo3);
+	al_destroy_bitmap(AtaqueRcima1);
+	al_destroy_bitmap(AtaqueRcima2);
+	al_destroy_bitmap(AtaqueRcima3);
+	al_destroy_bitmap(AtaqueRcima4);
+	al_destroy_bitmap(AtaqueRbaixo1);
+	al_destroy_bitmap(AtaqueRbaixo2);
+	al_destroy_bitmap(AtaqueRbaixo3);
+	al_destroy_bitmap(AtaqueRbaixo4);
+	al_destroy_bitmap(AtaqueRlado1);
+	al_destroy_bitmap(AtaqueRlado2);
+	al_destroy_bitmap(AtaqueRlado3);
+	al_destroy_bitmap(AtaqueRlado4);
 	//Paris
 	al_destroy_bitmap(ParisAtaqueB1);
 	al_destroy_bitmap(ParisAtaqueB2);
@@ -1405,6 +1722,19 @@ void destruidor() {
 	al_destroy_bitmap(ParisDirNormal);
 	al_destroy_bitmap(ParisDirEsq);
 	al_destroy_bitmap(ParisDirDir);
+	al_destroy_bitmap(ParisAtaqueC1);
+	al_destroy_bitmap(ParisAtaqueC2);
+	al_destroy_bitmap(ParisAtaqueC3);
+	al_destroy_bitmap(ParisAtaqueC4);
+	al_destroy_bitmap(ParisAtaqueL1);
+	al_destroy_bitmap(ParisAtaqueL2);
+	al_destroy_bitmap(ParisAtaqueL3);
+	al_destroy_bitmap(ParisAtaqueL4);
+	al_destroy_bitmap(ParisCaindo1);
+	al_destroy_bitmap(ParisCaindo2);
+	al_destroy_bitmap(ParisCaindo3);
+	al_destroy_bitmap(ParisCaindo4);
+	al_destroy_bitmap(ParisCaindo5);
 	//Remover
 	al_destroy_bitmap(barra_vida_cheia);
 	al_destroy_bitmap(espada_rei_f2);
