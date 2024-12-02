@@ -233,6 +233,7 @@ int swapX;
 int swapY;
 
 //Fase 3
+ALLEGRO_BITMAP* arrayPuzzle[25]; //Destruido
 ALLEGRO_BITMAP* imgPuzzle; //Destruido
 ALLEGRO_BITMAP* imgFundoPuzzle; //Destruido
 ALLEGRO_BITMAP* puzzle1; //Destruido
@@ -677,59 +678,57 @@ void iniciarConstantes() {
 	//Fase 3
 	imgPuzzle = al_load_bitmap("Imagens/Fase_03/img_original.jpg");
 	imgFundoPuzzle = al_load_bitmap("Imagens/Fase_03/img_fundo.jpg");
-	puzzle1 = al_load_bitmap("Imagens/Fase_03/1.jpg");
-	puzzle2 = al_load_bitmap("Imagens/Fase_03/2.jpg");
-	puzzle3 = al_load_bitmap("Imagens/Fase_03/3.jpg");
-	puzzle4 = al_load_bitmap("Imagens/Fase_03/4.jpg");
-	puzzle5 = al_load_bitmap("Imagens/Fase_03/5.jpg");
-	puzzle6 = al_load_bitmap("Imagens/Fase_03/6.jpg");
-	puzzle7 = al_load_bitmap("Imagens/Fase_03/7.jpg");
-	puzzle8 = al_load_bitmap("Imagens/Fase_03/8.jpg");
-	puzzle9 = al_load_bitmap("Imagens/Fase_03/9.jpg");
-	puzzle10 = al_load_bitmap("Imagens/Fase_03/10.jpg");
-	puzzle11 = al_load_bitmap("Imagens/Fase_03/11.jpg");
-	puzzle12 = al_load_bitmap("Imagens/Fase_03/12.jpg");
-	puzzle13 = al_load_bitmap("Imagens/Fase_03/13.jpg");
-	puzzle14 = al_load_bitmap("Imagens/Fase_03/14.jpg");
-	puzzle15 = al_load_bitmap("Imagens/Fase_03/15.jpg");
-	puzzle16 = al_load_bitmap("Imagens/Fase_03/16.jpg");
-	puzzle17 = al_load_bitmap("Imagens/Fase_03/17.jpg");
-	puzzle18 = al_load_bitmap("Imagens/Fase_03/18.jpg");
-	puzzle19 = al_load_bitmap("Imagens/Fase_03/19.jpg");
-	puzzle20 = al_load_bitmap("Imagens/Fase_03/20.jpg");
-	puzzle21 = al_load_bitmap("Imagens/Fase_03/21.jpg");
-	puzzle22 = al_load_bitmap("Imagens/Fase_03/22.jpg");
-	puzzle23 = al_load_bitmap("Imagens/Fase_03/23.jpg");
-	puzzle24 = al_load_bitmap("Imagens/Fase_03/24.jpg");
-	puzzle25 = al_load_bitmap("Imagens/Fase_03/25.jpg");
+	arrayPuzzle[0] = al_load_bitmap("Imagens/Fase_03/1.jpg");
+	arrayPuzzle[1] = al_load_bitmap("Imagens/Fase_03/2.jpg");
+	arrayPuzzle[2] = al_load_bitmap("Imagens/Fase_03/3.jpg");
+	arrayPuzzle[3] = al_load_bitmap("Imagens/Fase_03/4.jpg");
+	arrayPuzzle[4] = al_load_bitmap("Imagens/Fase_03/5.jpg");
+	arrayPuzzle[5] = al_load_bitmap("Imagens/Fase_03/6.jpg");
+	arrayPuzzle[6] = al_load_bitmap("Imagens/Fase_03/7.jpg");
+	arrayPuzzle[7] = al_load_bitmap("Imagens/Fase_03/8.jpg");
+	arrayPuzzle[8] = al_load_bitmap("Imagens/Fase_03/9.jpg");
+	arrayPuzzle[9] = al_load_bitmap("Imagens/Fase_03/10.jpg");
+	arrayPuzzle[10] = al_load_bitmap("Imagens/Fase_03/11.jpg");
+	arrayPuzzle[11] = al_load_bitmap("Imagens/Fase_03/12.jpg");
+	arrayPuzzle[12] = al_load_bitmap("Imagens/Fase_03/13.jpg");
+	arrayPuzzle[13] = al_load_bitmap("Imagens/Fase_03/14.jpg");
+	arrayPuzzle[14] = al_load_bitmap("Imagens/Fase_03/15.jpg");
+	arrayPuzzle[15] = al_load_bitmap("Imagens/Fase_03/16.jpg");
+	arrayPuzzle[16] = al_load_bitmap("Imagens/Fase_03/17.jpg");
+	arrayPuzzle[17] = al_load_bitmap("Imagens/Fase_03/18.jpg");
+	arrayPuzzle[18] = al_load_bitmap("Imagens/Fase_03/19.jpg");
+	arrayPuzzle[19] = al_load_bitmap("Imagens/Fase_03/20.jpg");
+	arrayPuzzle[20] = al_load_bitmap("Imagens/Fase_03/21.jpg");
+	arrayPuzzle[21] = al_load_bitmap("Imagens/Fase_03/22.jpg");
+	arrayPuzzle[22] = al_load_bitmap("Imagens/Fase_03/23.jpg");
+	arrayPuzzle[23] = al_load_bitmap("Imagens/Fase_03/24.jpg");
+	arrayPuzzle[24] = al_load_bitmap("Imagens/Fase_03/25.jpg");
 
-	testeInicializar(imgPuzzle, "imgPuzzle");
-	testeInicializar(imgFundoPuzzle, "imgFundoPuzzle");
-	testeInicializar(puzzle1, "puzzle1");
-	testeInicializar(puzzle2, "puzzle2");
-	testeInicializar(puzzle3, "puzzle3");
-	testeInicializar(puzzle4, "puzzle4");
-	testeInicializar(puzzle5, "puzzle5");
-	testeInicializar(puzzle6, "puzzle6");
-	testeInicializar(puzzle7, "puzzle7");
-	testeInicializar(puzzle8, "puzzle8");
-	testeInicializar(puzzle9, "puzzle9");
-	testeInicializar(puzzle10, "puzzle10");
-	testeInicializar(puzzle11, "puzzle11");
-	testeInicializar(puzzle12, "puzzle12");
-	testeInicializar(puzzle13, "puzzle13");
-	testeInicializar(puzzle14, "puzzle14");
-	testeInicializar(puzzle15, "puzzle15");
-	testeInicializar(puzzle16, "puzzle16");
-	testeInicializar(puzzle17, "puzzle17");
-	testeInicializar(puzzle18, "puzzle18");
-	testeInicializar(puzzle19, "puzzle19");
-	testeInicializar(puzzle20, "puzzle20");
-	testeInicializar(puzzle21, "puzzle21");
-	testeInicializar(puzzle22, "puzzle22");
-	testeInicializar(puzzle23, "puzzle23");
-	testeInicializar(puzzle24, "puzzle24");
-	testeInicializar(puzzle25, "puzzle25");
+	testeInicializar(arrayPuzzle[0], "Puzzle 1");
+	testeInicializar(arrayPuzzle[1], "Puzzle 2");
+	testeInicializar(arrayPuzzle[2], "Puzzle 3");
+	testeInicializar(arrayPuzzle[3], "Puzzle 4");
+	testeInicializar(arrayPuzzle[4], "Puzzle 5");
+	testeInicializar(arrayPuzzle[5], "Puzzle 6");
+	testeInicializar(arrayPuzzle[6], "Puzzle 7");
+	testeInicializar(arrayPuzzle[7], "Puzzle 8");
+	testeInicializar(arrayPuzzle[8], "Puzzle 9");
+	testeInicializar(arrayPuzzle[9], "Puzzle 10");
+	testeInicializar(arrayPuzzle[10], "Puzzle 11");
+	testeInicializar(arrayPuzzle[11], "Puzzle 12");
+	testeInicializar(arrayPuzzle[12], "Puzzle 13");
+	testeInicializar(arrayPuzzle[13], "Puzzle 14");
+	testeInicializar(arrayPuzzle[14], "Puzzle 15");
+	testeInicializar(arrayPuzzle[15], "Puzzle 16");
+	testeInicializar(arrayPuzzle[16], "Puzzle 17");
+	testeInicializar(arrayPuzzle[17], "Puzzle 18");
+	testeInicializar(arrayPuzzle[18], "Puzzle 19");
+	testeInicializar(arrayPuzzle[19], "Puzzle 20");
+	testeInicializar(arrayPuzzle[20], "Puzzle 21");
+	testeInicializar(arrayPuzzle[21], "Puzzle 22");
+	testeInicializar(arrayPuzzle[22], "Puzzle 23");
+	testeInicializar(arrayPuzzle[23], "Puzzle 24");
+	testeInicializar(arrayPuzzle[24], "Puzzle 25");
 
 	posicoesIniciais.posicoes[0].id = 1;
 	posicoesIniciais.posicoes[0].x = 20;
@@ -1603,6 +1602,7 @@ void destruidor() {
 	al_destroy_bitmap(backgroundMenu);
 	al_destroy_font(fonteMenu);
 	al_destroy_font(font);
+	al_destroy_bitmap(logo);
 
 	//Opções
 	al_destroy_bitmap(backgroundOpcoes);
@@ -1746,31 +1746,31 @@ void destruidor() {
 	//Fase 3
 	al_destroy_bitmap(imgPuzzle);
 	al_destroy_bitmap(imgFundoPuzzle);
-	al_destroy_bitmap(puzzle1);
-	al_destroy_bitmap(puzzle2);
-	al_destroy_bitmap(puzzle3);
-	al_destroy_bitmap(puzzle4);
-	al_destroy_bitmap(puzzle5);
-	al_destroy_bitmap(puzzle6);
-	al_destroy_bitmap(puzzle7);
-	al_destroy_bitmap(puzzle8);
-	al_destroy_bitmap(puzzle9);
-	al_destroy_bitmap(puzzle10);
-	al_destroy_bitmap(puzzle11);
-	al_destroy_bitmap(puzzle12);
-	al_destroy_bitmap(puzzle13);
-	al_destroy_bitmap(puzzle14);
-	al_destroy_bitmap(puzzle15);
-	al_destroy_bitmap(puzzle16);
-	al_destroy_bitmap(puzzle17);
-	al_destroy_bitmap(puzzle18);
-	al_destroy_bitmap(puzzle19);
-	al_destroy_bitmap(puzzle20);
-	al_destroy_bitmap(puzzle21);
-	al_destroy_bitmap(puzzle22);
-	al_destroy_bitmap(puzzle23);
-	al_destroy_bitmap(puzzle24);
-	al_destroy_bitmap(puzzle25);
+	al_destroy_bitmap(arrayPuzzle[0]);
+	al_destroy_bitmap(arrayPuzzle[1]);
+	al_destroy_bitmap(arrayPuzzle[2]);
+	al_destroy_bitmap(arrayPuzzle[3]);
+	al_destroy_bitmap(arrayPuzzle[4]);
+	al_destroy_bitmap(arrayPuzzle[5]);
+	al_destroy_bitmap(arrayPuzzle[6]);
+	al_destroy_bitmap(arrayPuzzle[7]);
+	al_destroy_bitmap(arrayPuzzle[8]);
+	al_destroy_bitmap(arrayPuzzle[9]);
+	al_destroy_bitmap(arrayPuzzle[10]);
+	al_destroy_bitmap(arrayPuzzle[11]);
+	al_destroy_bitmap(arrayPuzzle[12]);
+	al_destroy_bitmap(arrayPuzzle[13]);
+	al_destroy_bitmap(arrayPuzzle[14]);
+	al_destroy_bitmap(arrayPuzzle[15]);
+	al_destroy_bitmap(arrayPuzzle[16]);
+	al_destroy_bitmap(arrayPuzzle[17]);
+	al_destroy_bitmap(arrayPuzzle[18]);
+	al_destroy_bitmap(arrayPuzzle[19]);
+	al_destroy_bitmap(arrayPuzzle[20]);
+	al_destroy_bitmap(arrayPuzzle[21]);
+	al_destroy_bitmap(arrayPuzzle[22]);
+	al_destroy_bitmap(arrayPuzzle[23]);
+	al_destroy_bitmap(arrayPuzzle[24]);
 
 	//fase 4
 	al_destroy_bitmap(backgroundFase04);
@@ -1788,5 +1788,4 @@ void destruidor() {
 	al_destroy_bitmap(arq_Costas_1);
 	al_destroy_bitmap(arq_Costas_2);
 	al_destroy_bitmap(flecha);
-
 }

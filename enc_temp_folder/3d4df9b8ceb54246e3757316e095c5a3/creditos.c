@@ -33,7 +33,7 @@ void creditos(ALLEGRO_EVENT evento) {
 	}
 
 	al_draw_filled_rectangle(17, 650, 175, 690, al_map_rgb(140, 70, 20));
-	if ((mouseX >= 17 && mouseX <= 175) && (mouseY >= 650 && mouseY <= 690)) {
+	if ((mouseX >= 40 && mouseX <= 150) && (mouseY >= 650 && mouseY <= 690)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		al_draw_filled_rectangle(17, 650, 175, 690, al_map_rgb(200, 100, 20));
 	}
@@ -44,7 +44,7 @@ void creditos(ALLEGRO_EVENT evento) {
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 96, 648, ALLEGRO_ALIGN_CENTRE, "VOLTAR");
 
 	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
-		if ((mouseX >= 17 && mouseX <= 175) && (mouseY >= 650 && mouseY <= 690)) {
+		if ((mouseX >= 40 && mouseX <= 150) && (mouseY >= 650 && mouseY <= 690)) {
 			navegacao -= 2;
 		}
 	}

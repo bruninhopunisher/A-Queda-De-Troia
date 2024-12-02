@@ -287,31 +287,7 @@ extern int posicaoRei;
 //Fase 3
 extern ALLEGRO_BITMAP* imgPuzzle;
 extern ALLEGRO_BITMAP* imgFundoPuzzle;
-extern ALLEGRO_BITMAP* puzzle1;
-extern ALLEGRO_BITMAP* puzzle2;
-extern ALLEGRO_BITMAP* puzzle3;
-extern ALLEGRO_BITMAP* puzzle4;
-extern ALLEGRO_BITMAP* puzzle5;
-extern ALLEGRO_BITMAP* puzzle6;
-extern ALLEGRO_BITMAP* puzzle7;
-extern ALLEGRO_BITMAP* puzzle8;
-extern ALLEGRO_BITMAP* puzzle9;
-extern ALLEGRO_BITMAP* puzzle10;
-extern ALLEGRO_BITMAP* puzzle11;
-extern ALLEGRO_BITMAP* puzzle12;
-extern ALLEGRO_BITMAP* puzzle13;
-extern ALLEGRO_BITMAP* puzzle14;
-extern ALLEGRO_BITMAP* puzzle15;
-extern ALLEGRO_BITMAP* puzzle16;
-extern ALLEGRO_BITMAP* puzzle17;
-extern ALLEGRO_BITMAP* puzzle18;
-extern ALLEGRO_BITMAP* puzzle19;
-extern ALLEGRO_BITMAP* puzzle20;
-extern ALLEGRO_BITMAP* puzzle21;
-extern ALLEGRO_BITMAP* puzzle22;
-extern ALLEGRO_BITMAP* puzzle23;
-extern ALLEGRO_BITMAP* puzzle24;
-extern ALLEGRO_BITMAP* puzzle25;
+extern ALLEGRO_BITMAP* arrayPuzzle[25];
 extern int contadorCreditos;
 
 // Armazena as informações de cada peça do puzzle
