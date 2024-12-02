@@ -18,27 +18,15 @@ void menu(ALLEGRO_EVENT evento) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		al_draw_filled_rectangle(555, 400, 735, 460, al_map_rgb(200, 100, 20));
 	}
-	else {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-	}
-
-	if ((mouseX >= 555 && mouseX <= 735) && (mouseY >= 480 && mouseY <= 540)) {
+	else if ((mouseX >= 555 && mouseX <= 735) && (mouseY >= 480 && mouseY <= 540)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		al_draw_filled_rectangle(555, 480, 735, 540, al_map_rgb(200, 100, 20));
 	}
-	else {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-	}
-
-	if ((mouseX >= 555 && mouseX <= 735) && (mouseY >= 560 && mouseY <= 620)) {
+	else if ((mouseX >= 555 && mouseX <= 735) && (mouseY >= 560 && mouseY <= 620)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		al_draw_filled_rectangle(555, 560, 735, 620, al_map_rgb(200, 100, 20));
 	}
-	else {
-		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
-	}
-
-	if ((mouseX >= 40 && mouseX <= 150) && (mouseY >= 650 && mouseY <= 690)) {
+	else if ((mouseX >= 40 && mouseX <= 150) && (mouseY >= 650 && mouseY <= 690)) {
 		al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
 		al_draw_filled_rectangle(40, 650, 150, 690, al_map_rgb(200, 100, 20));
 	}

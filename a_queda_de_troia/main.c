@@ -32,8 +32,10 @@ int main() {
 		/*audioJogo(navegacao);*/
 		switch (navegacao) {
 			case 0:
-				/*creditos(event);*/
 				menu(event);
+
+				/*creditos(event);*/
+				/*fase4(event);*/
 				break;
 			case 1:  
 				opcoes(event);
