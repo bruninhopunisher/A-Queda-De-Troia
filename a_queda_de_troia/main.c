@@ -24,6 +24,7 @@ int main() {
 		if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
 			if (event.keyboard.keycode == ALLEGRO_KEY_P) { // Atalho para passar de fase (APENAS DESENVOLVEDORES :p )
 				navegacao += 1;
+				intro = 1;
 			}
 			if (event.keyboard.keycode == ALLEGRO_KEY_O) { // Atalho para DESATIVAR o som (APENAS DESENVOLVEDORES :p )
 				boolVolume = false;
