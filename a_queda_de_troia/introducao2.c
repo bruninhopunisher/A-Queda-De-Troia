@@ -11,25 +11,25 @@ void introducao2(ALLEGRO_EVENT evento) {
 	{
 	case 1:
 		imagemIntro(fundoEmbarcacao1, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 585, ALLEGRO_ALIGN_CENTRE, "Apos roubar Helena de Esparta, ambos fogem para Troia.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 615, ALLEGRO_ALIGN_CENTRE, "Mas essa escolha ira mudar o destino de duas nacoes...");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 500, 600, ALLEGRO_ALIGN_CENTRE, "Apos roubar Helena de Esparta, ambos fogem para Troia.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 500, 630, ALLEGRO_ALIGN_CENTRE, "Mas essa escolha ira mudar o destino de duas nacoes...");
 		break;
 	case 2:
 		imagemIntro(fundoEmbarcacao2, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 585, ALLEGRO_ALIGN_CENTRE, "Voce tem ideia do que fez, Paris? ");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 615, ALLEGRO_ALIGN_CENTRE, "Isso nao e amor, e guerra.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 670, 600, ALLEGRO_ALIGN_CENTRE, "Voce tem ideia do que fez, Paris? ");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 650, 630, ALLEGRO_ALIGN_CENTRE, "Isso nao e amor, e guerra.");
 		break;
 	case 3:
 		imagemIntro(fundoEmbarcacao3, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 585, ALLEGRO_ALIGN_CENTRE, "O amor nao pode ser errado, irmao.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 615, ALLEGRO_ALIGN_CENTRE, "Eu fiz o que o coracao mandou!");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 600, ALLEGRO_ALIGN_CENTRE, "O amor nao pode ser errado, irmao.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 600, 630, ALLEGRO_ALIGN_CENTRE, "Eu fiz o que o coracao mandou!");
 		break;
 	case 4:
 		imagemIntro(fundoMenelau, evento);
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 585, ALLEGRO_ALIGN_CENTRE, "Irmao, isso e mais que uma afronta a minha honra.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 615, ALLEGRO_ALIGN_CENTRE, "toda a Grecia! Troia deve pagar pelo que fez.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 650, ALLEGRO_ALIGN_CENTRE, "Paris nao apenas roubou minha esposa, mas insultou");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 685, ALLEGRO_ALIGN_CENTRE, "toda a Grecia! Troia deve pagar pelo que fez.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 580, ALLEGRO_ALIGN_CENTRE, "Irmao, isso e mais que uma afronta a minha honra.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 610, ALLEGRO_ALIGN_CENTRE, "toda a Grecia! Troia deve pagar pelo que fez.");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 640, ALLEGRO_ALIGN_CENTRE, "Paris nao apenas roubou minha esposa, mas insultou");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 450, 670, ALLEGRO_ALIGN_CENTRE, "toda a Grecia! Troia deve pagar pelo que fez.");
 		break;
 	case 5:
 		imagemIntro(fundoAgamenom, evento);

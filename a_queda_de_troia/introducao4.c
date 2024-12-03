@@ -9,24 +9,24 @@ void introducao4(ALLEGRO_EVENT evento) {
 	switch (intro) {
 	case 1:
 		imagemIntro(pag1, evento);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 830, 535, ALLEGRO_ALIGN_CENTRE, "Aquiles");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 800, 525, ALLEGRO_ALIGN_CENTRE, "Aquiles");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 470, 580, ALLEGRO_ALIGN_CENTRE, "Troia esta ruindo, mas isso nao significa que ja vencemos.");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 470, 620, ALLEGRO_ALIGN_CENTRE, "Os troianos ainda lutam, e voce precisa ser mais rapido");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 470, 660, ALLEGRO_ALIGN_CENTRE, "que eles. Lembre-se: 'A gloria e de quem luta!'");
 		break;
 	case 2:
 		imagemIntro(pag2, evento);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 830, 535, ALLEGRO_ALIGN_CENTRE, "Menelau");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 830, 525, ALLEGRO_ALIGN_CENTRE, "Menelau");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 490, 580, ALLEGRO_ALIGN_CENTRE, "Essa cidade roubou tudo de mim! 'Agora vamos mostrar a eles");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 470, 620, ALLEGRO_ALIGN_CENTRE, "que nem seus muros, nem seus deuses podem salva - los.");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 470, 660, ALLEGRO_ALIGN_CENTRE, "'Nao hesite, nao recue. Troia precisa cair hoje!");
 		break;
 	case 3:
 		imagemIntro(pag3, evento);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 870, 535, ALLEGRO_ALIGN_CENTRE, "Ulisses");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 580, ALLEGRO_ALIGN_CENTRE, "Voce sabe o que esta em jogo aqui. 'Troia caira, nao por sorte,");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 620, ALLEGRO_ALIGN_CENTRE, "mas pela nossa astucia e determinacao.'");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 660, ALLEGRO_ALIGN_CENTRE, " Mostre que voce esta a altura deste destino.");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 870, 525, ALLEGRO_ALIGN_CENTRE, "Ulisses");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 590, ALLEGRO_ALIGN_CENTRE, "Voce sabe o que esta em jogo aqui. 'Troia caira, nao por sorte,");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 630, ALLEGRO_ALIGN_CENTRE, "mas pela nossa astucia e determinacao.'");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 530, 670, ALLEGRO_ALIGN_CENTRE, " Mostre que voce esta a altura deste destino.");
 		break;
 	case 4:
 		imagemIntro(pag4, evento);
