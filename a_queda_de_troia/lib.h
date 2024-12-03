@@ -110,6 +110,7 @@ extern ALLEGRO_BITMAP* ParisDirNormal;
 extern ALLEGRO_BITMAP* ParisDirEsq;
 extern ALLEGRO_BITMAP* ParisDirDir;
 extern ALLEGRO_BITMAP* sprite_atual;
+extern ALLEGRO_BITMAP* sprite_atual2;
 extern int personagemParisX;
 extern int personagemParisY;
 extern int personagemHeitorX;
@@ -185,6 +186,9 @@ extern ALLEGRO_BITMAP* HeitorBaixoD;
 extern ALLEGRO_BITMAP* HeitorLadoN;
 extern ALLEGRO_BITMAP* HeitorLadoE;
 extern ALLEGRO_BITMAP* HeitorLadoD;
+extern ALLEGRO_BITMAP* HeitorLadoEN;
+extern ALLEGRO_BITMAP* HeitorLadoED;
+extern ALLEGRO_BITMAP* HeitorLadoEE;
 
 extern ALLEGRO_BITMAP* HeitorAtaqueB1;
 extern ALLEGRO_BITMAP* HeitorAtaqueB2;

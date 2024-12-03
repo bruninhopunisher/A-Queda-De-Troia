@@ -7,6 +7,7 @@ void fase01(ALLEGRO_EVENT evento) {
 
     // carregando sprite inicial
     sprite_atual = ParisCimaNormal;
+    sprite_atual2 =HeitorCimaN;
 
     if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
         mouseX = evento.mouse.x;
@@ -26,36 +27,45 @@ void fase01(ALLEGRO_EVENT evento) {
         // Determinar o sprite com base na direção e no passo
         if (direcaoY == -1) { //  cima
             sprite_atual = contador_passos == 0 ? ParisCimaEsq : ParisCimaDir;
+            sprite_atual2 = contador_passos == 0 ? HeitorCimaE : HeitorCimaD;
         }
         else if (direcaoY == 1) { //  baixo
             sprite_atual = contador_passos == 0 ? ParisBaixoEsq : ParisBaixoDir;
+            sprite_atual2 = contador_passos == 0 ? HeitorBaixoE : HeitorBaixoD;
         }
         else if (direcaoX == -1) { // esquerda
             sprite_atual = contador_passos == 0 ? ParisEsqEsq : ParisEsqDir;
+           sprite_atual2 = contador_passos == 0 ? HeitorLadoEE : HeitorLadoED;
         }
         else if (direcaoX == 1) { // direita
             sprite_atual = contador_passos == 0 ? ParisDirEsq : ParisDirDir;
+            sprite_atual2 = contador_passos == 0 ? HeitorLadoE : HeitorLadoD;
         }
     }
     else {
         // mantendo sprite da ultima posição, de acordo com os valores acima 
         if (ultima_direcaoY == -1) {
             sprite_atual = ParisCimaNormal;
+            sprite_atual2 = HeitorCimaN;
         }
         else if (ultima_direcaoY == 1) {
             sprite_atual = ParisBaixoNormal;
+            sprite_atual2 = HeitorBaixoN;
         }
         else if (ultima_direcaoX == -1) {
             sprite_atual = ParisEsqNormal;
+            sprite_atual2 = HeitorLadoEN;
         }
         else if (ultima_direcaoX == 1) {
             sprite_atual = ParisDirNormal;
+            sprite_atual2 = HeitorLadoN;
         }
 
     }
 
     // Desenhar o sprite do personagem
     al_draw_bitmap(sprite_atual, personagemParisX, personagemParisY, 0);
+    al_draw_bitmap(sprite_atual2, personagemParisX -50, personagemParisY + 45, 0);
 
     // Desenhar a Helena (caso exista)
     //al_draw_bitmap(personagemHelena, personagemHelenaX, personagemHelenaY, 0);
@@ -105,10 +115,11 @@ void fase01(ALLEGRO_EVENT evento) {
 
 
     // Definindo as novas áreas restritas
-    bool dentro_da_area_restrita1 = (personagemParisX >= 0 && personagemParisX <= 0 && personagemParisY >= 0 && personagemParisY <= 620);
+    bool dentro_da_area_restrita1 = (personagemParisX  >= 0 && personagemParisX <= 0 && personagemParisY >= 0 && personagemParisY <= 620);
     bool dentro_da_area_restrita2 = (personagemParisX >= 0 && personagemParisX <= 695 && personagemParisY == 100);
-    bool dentro_da_area_restrita3 = (personagemParisX >= 0 && personagemParisX <= 1200 && personagemParisY >= 575 && personagemParisY <= 620);
-    bool dentro_da_area_restrita4 = (personagemParisX >= 696 && personagemParisX <= 1069 && personagemParisY >= 100 && personagemParisY <= 292); // Nova área restrita
+    bool dentro_da_area_restrita3 = (personagemParisX >= 0 && personagemParisX <= 1200 && personagemParisY +70 >= 575 && personagemParisY <= 620);
+    bool dentro_da_area_restrita4 = (personagemParisX >= 696 && personagemParisX <= 1069 && personagemParisY + 70 >= 100 && personagemParisY + 70 <= 292);
+
 
     // Verifica colisão com a reta inclinada
     bool colisao_com_reta = false;
@@ -117,7 +128,7 @@ void fase01(ALLEGRO_EVENT evento) {
     if (personagemParisX >= 698 && personagemParisX <= 1069) {
         y_reta = 0.514f * personagemParisX - 254.572f;
 
-        if (personagemParisY == y_reta) {
+        if (personagemParisY  == y_reta) {
             colisao_com_reta = true;
         }
         else if (personagemParisY < y_reta) {
@@ -132,7 +143,7 @@ void fase01(ALLEGRO_EVENT evento) {
     if (personagemParisX >= 692 && personagemParisX <= 1070) {
         y_reta2 = -0.864f * personagemParisX + 1190.23f;
 
-        if (personagemParisY == y_reta2) {
+        if (personagemParisY + 70 == y_reta2) {
             colisao_com_reta = true;
         }
         else if (personagemParisY > y_reta2) {
@@ -146,7 +157,7 @@ void fase01(ALLEGRO_EVENT evento) {
     // Atualiza a posição do personagem se ele estiver em movimento
     if (esta_movendo) {
         // Verifica se o personagem está dentro de uma área restrita
-        if (dentro_da_area_restrita1 || dentro_da_area_restrita2 || dentro_da_area_restrita3 || dentro_da_area_restrita4 || colisao_com_reta || colisao_com_reta2) {
+        if (dentro_da_area_restrita1 || dentro_da_area_restrita2 || dentro_da_area_restrita3 || dentro_da_area_restrita4 || colisao_com_reta || colisao_com_reta2 ) {
             //escape reta 3
             if (dentro_da_area_restrita3) {
                 if (direcaoY < 0) {
@@ -160,7 +171,7 @@ void fase01(ALLEGRO_EVENT evento) {
                 }
             }
             else if (colisao_com_reta) {
-                // Impede movimento para dentro da área restrita abaixo da reta
+                // impede movimento para area restrita
                 if (direcaoY > 0) {
                     personagemParisY += direcaoY * 5; // Permite subir
                     dentro_da_area_restrita1 = false;
@@ -169,7 +180,7 @@ void fase01(ALLEGRO_EVENT evento) {
             }
             else if (colisao_com_reta2) {
                 if (direcaoY > 0) {
-                    personagemParisY += direcaoY * 5; // Permite subir
+                    personagemParisY  += direcaoY * 5; // Permite subir
                 }
 
             }

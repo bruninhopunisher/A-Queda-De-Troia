@@ -575,6 +575,15 @@
     <Image Include="GameOver.jpg">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoED.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoEE.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoEN.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">

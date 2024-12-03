@@ -91,6 +91,7 @@ ALLEGRO_BITMAP* personagemHelena; //Destruido
 ALLEGRO_BITMAP* frente_direito; //Destruido
 ALLEGRO_BITMAP* frente_esquerdo; //Destruido
 ALLEGRO_BITMAP* sprite_atual; //Destruido
+ALLEGRO_BITMAP* sprite_atual2;//destruido
 
 int personagemParisX = 115;
 int personagemParisY = 490;
@@ -137,6 +138,10 @@ ALLEGRO_BITMAP* HeitorBaixoD;
 ALLEGRO_BITMAP* HeitorLadoN;
 ALLEGRO_BITMAP* HeitorLadoE;
 ALLEGRO_BITMAP* HeitorLadoD;
+ALLEGRO_BITMAP* HeitorLadoEN;
+ALLEGRO_BITMAP* HeitorLadoED;
+ALLEGRO_BITMAP* HeitorLadoEE;
+
 
 ALLEGRO_BITMAP* HeitorAtaqueB1;
 ALLEGRO_BITMAP* HeitorAtaqueB2;
@@ -503,7 +508,7 @@ void iniciarConstantes() {
 	frente_direito = al_load_bitmap("Imagens/Fase_01/frente_descendo.jpg");
 	frente_esquerdo = al_load_bitmap("Imagens/Fase_01/frente_descendo_2.jpg");
 	sprite_atual = NULL;
-
+	sprite_atual2 = NULL;
 	testeInicializar(personagemHeitor, "personagemHeitor");
 	testeInicializar(personagemHelena, "personagemHelena");
 	testeInicializar(backgroundFaseUm, "backgroundFaseUm");
@@ -582,6 +587,9 @@ void iniciarConstantes() {
 	HeitorBaixoN = al_load_bitmap("Imagens/Fase_02/heitorBaixoN.jpg");
 	HeitorBaixoE = al_load_bitmap("Imagens/Fase_02/heitorBaixoE.jpg");
 	HeitorBaixoD = al_load_bitmap("Imagens/Fase_02/heitorbaixoD.jpg");
+	HeitorLadoEN = al_load_bitmap("Imagens/Fase_02/heitorLadoEN.png");
+	HeitorLadoED = al_load_bitmap("Imagens/Fase_02/heitorLadoED.png");
+	HeitorLadoEE = al_load_bitmap("Imagens/Fase_02/heitorLadoEE.png");
 	HeitorAtaqueB1 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo1.jpg");
 	HeitorAtaqueB2 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo2.jpg");
 	HeitorAtaqueB3 = al_load_bitmap("Imagens/Fase_02/HataqueBaixo3.jpg");
@@ -1692,7 +1700,9 @@ void destruidor() {
 	al_destroy_bitmap(HeitorCimaN);
 	al_destroy_bitmap(HeitorCimaE);
 	al_destroy_bitmap(HeitorCimaD);
-
+	al_destroy_bitmap(HeitorLadoEN);
+	al_destroy_bitmap(HeitorLadoED);
+	al_destroy_bitmap(HeitorLadoEE);
 	al_destroy_bitmap(HeitorAtaqueB1);
 	al_destroy_bitmap(HeitorAtaqueB2);
 	al_destroy_bitmap(HeitorAtaqueB3);

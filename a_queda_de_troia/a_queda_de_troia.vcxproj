@@ -233,6 +233,9 @@
     <Image Include="ataquebaixo2.jpg" />
     <Image Include="GameOver.jpg" />
     <Image Include="Imagens\Creditos\backgroundCreditos.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoED.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoEE.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoEN.png" />
     <Image Include="Imagens\Fase_04\Aquiles\baixo.png" />
     <Image Include="Imagens\Fase_04\Aquiles\cima.png" />
     <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png" />
