@@ -202,6 +202,17 @@ void fase01(ALLEGRO_EVENT evento) {
             al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 360, ALLEGRO_ALIGN_CENTRE, "PROXIMA FASE");
             al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
             if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+
+                personagemParisX = 115;
+                personagemParisY = 490;
+                esta_movendo = false; // controlar o estado de movimento
+                direcaoX = 0;    // Direção horizontal -1 = esquerda 1 = direita
+                direcaoY = 0;    // Direção vertical -1 = cima, 1 = baixo
+                contador_passos = 0;  // Contador para alternar entre os passos
+                atraso_animacao = 0; // Controlar a velocidade da animação
+                ultima_direcaoX = 0; // Última direção horizontal
+                ultima_direcaoY = 0; // Última direção vertical
+
                 navegacao += 1;
             }
         }

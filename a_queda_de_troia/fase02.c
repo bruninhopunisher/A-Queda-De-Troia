@@ -911,22 +911,34 @@ void fase2(ALLEGRO_EVENT evento) {
 					if (mouseX >= 525 && mouseY >= 360 && mouseX <= 755 && mouseY <= 410) {
 						al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
 						//Configs
-						intro = 1;
-						controleJogador = false;
-						navegacao = 0;
-
-						//Rei
-						positionReiX = 650;
-						positionReiY = 450;
-						vidaReiX = 1170;
-
-						//Paris e Heitor
-						vidaJogador = 300;
+						pressionado = 0;
+						ultPressionado = 0;
+						positionX1_heitor = 615;
+						positionY1_heitor = 225;
+						movimento = 0;
 						positionX1_f2 = 650;
 						positionY1_f2 = 225;
-						positionX1_heitor = 615;
-						positionY1_heitor = 200;
-
+						positionX_espada1 = 605;
+						positionY_espada1 = 275;
+						ladoAtaque = 0;
+						parisCaindoTimer = 0;
+						vidaJogador = 300;
+						limiteAtaque = 0;
+						controleJogador = false;
+						atacando = false;
+						atacou = false;
+						positionReiX = 650;
+						positionReiY = 450;
+						movimentoRei = 0;
+						ataqueReiTimer = 0;
+						vidaReiX = 1170;
+						pontoAndarX = 650;
+						pontoAndarY = 450;
+						movRei = 0;
+						atacouRei = false;
+						timerAtaqueRei = 0;
+						posicaoRei = 4;
+						navegacao = 0;
 					}
 				}
 
@@ -937,6 +949,8 @@ void fase2(ALLEGRO_EVENT evento) {
 					}
 				}
 			}
+
+
 			if (vidaReiX <= 958) {
 				al_draw_bitmap(VitoriaFase2, 0, 0, 0);
 				al_draw_filled_rectangle(525, 480, 755, 530, al_map_rgb(242, 183, 64));
@@ -950,6 +964,33 @@ void fase2(ALLEGRO_EVENT evento) {
 				if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 					if (mouseX >= 525 && mouseY >= 480 && mouseX <= 755 && mouseY <= 530) {
 						al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+						pressionado = 0;
+						ultPressionado = 0;
+						positionX1_heitor = 615;
+						positionY1_heitor = 225;
+						movimento = 0;
+						positionX1_f2 = 650;
+						positionY1_f2 = 225;
+						positionX_espada1 = 605;
+						positionY_espada1 = 275;
+						ladoAtaque = 0;
+						parisCaindoTimer = 0;
+						vidaJogador = 300;
+						limiteAtaque = 0;
+						controleJogador = false;
+						atacando = false;
+						atacou = false;
+						positionReiX = 650;
+						positionReiY = 450;
+						movimentoRei = 0;
+						ataqueReiTimer = 0;
+						vidaReiX = 1170;
+						pontoAndarX = 650;
+						pontoAndarY = 450;
+						movRei = 0;
+						atacouRei = false;
+						timerAtaqueRei = 0;
+						posicaoRei = 4;
 						navegacao += 1;
 					}
 				}
