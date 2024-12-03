@@ -41,9 +41,9 @@ char nomes[13][100] = {
 	"DESENVOLVIDO POR",
 	"BCC - TURMA A - 2024",
 	"Bruno Silva Souza",
-	"Caua",
-	"Keila",
-	"Lucas Pinheiro",
+	"Caua Mendes Gomes",
+	"Keila Suellen Santos Sacramento",
+	"Lucas Pinheiro da Costa Pedrosa",
 	"Lucas Sa Magalhaes",
 	"OBRIGADO POR JOGAR!",
 	"Ate a proxima!"

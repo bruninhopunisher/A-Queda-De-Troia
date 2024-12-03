@@ -39,7 +39,7 @@ void menu(ALLEGRO_EVENT evento) {
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 645, 565, ALLEGRO_ALIGN_CENTRE, "CREDITOS");
 	al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 96, 648, ALLEGRO_ALIGN_CENTRE, "SAIR");
 	al_flip_display();
-	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
+	if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 		if ((mouseX >= 555 && mouseX <= 735) && (mouseY >= 400 && mouseY <= 460)) {
 			navegacao += 3; // Iniciar
 		}
@@ -50,7 +50,7 @@ void menu(ALLEGRO_EVENT evento) {
 			navegacao += 2; // Creditos
 		}
 		else if ((mouseX >= 40 && mouseX <= 150) && (mouseY >= 650 && mouseY <= 690)) {
-			rodando = false;
+			rodando = false; // SAIR
 		}
 	}
 }
