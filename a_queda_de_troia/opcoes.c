@@ -7,7 +7,7 @@ void opcoes(ALLEGRO_EVENT evento) {
 		mouseAxesY = evento.mouse.y;
 	}
 
-	al_draw_bitmap(backgroundOpcoes, 0, 0, 0);
+	al_draw_bitmap(backgroundMenu, 0, 0, 0);
 	al_draw_bitmap(semVolume, 500, 300, 0);
 	al_draw_bitmap(comVolume, 700, 300, 0);
 

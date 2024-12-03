@@ -39,6 +39,14 @@ void reiniciar() { //Reinicia a fase
 	}
 }
 void fase4(ALLEGRO_EVENT evento) {
+
+	if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) {
+		mouseAxesX = evento.mouse.x;
+		mouseAxesY = evento.mouse.y;
+		/*printf("\nMOUSE X %d\n", mouseX);
+		printf("MOUSE Y %d\n", mouseY);*/
+	}
+
 	if (gameOver == false) {
 		al_draw_bitmap(backgroundFase04, 0, 0, 0); //Background 1280x720
 		al_draw_textf(fonteIntro1, al_map_rgb(255, 255, 255), 640, 0, ALLEGRO_ALIGN_CENTRE, "vidas: %d", vidaF4);
@@ -230,6 +238,14 @@ void fase4(ALLEGRO_EVENT evento) {
 		al_draw_filled_rectangle(561, 573, 719, 615, al_map_rgb(222, 158, 30));
 		al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 570, ALLEGRO_ALIGN_CENTRE, "Menu");
 		al_flip_display();
+
+		if ((mouseAxesX >= 560 && mouseAxesX <= 720) && (mouseAxesY >= 565 && mouseAxesY <= 615)) {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+		}
+		else {
+			al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+		}
+
 		if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
 			//Clicar Menu direciona para o Menu
 			if (evento.mouse.x >= 560 && evento.mouse.x <= 720 && evento.mouse.y >= 565 && evento.mouse.y <= 615) {
