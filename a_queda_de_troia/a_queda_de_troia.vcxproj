@@ -255,6 +255,9 @@
     <Image Include="Imagens\Introducao_1\mapa_atenas.png" />
     <Image Include="Imagens\Introducao_1\mapa_grecia.png" />
     <Image Include="Imagens\Introducao_1\mapa_troia.png" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao1.jpeg" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao2.jpeg" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao3.jpeg" />
     <Image Include="intro1Fase2.jpg" />
     <Image Include="intro2Fase2.jpg" />
     <Image Include="intro3Fase2.jpg" />

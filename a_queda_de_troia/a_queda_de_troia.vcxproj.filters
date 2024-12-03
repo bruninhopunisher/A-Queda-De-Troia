@@ -584,6 +584,15 @@
     <Image Include="Imagens\Fase_02\heitorLadoEN.png">
       <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
     </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao1.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao2.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao3.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
