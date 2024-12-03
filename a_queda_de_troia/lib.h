@@ -48,7 +48,7 @@ extern bool iniciaFuncao;
 extern bool destroiVariaveis;
 
 //Audios e Musicas
-extern ALLEGRO_SAMPLE* audioMenu;
+extern ALLEGRO_SAMPLE* Som;
 
 //Opções
 extern ALLEGRO_BITMAP* backgroundOpcoes;
@@ -116,10 +116,6 @@ extern ALLEGRO_BITMAP* sprite_atual;
 extern ALLEGRO_BITMAP* sprite_atual2;
 extern int personagemParisX;
 extern int personagemParisY;
-extern int personagemHeitorX;
-extern int personagemHeitorY;
-extern int personagemHelenaX;
-extern int personagemHelenaY;
 bool esta_movendo;
 extern int direcaoX;
 extern int direcaoY;
@@ -457,7 +453,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 void testeInicializar(bool metodo, char* referencia);
 void iniciarAddons();
 void iniciarConstantes();
-void audioJogo(int navegacao);
+void audioJogo();
 void imagemIntro(ALLEGRO_BITMAP* image, ALLEGRO_EVENT evento);
 void destruidor();
 

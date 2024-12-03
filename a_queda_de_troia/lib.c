@@ -97,10 +97,6 @@ ALLEGRO_BITMAP* sprite_atual2;//destruido
 
 int personagemParisX = 115;
 int personagemParisY = 490;
-int personagemHeitorX = 115;
-int personagemHeitorY = 490;
-int personagemHelenaX = 1150;
-int personagemHelenaY = 585;
 bool esta_movendo = false; // controlar o estado de movimento
 int direcaoX = 0;    // Direção horizontal -1 = esquerda 1 = direita
 int direcaoY = 0;    // Direção vertical -1 = cima, 1 = baixo
@@ -375,7 +371,7 @@ int fleY[32] = { 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 70, 670, 
 int fleZ[32] = { 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2 };
 //Fim Fase 04
 //Audios e Musicas
-ALLEGRO_SAMPLE* audioMenu; //Destruido
+ALLEGRO_SAMPLE* Som; //Destruido
 
 void testeInicializar(bool metodo, char* referencia) {
 	if (!metodo) {
@@ -413,8 +409,8 @@ void iniciarConstantes() {
 	font = al_load_ttf_font("Fontes/MateSC-Regular.ttf", 35, 0);
 
 	//Audios Jogo
-	audioMenu = al_load_sample("Audios/audio_menu.mp3");
-	testeInicializar(audioMenu, "audio_menu");
+	Som = al_load_sample("Audios/audio.mp3");
+	testeInicializar(Som, "audio");
 
 	//TAMANHO E CRIAÇÃO DO DISPLAY
 	displayX = 1280;	
@@ -1568,33 +1564,12 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 	}
 }
 
-void audioJogo(int navegacao) {
+void audioJogo() {
 	if (boolVolume == false) {
 		al_stop_samples();
 	}
 	else {
-		switch (navegacao) {
-		case 0:
-			//Audio menu
-			al_play_sample(audioMenu, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-			break;
-		case 1:
-			//Audio Introdução
-			al_play_sample(audioMenu, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-			break;
-		case 2:
-			//Audio opções
-			al_play_sample(audioMenu, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-			break;
-		case 3:
-			//Audio fase 1
-			al_play_sample(audioMenu, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-			break;
-		case 4:
-			//Audio fase 2
-			al_play_sample(audioMenu, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
-			break;
-		}
+		al_play_sample(Som, 0.4, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
 	}
 }
 
@@ -1626,10 +1601,10 @@ void destruidor() {
 	//Global
 	al_destroy_timer(timer);
 	al_destroy_event_queue(evento);
-	/*al_destroy_display(display);*/
+	al_destroy_display(display);
 
 	//Audios e Musicas
-	al_destroy_sample(audioMenu);
+	al_destroy_sample(Som);
 
 	//Menu
 	al_destroy_bitmap(backgroundMenu);

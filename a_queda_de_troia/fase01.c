@@ -12,7 +12,6 @@ void fase01(ALLEGRO_EVENT evento) {
     if (evento.type == ALLEGRO_EVENT_MOUSE_AXES) { // Remover posterior
         mouseX = evento.mouse.x;
         mouseY = evento.mouse.y;
-        printf("X: %d Y: %d \n\n", mouseX, mouseY);
     }
 
     //alterna entre o pe dir e esq
@@ -62,14 +61,9 @@ void fase01(ALLEGRO_EVENT evento) {
         }
 
     }
-
     // Desenhar o sprite do personagem
     al_draw_bitmap(sprite_atual, personagemParisX, personagemParisY, 0);
-    al_draw_bitmap(sprite_atual2, personagemParisX -50, personagemParisY + 45, 0);
-
-    // Desenhar a Helena (caso exista)
-    //al_draw_bitmap(personagemHelena, personagemHelenaX, personagemHelenaY, 0);
-
+    al_draw_bitmap(sprite_atual2, personagemParisX -10, personagemParisY + 45, 0);
     // Verificar o evento
     if (evento.type == ALLEGRO_EVENT_KEY_DOWN) {
         esta_movendo = true; // Inicia o movimento
@@ -106,21 +100,16 @@ void fase01(ALLEGRO_EVENT evento) {
             direcaoX = 0;
             break;
         }
-
         // Para o movimento se nenhuma tecla de direção estiver pressionada
         if (direcaoX == 0 && direcaoY == 0) {
             esta_movendo = false;
         }
     }
-
-
     // Definindo as novas áreas restritas
     bool dentro_da_area_restrita1 = (personagemParisX == 0  && personagemParisY >= 0 && personagemParisY <= 620);
     bool dentro_da_area_restrita2 = (personagemParisX >= 0 && personagemParisX <= 695 && personagemParisY == 100);
     bool dentro_da_area_restrita3 = (personagemParisX >= 0 && personagemParisX <= 1200 && personagemParisY +70 >= 575 && personagemParisY <= 620);
     bool dentro_da_area_restrita4 = (personagemParisX >= 696 && personagemParisX <= 1069 && personagemParisY + 70 >= 100 && personagemParisY + 70 <= 292);
-
-
     // Verifica colisão com a reta inclinada
     bool colisao_com_reta = false;
     float y_reta = 0.0f;
@@ -136,7 +125,6 @@ void fase01(ALLEGRO_EVENT evento) {
             personagemParisY = y_reta;
         }
     }
-
     bool colisao_com_reta2 = false;
     float y_reta2 = 0.0f;
 
@@ -151,9 +139,6 @@ void fase01(ALLEGRO_EVENT evento) {
             personagemParisY = y_reta2;
         }
     }
-
-
-
     // Atualiza a posição do personagem se ele estiver em movimento
     if (esta_movendo) {
         // Verifica se o personagem está dentro de uma área restrita
@@ -176,7 +161,6 @@ void fase01(ALLEGRO_EVENT evento) {
                     personagemParisY += direcaoY * 5; // Permite subir
                     dentro_da_area_restrita1 = false;
                 }
-
             }
             else if (colisao_com_reta2) {
                 if (direcaoY > 0) {
@@ -207,20 +191,16 @@ void fase01(ALLEGRO_EVENT evento) {
         ultima_direcaoX = direcaoX;
         ultima_direcaoY = direcaoY;
     }
-
-
     // Verificar colisão com a area  da próxima fase
     if ((personagemParisX >= 700 && personagemParisX <= 841) && (personagemParisY >= 250 && personagemParisY <= 304)) {
         al_draw_filled_rectangle(0, 0, 1280, 720, al_map_rgba(50, 50, 50, 128));
         al_draw_filled_rectangle(500, 350, 780, 410, al_map_rgba(50, 50, 50, 128));
         al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 360, ALLEGRO_ALIGN_CENTRE, "PROXIMA FASE");
-
         // Verifica se o mouse  dentro da area do botão
         if ((mouseX >= 500 && mouseX <= 780) && (mouseY >= 350 && mouseY <= 410)) {
             al_draw_filled_rectangle(500, 350, 780, 410, al_map_rgb(255, 165, 0));
             al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 640, 360, ALLEGRO_ALIGN_CENTRE, "PROXIMA FASE");
             al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
-
             if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP) {
                 navegacao += 1;
             }
@@ -229,7 +209,5 @@ void fase01(ALLEGRO_EVENT evento) {
             al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
         }
     }
-
-
     al_flip_display();
 }

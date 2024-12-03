@@ -29,7 +29,7 @@ int main() {
 				boolVolume = false;
 			}
 		}
-		/*audioJogo(navegacao);*/
+		audioJogo();
 		switch (navegacao) {
 			case 0:
 				menu(event);
