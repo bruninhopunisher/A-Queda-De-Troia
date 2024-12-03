@@ -83,6 +83,8 @@
     <Allegro_AddonFont>true</Allegro_AddonFont>
     <Allegro_AddonColor>true</Allegro_AddonColor>
     <Allegro_AddonVideo>true</Allegro_AddonVideo>
+    <CustomBuildAfterTargets>Clean</CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>Clean</CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,42 +144,225 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="creditos.c" />
+    <ClCompile Include="fase02.c" />
+    <ClCompile Include="fase01.c" />
+    <ClCompile Include="fase03.c" />
+    <ClCompile Include="fase04.c" />
     <ClCompile Include="introducao1.c" />
+    <ClCompile Include="introducao2.c" />
+    <ClCompile Include="introducao3.c" />
+    <ClCompile Include="introducao4.c" />
     <ClCompile Include="lib.c" />
     <ClCompile Include="main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
     </ClCompile>
     <ClCompile Include="menu.c" />
+    <ClCompile Include="opcoes.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag1.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag2.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag3.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag4.jpg" />
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag5.jpg" />
+    <Image Include="..\..\introduçao 3\pagina1.jpg" />
+    <Image Include="..\..\introduçao 3\pagina2.jpg" />
+    <Image Include="..\..\introduçao 3\pagina3.jpg" />
+    <Image Include="..\..\introduçao 3\pagina4.jpg" />
+    <Image Include="..\..\introduçao 3\pagina5.jpg" />
+    <Image Include="..\..\introduçao 3\pagina6.jpg" />
+    <Image Include="..\..\introduçao 3\pagina7.jpg" />
+    <Image Include="ataquebaixo1.jpg" />
+    <Image Include="ataquebaixo3.jpg" />
+    <Image Include="ataquebaixo4.jpg" />
+    <Image Include="ataquecima1.jpg" />
+    <Image Include="ataquecima2.jpg" />
+    <Image Include="ataquecima3.jpg" />
+    <Image Include="ataquecima4.jpg" />
+    <Image Include="ataquelado1.jpg" />
+    <Image Include="ataquelado2.jpg" />
+    <Image Include="ataquelado3.jpg" />
+    <Image Include="ataquelado4.jpg" />
+    <Image Include="ataqueRbaixo1.jpg" />
+    <Image Include="ataqueRbaixo2.jpg" />
+    <Image Include="ataqueRbaixo3.jpg" />
+    <Image Include="ataqueRbaixo4.jpg" />
+    <Image Include="ataqueRcima1.jpg" />
+    <Image Include="ataqueRcima2.jpg" />
+    <Image Include="ataqueRcima3.jpg" />
+    <Image Include="ataqueRcima4.jpg" />
+    <Image Include="ataqueRlado1.jpg" />
+    <Image Include="ataqueRlado2.jpg" />
+    <Image Include="ataqueRlado3.jpg" />
+    <Image Include="ataqueRlado4.jpg" />
+    <Image Include="background-f2.jpg" />
+    <Image Include="barra-vida-50R.jpg" />
+    <Image Include="barra-vida-cheia.jpg" />
+    <Image Include="barra-vida-baixa.jpg" />
+    <Image Include="barra-vida-100R-f2.jpg" />
+    <Image Include="espada-rei-f2.jpg" />
+    <Image Include="espada1-player-f2.jpg" />
+    <Image Include="fundo1Intro1.jpg" />
+    <Image Include="fundo2Intro1.jpg" />
+    <Image Include="fundo3Intro1.jpg" />
+    <Image Include="fundoAgamenom.jpg" />
+    <Image Include="fundoMenelau.jpg" />
+    <Image Include="HataqueBaixo1.jpg" />
+    <Image Include="HataqueBaixo2.jpg" />
+    <Image Include="HataqueBaixo3.jpg" />
+    <Image Include="HataqueBaixo4.jpg" />
+    <Image Include="HataqueCima1.jpg" />
+    <Image Include="HataqueCima2.jpg" />
+    <Image Include="HataqueCima3.jpg" />
+    <Image Include="HataqueCima4.jpg" />
+    <Image Include="HataqueLado1.jpg" />
+    <Image Include="HataqueLado2.jpg" />
+    <Image Include="HataqueLado3.jpg" />
+    <Image Include="HataqueLado4.jpg" />
+    <Image Include="heitorBaixoD.jpg" />
+    <Image Include="heitorBaixoE.jpg" />
+    <Image Include="heitorBaixoN.jpg" />
+    <Image Include="heitorCimaD.jpg" />
+    <Image Include="heitorCimaE.jpg" />
+    <Image Include="heitorCimaN.jpg" />
+    <Image Include="heitorLadoD.jpg" />
+    <Image Include="heitorLadoE.jpg" />
+    <Image Include="heitorLadoN.jpg" />
+    <Image Include="helenaIntro1.jpg" />
+    <Image Include="ataquebaixo2.jpg" />
+    <Image Include="GameOver.jpg" />
+    <Image Include="Imagens\Creditos\backgroundCreditos.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoED.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoEE.png" />
+    <Image Include="Imagens\Fase_02\heitorLadoEN.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\baixo.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\cima.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo1.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\lado_0.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\lado_1.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\subindo0.png" />
+    <Image Include="Imagens\Fase_04\Aquiles\subindo1.png" />
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_1.png" />
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_2.png" />
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_1.png" />
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_2.png" />
+    <Image Include="Imagens\Fase_04\Background\backgroundF4.png" />
+    <Image Include="Imagens\Fase_04\flexa.png" />
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_0.png" />
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_1.png" />
+    <Image Include="Imagens\Introducao_1\mapa_atenas.png" />
+    <Image Include="Imagens\Introducao_1\mapa_grecia.png" />
+    <Image Include="Imagens\Introducao_1\mapa_troia.png" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao1.jpeg" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao2.jpeg" />
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao3.jpeg" />
+    <Image Include="intro1Fase2.jpg" />
+    <Image Include="intro2Fase2.jpg" />
+    <Image Include="intro3Fase2.jpg" />
+    <Image Include="MenelauBaixo1.jpg" />
+    <Image Include="MenelauBaixo2.jpg" />
+    <Image Include="MenelauBaixo3.jpg" />
+    <Image Include="MenelauBaixoN.jpg" />
+    <Image Include="MenelauCima1.jpg" />
+    <Image Include="MenelauCima2.jpg" />
+    <Image Include="MenelauCima3.jpg" />
+    <Image Include="MenelauCimaN.jpg" />
+    <Image Include="MenelauEsqDir1.jpg" />
+    <Image Include="MenelauEsqDir2.jpg" />
+    <Image Include="MenelauEsqDir3.jpg" />
+    <Image Include="MenelauEsqN.jpg" />
+    <Image Include="ParisBaixoNormal.jpg" />
+    <Image Include="Imagens\Fase_01\background_fase_um.jpg" />
+    <Image Include="Imagens\Fase_01\frente_descendo.jpg" />
+    <Image Include="Imagens\Fase_01\frente_descendo_2.jpg" />
+    <Image Include="Imagens\Fase_01\heitor_um.png" />
+    <Image Include="Imagens\Fase_01\helena_um.png" />
+    <Image Include="Imagens\Fase_03\1.jpg" />
+    <Image Include="Imagens\Fase_03\10.jpg" />
+    <Image Include="Imagens\Fase_03\11.jpg" />
+    <Image Include="Imagens\Fase_03\12.jpg" />
+    <Image Include="Imagens\Fase_03\13.jpg" />
+    <Image Include="Imagens\Fase_03\14.jpg" />
+    <Image Include="Imagens\Fase_03\15.jpg" />
+    <Image Include="Imagens\Fase_03\16.jpg" />
+    <Image Include="Imagens\Fase_03\17.jpg" />
+    <Image Include="Imagens\Fase_03\18.jpg" />
+    <Image Include="Imagens\Fase_03\19.jpg" />
+    <Image Include="Imagens\Fase_03\2.jpg" />
+    <Image Include="Imagens\Fase_03\20.jpg" />
+    <Image Include="Imagens\Fase_03\21.jpg" />
+    <Image Include="Imagens\Fase_03\22.jpg" />
+    <Image Include="Imagens\Fase_03\23.jpg" />
+    <Image Include="Imagens\Fase_03\24.jpg" />
+    <Image Include="Imagens\Fase_03\25.jpg" />
+    <Image Include="Imagens\Fase_03\3.jpg" />
+    <Image Include="Imagens\Fase_03\4.jpg" />
+    <Image Include="Imagens\Fase_03\5.jpg" />
+    <Image Include="Imagens\Fase_03\6.jpg" />
+    <Image Include="Imagens\Fase_03\7.jpg" />
+    <Image Include="Imagens\Fase_03\8.jpg" />
+    <Image Include="Imagens\Fase_03\9.jpg" />
+    <Image Include="Imagens\Fase_03\img_fundo.jpg" />
+    <Image Include="Imagens\Fase_03\img_original.jpg" />
     <Image Include="Imagens\Img Testes\backgroundI1.jpg" />
-    <Image Include="Imagens\Introducao_1\intro1.jpg" />
-    <Image Include="Imagens\Introducao_1\intro2.jpg" />
-    <Image Include="Imagens\Introducao_1\intro3.jpg" />
-    <Image Include="Imagens\Introducao_1\intro4.jpg" />
-    <Image Include="Imagens\Introducao_1\intro5.jpg" />
-    <Image Include="Imagens\Introducao_1\intro6.jpg" />
-    <Image Include="Imagens\Introducao_1\intro7.jpg" />
     <Image Include="Imagens\Menu\background_login.jpg" />
+    <Image Include="Imagens\Opcoes\background_opcoes.png" />
+    <Image Include="Imagens\Opcoes\sem-som.png" />
+    <Image Include="Imagens\Opcoes\som-musical-hover.png" />
+    <Image Include="Imagens\Opcoes\som-musical.png" />
+    <Image Include="ParisBaixoDir.jpg" />
+    <Image Include="ParisBaixoEsq.jpg" />
+    <Image Include="parisCaindo1.jpg" />
+    <Image Include="parisCaindo2.jpg" />
+    <Image Include="parisCaindo3.jpg" />
+    <Image Include="parisCaindo4.jpg" />
+    <Image Include="parisCaindo5.jpg" />
+    <Image Include="ParisCimaDir.jpg" />
+    <Image Include="ParisCimaEsq.jpg" />
+    <Image Include="ParisCimaNormal.jpg" />
+    <Image Include="ParisDirDir.jpg" />
+    <Image Include="ParisDirEsq.jpg" />
+    <Image Include="ParisDirNormal.jpg" />
+    <Image Include="ParisEsqDir.jpg" />
+    <Image Include="ParisEsqEsq.jpg" />
+    <Image Include="ParisEsqNormal.jpg" />
+    <Image Include="ParisIntro1.jpg" />
+    <Image Include="soldadosEsparta.jpg" />
+    <Image Include="soldadosTroia.jpg" />
+    <Image Include="VitoriaFase2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="creditos.h" />
+    <ClInclude Include="fase02.h" />
+    <ClInclude Include="fase03.h" />
+    <ClInclude Include="fase04.h" />
     <ClInclude Include="introducao1.h" />
+    <ClInclude Include="introducao2.h" />
+    <ClInclude Include="introducao3.h" />
+    <ClInclude Include="introducao4.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="opcoes.h" />
+    <ClInclude Include="fase01.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audios\audio_menu.mp3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets" Condition="Exists('..\packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets')" />
-    <Import Project="..\packages\Allegro.5.2.9\build\native\Allegro.targets" Condition="Exists('..\packages\Allegro.5.2.9\build\native\Allegro.targets')" />
+    <Import Project="..\packages\AllegroDeps.1.15.0\build\native\AllegroDeps.targets" Condition="Exists('..\packages\AllegroDeps.1.15.0\build\native\AllegroDeps.targets')" />
+    <Import Project="..\packages\Allegro.5.2.10\build\native\Allegro.targets" Condition="Exists('..\packages\Allegro.5.2.10\build\native\Allegro.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets'))" />
-    <Error Condition="!Exists('..\packages\Allegro.5.2.9\build\native\Allegro.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Allegro.5.2.9\build\native\Allegro.targets'))" />
+    <Error Condition="!Exists('..\packages\AllegroDeps.1.15.0\build\native\AllegroDeps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AllegroDeps.1.15.0\build\native\AllegroDeps.targets'))" />
+    <Error Condition="!Exists('..\packages\Allegro.5.2.10\build\native\Allegro.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Allegro.5.2.10\build\native\Allegro.targets'))" />
   </Target>
 </Project>

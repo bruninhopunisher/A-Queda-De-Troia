@@ -5,13 +5,40 @@
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClCompile>
     <ClCompile Include="introducao1.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 1</Filter>
     </ClCompile>
     <ClCompile Include="menu.c">
-      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Menu</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="opcoes.c">
+      <Filter>Arquivos de Cabeçalho\Opções</Filter>
+    </ClCompile>
+    <ClCompile Include="fase01.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 1</Filter>
+    </ClCompile>
+    <ClCompile Include="fase02.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 2</Filter>
+    </ClCompile>
+    <ClCompile Include="fase03.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
+    </ClCompile>
+    <ClCompile Include="fase04.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao2.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao3.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
+    </ClCompile>
+    <ClCompile Include="introducao4.c">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
+    </ClCompile>
+    <ClCompile Include="creditos.c">
+      <Filter>Arquivos de Cabeçalho\Créditos</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -19,43 +46,553 @@
       <Filter>Arquivos de Cabeçalho\Bibliotecas</Filter>
     </ClInclude>
     <ClInclude Include="introducao1.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução</Filter>
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 1</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
-      <Filter>Arquivos de Cabeçalho\Telas\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="opcoes.h">
+      <Filter>Arquivos de Cabeçalho\Opções</Filter>
+    </ClInclude>
+    <ClInclude Include="fase01.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 1</Filter>
+    </ClInclude>
+    <ClInclude Include="fase02.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 2</Filter>
+    </ClInclude>
+    <ClInclude Include="fase03.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 3</Filter>
+    </ClInclude>
+    <ClInclude Include="fase04.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Fase 4</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao2.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 2</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao3.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 3</Filter>
+    </ClInclude>
+    <ClInclude Include="introducao4.h">
+      <Filter>Arquivos de Cabeçalho\Jogo\Introdução 4</Filter>
+    </ClInclude>
+    <ClInclude Include="creditos.h">
+      <Filter>Arquivos de Cabeçalho\Créditos</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Imagens\Menu\background_login.jpg">
-      <Filter>Arquivos de Origem\Imagens\Menu</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\Menu</Filter>
     </Image>
     <Image Include="Imagens\Img Testes\backgroundI1.jpg">
-      <Filter>Arquivos de Origem\Imagens\IMG Testes</Filter>
+      <Filter>Arquivos de Cabeçalho\Imagens\IMG Testes</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro1.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Opcoes\background_opcoes.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro2.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Opcoes\sem-som.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro3.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Opcoes\som-musical.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro4.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Opcoes\som-musical-hover.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Opções</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro5.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Fase_03\1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro6.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Fase_03\2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
     </Image>
-    <Image Include="Imagens\Introducao_1\intro7.jpg">
-      <Filter>Arquivos de Origem\Imagens\Introdução 1</Filter>
+    <Image Include="Imagens\Fase_03\3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Image Include="Imagens\Fase_03\4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\6.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\7.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\8.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\9.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\10.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\11.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\12.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\13.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\14.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\15.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\16.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\17.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\18.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\19.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\20.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\21.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\22.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\23.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\24.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\25.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\img_original.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_03\img_fundo.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 3</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\background_fase_um.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\frente_descendo.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\frente_descendo_2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\heitor_um.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_01\helena_um.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 1</Filter>
+    </Image>
+    <Image Include="helenaIntro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="ParisIntro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="ParisBaixoNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisBaixoEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisBaixoDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="espada-rei-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="espada1-player-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-cheia.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-baixa.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-100R-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="barra-vida-50R.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="ParisEsqNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisEsqEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisEsqDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisDirDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaNormal.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaEsq.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ParisCimaDir.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="background-f2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="fundoMenelau.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="fundoAgamenom.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="soldadosEsparta.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina6.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="..\..\introduçao 3\pagina7.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3</Filter>
+    </Image>
+    <Image Include="fundo1Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="fundo2Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="fundo3Intro1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\mapa_atenas.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\mapa_troia.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_1\mapa_grecia.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1</Filter>
+    </Image>
+    <Image Include="ataquebaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquebaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="soldadosTroia.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="..\..\..\Downloads\Untitled (1)\pag4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4</Filter>
+    </Image>
+    <Image Include="MenelauEsqN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCimaN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauBaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauCima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="MenelauEsqDir3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Frente_2.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Arqueiro\arqueiro_Costas_2.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\flexa.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\baixo.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\cima.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\frente_descendo1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\subindo0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Aquiles\subindo1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_0.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Lanceiro\Lanc_Lado_1.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_04\Background\backgroundF4.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Background</Filter>
+    </Image>
+    <Image Include="Imagens\Creditos\backgroundCreditos.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Créditos</Filter>
+    </Image>
+    <Image Include="ataquecima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquecima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="ataquelado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="parisCaindo5.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis</Filter>
+    </Image>
+    <Image Include="heitorLadoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorLadoE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorLadoD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorCimaD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoN.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoE.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="heitorBaixoD.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueLado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueCima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="HataqueBaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor</Filter>
+    </Image>
+    <Image Include="ataqueRlado1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRlado4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRcima4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo1.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo3.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="ataqueRbaixo4.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau</Filter>
+    </Image>
+    <Image Include="VitoriaFase2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="intro1Fase2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="intro2Fase2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="intro3Fase2.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="GameOver.jpg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoED.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoEE.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Fase_02\heitorLadoEN.png">
+      <Filter>Arquivos de Cabeçalho\Imagens\Fases\Fase 2</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao1.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao2.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
+    <Image Include="Imagens\Introducao_2\fundoEmbarcacao3.jpeg">
+      <Filter>Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Arquivos de Cabeçalho">
@@ -64,47 +601,133 @@
     <Filter Include="Arquivos de Cabeçalho\Bibliotecas">
       <UniqueIdentifier>{1ec26c51-00c6-48d2-970e-021124b0f7b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas">
-      <UniqueIdentifier>{d2ed3b90-e109-4e83-9ef3-39937faad5cd}</UniqueIdentifier>
+    <Filter Include="Arquivos de Recurso">
+      <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Créditos">
-      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo">
+    <Filter Include="Arquivos de Cabeçalho\Jogo">
       <UniqueIdentifier>{ec0510ec-928a-421c-96d8-70998e59ecbf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Menu">
-      <UniqueIdentifier>{e6fddd6a-de88-454a-9877-ab7bf244d685}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Opções">
-      <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01">
-      <UniqueIdentifier>{2e9df5a0-3d26-488b-bc92-a99b0bc9375a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Fase">
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 1">
       <UniqueIdentifier>{2d334e0d-f659-40df-a6a2-9140893761dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Telas\Jogo\Fase01\Introdução">
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 2">
+      <UniqueIdentifier>{8dcecaa8-c540-44b1-afce-21e2b29d7e74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 3">
+      <UniqueIdentifier>{b70c0484-c1ba-4194-bfaf-e51a262008d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 1">
       <UniqueIdentifier>{88dd37b3-294d-45be-8f9a-3fdeb63e5cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 2">
+      <UniqueIdentifier>{7f467c5d-4191-435b-8924-389c5785504b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 3">
+      <UniqueIdentifier>{15d011b9-87bd-49ca-8e48-64997ae4e0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 4">
+      <UniqueIdentifier>{4262aecf-0eb2-4637-a7a1-b496ec40d8c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Introdução 5">
+      <UniqueIdentifier>{cd0df1b1-37b2-4f9c-90d8-88983e2acd37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Menu">
+      <UniqueIdentifier>{e6fddd6a-de88-454a-9877-ab7bf244d685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Opções">
+      <UniqueIdentifier>{78d22007-871e-44f7-962e-7465cb4deae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Audios">
+      <UniqueIdentifier>{d0ae61bb-95e2-4826-99a5-d4e720863652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens">
+      <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Menu">
+      <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\IMG Testes">
+      <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Opções">
+      <UniqueIdentifier>{6cdda049-104c-478c-a75e-2389052c290c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases">
+      <UniqueIdentifier>{faf92c3b-40cf-440b-8df8-e45593d3c65b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2">
+      <UniqueIdentifier>{5cb9d68f-0b6d-4b2f-b4d0-6abd978e9a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 1">
+      <UniqueIdentifier>{fd3cf576-319d-40f3-ab19-f735daeb6efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 3">
+      <UniqueIdentifier>{ba67b6aa-db8e-4b26-be3b-61315295ed86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 3\Quebra-Cabeça">
+      <UniqueIdentifier>{bfb31db2-37dc-44e8-a975-f728ed8c6fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções">
+      <UniqueIdentifier>{6d2acc2a-4b20-43a1-832e-def046fe6e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 5">
+      <UniqueIdentifier>{3b331268-3f4b-4cdc-901d-28aa7f811c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 4">
+      <UniqueIdentifier>{7287c894-030d-4b7b-96b8-1b5fd1a7362a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 3">
+      <UniqueIdentifier>{f92e830a-517c-4325-b40c-a8be5612f785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 2">
+      <UniqueIdentifier>{073b627a-0a77-4fb6-acd0-838fbb6e2c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Introduções\Introdução 1">
+      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Jogo\Fase 4">
+      <UniqueIdentifier>{b5aba31b-7410-4d74-b55a-5c9030f232e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoParis">
+      <UniqueIdentifier>{ec77e31f-12bf-4a9e-9dde-f6314bbdaf20}</UniqueIdentifier>
     </Filter>
     <Filter Include="Arquivos de Origem">
       <UniqueIdentifier>{3c2ec262-f8af-4b4e-b85f-fd6ddbba1a49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Recurso">
-      <UniqueIdentifier>{3c9c56ac-6d83-4724-adec-bd28d76a148f}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4">
+      <UniqueIdentifier>{b0929e43-a9cb-40eb-86e0-7bf3a84a62b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens">
-      <UniqueIdentifier>{627f30ab-b38b-4ae7-a8eb-a7efc16961e9}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Créditos">
+      <UniqueIdentifier>{261be312-1d16-46ea-bdff-e8f7f2f4691f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Introdução 1">
-      <UniqueIdentifier>{b0557e51-065c-4a0a-a4f5-6c2d0e3bd31f}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoMenelau">
+      <UniqueIdentifier>{ed5fbbef-9493-42be-b6eb-cc69e486db67}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\Menu">
-      <UniqueIdentifier>{1ad8cd3a-7078-4497-84af-2828ca117022}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Aquiles">
+      <UniqueIdentifier>{dcc22174-9352-4a9c-bb2a-723d0d07dc96}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Origem\Imagens\IMG Testes">
-      <UniqueIdentifier>{088e7eef-d7a6-4225-9bd7-7d1592ac1078}</UniqueIdentifier>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Lanceiro">
+      <UniqueIdentifier>{51eed6fe-a1a1-477c-97f8-0d5140a66f42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Arqueiro">
+      <UniqueIdentifier>{ab5e7dd2-adc9-499e-8fc1-57eac3dfcc0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 4\Background">
+      <UniqueIdentifier>{a636c96a-dfe3-401d-81fb-cec039dee2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Créditos">
+      <UniqueIdentifier>{630da208-7477-4041-8fac-1bc6fc4865b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Imagens\Fases\Fase 2\MovimentoHeitor">
+      <UniqueIdentifier>{e8e46ef0-2711-4a92-9dc4-84f7119e705e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Audios\audio_menu.mp3">
+      <Filter>Arquivos de Cabeçalho\Audios</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

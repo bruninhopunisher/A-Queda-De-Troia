@@ -2,6 +2,6 @@
 #define MENU_H
 #include "lib.h"
 
-void menu(int* navegacao, ALLEGRO_BITMAP* background, ALLEGRO_EVENT evento, bool* rodando); 
+void menu(ALLEGRO_EVENT evento); 
 
 #endif // !MENU_H
