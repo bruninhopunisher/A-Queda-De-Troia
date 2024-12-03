@@ -1371,7 +1371,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 		if (ultPressionado == 1)
 			al_draw_bitmap(cimaN, posicaoX, posicaoY, 0);
 		if (ultPressionado == 2)
-			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 0);
+			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 1);
 		if (ultPressionado == 3)
 			al_draw_bitmap(direitaN, posicaoX, posicaoY, 0);
 		if (ultPressionado == 4 || ultPressionado == 0 || ultPressionado == 5)

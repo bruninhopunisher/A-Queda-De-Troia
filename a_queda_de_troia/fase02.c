@@ -94,7 +94,8 @@ void fase2(ALLEGRO_EVENT evento) {
 		//Background Barra de Vida
 		al_draw_bitmap(barra_vida_cheia, 80, 38, 0);
 		//BARRA DE VIDA PARIS ( JOGADOR )
-		al_draw_filled_rectangle(88, 45, vidaJogador, 61, al_map_rgba(255, 0, 0, 1));
+		if(vidaJogador > 88)
+			al_draw_filled_rectangle(88, 45, vidaJogador, 61, al_map_rgba(255, 0, 0, 1));
 
 		//Timer Ataque Rei
 		if (timerAtaqueRei > 0) {
@@ -214,7 +215,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 6;
+					vidaJogador -= 10;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRcima4, positionReiX, positionReiY, 0);
@@ -251,7 +252,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 6;
+					vidaJogador -= 10;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRlado4, positionReiX - 50, positionReiY, 0);
@@ -288,7 +289,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 6;
+					vidaJogador -= 10;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRlado4, positionReiX, positionReiY, 1);
@@ -325,7 +326,7 @@ void fase2(ALLEGRO_EVENT evento) {
 			}
 			if (movRei >= 30 && movRei <= 40) {
 				if (atacouRei == false)
-					vidaJogador -= 6;
+					vidaJogador -= 10;
 				atacouRei == true;
 
 				al_draw_bitmap(AtaqueRbaixo4, positionReiX, positionReiY, 0);
@@ -762,9 +763,11 @@ void fase2(ALLEGRO_EVENT evento) {
 			if (parisCaindoTimer >= 80) {
 				al_draw_bitmap(ParisCaindo5, positionX1_f2, positionY1_f2, 0);
 			}
-
+			/*printf("X-%d", positionX1_heitor);
+			printf("Y-%d", positionY1_heitor);*/
 			//Controlando Heitor
-			if ((positionY1_heitor < 450 && positionY1_heitor > 190)) {
+			if (positionY1_heitor < 450 && positionY1_heitor > 190) {
+				printf("To entrando");
 				movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 			}
 			else {
