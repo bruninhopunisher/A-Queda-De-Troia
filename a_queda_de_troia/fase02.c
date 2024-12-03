@@ -926,6 +926,7 @@ void fase2(ALLEGRO_EVENT evento) {
 						positionY1_f2 = 225;
 						positionX1_heitor = 615;
 						positionY1_heitor = 200;
+
 					}
 				}
 
@@ -936,8 +937,6 @@ void fase2(ALLEGRO_EVENT evento) {
 					}
 				}
 			}
-
-
 			if (vidaReiX <= 958) {
 				al_draw_bitmap(VitoriaFase2, 0, 0, 0);
 				al_draw_filled_rectangle(525, 480, 755, 530, al_map_rgb(242, 183, 64));
