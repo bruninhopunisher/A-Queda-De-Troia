@@ -78,6 +78,9 @@ extern bool renderizar;
 extern ALLEGRO_BITMAP* fundoAgamenom;
 extern ALLEGRO_BITMAP* fundoMenelau;
 extern ALLEGRO_BITMAP* fundoExplicacao;
+ALLEGRO_BITMAP* fundoEmbarcacao1;
+ALLEGRO_BITMAP* fundoEmbarcacao2;
+ALLEGRO_BITMAP* fundoEmbarcacao3;
 
 //Introdução 3
 extern ALLEGRO_BITMAP* pagina1;

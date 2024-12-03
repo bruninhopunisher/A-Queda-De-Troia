@@ -67,7 +67,9 @@ bool renderizar = 0;
 ALLEGRO_BITMAP * fundoAgamenom; //Destruido
 ALLEGRO_BITMAP* fundoMenelau; //Destruido
 ALLEGRO_BITMAP* fundoExplicacao;
-
+ALLEGRO_BITMAP* fundoEmbarcacao1;
+ALLEGRO_BITMAP* fundoEmbarcacao2;
+ALLEGRO_BITMAP* fundoEmbarcacao3;
 //Introdução 3
 ALLEGRO_BITMAP* pagina1; //Destruido
 ALLEGRO_BITMAP* pagina2; //Destruido
@@ -454,6 +456,9 @@ void iniciarConstantes() {
 	fundoAgamenom = al_load_bitmap("Imagens/Introducao_2/fundoAgamenom.jpg");
 	fundoMenelau = al_load_bitmap("Imagens/Introducao_2/fundoMenelau.jpg");
 	fundoExplicacao = al_load_bitmap("Imagens/Introducao_2/fundoExplicacao.jpg");
+	fundoEmbarcacao1 = al_load_bitmap("Imagens/Introducao_2/fundoEmbarcacao1.jpeg");
+	fundoEmbarcacao2 = al_load_bitmap("Imagens/Introducao_2/fundoEmbarcacao2.jpeg");
+	fundoEmbarcacao3 = al_load_bitmap("Imagens/Introducao_2/fundoEmbarcacao3.jpeg");
 
 	testeInicializar(fundoAgamenom, "fundo-agamenom-Intro2");
 	testeInicializar(fundoMenelau, "fundo-menelau-Intro2");
@@ -1657,7 +1662,9 @@ void destruidor() {
 	al_destroy_bitmap(fundoAgamenom);
 	al_destroy_bitmap(fundoMenelau);
 	al_destroy_bitmap(fundoExplicacao);
-
+	al_destroy_bitmap(fundoEmbarcacao1);
+	al_destroy_bitmap(fundoEmbarcacao2);
+	al_destroy_bitmap(fundoEmbarcacao3);
 	//Introdução 3
 	al_destroy_bitmap(pagina1);
 	al_destroy_bitmap(pagina2);

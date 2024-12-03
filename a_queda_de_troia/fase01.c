@@ -115,7 +115,7 @@ void fase01(ALLEGRO_EVENT evento) {
 
 
     // Definindo as novas áreas restritas
-    bool dentro_da_area_restrita1 = (personagemParisX  >= 0 && personagemParisX <= 0 && personagemParisY >= 0 && personagemParisY <= 620);
+    bool dentro_da_area_restrita1 = (personagemParisX == 0  && personagemParisY >= 0 && personagemParisY <= 620);
     bool dentro_da_area_restrita2 = (personagemParisX >= 0 && personagemParisX <= 695 && personagemParisY == 100);
     bool dentro_da_area_restrita3 = (personagemParisX >= 0 && personagemParisX <= 1200 && personagemParisY +70 >= 575 && personagemParisY <= 620);
     bool dentro_da_area_restrita4 = (personagemParisX >= 696 && personagemParisX <= 1069 && personagemParisY + 70 >= 100 && personagemParisY + 70 <= 292);
