@@ -155,7 +155,7 @@ ALLEGRO_BITMAP* HeitorAtaqueL3;
 ALLEGRO_BITMAP* HeitorAtaqueL4;
 
 int positionX1_heitor = 615;
-int positionY1_heitor = 200;
+int positionY1_heitor = 225;
 //PARIS
 ALLEGRO_BITMAP* ParisBaixoEsq; //Destruido
 ALLEGRO_BITMAP* ParisBaixoDir; //Destruido
@@ -1367,7 +1367,7 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 		if (ultPressionado == 1)
 			al_draw_bitmap(cimaN, posicaoX, posicaoY, 0);
 		if (ultPressionado == 2)
-			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 0);
+			al_draw_bitmap(esquerdaN, posicaoX, posicaoY, 1);
 		if (ultPressionado == 3)
 			al_draw_bitmap(direitaN, posicaoX, posicaoY, 0);
 		if (ultPressionado == 4 || ultPressionado == 0 || ultPressionado == 5)
@@ -1446,9 +1446,12 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			}
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX + 8, posicaoY - 1, 70, 41, positionReiX, positionReiY + 11, 37, 54) == true) {
-					if (atacou == false)
-						vidaReiX -= 4;
-
+					if (controleJogador == false && atacou == false) {
+						vidaReiX -= 2;
+					}
+					if (controleJogador == true && atacou == false) {
+						vidaReiX -= 40;
+					}
 					atacou = true;
 				}
 				al_draw_bitmap(ataqueCima4, posicaoX, posicaoY, 0);
@@ -1479,9 +1482,12 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX, posicaoY, 29, 45, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
-					if (atacou == false)
-						vidaReiX -= 4;
-
+					if (controleJogador == false && atacou == false) {
+						vidaReiX -= 2;
+					}
+					if (controleJogador == true && atacou == false) {
+						vidaReiX -= 40;
+					}
 					atacou = true;
 				}
 				al_draw_bitmap(ataqueLado4, posicaoX, posicaoY, 0);
@@ -1512,9 +1518,12 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX + 37, posicaoY, 63, 45, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
-					if (atacou == false)
-						vidaReiX -= 4;
-
+					if (controleJogador == false && atacou == false) {
+						vidaReiX -= 2;
+					}
+					if (controleJogador == true && atacou == false) {
+						vidaReiX -= 40;
+					}
 					atacou = true;
 				}
 				al_draw_bitmap(ataqueLado4, posicaoX, posicaoY, 1);
@@ -1545,9 +1554,12 @@ void movimentoSprite(ALLEGRO_BITMAP* baixoN, ALLEGRO_BITMAP* baixoE, ALLEGRO_BIT
 			if (movimento >= 30 && movimento <= 40) {
 				if (areaAtaque(posicaoX, posicaoY + 35, 80, 30, positionReiX, positionReiY + 11, 37, 54) == true)
 				{
-					if (atacou == false)
-						vidaReiX -= 4;
-
+					if (controleJogador == false && atacou == false) {
+						vidaReiX -= 2;
+					}
+					if (controleJogador == true && atacou == false) {
+						vidaReiX -= 40;
+					}
 					atacou = true;
 				}
 				al_draw_bitmap(ataqueBaixo4, posicaoX, posicaoY, 0);

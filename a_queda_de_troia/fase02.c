@@ -87,14 +87,19 @@ void fase2(ALLEGRO_EVENT evento) {
 		//Background Barra de Vida
 		al_draw_bitmap(barra_vida_cheia, 950, 38, 0);
 		//BARRA DE VIDA REI MENELAU
-		al_draw_filled_rectangle(958, 45, vidaReiX, 61, al_map_rgba(255, 0, 0, 1));
+		if (vidaReiX > 970) {
+			al_draw_filled_rectangle(958, 45, vidaReiX, 61, al_map_rgba(255, 0, 0, 1));
+		}
+		else {
+			al_draw_filled_rectangle(958, 45, 970, 61, al_map_rgba(255, 0, 0, 1));
+		}
 
 		//Nome Paris Personagem
 		al_draw_text(fonteFase2, al_map_rgb(0, 0, 0), 180, 6, ALLEGRO_ALIGN_CENTRE, "Paris ( Jogador )");
 		//Background Barra de Vida
 		al_draw_bitmap(barra_vida_cheia, 80, 38, 0);
 		//BARRA DE VIDA PARIS ( JOGADOR )
-		if(vidaJogador > 88)
+		if (vidaJogador > 88)
 			al_draw_filled_rectangle(88, 45, vidaJogador, 61, al_map_rgba(255, 0, 0, 1));
 
 		//Timer Ataque Rei
@@ -199,9 +204,7 @@ void fase2(ALLEGRO_EVENT evento) {
 
 		//Ataque para Cima Rei
 		if (((areaAtaque(positionReiX + 2, positionReiY + 5, 83, 40, positionX1_f2 + 10, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 1) && (vidaJogador > 88)) {
-			printf("aqui");
 			if (movRei >= 0 && movRei < 10) {
-				printf("Entrei");
 				al_draw_bitmap(AtaqueRcima1, positionReiX, positionReiY, 0);
 				movRei += 1;
 			}
@@ -236,9 +239,8 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 		//Ataque para Esquerda Rei
 		if (((areaAtaque((positionReiX - 50) + 2, positionReiY + 15, 100, 50, positionX1_f2 + 5, positionY1_f2 + 5, 30, 50) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 2) && (vidaJogador > 88)) {
-			printf("aqui");
+
 			if (movRei >= 0 && movRei < 10) {
-				printf("Entrei");
 				al_draw_bitmap(AtaqueRlado1, positionReiX, positionReiY, 0);
 				movRei += 1;
 			}
@@ -273,9 +275,8 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 		//Ataque para Direita Rei
 		if (((areaAtaque(positionX1_f2 + 10, positionY1_f2 + 5, 30, 50, positionReiX + 40, positionReiY + 20, 35, 30) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 3) && (vidaJogador > 88)) {
-			printf("aqui");
+
 			if (movRei >= 0 && movRei < 10) {
-				printf("Entrei");
 				al_draw_bitmap(AtaqueRlado1, positionReiX, positionReiY, 1);
 				movRei += 1;
 			}
@@ -310,9 +311,8 @@ void fase2(ALLEGRO_EVENT evento) {
 		}
 		//Ataque para Baixo Rei
 		if (((areaAtaque(positionReiX + 5, positionReiY + 20, 55, 55, positionX1_f2 + 10, positionY1_f2 + 15, 30, 40) == true) && (timerAtaqueRei == 0)) && (posicaoRei == 4) && (vidaJogador > 88)) {
-			printf("aqui");
+
 			if (movRei >= 0 && movRei < 10) {
-				printf("Entrei");
 				al_draw_bitmap(AtaqueRbaixo1, positionReiX, positionReiY, 0);
 				movRei += 1;
 			}
@@ -345,17 +345,13 @@ void fase2(ALLEGRO_EVENT evento) {
 				movRei = 0;
 			}
 		}
-
-
 		if (vidaJogador > 88 && vidaJogador <= 300) {
 			//MOVIMENTAÇÃO DO PARIS VIDA 100%
-			if (positionY1_f2 < 450 && positionY1_f2 > 150) {
+			if ((positionY1_f2 < 450 && positionY1_f2 > 150) && (positionX1_f2 > 1 && positionX1_f2 < displayX - 30)) {
 				movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 			}
 			else {
-				printf("Y-%d", positionY1_f2);
 				if (positionY1_f2 >= 451) {
-					printf("To aqui");
 					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
@@ -366,11 +362,33 @@ void fase2(ALLEGRO_EVENT evento) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
 				}
-				if (positionY1_f2 <= 149 || (positionY1_f2 >= positionReiY && positionY1_f2 <= positionReiY + 60)) {
+				if (positionY1_f2 <= 149) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
 					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+				}
+				if (positionX1_f2 <= 1) {
+					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+				}
+				if (positionX1_f2 >= displayX - 30) {
+					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_f2, &positionY1_f2);
 					}
 					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
@@ -452,13 +470,64 @@ void fase2(ALLEGRO_EVENT evento) {
 							switch (intro)
 							{
 							case 1:
-								imagemIntro(Intro1Fase2, evento);
+								al_draw_bitmap(Intro1Fase2, 0, 0, 0);
+								al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(140, 70, 20));
+								if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1195 && mouseY <= 692) {
+									al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(200, 100, 20));
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+								}
+								else {
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+								}
+
+								al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1125, 650, ALLEGRO_ALIGN_CENTRE, "Proximo");
+
+								if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+									if (mouseX >= 1046 && mouseY >= 653 && mouseX <= 1205 && mouseY <= 692) {
+										al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+										intro += 1;
+									}
+								}
 								break;
 							case 2:
-								imagemIntro(Intro2Fase2, evento);
+								al_draw_bitmap(Intro2Fase2, 0, 0, 0);
+								al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(140, 70, 20));
+								if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1195 && mouseY <= 692) {
+									al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(200, 100, 20));
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+								}
+								else {
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+								}
+
+								al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1125, 650, ALLEGRO_ALIGN_CENTRE, "Proximo");
+
+								if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+									if (mouseX >= 1046 && mouseY >= 653 && mouseX <= 1205 && mouseY <= 692) {
+										al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+										intro += 1;
+									}
+								}
 								break;
 							case 3:
-								imagemIntro(Intro3Fase2, evento);
+								al_draw_bitmap(Intro3Fase2, 0, 0, 0);
+								al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(140, 70, 20));
+								if (mouseX >= 1016 && mouseY >= 653 && mouseX <= 1195 && mouseY <= 692) {
+									al_draw_filled_rectangle(1046, 653, 1205, 692, al_map_rgb(200, 100, 20));
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_LINK);
+								}
+								else {
+									al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+								}
+
+								al_draw_text(fonteMenu, al_map_rgb(255, 255, 255), 1125, 650, ALLEGRO_ALIGN_CENTRE, "Proximo");
+
+								if (evento.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
+									if (mouseX >= 1046 && mouseY >= 653 && mouseX <= 1205 && mouseY <= 692) {
+										al_set_system_mouse_cursor(display, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT);
+										intro += 1;
+									}
+								}
 								break;
 							case 4:
 								vidaJogador = 300;
@@ -756,22 +825,19 @@ void fase2(ALLEGRO_EVENT evento) {
 				al_draw_bitmap(ParisCaindo3, positionX1_f2, positionY1_f2, 0);
 				parisCaindoTimer += 1;
 			}
-			if (parisCaindoTimer >= 60 && parisCaindoTimer <= 80) {
+			if (parisCaindoTimer >= 60 && parisCaindoTimer < 80) {
 				al_draw_bitmap(ParisCaindo4, positionX1_f2, positionY1_f2, 0);
 				parisCaindoTimer += 1;
 			}
-			if (parisCaindoTimer >= 80) {
+			if (parisCaindoTimer == 80) {
 				al_draw_bitmap(ParisCaindo5, positionX1_f2, positionY1_f2, 0);
 			}
-			/*printf("X-%d", positionX1_heitor);
-			printf("Y-%d", positionY1_heitor);*/
-			//Controlando Heitor
-			if (positionY1_heitor < 450 && positionY1_heitor > 190) {
-				printf("To entrando");
+
+			if ((positionY1_heitor < 450 && positionY1_heitor > 150) && (positionX1_heitor > 1 && positionX1_heitor < displayX - 30)) {
 				movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 			}
 			else {
-				if (positionY1_heitor >= 450) {
+				if (positionY1_heitor >= 451) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
@@ -782,11 +848,33 @@ void fase2(ALLEGRO_EVENT evento) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
 				}
-				if (positionY1_heitor <= 190) {
+				if (positionY1_heitor <= 149) {
 					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
 					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+				}
+				if (positionX1_heitor <= 1) {
+					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_RIGHT) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+				}
+				if (positionX1_heitor >= displayX - 30) {
+					if (evento.keyboard.keycode == ALLEGRO_KEY_LEFT) {
+						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
+					}
+					if (evento.keyboard.keycode == ALLEGRO_KEY_UP) {
 						movimentarPlayer(evento, &positionX1_heitor, &positionY1_heitor);
 					}
 					if (evento.keyboard.keycode == ALLEGRO_KEY_DOWN) {
