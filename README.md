@@ -1,4 +1,4 @@
-# PI II - Desvendando Troia
+# PI II - A Queda de Tróia
 
 ## Sobre o Jogo
 A Queda de Tróia é um jogo educacional 2D baseado no filme de Tróia 2004. Desenvolvido em linguagem C com biblioteca gráfica Allegro 5.
