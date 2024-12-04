@@ -54,7 +54,7 @@ int introducao1(ALLEGRO_EVENT event) {
 		break;
 	case 13:
 		imagemIntro(fundoHelena, event);
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 590, 570, ALLEGRO_ALIGN_CENTRE, "Ele e lindo, mais nao posso usa-lo,");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 590, 570, ALLEGRO_ALIGN_CENTRE, "Ele e lindo, mas nao posso usa-lo,");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 590, 630, ALLEGRO_ALIGN_CENTRE, "Menelau mataria nos dois.");
 		break;
 	case 14:

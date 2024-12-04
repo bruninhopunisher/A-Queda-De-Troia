@@ -52,15 +52,15 @@ void introducao2(ALLEGRO_EVENT evento) {
 	case 8:
 		imagemIntro(fundoAgamenom, evento);
 		al_draw_text(font, al_map_rgb(0, 0, 0), 780, 585, ALLEGRO_ALIGN_CENTRE, "O sangue deles manchara a areia antes do amanhecer.");
-		al_draw_text(font, al_map_rgb(0, 0, 0), 780, 615, ALLEGRO_ALIGN_CENTRE, "Prepare os homens. Amanha, Troia.vera o verdadeiro");
+		al_draw_text(font, al_map_rgb(0, 0, 0), 795, 615, ALLEGRO_ALIGN_CENTRE, "Prepare os homens pois amanha troia vera o verdadeiro");
 		al_draw_text(font, al_map_rgb(0, 0, 0), 690, 650, ALLEGRO_ALIGN_CENTRE, "poder da Grecia.");
 		break;
 	case 9:
 		imagemIntro(fundoExplicacao, evento);
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 190, ALLEGRO_ALIGN_CENTRE, "Gregos avancaram sobre a costa de Troia");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 240, ALLEGRO_ALIGN_CENTRE, "em uma tentativa de quebrar suas defesas.");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 290, ALLEGRO_ALIGN_CENTRE, "Durante a batalha, Menelau, rei de ,");
-		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 340, ALLEGRO_ALIGN_CENTRE, "Esparta enfrentou Paris,que recuou apos ");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 290, ALLEGRO_ALIGN_CENTRE, "Durante a batalha, Menelau, rei de");
+		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 630, 340, ALLEGRO_ALIGN_CENTRE, "Esparta, enfrentou Paris, que recuou apos ");
 		al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 390, ALLEGRO_ALIGN_CENTRE, "ser derrotado.");
 		//al_draw_text(fonteIntro1, al_map_rgb(0, 0, 0), 640, 440, ALLEGRO_ALIGN_CENTRE, "");
 		break;
