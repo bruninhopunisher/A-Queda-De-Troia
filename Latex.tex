@@ -1,0 +1,160 @@
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{PI1}}
+\usepackage[portuges, brazil]{babel}   
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\boldmath
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
+
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{images/}}
+
+% -------------------------- TÍTULO ------------------------------
+\title{\Huge \textbf{A Queda de Troia}}
+\vspace{150cm} % Espaço vertical de 50cm
+\author{Bruno Silva Souza, Cauã Mendes Gomes, Keila Suellen Santos Sacramento, Lucas Lucas Sá Magalhães, Lucas Pinheiro da Costa Pedrosa.}
+\vspace{1cm} % Espaço vertical de 1cm
+\institute[SENAC]{Centro Universitário Senac - Campus Santo Amaro}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+\begin{document}
+\begin{frame}
+    \vspace{1cm}
+    \begin{columns}
+        % ---------------------------------------------------------%
+        % Primeira coluna - Introdução e Metodologia
+        \begin{column}{.49\textwidth}
+            \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+                \begin{minipage}[T]{.85\textwidth} 
+                    \parbox[t][\columnheight]{\textwidth}{ 
+                        % TÍTULO INTRODUÇÃO
+                        \begin{block}{\textbf{Introdução}}
+                            A Queda de Troia é um jogo 2D inspirado no épico filme de 2004, permitindo aos jogadores reviverem a lendária Guerra de Troia ao assumirem papéis de heróis como Aquiles, Menelau e Heitor. O jogo combina narrativa, batalhas épicas e interatividade para ensinar sobre a história e mitologia da antiga Grécia.
+                        \end{block}
+                        
+                        % TÍTULO METODOLOGIA
+                        \begin{block}{\textbf{Fases do Jogo}}
+                            \begin{itemize}
+                                \item \textbf{Fase 1:} Paris sequestra Helena e a leva para Troia, enquanto os gregos iniciam uma tentativa de resgatá-la.
+                                \item \textbf{Fase 2:} O jogador controla Heitor em uma batalha contra Menelau, defendendo a honra e segurança de Troia.
+                                \item \textbf{Fase 3:} Os gregos constroem o Cavalo de Troia para invadir a cidade. O jogador deve resolver um quebra-cabeça estratégico para concluir a montagem.
+                                \item \textbf{Fase 4:} Em meio à destruição de Troia, o jogador enfrenta obstáculos enquanto tenta escapar. A decisão final determinará o destino da cidade: sobreviver ou sucumbir.
+                            \end{itemize}
+                        \end{block}
+                        
+                        % TÍTULO PERSONAGENS
+                       \begin{block}{\textbf{Personagens}}
+    \begin{itemize}
+      \item \begin{minipage}[t]{0.2\textwidth}
+                \centering
+                 \textbf{Aquiles}
+                 \vspace{1cm} % Espaço vertical de 1cm
+                \includegraphics[width=0.3\textwidth]{aquiles.png} \\
+              \end{minipage} 
+              O maior guerreiro grego, destemido e habilidoso.
+        \vspace{1cm} % Espaço vertical de 1cm
+        \item \begin{minipage}[t]{0.2\textwidth}
+                \centering
+                \hspace{4cm} % Espaço de 2cm à esquerda
+                \includegraphics[width=0.3\textwidth]{menelau.png} \\
+                \textbf{Menelau}
+              \end{minipage} 
+              O rei de Esparta, motivado pela vingança lidera os gregos na vigança contra tróia
+        \vspace{1cm} % Espaço vertical de 1cm
+        \item \begin{minipage}[t]{0.2\textwidth}
+                \centering
+                \textbf{Helena}
+                \includegraphics[width=0.3\textwidth]{helena.png} \\
+              \end{minipage} 
+             Rainha de Esparta, cuja beleza e paixão desencadeiam a guerra de Tróia.
+        \vspace{1cm} % Espaço vertical de 1cm
+        \item \begin{minipage}[t]{0.2\textwidth}
+                \centering
+                \textbf{Heitor}
+                \includegraphics[width=0.4\textwidth]{heitor.png} \\
+              \end{minipage} 
+             Herói troiano, irmão de Paris e defensor de Tróia.
+        \vspace{1cm} % Espaço vertical de 1cm
+        \item \begin{minipage}[t]{0.2\textwidth}
+                \centering
+                \textbf{Paris}
+                \includegraphics[width=0.4\textwidth]{paris.png} 
+              \end{minipage} 
+              Príncipe de Tróia e responsável pelo início da guerra ao levar Helena para sua cidade. 
+    \end{itemize}
+\end{block}
+
+                    }
+                \end{minipage}
+            \end{beamercolorbox}
+        \end{column}
+        % ---------------------------------------------------------%
+
+        % Segunda coluna - Jogabilidade, Tecnologias e Imagem
+        \begin{column}{.49\textwidth}
+            \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+                \begin{minipage}[T]{.95\textwidth} 
+                    \parbox[t][\columnheight]{\textwidth}{ 
+                        % TÍTULO JOGABILIDADE
+                        \begin{block}{\textbf{Jogabilidade}}
+                            \begin{itemize}
+                                \item Jogo de ação 2D com combate em tempo real.
+                                \item Quebra-cabeça desafiador, como a montagem do Cavalo de Tróia.
+                                \item Batalhas épicas, incluindo a luta de Heitor contra Menelau.
+                                \item Decisão sobre o destino de Tróia: será que ela cairá ou sobreviverá?
+                            \end{itemize}
+                        \end{block}
+                        
+                        % TÍTULO TECNOLOGIAS UTILIZADAS
+                        \begin{block}{\textbf{Tecnologias Utilizadas}}
+                            \begin{itemize}
+                                \item Linguagem: C
+                                \item Ambiente de Desenvolvimento: Visual Studio 2022
+                                \item Biblioteca: Allegro 5
+                                \item Design: Figma e Canva
+                                \item Arte: Sprites 2D (criação utilizando o repositório \href{https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/}{Universal LPC Spritesheet Generator})
+
+                            \end{itemize}
+                        \end{block}
+
+                        % TÍTULO IMAGEM DO JOGO
+                        \begin{block}{\textbf{Imagens do Jogo}}
+                            \begin{minipage}{0.48\textwidth}
+                                \centering
+                                \includegraphics[width=\textwidth]{menu.png} 
+                                \vspace{0.3cm}
+                                \includegraphics[width=\textwidth]{intro.png} 
+                            \end{minipage}%
+                            \hfill
+                            \begin{minipage}{0.48\textwidth}
+                                \centering
+                                \includegraphics[width=\textwidth]{fase2.jpg} 
+                                \vspace{0.3cm}
+                                \includegraphics[width=\textwidth]{puzzles.png}
+                            \end{minipage}
+                            \vspace{0.3cm}
+                            \begin{minipage}{0.48\textwidth}
+                                \centering
+                                \includegraphics[width=\textwidth]{fase4.jpg} 
+                            \end{minipage}
+                        \end{block}
+                        
+                        \vfill
+                    }
+                \end{minipage}
+            \end{beamercolorbox}
+        \end{column}
+        % ---------------------------------------------------------%
+    \end{columns}
+    \vskip
+\end{frame}
+\end{document}
